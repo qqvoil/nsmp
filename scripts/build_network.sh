@@ -28,26 +28,26 @@ echo -e "=================================================================${NC}"
 mkdir -p "${SERVER_DIR}"
 
 # 1. Server setup definitions
-# Format: NAME|TEMPLATE|PORT|JAR_TYPE|MAP_TAR
+# Format: NAME|TEMPLATE|PORT|JAR_TYPE|MAP_TAR|RAM_MIN|RAM_MAX
 declare -a SERVERS_CONFIG=(
-    "velocity|velocity|25565|velocity|"
-    "Limbo|Limbo|25567|limbo|"
-    "Lobby|Lobby|25566|paper|lobby_world.tar.gz"
-    "SMP1|SMP|25590|paper|"
-    "SMP2|SMP|25587|paper|"
-    "anarchy1|anarchy1|25588|paper|"
-    "anarchy2|anarchy1|25585|paper|"
-    "hardcore1|hardcore1|25589|paper|hardcore_world.tar.gz"
-    "hardcore2|hardcore1|25586|paper|hardcore_world.tar.gz"
-    "building1|building1|25583|paper|building_world.tar.gz"
-    "building2|building1|25584|paper|building_world.tar.gz"
+    "velocity|velocity|25565|velocity||512M|1G"
+    "Limbo|Limbo|25567|limbo||128M|256M"
+    "Lobby|Lobby|25566|paper|lobby_world.tar.gz|1G|2G"
+    "SMP1|SMP|25590|paper||2G|4G"
+    "SMP2|SMP|25587|paper||2G|4G"
+    "anarchy1|anarchy1|25588|paper||2G|4G"
+    "anarchy2|anarchy1|25585|paper||2G|4G"
+    "hardcore1|hardcore1|25589|paper|hardcore_world.tar.gz|2G|4G"
+    "hardcore2|hardcore1|25586|paper|hardcore_world.tar.gz|2G|4G"
+    "building1|building1|25583|paper|building_world.tar.gz|1G|2G"
+    "building2|building1|25584|paper|building_world.tar.gz|1G|2G"
 )
 
 assemble_servers() {
     echo -e "\n${YELLOW}🏗 [1/3] Развертывание структуры 11 серверов...${NC}"
 
     for entry in "${SERVERS_CONFIG[@]}"; do
-        IFS='|' read -r name template port jar_type map_archive <<< "$entry"
+        IFS='|' read -r name template port jar_type map_archive ram_min ram_max <<< "$entry"
         local srv_dir="${SERVER_DIR}/${name}"
         local tmpl_dir="${TEMPLATES_DIR}/${template}"
 
@@ -59,15 +59,30 @@ assemble_servers() {
             cp -rn "$tmpl_dir"/* "$srv_dir/" 2>/dev/null || cp -r "$tmpl_dir"/* "$srv_dir/"
         fi
 
-        # Place the correct server jar from core/jars
+        # Place the correct server jar from core/jars and generate start.sh
         if [[ "$jar_type" == "velocity" ]]; then
             cp "${JARS_DIR}/velocity.jar" "${srv_dir}/velocity.jar"
+            cat << 'EOF' > "${srv_dir}/start.sh"
+#!/usr/bin/env bash
+exec java -Xms512M -Xmx1G -jar velocity.jar
+EOF
         elif [[ "$jar_type" == "limbo" ]]; then
             cp "${JARS_DIR}/limbo" "${srv_dir}/limbo"
             chmod +x "${srv_dir}/limbo"
+            cat << 'EOF' > "${srv_dir}/start.sh"
+#!/usr/bin/env bash
+chmod +x ./limbo 2>/dev/null || true
+exec ./limbo
+EOF
         else
             cp "${JARS_DIR}/paper-1.21.4.jar" "${srv_dir}/server.jar"
+            cat << EOF > "${srv_dir}/start.sh"
+#!/usr/bin/env bash
+exec java -Xms${ram_min} -Xmx${ram_max} -XX:+UseG1GC -jar server.jar nogui
+EOF
         fi
+
+        chmod +x "${srv_dir}/start.sh"
 
         # Accept EULA
         echo "eula=true" > "${srv_dir}/eula.txt"

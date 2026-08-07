@@ -51,27 +51,19 @@ start_server() {
         return 1
     fi
 
-    if [[ ! -f "$target_dir/$jar" ]]; then
-        local found_jar
-        found_jar=$(find "$target_dir" -maxdepth 1 -name "*.jar" | head -n 1)
-        if [[ -n "$found_jar" ]]; then
-            jar=$(basename "$found_jar")
+    if [[ ! -f "$target_dir/start.sh" ]]; then
+        if [[ "$srv" == "limbo" ]]; then
+            echo -e "#!/usr/bin/env bash\nchmod +x ./limbo 2>/dev/null || true\nexec ./limbo" > "$target_dir/start.sh"
+        elif [[ "$srv" == "velocity" ]]; then
+            echo -e "#!/usr/bin/env bash\nexec java -Xms${ram_min} -Xmx${ram_max} -jar velocity.jar" > "$target_dir/start.sh"
+        else
+            echo -e "#!/usr/bin/env bash\nexec java -Xms${ram_min} -Xmx${ram_max} -XX:+UseG1GC -jar server.jar nogui" > "$target_dir/start.sh"
         fi
+        chmod +x "$target_dir/start.sh"
     fi
 
     echo "🚀 Запуск $srv ($dir) [RAM: $ram_max, Port: $port]..."
-    if [[ "$srv" == "velocity" ]]; then
-        tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" \
-            "bash -c 'exec java -Xms${ram_min} -Xmx${ram_max} -jar ${jar}'"
-    elif [[ "$srv" == "limbo" ]]; then
-        chmod +x "$target_dir/$jar" 2>/dev/null || true
-        tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" \
-            "bash -c 'exec ./${jar}'"
-    else
-        tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" \
-            "bash -c 'exec java -Xms${ram_min} -Xmx${ram_max} ${AIKAR_FLAGS} -jar ${jar} nogui'"
-    fi
-    
+    tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" ./start.sh
     sleep 1
 }
 
