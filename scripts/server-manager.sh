@@ -60,9 +60,13 @@ start_server() {
     fi
 
     echo "🚀 Запуск $srv ($dir) [RAM: $ram_max, Port: $port]..."
-    if [[ "$srv" == "velocity" || "$srv" == "limbo" ]]; then
+    if [[ "$srv" == "velocity" ]]; then
         tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" \
             "java -Xms${ram_min} -Xmx${ram_max} -jar ${jar}"
+    elif [[ "$srv" == "limbo" ]]; then
+        chmod +x "$target_dir/$jar" 2>/dev/null || true
+        tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" \
+            "./${jar}"
     else
         tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" \
             "java -Xms${ram_min} -Xmx${ram_max} ${AIKAR_FLAGS} -jar ${jar} nogui"
