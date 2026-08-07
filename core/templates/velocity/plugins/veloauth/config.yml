@@ -95,7 +95,7 @@ premium:
 # Floodgate / Bedrock support configuration
 # Must stay aligned with your Floodgate proxy config.
 floodgate:
-  enabled: false # Enable Floodgate-specific Bedrock handling in VeloAuth
+  enabled: true # Enable Floodgate-specific Bedrock handling in VeloAuth
   username-prefix: "." # Match Floodgate's username-prefix; use "" if you removed the prefix
   bypass-auth-server: true # Bedrock players authenticated by Floodgate can skip auth server
 
