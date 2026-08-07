@@ -136,9 +136,12 @@ function initTokenSlider() {
 
     function updateSlider() {
         const tokens = parseInt(slider.value, 10);
+        const min = parseInt(slider.min, 10);
+        const max = parseInt(slider.max, 10);
         const basePrice = tokens / BASE_TOKENS_PER_RUB;
+
         // Progressive discount up to 30% at 100k
-        const progress = (tokens - 1000) / 99000.0;
+        const progress = Math.max(0, Math.min(1, (tokens - min) / (max - min)));
         const discountPct = Math.round(progress * 30.0);
         const finalPrice = Math.max(10, Math.round(basePrice * (1 - discountPct / 100.0)));
 
@@ -149,7 +152,7 @@ function initTokenSlider() {
         if (discountPct > 0) {
             basePriceVal.textContent = `${Math.round(basePrice)} ₽`;
             basePriceVal.style.display = 'inline';
-            badge.textContent = `🔥 Скидка: ${discountPct}%`;
+            badge.textContent = `Скидка: ${discountPct}%`;
             badge.style.display = 'inline-block';
         } else {
             basePriceVal.style.display = 'none';
@@ -158,6 +161,10 @@ function initTokenSlider() {
 
         btnTokensAmount.textContent = formattedTokens;
         btnTokensPrice.textContent = `${finalPrice} ₽`;
+
+        // Update slider fill track
+        const fillPercent = progress * 100;
+        slider.style.background = `linear-gradient(to right, #f59e0b 0%, #f59e0b ${fillPercent}%, rgba(255,255,255,0.1) ${fillPercent}%, rgba(255,255,255,0.1) 100%)`;
     }
 
     slider.addEventListener('input', updateSlider);
