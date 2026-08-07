@@ -124,7 +124,7 @@ mysql-settings:
   # Enable MySQL
   # If false, SQLite will be used instead
   # Default: false
-  enabled: false
+  enabled: true
 
   # MySQL Database Hostname
   # Default: 127.0.0.1
@@ -136,15 +136,15 @@ mysql-settings:
 
   # MySQL Database Name
   # Default: ''
-  database-name: ''
+  database-name: 'neversmp'
 
   # MySQL Database User Name
   # Default: ''
-  user-name: ''
+  user-name: 'nsmp_user'
 
   # MySQL Database User Password
   # Default: ''
-  user-password: ''
+  user-password: 'NeverSMP_SecureDB_2026!'
 
   # If the database connection should use SSL
   # You should enable this if your database supports SSL

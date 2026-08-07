@@ -1,0 +1,68 @@
+# ==============================================================================
+# NeverSMP — Hardcore Death & Spectator / Revive Mechanics
+# ==============================================================================
+
+options:
+    revive_cost_tokens: 500
+    spawn_world: "world"
+    spawn_x: 0.5
+    spawn_y: 80.0
+    spawn_z: 0.5
+
+on death of player:
+    set {_loc} to victim's location
+    set {_x} to round(x-coord of {_loc})
+    set {_y} to round(y-coord of {_loc})
+    set {_z} to round(z-coord of {_loc})
+    
+    broadcast "&8&m----------------------------------------"
+    broadcast "&c&l☠ ГИБЕЛЬ НА ХАРДКОРЕ!"
+    broadcast "&fИгрок &e%victim's name% &fпогиб на &cHardcore&f!"
+    broadcast "&8&m----------------------------------------"
+    
+    send "&c☠ Вы погибли на координатах: &eX: %{_x}%, Y: %{_y}%, Z: %{_z%}" to victim
+    send "&7Вы переведены в режим наблюдателя." to victim
+    send "&7Возродиться за токены: &b/revive &7(Стоимость: &e{@revive_cost_tokens} токенов&7)" to victim
+    send "&7Вернуться в Лобби: &e/hub &7или &e/lobby" to victim
+    
+    set {is_hardcore_dead::%victim's uuid%} to true
+
+on respawn:
+    if {is_hardcore_dead::%player's uuid%} is true:
+        wait 2 ticks
+        set player's gamemode to spectator
+        send title "&c&lВЫ ПОГИБЛИ" with subtitle "&7Режим наблюдателя активирован" to player for 5 seconds
+
+# Команда возрождения за токены
+command /revive:
+    trigger:
+        if {is_hardcore_dead::%player's uuid%} is not true:
+            send "&aВы живы и не нуждаетесь в возрождении!" to player
+            stop
+            
+        # Проверка баланса токенов
+        set {_tokens} to placeholder "playerpoints_points" from player parsed as integer
+        if {_tokens} < {@revive_cost_tokens}:
+            send "&cУ вас недостаточно токенов для возрождения! Необходимо: &e{@revive_cost_tokens} токенов &c(У вас: %{_tokens}%)." to player
+            send "&7Купить токены: &dhttps://donate.neversmp.ru" to player
+            stop
+            
+        # Списание токенов
+        make console execute command "p take %player's name% {@revive_cost_tokens}"
+        delete {is_hardcore_dead::%player's uuid%}
+        set player's gamemode to survival
+        set {_target} to location({@spawn_x}, {@spawn_y}, {@spawn_z}, world({@spawn_world}))
+        teleport player to {_target}
+        heal player
+        feed player
+        apply resistance 5 to player for 5 seconds
+        
+        broadcast "&a✦ Игрок &e%player's name% &aуспешно возродился на Хардкоре!"
+        play sound "ui.toast.challenge_complete" at player to player
+
+# Команда возврата в Лобби для наблюдателей
+command /hub:
+    aliases: /lobby, /лобби
+    trigger:
+        send "&aПодключение к главному Лобби..." to player
+        make player execute command "server lobby"

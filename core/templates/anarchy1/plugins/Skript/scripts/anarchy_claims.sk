@@ -1,0 +1,237 @@
+# ==============================================================================
+# NeverSMP — Anarchy Claim Blocks (Приват-блоки)
+# ==============================================================================
+
+options:
+    # Лимиты приватов
+    limit_default: 3
+    limit_vip: 6
+    
+    # Запретная зона вокруг спавна (где нельзя ставить приваты)
+    no_claim_radius: 150
+    spawn_world: "world"
+
+# Функция получения лимита игрока
+function getClaimLimit(p: player) :: integer:
+    if {_p} has permission "neversmp.claim.vip" or "group.vip" or "group.premium" or "group.admin" or "group.owner":
+        return {@limit_vip}
+    return {@limit_default}
+
+# Функция проверки попадания точки в чужой приват
+function getClaimAtLocation(loc: location) :: text:
+    loop {all_claims::*}:
+        set {_cid} to loop-value
+        set {_center} to {claim::%{_cid}%::center}
+        if {_center}'s world is {_loc}'s world:
+            set {_r} to {claim::%{_cid}%::radius}
+            if abs(x-coord of {_loc} - x-coord of {_center}) <= {_r}:
+                if abs(y-coord of {_loc} - y-coord of {_center}) <= {_r}:
+                    if abs(z-coord of {_loc} - z-coord of {_center}) <= {_r}:
+                        return {_cid}
+    return "none"
+
+# Функция проверки доступа игрока к привату
+function canAccessClaim(p: player, cid: text) :: boolean:
+    if {_p} is op:
+        return true
+    if {claim::%{_cid}%::owner_uuid} is {_p}'s uuid:
+        return true
+    if {claim::%{_cid}%::members::%{_p}'s uuid%} is set:
+        return true
+    return false
+
+# ==============================================================================
+# СОБЫТИЯ: УСТАНОВКА И СНЯТИЕ ПРИВАТ-БЛОКА
+# ==============================================================================
+
+on place of crying obsidian or lodestone or respawn anchor:
+    set {_name} to name of player's held item
+    set {_r} to 0
+    if {_name} contains "Приват-блок (10x10)":
+        set {_r} to 5
+    else if {_name} contains "Приват-блок (15x15)":
+        set {_r} to 7
+    else if {_name} contains "Приват-блок (20x20)":
+        set {_r} to 10
+    else:
+        stop
+        
+    # Проверка расстояния до спавна
+    if player's world is {@spawn_world}:
+        if distance between event-location and location(0, event-location's y-coord, 0, world({@spawn_world})) <= {@no_claim_radius}:
+            cancel event
+            send "&cНельзя устанавливать приват-блок слишком близко к спавну!" to player
+            stop
+            
+    # Проверка лимита
+    set {_limit} to getClaimLimit(player)
+    set {_count} to size of {player_claims::%player's uuid%::*}
+    if {_count} >= {_limit}:
+        cancel event
+        send "&cВы достигли максимального лимита приватов (%{_count}%/%{_limit}%)!" to player
+        send "&7Купите статус &6VIP &7для лимита в &a{@limit_vip} &7приватов!" to player
+        stop
+        
+    # Проверка пересечения с чужими приватами
+    set {_exist} to getClaimAtLocation(event-location)
+    if {_exist} is not "none":
+        cancel event
+        send "&cЗдесь уже находится чужой приват!" to player
+        stop
+        
+    # Создание привата
+    set {_cid} to "%player's uuid%_%now's unix timestamp%"
+    set {claim::%{_cid}%::owner_uuid} to player's uuid
+    set {claim::%{_cid}%::owner_name} to player's name
+    set {claim::%{_cid}%::center} to event-location
+    set {claim::%{_cid}%::radius} to {_r}
+    add {_cid} to {all_claims::*}
+    add {_cid} to {player_claims::%player's uuid%::*}
+    set {block_claim::%event-location%} to {_cid}
+    
+    send "&a✓ Приват-блок успешно установлен!" to player
+    send "&7Радиус защиты: &e%{_r}*2%x%{_r}*2% &7блоков (Центр: %x-coord of event-location%, %y-coord of event-location%, %z-coord of event-location%)" to player
+    send "&7Добавить друга: &b/ps add <ник>" to player
+    play sound "block.beacon.activate" at player to player
+
+on break:
+    if {block_claim::%event-location%} is set:
+        set {_cid} to {block_claim::%event-location%}
+        if {claim::%{_cid}%::owner_uuid} is not player's uuid:
+            if player is not op:
+                cancel event
+                send action bar "&cВы не можете сломать чужой приват-блок!" to player
+                stop
+        # Снятие привата
+        set {_r} to {claim::%{_cid}%::radius}
+        delete {claim::%{_cid}%::owner_uuid}
+        delete {claim::%{_cid}%::owner_name}
+        delete {claim::%{_cid}%::center}
+        delete {claim::%{_cid}%::radius}
+        delete {claim::%{_cid}%::members::*}
+        remove {_cid} from {all_claims::*}
+        remove {_cid} from {player_claims::%player's uuid%::*}
+        delete {block_claim::%event-location%}
+        
+        send "&e✓ Приват-блок успешно снят и удален!" to player
+        play sound "block.beacon.deactivate" at player to player
+        stop
+        
+    # Проверка на обычное разрушение в чужом регионе
+    set {_cid} to getClaimAtLocation(event-location)
+    if {_cid} is not "none":
+        if canAccessClaim(player, {_cid}) is false:
+            cancel event
+            send action bar "&cЭтот регион защищен игроком %{claim::%{_cid}%::owner_name%}%!" to player
+
+on place:
+    set {_cid} to getClaimAtLocation(event-location)
+    if {_cid} is not "none":
+        if canAccessClaim(player, {_cid}) is false:
+            cancel event
+            send action bar "&cЭтот регион защищен игроком %{claim::%{_cid}%::owner_name%}%!" to player
+
+on rightclick:
+    if clicked block is chest or trapped chest or barrel or furnace or blast furnace or smoker or hopper or dispenser or dropper or shulker box or door or trapdoor:
+        set {_cid} to getClaimAtLocation(location of clicked block)
+        if {_cid} is not "none":
+            if canAccessClaim(player, {_cid}) is false:
+                cancel event
+                send action bar "&cЭтот сундук защищен приватом %{claim::%{_cid}%::owner_name%}%!" to player
+
+# ==============================================================================
+# КОМАНДЫ ПРИВАТА: /ps, /claim
+# ==============================================================================
+
+command /ps [<text>] [<text>]:
+    aliases: /claim, /приват
+    trigger:
+        set {_sub} to arg-1
+        if {_sub} is not set or {_sub} is "help":
+            send "&8&m----------------------------------------" to player
+            send "&6&l⚔ NeverSMP — Управление приват-блоками" to player
+            send "&e/ps info &7— информация о регионе, в котором вы стоите" to player
+            send "&e/ps list &7— список всех ваших активных приватов" to player
+            send "&e/ps add <ник> &7— добавить участника в текущий приват" to player
+            send "&e/ps remove <ник> &7— удалить участника из привата" to player
+            send "&7Лимит приватов: &a%size of {player_claims::%player's uuid%::*}%&7/&e%getClaimLimit(player)%" to player
+            send "&8&m----------------------------------------" to player
+            stop
+            
+        if {_sub} is "info":
+            set {_cid} to getClaimAtLocation(player's location)
+            if {_cid} is "none":
+                send "&7Вы находитесь на свободной территории." to player
+            else:
+                send "&8&m----------------------------------------" to player
+                send "&aИнформация о привате:" to player
+                send "&7Владелец: &e%{claim::%{_cid}%::owner_name%}%" to player
+                send "&7Радиус: &b%{claim::%{_cid}%::radius%*2%x%{claim::%{_cid}%::radius%*2%}" to player
+                send "&7Участники: &f%join {claim::%{_cid}%::member_names::*} with ', '%" to player
+                send "&8&m----------------------------------------" to player
+            stop
+            
+        if {_sub} is "list":
+            send "&8&m----------------------------------------" to player
+            send "&6Ваши активные приваты (&e%size of {player_claims::%player's uuid%::*}%&7/&a%getClaimLimit(player)%&6):" to player
+            set {_n} to 1
+            loop {player_claims::%player's uuid%::*}:
+                set {_cid} to loop-value
+                set {_center} to {claim::%{_cid}%::center}
+                send "&7%{_n}%. &fX: %x-coord of {_center}%, Y: %y-coord of {_center}%, Z: %z-coord of {_center}% &7(Радиус: %{claim::%{_cid}%::radius%*2%x%{claim::%{_cid}%::radius%*2%})" to player
+                add 1 to {_n}
+            send "&8&m----------------------------------------" to player
+            stop
+            
+        if {_sub} is "add":
+            if arg-2 is not set:
+                send "&cИспользование: /ps add <ник_игрока>" to player
+                stop
+            set {_cid} to getClaimAtLocation(player's location)
+            if {_cid} is "none":
+                send "&cВы должны стоять внутри своего привата!" to player
+                stop
+            if {claim::%{_cid}%::owner_uuid} is not player's uuid:
+                send "&cВы не являетесь владельцем этого привата!" to player
+                stop
+            set {_target} to arg-2 parsed as offline player
+            if {_target} is not set:
+                send "&cИгрок не найден!" to player
+                stop
+            set {claim::%{_cid}%::members::%{_target}'s uuid%} to true
+            add {_target}'s name to {claim::%{_cid}%::member_names::*}
+            send "&aИгрок &e%{_target}'s name% &aуспешно добавлен в приват!" to player
+            stop
+            
+        if {_sub} is "remove":
+            if arg-2 is not set:
+                send "&cИспользование: /ps remove <ник_игрока>" to player
+                stop
+            set {_cid} to getClaimAtLocation(player's location)
+            if {_cid} is "none":
+                send "&cВы должны стоять внутри своего привата!" to player
+                stop
+            if {claim::%{_cid}%::owner_uuid} is not player's uuid:
+                send "&cВы не являетесь владельцем этого привата!" to player
+                stop
+            set {_target} to arg-2 parsed as offline player
+            delete {claim::%{_cid}%::members::%{_target}'s uuid%}
+            remove {_target}'s name from {claim::%{_cid}%::member_names::*}
+            send "&eИгрок &f%{_target}'s name% &eудален из привата!" to player
+            stop
+
+# Команда выдачи приват-блоков админом или магазином
+command /giveps <player> <text>:
+    permission: op
+    trigger:
+        set {_target} to arg-1
+        set {_type} to arg-2
+        if {_type} is "small" or "10":
+            give 1 crying obsidian named "&6&lПриват-блок (10x10)" with lore "&7Установите на землю,", "&7чтобы создать приват 10x10 блоков." to {_target}
+            send "&aВы получили Приват-блок 10x10!" to {_target}
+        else if {_type} is "medium" or "15":
+            give 1 lodestone named "&e&lПриват-блок (15x15)" with lore "&7Установите на землю,", "&7чтобы создать приват 15x15 блоков." to {_target}
+            send "&aВы получили Приват-блок 15x15!" to {_target}
+        else if {_type} is "large" or "20":
+            give 1 respawn anchor named "&b&lПриват-блок (20x20)" with lore "&7Установите на землю,", "&7чтобы создать приват 20x20 блоков." to {_target}
+            send "&aВы получили Приват-блок 20x20!" to {_target}
