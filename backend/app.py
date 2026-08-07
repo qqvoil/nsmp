@@ -1,6 +1,7 @@
 import os
 import logging
 import json
+import functools
 import urllib.request
 import urllib.error
 
@@ -11,7 +12,7 @@ try:
 except ImportError:
     pass
 
-from flask import Flask, request, jsonify, redirect, send_from_directory
+from flask import Flask, request, jsonify, redirect, send_from_directory, render_template, session
 from catalog import CATALOG, TOKEN_PACKAGES, PREMIUM_TIERS, calculate_custom_tokens
 from database import init_db, create_invoice, get_invoice, get_invoice_by_payload, mark_invoice_paid, get_recent_donates, get_db
 from rcon_client import execute_rcon_command
@@ -27,6 +28,7 @@ init_db()
 # --- Configs & Environment Variables ---
 PLATEGA_PROJECT_ID = os.environ.get("PLATEGA_PROJECT_ID")
 PLATEGA_SECRET_KEY = os.environ.get("PLATEGA_SECRET_KEY")
+ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "neversmp_admin_2026")
 ADMIN_TG_ID = os.environ.get("ADMIN_TG_ID")
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("TG_BOT_TOKEN")
 
@@ -35,6 +37,26 @@ RCON_SERVERS = {
     "lobby": {"host": os.environ.get("RCON_LOBBY_HOST", "127.0.0.1"), "port": int(os.environ.get("RCON_LOBBY_PORT", 25575)), "pass": os.environ.get("RCON_PASS", "")},
     "smp1": {"host": os.environ.get("RCON_SMP1_HOST", "127.0.0.1"), "port": int(os.environ.get("RCON_SMP1_PORT", 25576)), "pass": os.environ.get("RCON_PASS", "")},
 }
+
+def is_admin_authenticated() -> bool:
+    """Check if current request is authorized as admin via session or API header."""
+    if session.get("is_admin") is True:
+        return True
+    
+    header_pass = request.headers.get("X-Admin-Password") or request.headers.get("X-Admin-Key")
+    if header_pass and header_pass == ADMIN_PASSWORD:
+        return True
+        
+    return False
+
+def require_admin(f):
+    """Decorator to enforce admin authentication on API routes."""
+    @functools.wraps(f)
+    def decorated_function(*args, **kwargs):
+        if not is_admin_authenticated():
+            return jsonify({"success": False, "error": "Unauthorized: Требуется авторизация администратора"}), 401
+        return f(*args, **kwargs)
+    return decorated_function
 
 def notify_admin(message: str):
     """Send notification to admin's Telegram using standard urllib."""
@@ -55,8 +77,11 @@ def notify_admin(message: str):
 def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int = 0):
     """Execute LuckPerms and Minecraft commands via RCON."""
     commands = []
-    if item_id == "custom_tokens" and custom_tokens > 0:
-        commands = [f"p give {{player}} {custom_tokens}"]
+    if (item_id == "custom_tokens" or item_id.startswith("tokens_")) and custom_tokens > 0:
+        commands = [
+            f"p give {{player}} {custom_tokens}",
+            f"broadcast <gradient:#f9ca24:#f0932b>⭐ NeverSMP ⭐</gradient> <white>Игрок</white> <gold>{{player}}</gold> <white>получил</white> <yellow>{custom_tokens:,} Токенов</yellow>!"
+        ]
     else:
         item = CATALOG.get(item_id)
         if item:
@@ -81,7 +106,7 @@ def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int 
 def serve_index():
     return send_from_directory(app.static_folder, "index.html")
 
-# --- API Endpoints ---
+# --- Public API Endpoints ---
 
 @app.route("/api/catalog", methods=["GET"])
 def get_catalog():
@@ -184,7 +209,10 @@ def create_payment():
 def platega_webhook():
     secret_key = os.environ.get("PLATEGA_SECRET_KEY")
     incoming_secret = request.headers.get("X-Secret")
-    if secret_key and incoming_secret != secret_key:
+    
+    # Strict secret verification: Reject if secret is unset or mismatches
+    if not secret_key or incoming_secret != secret_key:
+        logging.warning("Platega webhook rejected: Invalid or missing secret")
         return "Unauthorized", 401
 
     data = request.json or {}
@@ -198,8 +226,23 @@ def platega_webhook():
         if invoice and invoice["status"] == "pending":
             mark_invoice_paid(invoice["id"])
 
+            # Resolve custom token count if applicable
+            tokens_to_give = 0
+            if invoice["item_id"] == "custom_tokens":
+                try:
+                    tokens_str = invoice["item_name"].split("Токенов")[0].replace(" ", "").strip()
+                    tokens_to_give = int(tokens_str)
+                except Exception:
+                    tokens_to_give = int(invoice["amount"] * 10)
+            elif invoice["item_id"] == "tokens_15k":
+                tokens_to_give = 15000
+            elif invoice["item_id"] == "tokens_50k":
+                tokens_to_give = 50000
+            elif invoice["item_id"] == "tokens_100k":
+                tokens_to_give = 100000
+
             # Issue Minecraft rewards via RCON
-            execute_donation_rewards(invoice["player_name"], invoice["item_id"])
+            execute_donation_rewards(invoice["player_name"], invoice["item_id"], custom_tokens=tokens_to_give)
 
             # Send Telegram Alert
             tg_text = (
@@ -220,7 +263,20 @@ def simulate_payment(invoice_id: int):
     invoice = get_invoice(invoice_id)
     if invoice and invoice["status"] == "pending":
         mark_invoice_paid(invoice_id)
-        execute_donation_rewards(invoice["player_name"], invoice["item_id"])
+        
+        tokens_to_give = 0
+        if invoice["item_id"] == "custom_tokens":
+            try:
+                tokens_str = invoice["item_name"].split("Токенов")[0].replace(" ", "").strip()
+                tokens_to_give = int(tokens_str)
+            except Exception:
+                tokens_to_give = int(invoice["amount"] * 10)
+        elif invoice["item_id"] == "tokens_15k":
+            tokens_to_give = 15000
+        elif invoice["item_id"] == "tokens_50k":
+            tokens_to_give = 50000
+
+        execute_donation_rewards(invoice["player_name"], invoice["item_id"], custom_tokens=tokens_to_give)
         notify_admin(f"🧪 [DEV TEST] Донат подтвержден: {invoice['player_name']} купил {invoice['item_name']} ({invoice['amount']}₽)")
         return redirect(f"/?success=1&id={invoice_id}")
     return redirect("/")
@@ -242,13 +298,32 @@ def check_invoice(invoice_id: int):
         }
     })
 
-from flask import Flask, request, jsonify, redirect, send_from_directory, render_template
+# --- Admin Authentication & Control Routes ---
 
 @app.route("/admin")
 def admin_page():
     return render_template("admin.html")
 
+@app.route("/api/admin/login", methods=["POST"])
+def admin_login():
+    data = request.get_json() or {}
+    password = data.get("password", "")
+    if password == ADMIN_PASSWORD:
+        session["is_admin"] = True
+        return jsonify({"success": True, "message": "Авторизация успешна"})
+    return jsonify({"success": False, "error": "Неверный пароль администратора"}), 401
+
+@app.route("/api/admin/logout", methods=["POST"])
+def admin_logout():
+    session.pop("is_admin", None)
+    return jsonify({"success": True, "message": "Вы вышли из панели"})
+
+@app.route("/api/admin/check_auth", methods=["GET"])
+def admin_check_auth():
+    return jsonify({"authenticated": is_admin_authenticated()})
+
 @app.route("/api/admin/invoices", methods=["GET"])
+@require_admin
 def admin_invoices():
     conn = get_db()
     cursor = conn.cursor()
@@ -272,6 +347,7 @@ def admin_invoices():
     return jsonify({"success": True, "invoices": invoices})
 
 @app.route("/api/admin/transfer_invoice", methods=["POST"])
+@require_admin
 def admin_transfer_invoice():
     data = request.get_json() or {}
     inv_id = data.get("invoice_id")
@@ -299,6 +375,7 @@ def admin_transfer_invoice():
     return jsonify({"success": True, "message": f"Счет #{inv_id} перепривязан с '{old_nick}' на '{new_nick}'. Награда выдана!"})
 
 @app.route("/api/admin/manual_give", methods=["POST"])
+@require_admin
 def admin_manual_give():
     data = request.get_json() or {}
     nick = (data.get("player_name") or "").strip()
@@ -311,4 +388,4 @@ def admin_manual_give():
     return jsonify({"success": True, "message": f"Товар '{item_id}' успешно выдан игроку '{nick}'!"})
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=False)
