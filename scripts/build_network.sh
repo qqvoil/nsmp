@@ -56,7 +56,7 @@ assemble_servers() {
 
         # Copy clean template configs
         if [[ -d "$tmpl_dir" ]]; then
-            cp -rn "$tmpl_dir"/* "$srv_dir/" 2>/dev/null || cp -r "$tmpl_dir"/* "$srv_dir/"
+            cp -r "$tmpl_dir"/* "$srv_dir/"
         fi
 
         # Place the correct server jar from core/jars and generate start.sh

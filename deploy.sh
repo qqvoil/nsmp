@@ -212,6 +212,7 @@ echo -e "\n${YELLOW}🎮 [6/7] Сборка и запуск серверов Nev
 chmod +x "${BASE_DIR}/scripts/build_network.sh"
 chmod +x "${BASE_DIR}/scripts/server-manager.sh"
 
+"${BASE_DIR}/scripts/server-manager.sh" stop all || true
 "${BASE_DIR}/scripts/build_network.sh"
 "${BASE_DIR}/scripts/server-manager.sh" start all || true
 echo -e "${GREEN}✓ Игровые серверы запущены через tmux.${NC}"
