@@ -1,0 +1,6 @@
+name: staff
+groups:
+- default
+- vip
+- admin
+- owner

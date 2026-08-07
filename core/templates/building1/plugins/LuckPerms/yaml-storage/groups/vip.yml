@@ -1,0 +1,13 @@
+name: vip
+parents:
+- default
+prefixes:
+- '&a[VIP] ':
+    priority: 50
+permissions:
+- crazyauctions.amount.7:
+    value: true
+- essentials.sethome.multiple.vip:
+    value: true
+- weight.50:
+    value: true

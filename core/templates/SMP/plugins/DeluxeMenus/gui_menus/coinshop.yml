@@ -28,13 +28,6 @@ items:
       - '&e▶ Клик — Что бы посмотреть что внутри'
     click_commands:
       - '[openmenu] pvp_kit'
-    click_requirement:
-      requirements:
-        money_check:
-          type: has money
-          amount: 5000
-          deny_commands:
-            - '[message] &cУ вас недостаточно монет!'
 
   # --- КРИСТАЛЛ ЭНДА ---
   'end_crystal_shop':

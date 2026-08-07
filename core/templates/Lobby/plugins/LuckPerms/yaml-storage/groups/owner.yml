@@ -1,0 +1,11 @@
+name: owner
+parents:
+- admin
+prefixes:
+- '&4[Owner] ':
+    priority: 100
+permissions:
+- '*':
+    value: true
+- weight.100:
+    value: true

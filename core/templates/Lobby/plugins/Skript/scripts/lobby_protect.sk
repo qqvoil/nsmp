@@ -24,13 +24,32 @@ on rightclick:
 # ВЫДАЧА КОМПАСА В СЛОТ 0
 # ============================================
 
+function giveLobbyCompass(p: player):
+    if {_p}'s world is "world":
+        set {_c} to recovery compass named "&6&lВЫБОР РЕЖИМА &7(ПКМ)" with lore "&7Нажмите правой кнопкой мыши," and "&7чтобы открыть меню серверов &eNeverSMP"
+        enchant {_c} with unbreaking 1
+        set slot 0 of {_p}'s inventory to {_c}
+
 on join:
     wait 2 ticks
     teleport player to spawn of world("world")
-    clear player's inventory
-    set {_c} to recovery compass named "&6&lВЫБОР РЕЖИМА &7(ПКМ)" with lore "&7Нажмите правой кнопкой мыши," and "&7чтобы открыть меню серверов &eNeverSMP"
-    enchant {_c} with unbreaking 1
-    set slot 0 of player's inventory to {_c}
+    giveLobbyCompass(player)
+    wait 2 seconds
+    giveLobbyCompass(player)
+
+# Периодическая проверка наличия компаса в лобби
+every 3 seconds:
+    loop all players:
+        if loop-player's world is "world":
+            if slot 0 of loop-player's inventory is not recovery compass:
+                giveLobbyCompass(loop-player)
+
+# Выдача при выполнении команды (в т.ч. после прохождения верификации)
+on command:
+    if player's world is "world":
+        wait 5 ticks
+        if slot 0 of player's inventory is not recovery compass:
+            giveLobbyCompass(player)
 
 # Открытие меню по клику на компас
 on rightclick:
@@ -53,3 +72,8 @@ on drop:
     if event-item is recovery compass:
         cancel the event
         send action bar "&cНельзя выбросить компас меню!" to player
+
+# Запрет смены в левую руку (клавиша F)
+on swap hand items:
+    if player's world is "world":
+        cancel the event

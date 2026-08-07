@@ -118,16 +118,52 @@ link_plugins() {
     # Paper Common plugins for all game servers
     local GAME_SERVERS=("Lobby" "SMP1" "SMP2" "anarchy1" "anarchy2" "hardcore1" "hardcore2" "building1" "building2")
     for srv in "${GAME_SERVERS[@]}"; do
-        # Clean any improperly placed velocity plugins in paper servers
-        rm -f "${SERVER_DIR}/${srv}/plugins/"*velocity* "${SERVER_DIR}/${srv}/plugins/"*Velocity* "${SERVER_DIR}/${srv}/plugins/"*TCPShield* "${SERVER_DIR}/${srv}/plugins/"*veloauth* 2>/dev/null || true
+        # Clean existing jars to avoid stale plugins
+        rm -f "${SERVER_DIR}/${srv}/plugins/"*.jar 2>/dev/null || true
+
+        # Clean mode-mismatched plugin config folders
+        if [[ "$srv" != "Lobby" ]]; then
+            rm -rf "${SERVER_DIR}/${srv}/plugins/sCheckPlayer" "${SERVER_DIR}/${srv}/plugins/DGCommandItems" "${SERVER_DIR}/${srv}/plugins/UltraItemLock" "${SERVER_DIR}/${srv}/plugins/kav16Disable" 2>/dev/null || true
+        fi
+        if [[ "$srv" != hardcore* ]]; then
+            rm -rf "${SERVER_DIR}/${srv}/plugins/HardcoreRevive" 2>/dev/null || true
+        fi
+        if [[ "$srv" != SMP* && "$srv" != anarchy* ]]; then
+            rm -rf "${SERVER_DIR}/${srv}/plugins/CrazyAuctions" "${SERVER_DIR}/${srv}/plugins/DonutAuctionHouse" "${SERVER_DIR}/${srv}/plugins/DonutOrders" "${SERVER_DIR}/${srv}/plugins/GUIShop" 2>/dev/null || true
+        fi
+        if [[ "$srv" == "Lobby" ]]; then
+            rm -rf "${SERVER_DIR}/${srv}/plugins/AdvancedRTP" "${SERVER_DIR}/${srv}/plugins/SimpleClans" "${SERVER_DIR}/${srv}/plugins/SimpleTPA" 2>/dev/null || true
+        fi
+
         for p in "${PLUGINS_POOL}"/*.jar; do
             local p_name
             p_name=$(basename "$p")
             # Skip velocity-only plugins
-            if [[ "$p_name" == *"[Vv]elocity"* || "$p_name" == *"Velocity"* || "$p_name" == *"velocity"* || "$p_name" == *"Geyser-Velocity"* || "$p_name" == *"TCPShield"* || "$p_name" == *"veloauth"* ]]; then
+            if [[ "$p_name" == *velocity* || "$p_name" == *Velocity* || "$p_name" == *Geyser-Velocity* || "$p_name" == *TCPShield* || "$p_name" == *veloauth* ]]; then
                 continue
             fi
-            cp -u "$p" "${SERVER_DIR}/${srv}/plugins/" 2>/dev/null || cp "$p" "${SERVER_DIR}/${srv}/plugins/"
+            # Filter sCheckPlayer (Lobby only)
+            if [[ "$p_name" == *sCheckPlayer* ]] && [[ "$srv" != "Lobby" ]]; then
+                continue
+            fi
+            # Filter HardcoreRevive (Hardcore servers only)
+            if [[ "$p_name" == *HardcoreRevive* ]] && [[ "$srv" != hardcore* ]]; then
+                continue
+            fi
+            # Filter CrazyAuctions (SMP and Anarchy servers only)
+            if [[ "$p_name" == *CrazyAuctions* ]] && [[ "$srv" != SMP* ]] && [[ "$srv" != anarchy* ]]; then
+                continue
+            fi
+            # Filter AdvancedRTP and SimpleClans (Game modes only, not Lobby)
+            if [[ "$p_name" == *AdvancedRTP* || "$p_name" == *SimpleClans* ]] && [[ "$srv" == "Lobby" ]]; then
+                continue
+            fi
+            # Filter Lobby-specific items plugins
+            if [[ "$p_name" == *DGCommandItems* || "$p_name" == *ItemLock* || "$p_name" == *kav16Disable* ]] && [[ "$srv" != "Lobby" ]]; then
+                continue
+            fi
+
+            cp "$p" "${SERVER_DIR}/${srv}/plugins/"
         done
     done
     echo -e "${GREEN}✓ Все плагины распределены по серверам.${NC}"

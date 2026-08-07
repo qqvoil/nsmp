@@ -1,0 +1,92 @@
+name: default
+permissions:
+- advancedrtp.rtp:
+    value: true
+- advancedrtp.use:
+    value: true
+- crazyauctions.access:
+    value: true
+- crazyauctions.amount.3:
+    value: true
+- crazyauctions.buy:
+    value: true
+- crazyauctions.sell:
+    value: true
+- deluxemenus.menu.pvp_kit:
+    value: true
+- deluxemenus.menu.pvp_kit_preview:
+    value: true
+- deluxemenus.menu.server_selector:
+    value: true
+- deluxemenus.menu.tokenshop:
+    value: true
+- essentials.afk:
+    value: true
+- essentials.balance:
+    value: true
+- essentials.balancetop:
+    value: true
+- essentials.delhome:
+    value: true
+- essentials.help:
+    value: true
+- essentials.home:
+    value: true
+- essentials.ignore:
+    value: true
+- essentials.list:
+    value: true
+- essentials.mail:
+    value: true
+- essentials.mail.send:
+    value: true
+- essentials.motd:
+    value: true
+- essentials.msg:
+    value: true
+- essentials.pay:
+    value: true
+- essentials.r:
+    value: true
+- essentials.rules:
+    value: true
+- essentials.sethome:
+    value: true
+- essentials.sethome.multiple:
+    value: true
+- essentials.sethome.multiple.default:
+    value: true
+- essentials.spawn:
+    value: true
+- essentials.warp:
+    value: true
+- essentials.warp.list:
+    value: true
+- guishop.shop:
+    value: true
+- guishop.use:
+    value: true
+- orders.create:
+    value: true
+- orders.use:
+    value: true
+- playerpoints.points:
+    value: true
+- simpleclans.leader.*:
+    value: true
+- simpleclans.member.*:
+    value: true
+- simpletpa.tpa:
+    value: true
+- simpletpa.tpaccept:
+    value: true
+- simpletpa.tpacancel:
+    value: true
+- simpletpa.tpdeny:
+    value: true
+- simpletpa.tpahere:
+    value: true
+- simpletpa.tpatoggle:
+    value: true
+- weight.10:
+    value: true
