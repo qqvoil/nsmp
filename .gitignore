@@ -37,8 +37,13 @@ ENV/
 # Backups & Archives
 backups/
 *.tar.gz
+!core/maps/*.tar.gz
 *.zip
 *.bak
+
+# Server Runtime & Caches
+/server/
+/cache/
 
 # Databases
 *.sqlite3
@@ -55,3 +60,4 @@ backups/
 # OS Files
 .DS_Store
 Thumbs.db
+

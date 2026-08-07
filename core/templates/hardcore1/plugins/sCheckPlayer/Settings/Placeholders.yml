@@ -1,0 +1,29 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+Settings:
+  # The value displayed if the player is under review.
+  # Значение, которое отображается, если игрок находится на проверке.
+  Placeholder-On-Check-Yes: 'yes'
+  # The value displayed if the player is not under review.
+  # Значение, которое отображается, если игрок не находится на проверке.
+  Placeholder-On-Check-No: 'no'
+  # The value displayed if the player has never been called for a review.
+  # Значение, которое отображается, если игрока ни разу не вызывали на проверку.
+  Placeholder-Checks-Count: '0'
+  # The value displayed if the player has never been found innocent in a review.
+  # Значение, которое отображается, если игрока ни разу не признавали невиновным на проверке.
+  Placeholder-Finished-Checks-Count: '0'
+  # The value displayed if the player has never been found guilty of cheating in a review.
+  # Значение, которое отображается, если игрока ни разу не признавали в использовании читов на проверке.
+  Placeholder-Confirm-Checks-Count: '0'

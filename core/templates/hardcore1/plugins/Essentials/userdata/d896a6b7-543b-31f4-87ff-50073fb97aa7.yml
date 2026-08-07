@@ -1,0 +1,31 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 57.128.140.147
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1784568223529
+  login: 1784568143753
+money: '0'
+last-account-name: Paxipi20
+logoutlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: 4.376220191636902
+  y: 70.0
+  z: 18.969147231144138
+  yaw: 82.256103515625
+  pitch: 22.83587074279785

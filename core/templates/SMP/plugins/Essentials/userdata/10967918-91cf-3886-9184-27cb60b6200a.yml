@@ -1,0 +1,31 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 5.34.127.109
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1783755388530
+  login: 1783755377239
+money: '0'
+last-account-name: Rijasi
+logoutlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: -329.4486422744837
+  y: 66.0
+  z: 417.5385433648119
+  yaw: 179.25003051757812
+  pitch: 4.199998378753662

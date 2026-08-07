@@ -1,0 +1,114 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck stop command (stop inspection for a player).
+# Настройка команды /scheck stop (остановить проверку у игрока)
+Command-Arg-Stop:
+  # You can disable the "stop" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "stop"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Stop-Enabled: true
+  Teleport:
+    # Allow teleporting the target player back to their original location
+    # after executing the /scheck stop command.
+    # Разрешить телепортацию целевого игрока обратно на исходное местоположение
+    # После команды /scheck stop
+    Allow-Teleport-Back-Target-Player: true
+  Sound-Stop-Check-Target:
+    # Should the player hear a sound when inspection is concluded?
+    # Нужно ли, включать звук игроку при окончании проверки?
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  Sound-Stop-Check-Initiator:
+    # Is it necessary for the initiator to turn on the sound when the check is completed?
+    # Нужно ли, включать звук инициатору при окончании проверки?
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  Title-Stop-Check-Target:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: true
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Title-Stop-Check-Initiator:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: false
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Notify-Message-Admin:
+    # Enables or disables messages to online admins.
+    # Включает или отключает сообщения онлайн админам.
+    Enabled: false
+    # Enables or disables console messages.
+    # Включает или отключает сообщения в консоль.
+    Notify-Message-Console: true

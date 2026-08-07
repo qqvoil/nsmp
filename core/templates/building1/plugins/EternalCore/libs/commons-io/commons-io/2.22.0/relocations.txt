@@ -1,0 +1,16 @@
+eu.okaeri -> com.eternalcode.core.libs.eu.okaeri
+com.eternalcode.multification -> com.eternalcode.core.libs.com.eternalcode.multification
+com.cryptomorin.xseries -> com.eternalcode.core.libs.com.cryptomorin.xseries
+com.eternalcode.commons -> com.eternalcode.core.libs.com.eternalcode.commons
+com.zaxxer.hikari -> com.eternalcode.core.libs.com.zaxxer.hikari
+com.j256.ormlite -> com.eternalcode.core.libs.com.j256.ormlite
+org.mariadb.jdbc -> com.eternalcode.core.libs.org.mariadb.jdbc
+org.postgresql -> com.eternalcode.core.libs.org.postgresql
+com.h2 -> com.eternalcode.core.libs.com.h2
+dev.rollczi.litecommands -> com.eternalcode.core.libs.dev.rollczi.litecommands
+dev.rollczi.liteskullapi -> com.eternalcode.core.libs.dev.rollczi.liteskullapi
+org.apache.commons.io -> com.eternalcode.core.libs.org.apache.commons.io
+dev.triumphteam -> com.eternalcode.core.libs.dev.triumphteam
+org.bstats -> com.eternalcode.core.libs.org.bstats
+com.github.benmanes.caffeine -> com.eternalcode.core.libs.com.github.benmanes.caffeine
+fr.skytasul -> com.eternalcode.core.libs.fr.skytasul

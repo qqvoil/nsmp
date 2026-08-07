@@ -1,0 +1,52 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+# !!! THIS FILE WILL NOT BE UPDATED AUTOMATICALLY, YOU WILL NEED TO ADD LINES YOURSELF !!!
+# !!! ЭТОТ ФАЙЛ НЕ БУДЕТ ОБНОВЛЯТЬСЯ АВТОМАТИЧЕСКИ, ВАМ НУЖНО БУДЕТ ДОБАВЛЯТЬ СТРОКИ САМИМ !!!
+#
+# Reasons for the /scheck confirm command (reason)
+# Причины для команды /scheck confirm (причина)
+# If enabled, you need to write the reason from this file.
+# If disabled, then the standard commands from the CmdArgConfirm.yml file "Commands-Confirm-Player" are used
+# Если включено то нужно написать причину из этого файла.
+# Если отключено то используется стандартные команды из файла CmdArgConfirm.yml "Commands-Confirm-Player"
+Reasons-Enabled: false
+
+#Reasons:
+#  cheat:
+#    Aliases:
+#    - cheat
+#    Commands:
+#    - %target-player%
+#    - %initiator-player%
+#
+#  cheat-1:
+#    Aliases:
+#    - cheat1
+#    Commands:
+#    - %target-player%
+#    - %initiator-player%
+#    - '(commands) - The command is executed on behalf of the player who called the player for verification.'
+#    - 'console: (commands) - The command is executed on behalf of the console.'
+#    - 'player: (commands) - The command is executed on behalf of the player who is being checked.'
+
+Reasons:
+  cheat:
+    Aliases:
+    - чит
+    - читы
+    - cheat
+    - cheats
+    Commands:
+    - tempban %target-player% cheats 30d -s
+    - 'console: say %target-player%'
+    - 'player: say %initiator-player%'

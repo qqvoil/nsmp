@@ -1,0 +1,302 @@
+menu_title: '&#5a5a5a&lСкупщик | Драгоценности'
+open_command: seller_jewels
+size: 27
+
+items:
+  # --- СЕРЫЕ СТЕКЛЯННЫЕ ПАНЕЛИ НА ФОН ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-1
+      - 7-11
+      - 15-21
+      - 23-26
+    display_name: ' '
+
+  # --- НЕЗЕРИТОВЫЙ СЛИТОК (Слот 2) ---
+  'sell_netherite_ingot':
+    material: NETHERITE_INGOT
+    slot: 2
+    display_name: '&#ffff55&lНезеритовый слиток'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a250 монет'
+      - '&7Цена за 64 шт: &a16000 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: NETHERITE_INGOT
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет незеритовых слитков!'
+    left_click_commands:
+      - '[console] clear %player_name% netherite_ingot 1'
+      - '[console] eco give %player_name% 250'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: NETHERITE_INGOT
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака незеритовых слитков!'
+    right_click_commands:
+      - '[console] clear %player_name% netherite_ingot 64'
+      - '[console] eco give %player_name% 16000'
+
+  # --- АЛМАЗ (Слот 3) ---
+  'sell_diamond':
+    material: DIAMOND
+    slot: 3
+    display_name: '&#ffff55&lАлмаз'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a125 монет'
+      - '&7Цена за 64 шт: &a8000 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: DIAMOND
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет алмазов!'
+    left_click_commands:
+      - '[console] clear %player_name% diamond 1'
+      - '[console] eco give %player_name% 125'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: DIAMOND
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака алмазов!'
+    right_click_commands:
+      - '[console] clear %player_name% diamond 64'
+      - '[console] eco give %player_name% 8000'
+
+  # --- ИЗУМРУД (Слот 4) ---
+  'sell_emerald':
+    material: EMERALD
+    slot: 4
+    display_name: '&#ffff55&lИзумруд'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a5 монет'
+      - '&7Цена за 64 шт: &a320 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: EMERALD
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет изумрудов!'
+    left_click_commands:
+      - '[console] clear %player_name% emerald 1'
+      - '[console] eco give %player_name% 5'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: EMERALD
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака изумрудов!'
+    right_click_commands:
+      - '[console] clear %player_name% emerald 64'
+      - '[console] eco give %player_name% 320'
+
+  # --- НЕЗЕРИТОВЫЙ ЛОМ (Слот 5) ---
+  'sell_netherite_scrap':
+    material: NETHERITE_SCRAP
+    slot: 5
+    display_name: '&#ffff55&lНезеритовый лом'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a50 монет'
+      - '&7Цена за 64 шт: &a3200 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: NETHERITE_SCRAP
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет незеритового лома!'
+    left_click_commands:
+      - '[console] clear %player_name% netherite_scrap 1'
+      - '[console] eco give %player_name% 50'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: NETHERITE_SCRAP
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака незеритового лома!'
+    right_click_commands:
+      - '[console] clear %player_name% netherite_scrap 64'
+      - '[console] eco give %player_name% 3200'
+
+  # --- УГОЛЬ (Слот 6) ---
+  'sell_coal':
+    material: COAL
+    slot: 6
+    display_name: '&#ffff55&lУголь'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a20 монет'
+      - '&7Цена за 64 шт: &a1280 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: COAL
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет угля!'
+    left_click_commands:
+      - '[console] clear %player_name% coal 1'
+      - '[console] eco give %player_name% 20'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: COAL
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака угля!'
+    right_click_commands:
+      - '[console] clear %player_name% coal 64'
+      - '[console] eco give %player_name% 1280'
+
+  # --- ЖЕЛЕЗНЫЙ СЛИТОК (Слот 12) ---
+  'sell_iron_ingot':
+    material: IRON_INGOT
+    slot: 12
+    display_name: '&#ffff55&lЖелезный слиток'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a15 монет'
+      - '&7Цена за 64 шт: &a960 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: IRON_INGOT
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет железных слитков!'
+    left_click_commands:
+      - '[console] clear %player_name% iron_ingot 1'
+      - '[console] eco give %player_name% 15'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: IRON_INGOT
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака железных слитков!'
+    right_click_commands:
+      - '[console] clear %player_name% iron_ingot 64'
+      - '[console] eco give %player_name% 960'
+
+  # --- ЗОЛОТОЙ СЛИТОК (Слот 13) ---
+  'sell_gold_ingot':
+    material: GOLD_INGOT
+    slot: 13
+    display_name: '&#ffff55&lЗолотой слиток'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a10 монет'
+      - '&7Цена за 64 шт: &a640 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GOLD_INGOT
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет золотых слитков!'
+    left_click_commands:
+      - '[console] clear %player_name% gold_ingot 1'
+      - '[console] eco give %player_name% 10'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GOLD_INGOT
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака золотых слитков!'
+    right_click_commands:
+      - '[console] clear %player_name% gold_ingot 64'
+      - '[console] eco give %player_name% 640'
+
+  # --- МЕДНЫЙ СЛИТОК (Слот 14) ---
+  'sell_copper_ingot':
+    material: COPPER_INGOT
+    slot: 14
+    display_name: '&#ffff55&lМедный слиток'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a5 монет'
+      - '&7Цена за 64 шт: &a320 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: COPPER_INGOT
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет медных слитков!'
+    left_click_commands:
+      - '[console] clear %player_name% copper_ingot 1'
+      - '[console] eco give %player_name% 5'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: COPPER_INGOT
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака медных слитков!'
+    right_click_commands:
+      - '[console] clear %player_name% copper_ingot 64'
+      - '[console] eco give %player_name% 320'
+
+  # --- СТРЕЛА НАЗАД (Слот 22) ---
+  'back_to_seller':
+    material: ARROW
+    slot: 22
+    display_name: '&c&lНазад'
+    click_commands:
+      - '[openmenu] seller'

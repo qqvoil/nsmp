@@ -1,0 +1,219 @@
+# =====================================================
+#         DG CommandItems - Configuration
+# =====================================================
+# The simplest and most powerful way to bind commands
+# to items in Minecraft 1.21.x and 26.1.x
+# =====================================================
+
+# General plugin settings
+settings:
+  # Prefix used in plugin messages
+  prefix: '&8[&6DG&eCI&8] '
+  # Enable debug logs
+  debug: false
+  # Save items defined via commands automatically
+  auto-save: true
+  # If true, TrueOP only uses a PermissionAttachment and SKIPS the setOp() safety net.
+  # Enable this on servers with watchdog plugins (LiteBans, AdvancedBan, etc.) that
+  # log/monitor OP changes - it prevents false alarms but may break some EssentialsX
+  # commands that check Player#isOp() directly. Default: false.
+  safe-trueop: false
+
+# =====================================================
+# Messages (supports & color codes and hex &#RRGGBB)
+# =====================================================
+messages:
+  no-permission: '&cYou don''t have permission to use this!'
+  cooldown: '&cYou must wait &e%time%&c before using this again!'
+  item-created: '&aItem &e%id% &acreated successfully!'
+  item-deleted: '&aItem &e%id% &adeleted successfully!'
+  item-given: '&aGave &e%amount%x %id% &ato &e%player%&a!'
+  item-not-found: '&cItem with id &e%id% &cnot found!'
+  config-reloaded: '&aConfiguration reloaded successfully!'
+  no-item-in-hand: '&cYou must hold an item in your hand!'
+  invalid-usage: '&cInvalid usage! &7Try &e/dgci help'
+  player-not-found: '&cPlayer &e%player% &cnot found!'
+
+# =====================================================
+# Items - This is where the magic happens!
+# =====================================================
+# Each item is defined by a unique ID. The ID can be
+# anything you want (lowercase, no spaces).
+#
+# Available options per item:
+# ---------------------------------------------------------
+# material:        The Minecraft material (e.g., DIAMOND_SWORD)
+# name:            Display name (supports & color codes)
+# lore:            List of lore lines
+# custom-model-data: Optional integer for resource packs
+# enchanted:       true/false - adds enchantment glow
+# unbreakable:     true/false - makes item unbreakable
+# hide-attributes: true/false - hide tooltip attributes
+# consume:         true/false - consume 1 on use
+# cancel-event:    true/false - cancel the click event (no block placement etc.)
+# permission:      Optional permission to use this item
+# cooldown:        Cooldown in seconds (0 = none)
+# click-types:     Allowed click types. Options:
+#                  - RIGHT_CLICK_AIR
+#                  - RIGHT_CLICK_BLOCK
+#                  - LEFT_CLICK_AIR
+#                  - LEFT_CLICK_BLOCK
+#                  - SHIFT_RIGHT_CLICK
+#                  - SHIFT_LEFT_CLICK
+#                  - ANY (all of the above)
+# effects:
+#   sound:         Sound name (e.g., ENTITY_PLAYER_LEVELUP)
+#   sound-volume:  Volume (0.0 - 1.0)
+#   sound-pitch:   Pitch (0.5 - 2.0)
+#   particle:      Particle name (e.g., FLAME, HEART)
+#   particle-count: Number of particles
+# commands:
+#   player: List of commands run AS the player
+#   console: List of commands run from CONSOLE
+#   trueop: true/false - if true, player commands are executed
+#           with full permissions (fixes EssentialsX issues!)
+# message:         Optional message sent to player on use
+# ---------------------------------------------------------
+# Placeholders available in commands & messages:
+#   %player% - Player's name
+#   %uuid%   - Player's UUID
+#   %world%  - Player's current world
+#   %x%, %y%, %z% - Player's coordinates
+#   PlaceholderAPI placeholders also work if installed!
+# ---------------------------------------------------------
+
+items:
+  # Example 1: Heal Wand - reusable, no consumption
+  heal_wand:
+    material: BLAZE_ROD
+    name: '&6&lHeal Wand'
+    lore:
+    - '&7Right-click to heal yourself'
+    - ''
+    - '&eCooldown: &f30s'
+    enchanted: true
+    unbreakable: true
+    hide-attributes: true
+    consume: false
+    cancel-event: true
+    permission: dgcommanditems.use.heal
+    cooldown: 30
+    click-types:
+    - RIGHT_CLICK_AIR
+    - RIGHT_CLICK_BLOCK
+    effects:
+      sound: ENTITY_PLAYER_LEVELUP
+      sound-volume: 1.0
+      sound-pitch: 1.0
+      particle: HEART
+      particle-count: 15
+    commands:
+      trueop: false
+      player: []
+      console:
+      - effect give %player% minecraft:regeneration 5 2
+      - effect give %player% minecraft:saturation 5 2
+    message: '&aYou have been healed!'
+  
+  # Example 2: Random Teleport Scroll - consumable
+  random_tp:
+    material: PAPER
+    name: '&b&lRandom Teleport Scroll'
+    lore:
+    - '&7Right-click to teleport'
+    - '&7to a random location!'
+    - ''
+    - '&c&oConsumed on use'
+    enchanted: true
+    consume: true
+    cancel-event: true
+    cooldown: 5
+    click-types:
+    - RIGHT_CLICK_AIR
+    - RIGHT_CLICK_BLOCK
+    effects:
+      sound: ENTITY_ENDERMAN_TELEPORT
+      sound-volume: 1.0
+      sound-pitch: 1.0
+      particle: PORTAL
+      particle-count: 50
+    commands:
+      trueop: true
+      player:
+      - spreadplayers %x% %z% 100 1000 false %player%
+      console: []
+    message: '&bWhoosh! Teleporting...'
+  
+  # Example 3: Admin God Mode Toggle (TrueOP example)
+  god_stick:
+    material: STICK
+    name: '&c&lGod Stick'
+    lore:
+    - '&7Toggle god mode'
+    - '&7Requires EssentialsX'
+    enchanted: true
+    unbreakable: true
+    consume: false
+    cancel-event: true
+    permission: dgcommanditems.use.god
+    cooldown: 0
+    click-types:
+    - RIGHT_CLICK_AIR
+    - RIGHT_CLICK_BLOCK
+    effects:
+      sound: ITEM_TOTEM_USE
+      particle: TOTEM_OF_UNDYING
+      particle-count: 30
+    commands:
+      # TrueOP makes EssentialsX commands work even without permissions!
+      trueop: true
+      player:
+      - god %player%
+      console: []
+    message: '&eGod mode toggled!'
+  
+  # Example 4: Lightning Strike - left click example
+  lightning_axe:
+    material: GOLDEN_AXE
+    name: '&e&lThor''s Hammer'
+    lore:
+    - '&7Left-click to summon lightning'
+    - '&7at the block you''re looking at'
+    enchanted: true
+    unbreakable: true
+    hide-attributes: true
+    consume: false
+    cancel-event: false
+    cooldown: 10
+    click-types:
+    - LEFT_CLICK_AIR
+    - LEFT_CLICK_BLOCK
+    effects:
+      sound: ENTITY_LIGHTNING_BOLT_THUNDER
+      particle: ELECTRIC_SPARK
+      particle-count: 30
+    commands:
+      trueop: true
+      player: []
+      console:
+      - execute at %player% run summon lightning_bolt ~ ~ ~
+    message: '&e⚡ THUNDER! ⚡'
+  menu_compass:
+    material: RECOVERY_COMPASS
+    name: '&d&lMENU'
+    lore:
+    - '&cAnarchy (без вайпов)'
+    - '&bSMP (с вайпами)'
+    enchanted: true
+    unbreakable: true
+    hide-attributes: false
+    consume: false
+    cancel-event: true
+    cooldown: 0
+    click-types:
+    - RIGHT_CLICK_AIR
+    - RIGHT_CLICK_BLOCK
+    commands:
+      trueop: false
+      player:
+      - dm open server_selector

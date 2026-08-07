@@ -1,0 +1,31 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 120.29.111.159
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1781633642681
+  login: 1781633636517
+money: '0'
+last-account-name: wsxgyro
+logoutlocation:
+  world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+  world-name: world
+  x: -329.4486422744837
+  y: 60.0
+  z: 417.5385433648119
+  yaw: 179.25003051757812
+  pitch: 4.199998378753662

@@ -1,0 +1,66 @@
+menu_title: '&8Выбор режима'
+open_command: menu
+register_command: true
+size: 27
+items:
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-9
+      - 11
+      - 13
+      - 15
+      - 17-26
+    display_name: ' '
+  anarchy_button:
+    material: TNT
+    slot: 10
+    display_name: '&c&lАНАРХИЯ'
+    lore:
+      - ' '
+      - '&7Приваты'
+      - '&7Классика'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+      - '[openmenu] anarchy_menu'
+  smp_button:
+    material: GRASS_BLOCK
+    slot: 12
+    display_name: '&a&lSMP'
+    lore:
+      - ' '
+      - '&7Классическое СМП'
+      - '&7Экономика'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+      - '[openguimenu] smp_menu'
+  hardcore_button:
+    material: DIAMOND_AXE
+    slot: 14
+    display_name: '&c&lHardcore'
+    lore:
+      - ' '
+      - '&7Хардкор'
+      - '&7Ванила'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+      - '[openmenu] hardcore_menu'
+  building_button:
+    material: DIAMOND_PICKAXE
+    slot: 16
+    display_name: '&a&lBuilding'
+    lore:
+      - ' '
+      - '&7Строительство'
+      - '&7Ванила'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+      - '[openmenu] building_menu'

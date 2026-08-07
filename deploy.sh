@@ -27,13 +27,24 @@ if [ "$EUID" -ne 0 ]; then
     exit 1
 fi
 
-# 2. Системные пакеты
+# 2. Системные пакеты & Java 21 LTS
 echo -e "${YELLOW}📦 [1/6] Установка системных пакетов и зависимостей...${NC}"
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
-apt-get install -y -qq python3 python3-pip nginx certbot python3-certbot-nginx mariadb-server ethtool iptables tmux curl jq openjdk-17-jre-headless
+apt-get install -y -qq python3 python3-pip nginx certbot python3-certbot-nginx mariadb-server ethtool iptables tmux curl jq gnupg apt-transport-https
+
+# Install Java 21 Temurin if needed
+if ! command -v java &>/dev/null || [ "$(java -version 2>&1 | grep -o 'version "[0-9]*' | cut -d'"' -f2)" -lt 21 ]; then
+    echo -e "${CYAN}Установка Eclipse Temurin Java 21 LTS...${NC}"
+    mkdir -p /etc/apt/keyrings
+    curl -fsSL https://packages.adoptium.net/artifactory/api/gpg/key/public | gpg --batch --yes --dearmor -o /etc/apt/keyrings/adoptium.gpg
+    echo 'deb [signed-by=/etc/apt/keyrings/adoptium.gpg] https://packages.adoptium.net/artifactory/deb bookworm main' > /etc/apt/sources.list.d/adoptium.list
+    apt-get update -qq
+    apt-get install -y -qq temurin-21-jre
+fi
+
 pip install --break-system-packages -q flask gunicorn requests python-dotenv 2>/dev/null || pip install -q flask gunicorn requests python-dotenv
-echo -e "${GREEN}✓ Системные пакеты и библиотеки Python установлены.${NC}"
+echo -e "${GREEN}✓ Системные пакеты, Java 21 и библиотеки Python установлены.${NC}"
 
 # 3. Конфигурация .env
 echo -e "\n${YELLOW}🔑 [2/6] Проверка и настройка backend/.env...${NC}"
@@ -169,22 +180,14 @@ systemctl enable --now nsmp-web.service
 systemctl restart nsmp-web.service
 echo -e "${GREEN}✓ Сервис nsmp-web запущен и работает в фоновом режиме.${NC}"
 
-# 7. Развертывание и запуск игровых Minecraft серверов
-echo -e "\n${YELLOW}🎮 [6/7] Проверка и запуск игровых серверов NeverSMP...${NC}"
-if [ -f "${BASE_DIR}/server.zip" ] && [ ! -d "${BASE_DIR}/server" ]; then
-    echo -e "${CYAN}📦 Распаковка архива игровых серверов server.zip...${NC}"
-    apt-get install -y -qq unzip
-    unzip -q "${BASE_DIR}/server.zip" -d "${BASE_DIR}/server"
-    echo -e "${GREEN}✓ Серверы распакованы в ${BASE_DIR}/server.${NC}"
-fi
+# 7. Автоматическая сборка и запуск 11 игровых серверов NeverSMP
+echo -e "\n${YELLOW}🎮 [6/7] Сборка и запуск серверов NeverSMP...${NC}"
+chmod +x "${BASE_DIR}/scripts/build_network.sh"
+chmod +x "${BASE_DIR}/scripts/server-manager.sh"
 
-if [ -d "${BASE_DIR}/server" ]; then
-    chmod +x "${BASE_DIR}/scripts/server-manager.sh"
-    "${BASE_DIR}/scripts/server-manager.sh" start all || true
-    echo -e "${GREEN}✓ Игровые серверы запущены через tmux.${NC}"
-else
-    echo -e "${YELLOW}ℹ Каталог ${BASE_DIR}/server еще не загружен. Загрузите server.zip и запустите ./deploy.sh снова.${NC}"
-fi
+"${BASE_DIR}/scripts/build_network.sh"
+"${BASE_DIR}/scripts/server-manager.sh" start all || true
+echo -e "${GREEN}✓ Игровые серверы запущены через tmux.${NC}"
 
 # 8. Комплексный Health Check
 echo -e "\n${YELLOW}🧪 [7/7] Проверка работы сервисов...${NC}"

@@ -1,0 +1,69 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+Settings:
+  # Whether to create a region for the player when the check starts
+  # Нужно ли включать создание региона для игрока при старте проверки.
+  Enabled: false
+  # If enabled, the region will automatically move to the player's new location
+  # after any teleportation (including changing worlds).
+  # Если включено, регион будет автоматически перемещаться на новую локацию игрока
+  # после любой телепортации (включая смену миров).
+  Relocate-On-Teleport: true
+  # Region name prefix (player's name and 8 characters of their ID will be added to the end)
+  # Example: scheckplayer_region_PlayerName_a1b2c3d4
+  # Префикс названия региона (в конец добавится ник игрока и 8 символов его ID)
+  # Пример: scheckplayer_region_PlayerName_a1b2c3d4
+  Region-Name: scheckplayer_region_
+  # Region radius in all directions from the player
+  # Радиус региона во все стороны от игрока
+  Radius: 30
+  # Upper boundary setting (MaxY):
+  # -1 : Region extends to the sky limit (max build height)
+  #  0 : Region is limited upwards by the Radius value
+  # (Any value >= 0 activates radius-based limitation)
+  #
+  # Настройка верхней границы (MaxY):
+  #  -1 : Регион будет создан до самого неба (максимальная высота постройки).
+  #   0 : Регион будет ограничен сверху на расстоянии Radius от игрока.
+  # (Любое число больше или равно 0 активирует ограничение по радиусу)
+  MaxY: 0
+  # Lower boundary setting (MinY):
+  # -1 : Region extends to the bottom of the world (bedrock/void)
+  #  0 : Region is limited downwards by the Radius value
+  # (Any value >= 0 activates radius-based limitation)
+  #
+  # Настройка нижней границы (MinY):
+  #  -1 : Регион будет создан от самого дна мира (до бедрока/пустоты).
+  #   0 : Регион будет ограничен снизу на расстоянии Radius от игрока.
+  # (Любое число больше или равно 0 активирует ограничение по радиусу)
+  MinY: 0
+  # Region priority (higher numbers override lower priority regions)
+  # Приоритет региона (чем выше, тем главнее этот регион над другими)
+  Priority: 0
+  # Список флагов, которые будут наложены на регион.
+  # (Формат: - 'pvp: true или false')
+  Flags:
+  - ''
+  # List of region owners
+  # Список владельцев региона.
+  # %initiator-player% replaced by the initiator's nickname. | заменяется на ник инициатора.
+  # %target-player% is replaced by the player's nickname. | заменяется на ник игрока.
+  Owners:
+  - ''
+  # List of region members
+  # Список участников региона.
+  # %initiator-player% replaced by the initiator's nickname. | заменяется на ник инициатора.
+  # %target-player% is replaced by the player's nickname. | заменяется на ник игрока.
+  Members:
+  - ''

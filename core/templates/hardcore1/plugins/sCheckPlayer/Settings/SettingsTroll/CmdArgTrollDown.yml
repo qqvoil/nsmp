@@ -1,0 +1,29 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck troll down command (Bury the player underground.).
+# Настройка команды /scheck troll down (Засунуть игрока под землю.)
+Command-Arg-Troll-Down:
+  # You can disable the "troll down" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "troll down"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Troll-Down-Enabled: true
+  WhiteList-Players:
+    # Enables or disables the whitelist of players that the command will not work on.
+    # Включает или отключает белый список игроков, на которых команда не будет работать.
+    Enabled: false
+    # Specify a list of players.
+    # Укажите список игроков.
+    Players:
+    - Snon_SS

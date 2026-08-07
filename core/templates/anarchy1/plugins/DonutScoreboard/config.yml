@@ -1,0 +1,308 @@
+# ==========================================================
+#
+#         DonutScoreboard  —  config.yml
+#                  by SirSnaryo
+#
+#   Works on:  Paper · Spigot · Bukkit · Purpur
+#   Version:   1.21.x
+#
+# ==========================================================
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                    COLOR CODES                          │
+# ├─────────────────────────────────────────────────────────┤
+# │  &f = white        &7 = gray         &0 = black        │
+# │  &a = green        &c = red          &e = yellow       │
+# │  &b = aqua         &9 = blue         &d = purple       │
+# │  &l = bold         &o = italic       &r = reset all    │
+# │  &#RRGGBB = any hex color  (e.g. &#FF5500 = orange)    │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                BUILT-IN TOKENS                          │
+# │    These work with no extra plugins installed           │
+# ├─────────────────────────────────────────────────────────┤
+# │  %kills%      →  total player kills                    │
+# │  %deaths%     →  total player deaths                   │
+# │  %ping%       →  player ping in ms                     │
+# │  %playtime%   →  time played  (e.g.  2d 4h  /  3h 20m)│
+# │  %keyall%     →  keyall countdown  (e.g.  47m 13s)     │
+# │                                                         │
+# │  %keyall% also works anywhere via PlaceholderAPI:       │
+# │  %donut_keyall_countdown%                               │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                   HOW LINES WORK                        │
+# ├─────────────────────────────────────────────────────────┤
+# │  Every line is a plain string.  What you type is        │
+# │  exactly what appears on the sidebar.                   │
+# │                                                         │
+# │  A line with just a space  ( " " )  is a blank gap.    │
+# │                                                         │
+# │  You can swap any token for hardcoded text.             │
+# │  For example:  &#FF0000%kills%  →  &#FF00005           │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │               CONDITIONAL LINES                         │
+# ├─────────────────────────────────────────────────────────┤
+# │  You can make any line appear only when a condition     │
+# │  is true by adding a condition key with the same name   │
+# │  plus "-condition" at the end.                          │
+# │                                                         │
+# │  Syntax:                                                │
+# │    line-name: "&fKills %kills%"                         │
+# │    line-name-condition: "%kills% > 0"                   │
+# │                                                         │
+# │  Supported operators:  >  <  >=  <=  ==  !=            │
+# │                                                         │
+# │  Both sides can be numbers or placeholder values.       │
+# │  If the condition is false, the line is completely      │
+# │  hidden — other lines shift up to fill the gap.         │
+# │                                                         │
+# │  Examples:                                              │
+# │    kills-condition: "%kills% > 0"                       │
+# │    vip-condition: "%vault_eco_balance% >= 1000"          │
+# │    ping-condition: "%ping% < 200"                       │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                      COMMANDS                           │
+# ├─────────────────────────────────────────────────────────┤
+# │  /sb enable                        →  show scoreboard   │
+# │  /sb disable                       →  hide scoreboard   │
+# │                                                         │
+# │  /donutscoreboard                  →  plugin info       │
+# │  /donutscoreboard reload           →  reload config     │
+# │  /donutscoreboard reset            →  reset config      │
+# │  /donutscoreboard gui              →  open GUI          │
+# │  /donutscoreboard interval <secs>  →  set refresh rate  │
+# │  /donutscoreboard title edit "txt" →  change title      │
+# │  /donutscoreboard title reset      →  reset title       │
+# │  /donutscoreboard line add "text"  →  add a new line    │
+# │  /donutscoreboard line edit <n>    →  edit a line       │
+# │  /donutscoreboard line delete <n>  →  remove a line     │
+# │  /donutscoreboard line empty <n>   →  blank a line      │
+# │  /donutscoreboard line reset       →  reset all lines   │
+# │  /donutscoreboard line swap <n> with <n> → swap lines   │
+# │  /donutscoreboard keyall time set <time>                │
+# │  /donutscoreboard keyall time reset                     │
+# │  /donutscoreboard keyall duration <time>                │
+# │  /donutscoreboard world enable <world>                  │
+# │  /donutscoreboard world disable <world>                 │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                   BROKEN CONFIG                         │
+# ├─────────────────────────────────────────────────────────┤
+# │  If you break this file the plugin automatically        │
+# │  deletes it and regenerates a clean copy on startup.    │
+# └─────────────────────────────────────────────────────────┘
+#
+# ==========================================================
+
+
+# ----------------------------------------------------------
+#  PLUGIN TOGGLE
+#  Set to false to completely disable DonutScoreboard.
+#  No scoreboards will be shown to anyone on the server.
+# ----------------------------------------------------------
+enabled: true
+
+
+# ----------------------------------------------------------
+#  UPDATE INTERVAL
+#  How often the scoreboard refreshes, measured in seconds.
+#  Lower = smoother but more CPU usage.
+#  Recommended: 1
+# ----------------------------------------------------------
+update-interval: 1
+
+
+# ----------------------------------------------------------
+#  KEYALL DURATION
+#  The total countdown time for keyall in seconds.
+#  Default: 3600 (60 minutes)
+#  You can set this higher for longer countdowns.
+#  Examples:
+#    3600   = 1 hour
+#    7200   = 2 hours
+#    86400  = 1 day
+#    259200 = 3 days
+# ----------------------------------------------------------
+keyall-duration: 3600
+
+
+# ----------------------------------------------------------
+#  DISABLED WORLDS
+#  Worlds listed here will never show the scoreboard.
+#  Players moving into a disabled world lose their board,
+#  and get it back automatically when they leave.
+#  Example:
+#    disabled-worlds:
+#      - world_nether
+#      - minigames
+# ----------------------------------------------------------
+disabled-worlds: []
+
+
+# ----------------------------------------------------------
+#  TOGGLE MESSAGES
+#  The message and sound played when a player runs
+#  /sb enable or /sb disable.
+#
+#  command           →  the alias players type  (letters only, 1-10 chars)
+#                       Default: sb   →   /sb enable  /  /sb disable
+#                       Requires a server restart to take effect after changing.
+#  sound             →  any Bukkit Sound enum name
+#                       full list: hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+#
+#  For each message type you can independently enable or disable:
+#    chat-enabled       →  true/false  —  show/hide the chat message
+#    actionbar-enabled  →  true/false  —  show/hide the actionbar message
+#    title-enabled      →  true/false  —  show/hide the title message
+#    sound-enabled      →  true/false  —  play/mute the sound
+# ----------------------------------------------------------
+toggle:
+  
+  # The command players type to show or hide their scoreboard.
+  # Letters only, 1-10 characters.  Requires a server restart after changing.
+  command: sb
+  
+  # Set to false to disable the /sb command entirely.
+  # Players will not be able to show or hide their scoreboard.
+  # Default: false (disabled — enable it if you want players to use it)
+  command-enabled: false
+  
+  # Permission required to use the /sb command.
+  # Default: donutscoreboard.toggle  (given to all players by default in plugin.yml)
+  # You can restrict it via LuckPerms by setting  default: false  in plugin.yml
+  # and granting it only to specific groups.
+  permission: donutscoreboard.toggle
+  
+  # Whether new players see the scoreboard the first time they join.
+  default-on: true
+  
+  # The argument names players type after /sb.
+  # Example with defaults:  /sb enable   /sb disable
+  # Change these to anything you want.
+  args:
+    enable: enable
+    disable: disable
+  
+  # ==========================================================
+  #  ENABLE  —  shown when a player enables their scoreboard
+  # ==========================================================
+  enable:
+    chat-enabled: true
+    chat-message: '&aYou have enabled scoreboard.'
+    actionbar-enabled: true
+    actionbar-message: '&aYou have enabled scoreboard.'
+    title-enabled: false
+    title-message: '&aScoreboard'
+    subtitle-message: '&7has been enabled'
+    title-fade-in: 10
+    title-stay: 40
+    title-fade-out: 10
+    sound-enabled: true
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+  
+  # ==========================================================
+  #  DISABLE  —  shown when a player disables their scoreboard
+  # ==========================================================
+  disable:
+    chat-enabled: true
+    chat-message: '&cYou have disabled scoreboard.'
+    actionbar-enabled: true
+    actionbar-message: '&cYou have disabled scoreboard.'
+    title-enabled: false
+    title-message: '&cScoreboard'
+    subtitle-message: '&7has been disabled'
+    title-fade-in: 10
+    title-stay: 40
+    title-fade-out: 10
+    sound-enabled: true
+    sound: ENTITY_EXPERIENCE_ORB_PICKUP
+
+
+scoreboard:
+  
+  # ----------------------------------------------------------
+  #  TITLE
+  # ----------------------------------------------------------
+  title: '&#aa00aa&lN&#9224b6&le&#7949c2&lv&#616dce&le&#4992db&lr&#31b6e7&lS&#18dbf3&lM&#00ffff&lP'
+  
+  
+  lines:
+    
+    spacer-top: ' '
+    
+    money: '&f&#00FF00&l$ &fMoney &#00FF000'
+    
+    kills: '&f&#FF0000🗡 &fKills &#FF0000%kills%'
+    
+    deaths: '&f&#FC7703☠ &fDeaths &#FC7703%deaths%'
+    
+    playtime: '&f&#FFE600⌚ &fPlaytime &#FFE600%playtime%'
+    
+    team: '&#00A6FF🪓 &#FFFFFFTeam &#00A6FFnone'
+    
+    spacer-mid: ' '
+    
+    footer: '&f&7NA East &7(&#00A6FF%ping%ms&7)'
+
+
+# ----------------------------------------------------------
+#  KEYALL AUTO-EXECUTE
+#  When the keyall countdown reaches zero, the plugin can
+#  automatically run a list of commands as the console and
+#  optionally notify all online players.
+#
+#  enabled         →  set to true to activate this feature
+#  commands        →  list of console commands to run
+#                     Do NOT include the leading slash.
+#                     Example:  crates key give @a example
+#
+#  notify settings →  independently toggle actionbar, title,
+#                     and sound sent to every online player
+#                     at the moment the commands fire.
+# ----------------------------------------------------------
+keyall-execute:
+  
+  # Master switch — false by default.
+  enabled: false
+  
+  # Commands executed as the console the instant the timer hits zero.
+  # Do NOT include a leading slash.
+  commands:
+  - crates key give @a example
+  - broadcast &6&lKeyall keys have been distributed!
+  
+  notify:
+    
+    # ------ Actionbar ----------------------------------------
+    # Shown above the hotbar of every online player.
+    actionbar-enabled: false
+    actionbar-message: '&#00A6FF&lKeyall &7keys have been given to everyone!'
+    
+    # ------ Title --------------------------------------------
+    # Big text displayed in the center of the screen.
+    title-enabled: false
+    title-message: '&#00A6FF&lKEYALL'
+    subtitle-message: '&7Keys have been distributed!'
+    title-fade-in: 10
+    title-stay: 60
+    title-fade-out: 10
+    
+    # ------ Sound --------------------------------------------
+    # Played for every online player when commands execute.
+    # Full list: hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+    sound-enabled: false
+    sound: ENTITY_PLAYER_LEVELUP

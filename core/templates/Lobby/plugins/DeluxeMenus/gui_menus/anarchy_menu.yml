@@ -1,0 +1,36 @@
+menu_title: '&8Anarchy'
+open_command: anarchy
+register_command: true
+size: 27
+items:
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-26
+    display_name: ' '
+  smp1_button:
+    material: TNT
+    slot: 12
+    display_name: '&c&lAnarchy1'
+    lore:
+      - ' '
+      - '&7Приват блоки'
+      - '&7Вайп раз в месяц'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[connect] anarchy1'
+      - '[message] &aВы перешли на сервер Anarchy1'
+  smp2_button:
+    material: TNT
+    slot: 14
+    display_name: '&c&lAnarchy2'
+    lore:
+      - ' '
+      - '&7Приват блоки'
+      - '&7Вайп раз в три месяца'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[connect] anarchy2'
+      - '[message] &aВы перешли на сервер Anarchy2'

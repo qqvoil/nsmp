@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 95.82.66.140
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1784648241711
+  login: 1784648708331
+money: '0'
+last-account-name: KOSMO_STA
+lastlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: -38.30000001192093
+  y: 88.0
+  z: 98.69999998807907
+  yaw: 162.16497802734375
+  pitch: 89.03865814208984
+logoutlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: 340.41804693218046
+  y: 65.0
+  z: 370.50998626079956
+  yaw: 142.41015625
+  pitch: -26.670677185058594

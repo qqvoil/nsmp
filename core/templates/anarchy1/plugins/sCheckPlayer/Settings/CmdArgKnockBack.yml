@@ -1,0 +1,66 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck knockback command (Checking a player for anti-kickback).
+# Настройка команды /scheck knockback (Проверка игрока на анти откидывание)
+Command-Arg-KnockBack:
+  # You can disable the "knockback" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "knockback"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-KnockBack-Enabled: true
+  KnockBack:
+    # Maximum value for x, defining the range of knockback in the horizontal direction.
+    # The value will vary from -X-Range to +X-Range.
+    # Максимальное значение для x, определяющее диапазон отбрасывания по горизонтали.
+    # Значение будет варьироваться от -X-Range до +X-Range.
+    X-Range: 1.0
+    # Minimum value for y, setting the minimum height to which the player will be knocked back.
+    # Минимальное значение для y, задающее минимальную высоту, на которую игрок будет отбрасываться.
+    Y-Min: 0.5
+    # Maximum value for y, setting the maximum height of knockback for the player.
+    # Максимальное значение для y, задающее максимальную высоту отбрасывания игрока.
+    Y-Max: 1.5
+    # Maximum value for z, defining the range of knockback in the horizontal direction,
+    # similar to X-Range, but in the forward/backward direction.
+    # Максимальное значение для z, определяющее диапазон отбрасывания по горизонтали,
+    # аналогично X-Range, но в направлении вперед/назад.
+    Z-Range: 1.0
+    # Multiplier for the knockback force, which multiplies the resulting knockback vector.
+    # The greater the value, the stronger the knockback will be.
+    # Множитель силы отбрасывания, который умножает результирующий вектор отбрасывания.
+    # Чем больше значение, тем сильнее будет отбрасывание.
+    Multiplier: 1.5
+    # Distance threshold that the player must exceed to be considered successfully knocked back.
+    # If the distance from the starting position exceeds this value, the knockback is considered successful.
+    # Порог расстояния, который должен быть преодолен игроком, чтобы считаться успешно отлетевшим.
+    # Если расстояние от начальной позиции превышает это значение, считается, что отбрасывание прошло успешно.
+    Distance-Threshold: 1.0
+    # Factor for randomization, which is used to generate random values
+    # when calculating the knockback direction. The greater the value, the wider the range of directions.
+    # Фактор для рандомизации, который используется для генерации случайных значений
+    # при вычислении направления отбрасывания. Чем больше значение, тем шире диапазон направлений.
+    Random-Factor: 2.0
+    # Delay in ticks, which determines how many ticks to wait before checking
+    # the player's movement after the knockback. For example, 20 ticks = 1 second.
+    # Задержка в тиках, которая определяет, через сколько тиков будет проверяться
+    # перемещение игрока после отбрасывания. Например, 20 тиков = 1 секунда.
+    Delay: 20
+  WhiteList-Players:
+    # Should I include a whitelist of players that cannot be checked for anti-kickbacks?
+    # Нужно ли включать белый список игроков, которых нельзя проверить на анти-откидывания?
+    Enabled: false
+    # Specify a list of players.
+    # Укажите список игроков.
+    Players:
+    - Snon_SS

@@ -1,0 +1,198 @@
+menu_title: '&#5a5a5a&lКит ПВП'
+open_command: pvp_kit
+size: 54
+
+items:
+  # --- Заполнение серыми стеклянными панелями ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-9
+      - 19
+      - 25-28
+      - 32-38
+      - 41
+      - 43-53
+    display_name: ' '
+
+  # --- ПРЕДМЕТЫ КИТА (ДЕМОНСТРАЦИЯ) ---
+
+  # 1. Зачарованные золотые яблоки (12 шт.)
+  'preview_gapple':
+    material: ENCHANTED_GOLDEN_APPLE
+    amount: 12
+    slot: 10
+    display_name: '&#ffaa00Зачарованное золотое яблоко'
+
+  # 2. Лопата (Эффективность 3)
+  'preview_shovel':
+    material: DIAMOND_SHOVEL
+    slot: 11
+    display_name: '&bАлмазная лопата'
+    enchantments:
+      - EFFICIENCY;3
+
+  # 3. Шлем (Защита 3, Прочность 3, Починка)
+  'preview_helmet':
+    material: DIAMOND_HELMET
+    slot: 12
+    display_name: '&bАлмазный шлем'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;3
+      - MENDING;1
+
+  # 4. Нагрудник (Защита 3, Прочность 3, Починка)
+  'preview_chestplate':
+    material: DIAMOND_CHESTPLATE
+    slot: 13
+    display_name: '&bАлмазный нагрудник'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;3
+      - MENDING;1
+
+  # 5. Поножи (Защита 3, Прочность 3, Починка)
+  'preview_leggings':
+    material: DIAMOND_LEGGINGS
+    slot: 14
+    display_name: '&bАлмазные поножи'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;3
+      - MENDING;1
+
+  # 6. Ботинки (Защита 3, Прочность 3, Починка)
+  'preview_boots':
+    material: DIAMOND_BOOTS
+    slot: 15
+    display_name: '&bАлмазные ботинки'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;3
+      - MENDING;1
+
+  # 7. Меч (Острота 5, Заговор огня 2, Прочность 3, Починка)
+  'preview_sword':
+    material: NETHERITE_SWORD
+    slot: 16
+    display_name: '&4Незеритовый меч'
+    enchantments:
+      - DAMAGE_ALL;5
+      - FIRE_ASPECT;2
+      - DURABILITY;3
+      - MENDING;1
+
+  # 8. Стейк (64 шт.)
+  'preview_steak':
+    material: COOKED_BEEF
+    amount: 64
+    slot: 17
+    display_name: '&6Жареная говядина'
+
+  # 9. Паутина (32 шт.)
+  'preview_web':
+    material: COBWEB
+    amount: 32
+    slot: 18
+    display_name: '&fПаутина'
+
+  # 10. Ведро воды
+  'preview_water':
+    material: WATER_BUCKET
+    slot: 20
+    display_name: '&bВедро воды'
+
+  # 11. Кирка (Эффективность 5, Прочность 3, Починка)
+  'preview_pickaxe':
+    material: DIAMOND_PICKAXE
+    slot: 21
+    display_name: '&bАлмазная кирка'
+    enchantments:
+      - EFFICIENCY;5
+      - DURABILITY;3
+      - MENDING;1
+
+  # 12. Эндер-жемчуг #1 (16 шт.)
+  'preview_pearl_1':
+    material: ENDER_PEARL
+    amount: 16
+    slot: 22
+    display_name: '&3Жемчуг Энда'
+
+  # 13. Топор (Эффективность 5, Прочность 3, Починка)
+  'preview_axe':
+    material: DIAMOND_AXE
+    slot: 23
+    display_name: '&bАлмазный топор'
+    enchantments:
+      - EFFICIENCY;5
+      - DURABILITY;3
+      - MENDING;1
+
+  # 14. Ведро лавы
+  'preview_lava':
+    material: LAVA_BUCKET
+    slot: 24
+    display_name: '&cВедро лавы'
+
+  # 15. Щит дубовый
+  'preview_shield_oak':
+    material: SHIELD
+    slot: 29
+    display_name: '&eДубовый щит'
+
+  # 16. Эндер-жемчуг #2 (16 шт.)
+  'preview_pearl_2':
+    material: ENDER_PEARL
+    amount: 16
+    slot: 30
+    display_name: '&3Жемчуг Энда'
+
+  # 17. Щит багровый
+  'preview_shield_crimson':
+    material: SHIELD
+    slot: 31
+    display_name: '&cБагровый щит'
+
+  # 18. Эндер-жемчуг #3 (16 шт.)
+  'preview_pearl_3':
+    material: ENDER_PEARL
+    amount: 16
+    slot: 39
+    display_name: '&3Жемчуг Энда'
+
+  # ==========================================
+  # --- КНОПКИ УПРАВЛЕНИЯ (Слоты 40 и 42) ---
+  # ==========================================
+
+  # Красный краситель — Вернуться назад
+  'back_button':
+    material: RED_DYE
+    slot: 40
+    display_name: '&#FB4343Назад в магазин'
+    left_click_commands:
+      - '[openmenu] coinshop'
+
+  # Зеленый краситель — Купить Кит ПВП
+  'buy_button':
+    material: LIME_DYE
+    slot: 42
+    display_name: '&#45FF70Купить Кит ПВП'
+    lore:
+      - ''
+      - '&7Цена: &a5000 монет'
+      - ''
+      - '&e▶ Клик — Купить набор'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 5000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+    left_click_commands:
+      - '[console] eco take %player_name% 5000'
+      - '[openmenu] pvp_kit'
+      - '[message] &aВы успешно приобрели Кит ПВП за 5000 монет!'
+      - '[close]'

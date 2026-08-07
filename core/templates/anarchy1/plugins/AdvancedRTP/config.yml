@@ -1,0 +1,305 @@
+# AdvancedRTP Configuration
+
+# Config version - used for automatic migration
+config-version: "2.7.0"
+
+
+# DEFAULT WORLDS
+# List of worlds used for random teleportation.
+# If empty, the plugin will use the player's current world.
+default-worlds:
+  - "world"
+
+
+# BLACKLISTED WORLDS
+# Worlds where RTP is not allowed.
+# Players cannot teleport to these worlds using /rtp command.
+blacklisted-worlds:
+  - "events"
+  - "admin_world"
+  - "dungeon"
+
+
+# SAFE TELEPORT
+# If true, only teleport to already loaded chunks.
+# This improves performance and reduces lag from chunk loading.
+# Note: Dangerous block checks are always performed regardless of this setting.
+# WARNING: If set to true, RTP may teleport to same location repeatedly because it
+# prefers already loaded chunks. Set to false for truly random teleportation.
+safe-teleport: false
+
+
+# BIOME FILTER MODE
+# Mode for filtering biomes: "blacklist" or "whitelist"
+# - blacklist: RTP will not teleport to biomes listed in blacklisted-biomes
+# - whitelist: RTP will only teleport to biomes listed in whitelisted-biomes
+biome-filter:
+  mode: "blacklist"
+
+# BLACKLISTED BIOMES
+# List of biomes where RTP is not allowed.
+# Use internal Minecraft biome names (e.g., "nether_wastes", "the_void", "deep_dark").
+# All cave biomes are blacklisted by default to ensure surface teleportation.
+# Only used when biome-filter.mode = "blacklist"
+blacklisted-biomes:
+  - "nether_wastes"
+  - "the_end"
+  - "deep_dark"
+  - "lush_caves"
+  - "dripstone_caves"
+
+# WHITELISTED BIOMES
+# List of biomes where RTP is allowed.
+# Use internal Minecraft biome names.
+# Only used when biome-filter.mode = "whitelist"
+# If empty, all biomes are allowed (but still respects blacklist in blacklist mode)
+whitelisted-biomes: []
+
+
+# MAX ATTEMPTS
+# Maximum number of attempts to find a safe location for RTP.
+# If no safe location is found after this many attempts, the teleport fails.
+max-attempts: 10
+
+
+# ATTEMPT DELAY
+# Delay between location search attempts in milliseconds.
+# Higher values reduce server load but increase teleport time.
+attempt-delay: 100
+
+
+# TELEPORTATION RADIUS
+# Minimum and maximum radius from center point for teleportation.
+# min-radius: Minimum distance from center point (spawn/player) for teleportation
+# max-radius: Maximum distance from center point for teleportation
+min-radius: 1000
+max-radius: 5000
+
+
+# TELEPORT DELAY
+# Delay in seconds before teleporting the player.
+# During this time, the player must remain stationary.
+# Set to 0 for instant teleportation.
+teleport-delay: 3
+
+
+# INSTANT RTP
+# If true, skip the teleport delay for all players.
+# Players with 'advancedrtp.instant' permission always skip the delay.
+instant-rtp: false
+
+
+# USE WORLD SPAWN AS CENTER
+# If true, use world spawn location as the center point for RTP.
+# If false, use the player's current location as the center point.
+use-world-spawn-as-center: true
+
+
+# Y-COORDINATE LIMITS
+# Vertical range for teleportation to avoid deep underground areas.
+# min-y-coordinate: Minimum Y coordinate (default: sea level - 30)
+# max-y-coordinate: Maximum Y coordinate (default: sea level + 30)
+# Note: Cave teleportation is always prevented regardless of these settings.
+min-y-coordinate: 34
+max-y-coordinate: 94
+
+
+# PROTECTED REGION CHECK
+# If true, prevent teleport into protected regions (WorldGuard, GriefPrevention, etc.).
+# Requires the respective plugin to be installed.
+protected-region-check: true
+
+
+# DEBUG MODE
+# Enable debug mode for troubleshooting.
+# When enabled, additional information is logged to the console.
+debug: false
+
+
+# CHECK FOR UPDATES
+# Automatically check for plugin updates on SpigotMC.
+# If enabled, console and players with permission will be notified when a new version is available.
+check-for-updates: true
+
+
+# PERFORMANCE SETTINGS
+# Settings to optimize plugin performance and reduce server lag.
+performance:
+  # CACHE SETTINGS
+  cache:
+    # Maximum number of entries in the chunk cache.
+    # Higher values improve success rate but use more memory.
+    max-size: 500
+
+    # Interval for scheduled cache cleanup in minutes.
+    # Set to 0 to disable scheduled cleanup.
+    cleanup-interval: 5
+
+    # Cache expiration time in minutes.
+    # Entries older than this will be automatically removed.
+    expiration-minutes: 60
+
+  # PRELOADING SETTINGS
+  preloading:
+    # Enable chunk pre-loading to improve RTP success rate.
+    # May cause slight lag when teleporting.
+    enabled: true
+
+    # Maximum number of chunks to pre-load per RTP attempt.
+    # Higher values improve success rate but may cause lag.
+    max-chunks-per-attempt: 25
+
+    # Number of chunks to load per tick (batch size).
+    # Higher values load faster but may cause more lag.
+    batch-size: 5
+
+
+# COOLDOWN SETTINGS
+# Prevent players from spamming the RTP command.
+cooldown:
+  # Enable cooldown system for RTP command.
+  enabled: true
+
+  # Cooldown duration in seconds.
+  # Players must wait this long before using RTP again.
+  duration: 10
+
+  # Message shown when a player is on cooldown.
+  # Use {time} placeholder for remaining cooldown time.
+  message: "&cYou must wait {time} seconds before using RTP again!"
+
+  # Permission to bypass cooldown.
+  # Players with this permission can use RTP without waiting.
+  bypass-permission: "advancedrtp.bypass.cooldown"
+
+
+# ECONOMY SETTINGS
+# Integrate with Vault economy to charge players for using RTP.
+# Requires Vault and an economy plugin (e.g., EssentialsX).
+economy:
+  # Enable economy support.
+  enabled: false
+
+  # Cost for using RTP command.
+  # Players are charged this amount each time they use /rtp.
+  cost: 100.0
+
+  # Message shown when player doesn't have enough money.
+  # Use {cost} placeholder for the cost amount.
+  insufficient-funds-message: "&cYou don't have enough money to use RTP! Cost: {cost}"
+
+
+# EFFECTS SETTINGS
+# Customizable sound effects for RTP events.
+# Use Minecraft sound names (e.g., "ENTITY_ENDERMAN_TELEPORT", "UI_BUTTON_CLICK").
+# Set sound to "" to disable sound effects.
+effects:
+  # Countdown tick sound (played every second during teleport delay)
+  countdown:
+    sound:
+      enabled: true
+      name: "BLOCK_NOTE_BLOCK_HAT"
+      volume: 0.7
+      pitch: 1.0
+
+  # Success teleport effects
+  success:
+    sound:
+      enabled: true
+      name: "ENTITY_ENDERMAN_TELEPORT"
+      volume: 1.0
+      pitch: 1.0
+    particle:
+      enabled: true
+      name: "PORTAL"
+      count: 20
+      offset-x: 0.5
+      offset-y: 1.0
+      offset-z: 0.5
+      speed: 0.1
+
+  # End effects (played after teleport completes)
+  end:
+    sound:
+      enabled: true
+      name: "UI_BUTTON_CLICK"
+      volume: 1.0
+      pitch: 1.0
+    particle:
+      enabled: true
+      name: "END_ROD"
+      count: 15
+      offset-x: 0.3
+      offset-y: 1.0
+      offset-z: 0.3
+      speed: 0.05
+
+  # Cancel effects (played when teleport is cancelled)
+  cancel:
+    sound:
+      enabled: true
+      name: "ENTITY_VILLAGER_NO"
+      volume: 1.0
+      pitch: 0.8
+    particle:
+      enabled: true
+      name: "SMOKE_NORMAL"
+      count: 15
+      offset-x: 0.2
+      offset-y: 0.5
+      offset-z: 0.2
+      speed: 0.1
+
+
+# MESSAGES
+# Customizable messages for all plugin events.
+# Supports color codes using & (e.g., &a for green, &c for red).
+messages:
+  # Message when RTP teleport is successful.
+  success: "&aSuccessfully teleported to a random location!"
+
+  # Message when no safe location is found after maximum attempts.
+  no-safe-location: "&cCould not find a safe location after maximum attempts. Please try again."
+
+  # Message when the specified world is not found or is blacklisted.
+  world-not-found: "&cWorld not found or not allowed for RTP."
+
+  # Message when player doesn't have permission to use the command.
+  no-permission: "&cYou don't have permission to use this command."
+
+  # Message when configuration is reloading.
+  reloading: "&aReloading configuration..."
+
+  # Message when configuration has been reloaded successfully.
+  reloaded: "&aConfiguration reloaded successfully!"
+
+  # Message when command usage is invalid.
+  invalid-command: "&cInvalid command usage. Use /rtp [world], /rtp <player>, /rtp <player> <world>, or /rtp reload"
+
+  # Message when teleport countdown starts.
+  # Use {time} placeholder for remaining time in seconds.
+  teleport-start: "&eTeleporting in {time} seconds... Don't move!"
+
+  # Message when teleport is cancelled due to player movement.
+  teleport-cancelled: "&cTeleport cancelled! You moved."
+
+  # Title shown during teleport countdown.
+  teleport-countdown-title: "Teleporting..."
+
+  # Subtitle shown during teleport countdown.
+  # Use {time} placeholder for remaining time in seconds.
+  teleport-countdown-subtitle: "&eDon't move for {time} seconds!"
+
+  # Title shown when teleport is cancelled.
+  teleport-cancelled-title: "Teleport Cancelled"
+
+  # Subtitle shown when teleport is cancelled.
+  teleport-cancelled-subtitle: "&cYou moved!"
+
+  # Message when admin teleports another player.
+  # Use {player} and {world} placeholders.
+  rtp-other-player: "&aTeleported player {player} to a random location in {world}!"
+
+  # Message when specified player is not online.
+  # Use {player} placeholder.
+  player-not-online: "&cPlayer {player} is not online."

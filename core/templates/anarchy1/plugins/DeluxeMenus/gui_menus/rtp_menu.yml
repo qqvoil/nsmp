@@ -1,0 +1,37 @@
+menu_title: '&8Телепортация RTP'
+open_command: rtp
+register_command: true
+size: 27
+
+items:
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-11
+      - 13
+      - 15-26
+    display_name: ' '
+
+  near_rtp:
+    material: ENDER_PEARL
+    slot: 12
+    display_name: '&a&lRTP'
+    lore:
+      - '&7Телепорт в случайное место'
+      - ''
+      - '&fРасстояние: &a1.000 - 5.000 блоков'
+      - ''
+      - '&eНажмите, чтобы телепортироваться'
+    left_click_commands:
+      - '[close]'
+      - '[console] advancedrtp:rtp %player_name%'
+
+  info:
+    material: BOOK
+    slot: 14
+    display_name: '&e&lИнформация'
+    lore:
+      - '&aRTP'
+      - '&7Подойдет для быстрого поиска места'
+      - ''
+      - '&7Подойдет для поиска новых территорий'

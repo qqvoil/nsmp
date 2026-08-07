@@ -1,0 +1,29 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck troll launch command (Launch the player into the sky.).
+# Настройка команды /scheck troll launch (Запустить игрока в небо.)
+Command-Arg-Troll-Launch:
+  # You can disable the "troll launch" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "troll launch"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Troll-Launch-Enabled: true
+  WhiteList-Players:
+    # Enables or disables the whitelist of players that the command will not work on.
+    # Включает или отключает белый список игроков, на которых команда не будет работать.
+    Enabled: false
+    # Specify a list of players.
+    # Укажите список игроков.
+    Players:
+    - Snon_SS

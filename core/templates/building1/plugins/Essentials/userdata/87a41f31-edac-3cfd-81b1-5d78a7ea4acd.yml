@@ -1,0 +1,59 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 198.244.228.170
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1785173034333
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1785172892233
+  login: 1785172945478
+  kits:
+    artemarcan: 1781020520360
+    smppvp: 1781020656446
+    firework: 1781018876194
+    mace: 1783148706707
+    arbalet: 1783148764764
+    skorka2: 1783148974913
+    cila2: 1783148980774
+    pvp: 1784792194935
+    kopiyo: 1783149247286
+    almaz4: 1785171811736
+money: '0'
+last-account-name: ArtemArcan
+logoutlocation:
+  world: e8e3b377-5c35-4061-9c86-d259129de806
+  world-name: world
+  x: 192.89410334798984
+  y: 115.0
+  z: 89.39675904775912
+  yaw: -107.13081359863281
+  pitch: 48.480201721191406
+lastlocation:
+  world: e8e3b377-5c35-4061-9c86-d259129de806
+  world-name: world
+  x: 193.53565126155405
+  y: 115.0
+  z: 89.82196438042051
+  yaw: 1.67462158203125
+  pitch: 25.02153205871582
+homes:
+  vidio:
+    world: e8e3b377-5c35-4061-9c86-d259129de806
+    world-name: world
+    x: 3070.6131880720795
+    y: 63.0
+    z: 2858.2247342743685
+    yaw: 89.09954833984375
+    pitch: -2.2499728202819824

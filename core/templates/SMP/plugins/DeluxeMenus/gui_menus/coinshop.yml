@@ -1,0 +1,265 @@
+menu_title: '&#5a5a5a&lМагазин за Монеты'
+open_command: coinshop
+size: 54
+
+items:
+  # --- СЕРЫЕ СТЕКЛЯННЫЕ ПАНЕЛИ НА ФОН ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-12
+      - 14-19
+      - 22
+      - 25-28
+      - 34-39
+      - 41-48
+      - 50-53
+    display_name: ' '
+
+  # --- КИТ ПВП (СЕРЫЙ ШАЛКЕР) ---
+  'pvp_kit_shulker':
+    material: GRAY_SHULKER_BOX
+    slot: 13
+    display_name: '&#707070&lКит ПВП'
+    lore:
+      - ''
+      - '&7Цена: &a5000 монет'
+      - ''
+      - '&e▶ Клик — Что бы посмотреть что внутри'
+    click_commands:
+      - '[openmenu] pvp_kit'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 5000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- КРИСТАЛЛ ЭНДА ---
+  'end_crystal_shop':
+    material: END_CRYSTAL
+    slot: 20
+    display_name: '&#ff55ff&lКристалл Энда &7(1 шт.)'
+    lore:
+      - ''
+      - '&7Цена: &a200 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 200'
+      - '[console] give %player_name% end_crystal 1'
+      - '[message] &aВы купили 1 Кристалла Энда за 200 монет!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 200
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- ОБСИДИАН ---
+  'obsidian_shop':
+    material: OBSIDIAN
+    slot: 21
+    display_name: '&#5500aa&lОбсидиан &7(1 шт.)'
+    lore:
+      - ''
+      - '&7Цена: &a50 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 50'
+      - '[console] give %player_name% obsidian 1'
+      - '[message] &aВы купили 1 Обсидиана за 50 монет!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 50
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- ЯКОРЬ ВОЗРОЖДЕНИЯ ---
+  'respawn_anchor_shop':
+    material: RESPAWN_ANCHOR
+    slot: 29
+    display_name: '&#aa00aa&lЯкорь возрождения &7(1 шт.)'
+    lore:
+      - ''
+      - '&7Цена: &a300 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 300'
+      - '[console] give %player_name% respawn_anchor 1'
+      - '[message] &aВы купили 1 Якоря возрождения за 300 монет!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 300
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- СВЕТОКАМЕНЬ ---
+  'glowstone_shop':
+    material: GLOWSTONE
+    slot: 30
+    display_name: '&#ffff55&lСветокамень &7(1 шт.)'
+    lore:
+      - ''
+      - '&7Цена: &a50 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 50'
+      - '[console] give %player_name% glowstone 1'
+      - '[message] &aВы купили 1 Светокамня за 50 монет!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 50
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- БУЛАВА ---
+  'mace_shop':
+    material: MACE
+    slot: 31
+    display_name: '&#df73ff&lБулава'
+    lore:
+      - ''
+      - '&7Цена: &a5000 монет'
+      - ''
+      - '&e▶ Клик — Купить'
+    click_commands:
+      - '[console] eco take %player_name% 5000'
+      - '[console] give %player_name% mace 1'
+      - '[message] &aВы успешно приобрели Булаву!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 5000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- ТОТЕМ БЕССМЕРТИЯ ---
+  'totem_shop':
+    material: TOTEM_OF_UNDYING
+    slot: 23
+    display_name: '&#ffff55&lТотем бессмертия &7(1 шт.)'
+    lore:
+      - ''
+      - '&7Цена: &a1000 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 1000'
+      - '[console] give %player_name% totem_of_undying 1'
+      - '[message] &aВы купили Тотем бессмертия за 1000 монет!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 1000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- ЭЛИТРЫ ---
+  'elytra_shop':
+    material: ELYTRA
+    slot: 24
+    display_name: '&#a882ff&lЭлитры'
+    lore:
+      - ''
+      - '&7Цена: &a3000 монет'
+      - ''
+      - '&e▶ Клик — Купить'
+    click_commands:
+      - '[console] eco take %player_name% 3000'
+      - '[console] give %player_name% elytra 1'
+      - '[message] &aВы купили Элитры за 3000 монет!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 3000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- ЗОЛОТАЯ МОРКОВЬ ---
+  'golden_carrot_shop':
+    material: GOLDEN_CARROT
+    slot: 32
+    display_name: '&#ffaa00&lЗолотая морковь &7(1 шт.)'
+    lore:
+      - ''
+      - '&7Цена: &a10 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 10'
+      - '[console] give %player_name% golden_carrot 1'
+      - '[message] &aВы купили Золотую морковь!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 10
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- ЗОЛОТОЕ ЯБЛОКО ---
+  'golden_apple_shop':
+    material: GOLDEN_APPLE
+    slot: 33
+    display_name: '&#ffaa00&lЗолотое яблоко &7(1 шт.)'
+    lore:
+      - ''
+      - '&7Цена: &a100 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 100'
+      - '[console] give %player_name% golden_apple 1'
+      - '[message] &aВы купили Золотое яблоко!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 100
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- ШАЛКЕР (Покупка) ---
+  'shulker_box':
+    material: RED_SHULKER_BOX
+    slot: 40
+    display_name: '&c&lШалкер'
+    lore:
+      - ''
+      - '&7Цена: &a1000 монет'
+      - ''
+      - '&e▶ Клик — Купить 1 шт.'
+    click_commands:
+      - '[console] eco take %player_name% 1000'
+      - '[console] give %player_name% red_shulker_box 1'
+      - '[message] &aВы успешно купили Шалкер за 1000 монет!'
+    click_requirement:
+      requirements:
+        money_check:
+          type: has money
+          amount: 1000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет!'
+
+  # --- СТРЕЛА НАЗАД ---
+  'back_to_shop':
+    material: ARROW
+    slot: 49
+    display_name: '&c&lНазад'
+    click_commands:
+      - '[openmenu] shop'

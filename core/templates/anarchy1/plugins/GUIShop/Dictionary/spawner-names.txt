@@ -1,0 +1,110 @@
+This is the list of official Spigot Mob Names as of 1.21. You MUST use names from this list.
+If you are using an older server version, and the mob you are trying to use
+doesn't exist, it obviously will not work.
+
+Example Config Format:
+
+mob-type: BAT
+
+Available Mob Types (Hostile):
+    BLAZE
+    BOGGED
+    BREEZE
+    CAVE_SPIDER
+    CREAKING
+    CREEPER
+    DROWNED
+    ELDER_GUARDIAN
+    ENDERMAN
+    ENDERMITE
+    ENDER_DRAGON
+    EVOKER
+    GHAST
+    GIANT
+    GUARDIAN
+    HOGLIN
+    HUSK
+    ILLUSIONER
+    MAGMA_CUBE
+    PHANTOM
+    PIGLIN
+    PIGLIN_BRUTE
+    PILLAGER
+    RAVAGER
+    SHULKER
+    SILVERFISH
+    SKELETON
+    SLIME
+    SPIDER
+    STRAY
+    VEX
+    VINDICATOR
+    WARDEN
+    WITCH
+    WITHER
+    WITHER_SKELETON
+    ZOGLIN
+    ZOMBIE
+    ZOMBIE_VILLAGER
+    ZOMBIFIED_PIGLIN
+
+Available Mob Types (Passive):
+    ALLAY
+    ARMADILLO
+    AXOLOTL
+    BAT
+    BEE
+    CAMEL
+    CAT
+    CHICKEN
+    COD
+    COW
+    DOLPHIN
+    DONKEY
+    FOX
+    FROG
+    GLOW_SQUID
+    GOAT
+    HORSE
+    IRON_GOLEM
+    LLAMA
+    MOOSHROOM
+    MULE
+    OCELOT
+    PANDA
+    PARROT
+    PIG
+    POLAR_BEAR
+    PUFFERFISH
+    RABBIT
+    SALMON
+    SHEEP
+    SKELETON_HORSE
+    SNIFFER
+    SNOW_GOLEM
+    SQUID
+    STRIDER
+    TADPOLE
+    TRADER_LLAMA
+    TROPICAL_FISH
+    TURTLE
+    VILLAGER
+    WANDERING_TRADER
+    WOLF
+    ZOMBIE_HORSE
+
+New Entities (1.21.4+, experimental):
+    HAPPY_GHAST
+    COPPER_GOLEM
+    MANNEQUIN
+    CAMEL_HUSK
+    NAUTILUS
+    PARCHED
+    ZOMBIE_NAUTILUS
+
+Legacy Name Mappings:
+    MUSHROOM_COW       = MOOSHROOM
+    ZOMBIE_PIGMAN      = ZOMBIFIED_PIGLIN
+
+Note: Not all entities can be spawned from spawners in vanilla Minecraft.
+Some entities like ENDER_DRAGON and WITHER are boss mobs with special spawn mechanics.

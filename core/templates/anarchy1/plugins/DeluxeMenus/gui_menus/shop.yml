@@ -1,0 +1,80 @@
+menu_title: '&#5a5a5a&lМагазин Сервера' # Тёмно-серый цвет (HEX)
+open_command: shop
+register_command: true
+size: 27
+
+items:
+  # --- СЕРЫЕ СТЕКЛЯННЫЕ ПАНЕЛИ НА ВСЕ ОСТАЛЬНЫЕ СЛОТЫ ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 12
+      - 13
+      - 14
+      - 16
+      - 17
+      - 18
+      - 19
+      - 20
+      - 21
+      - 23
+      - 24
+      - 25
+      - 26
+    display_name: ' ' # Пустое имя, чтобы не мешалось при наведении
+
+  # --- ТОТЕМ (МАГАЗИН ЗА ТОКЕНЫ) ---
+  'token_shop_icon':
+    material: TOTEM_OF_UNDYING
+    slot: 11
+    display_name: '&#ffff55&lМагазин за Токены'
+    lore:
+      - ''
+      - '&7Нажмите, чтобы открыть раздел'
+      - '&7торговли за токеновую валюту.'
+      - ''
+      - '&e▶ Нажмите для перехода'
+    click_commands:
+      - '[player] tokenshop' 
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+
+  # --- ЩИТ (МАГАЗИН ЗА МОНЕТЫ) ---
+  'coin_shop_icon':
+    material: SHIELD
+    slot: 15
+    display_name: '&#55ff55&lМагазин за Монеты'
+    lore:
+      - ''
+      - '&7Нажмите, чтобы открыть раздел'
+      - '&7торговли за обычные монеты.'
+      - ''
+      - '&e▶ Нажмите для перехода'
+    click_commands:
+      - '[player] coinshop'
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+
+  # --- СТРЕЛА (НАЗАД) ---
+  'back_arrow':
+    material: ARROW
+    slot: 22
+    display_name: '&c&lНазад'
+    lore:
+      - ''
+      - '&7Вернуться в предыдущее меню'
+      - '&7или закрыть текущее.'
+      - ''
+      - '&e▶ Нажмите'
+    click_commands:
+      - '[close]'
+      - '[sound] BLOCK_LEVER_CLICK'

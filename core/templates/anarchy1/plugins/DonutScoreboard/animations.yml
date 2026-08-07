@@ -1,0 +1,247 @@
+# ==========================================================
+#
+#         DonutScoreboard  —  animations.yml
+#                  by SirSnaryo
+#
+# ==========================================================
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                  WHAT IS THIS FILE?                     │
+# ├─────────────────────────────────────────────────────────┤
+# │  This file lets you create named animations that loop   │
+# │  forever on the scoreboard sidebar.                     │
+# │                                                         │
+# │  You define an animation once here, then drop a         │
+# │  placeholder anywhere in config.yml (or any world       │
+# │  override file) to make it appear:                      │
+# │                                                         │
+# │    {anim:your_animation_name}                           │
+# │                                                         │
+# │  Example — in scoreboard.lines inside config.yml:       │
+# │                                                         │
+# │    kills: "{anim:rainbow_dot} &fKills &#FF0000%kills%"  │
+# │                                                         │
+# │  The plugin swaps {anim:rainbow_dot} for whatever frame │
+# │  that animation is currently on, every time the         │
+# │  scoreboard refreshes.                                  │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                HOW AN ANIMATION WORKS                   │
+# ├─────────────────────────────────────────────────────────┤
+# │  An animation is a numbered list of text "frames".      │
+# │  The plugin shows one frame at a time, waits            │
+# │  "interval" ticks, then moves to the next frame.        │
+# │  After the last frame it loops back to frame 1 forever. │
+# │                                                         │
+# │  frame 1 → wait → frame 2 → wait → frame 3 → ...       │
+# │  → last frame → wait → frame 1 → ... (loops forever)   │
+# │                                                         │
+# │  Every player on the server sees the same frame at      │
+# │  the same time.  Animations are server-wide.            │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                   WHAT IS A TICK?                       │
+# ├─────────────────────────────────────────────────────────┤
+# │  A tick is the smallest unit of time in Minecraft.      │
+# │                                                         │
+# │    1 tick  =  50 milliseconds  =  0.05 seconds         │
+# │   20 ticks =   1 second                                 │
+# │   40 ticks =   2 seconds                                │
+# │                                                         │
+# │  Use this as a reference when setting "interval":       │
+# │                                                         │
+# │    interval: 1   →  changes 20 times per second (max)  │
+# │    interval: 2   →  changes 10 times per second (fast) │
+# │    interval: 5   →  changes  4 times per second        │
+# │    interval: 10  →  changes  2 times per second        │
+# │    interval: 20  →  changes  1 time  per second (slow) │
+# │    interval: 40  →  changes every 2 seconds            │
+# │                                                         │
+# │  ⚠ IMPORTANT — UPDATE INTERVAL                         │
+# │  The scoreboard only refreshes as fast as the           │
+# │  "update-interval" setting in config.yml allows.        │
+# │                                                         │
+# │  If update-interval is 20 (1 second) and your           │
+# │  animation interval is 2 (fast), you will only see      │
+# │  the animation change once per second — not every       │
+# │  2 ticks — because the scoreboard refreshes too slowly. │
+# │                                                         │
+# │  For smooth animations, lower update-interval           │
+# │  in config.yml.  Recommended: 2 or 3.                  │
+# │  Keep in mind: lower = more CPU usage.                  │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                    COLOR CODES                          │
+# ├─────────────────────────────────────────────────────────┤
+# │  &f = white        &7 = gray         &0 = black        │
+# │  &a = green        &c = red          &e = yellow       │
+# │  &b = aqua         &9 = blue         &d = purple       │
+# │  &l = bold         &o = italic       &r = reset all    │
+# │  &#RRGGBB = any hex color  (e.g. &#FF5500 = orange)    │
+# │                                                         │
+# │  Each frame can use any color code you want.            │
+# │  Color codes in frames work exactly like they do        │
+# │  in regular scoreboard lines.                           │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │              HOW TO CREATE YOUR OWN ANIMATION           │
+# ├─────────────────────────────────────────────────────────┤
+# │  1. Pick a unique name using letters, numbers, and      │
+# │     underscores only.  No spaces.                       │
+# │     Examples:  rainbow_dot   blink   pulse_blue         │
+# │                                                         │
+# │  2. Set "interval" — how many ticks each frame lasts.   │
+# │                                                         │
+# │  3. Write your frames.  Each frame is a line in the     │
+# │     "frames:" list starting with a dash ( - ).          │
+# │     Use any text, symbols, or color codes.              │
+# │                                                         │
+# │  4. In config.yml (or a world override file), add the   │
+# │     placeholder wherever you want the animation:        │
+# │       {anim:your_name}                                  │
+# │                                                         │
+# │  5. Save this file and run:                             │
+# │       /donutscoreboard reload                           │
+# │     The animation will appear live instantly.           │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                       TIPS                              │
+# ├─────────────────────────────────────────────────────────┤
+# │  • You can use {anim:name} multiple times in one line.  │
+# │  • You can mix different animations on the same line.   │
+# │  • Animations work in the scoreboard title too.         │
+# │  • Animations work in world override files too.         │
+# │  • If you type a name that does not exist, you will     │
+# │    see {anim:name?} on the scoreboard — that is the     │
+# │    plugin telling you the name was not found.           │
+# │    Check for typos in both this file and config.yml.   │
+# │  • You can have as many animations as you want.         │
+# │  • Frames play in the order you write them.             │
+# │    The list loops automatically — no setup needed.      │
+# └─────────────────────────────────────────────────────────┘
+#
+# ==========================================================
+
+
+animations:
+
+  # ----------------------------------------------------------
+  #  RAINBOW DOT
+  #  A filled circle that cycles through all rainbow colors.
+  #  Great as a decorative icon next to any stat label.
+  #
+  #  Usage example in config.yml scoreboard.lines:
+  #    kills: "{anim:rainbow_dot} &fKills &#FF0000%kills%"
+  #
+  #  Result on screen:
+  #    ● Kills 6    (the dot shifts color continuously)
+  #
+  #  interval: 3  means each color holds for 3 ticks (0.15s)
+  #  9 frames × 3 ticks = full loop completes every 27 ticks
+  # ----------------------------------------------------------
+  rainbow_dot:
+    interval: 3
+    frames:
+      - "&#FF0000●"
+      - "&#FF5500●"
+      - "&#FFAA00●"
+      - "&#FFFF00●"
+      - "&#00FF00●"
+      - "&#00AAFF●"
+      - "&#0055FF●"
+      - "&#7700FF●"
+      - "&#FF00FF●"
+
+
+  # ----------------------------------------------------------
+  #  RAINBOW STAR
+  #  Same rainbow cycle as rainbow_dot but uses a star ★.
+  #  Useful as an eye-catching icon on important lines
+  #  like money or kills.
+  #
+  #  Usage:
+  #    money: "{anim:rainbow_star} &fMoney &#00FF00%vault_eco_balance_formatted%"
+  # ----------------------------------------------------------
+  rainbow_star:
+    interval: 3
+    frames:
+      - "&#FF0000★"
+      - "&#FF5500★"
+      - "&#FFAA00★"
+      - "&#FFFF00★"
+      - "&#00FF00★"
+      - "&#00AAFF★"
+      - "&#0055FF★"
+      - "&#7700FF★"
+      - "&#FF00FF★"
+
+
+  # ----------------------------------------------------------
+  #  BLINK
+  #  A white star that fades to gray then back to white.
+  #  Subtle — good for drawing attention without being loud.
+  #
+  #  Usage:
+  #    keyall: "{anim:blink} &fKeyall &#00A6FF%keyall%"
+  #
+  #  interval: 10  means each frame holds for 10 ticks (0.5s)
+  #  2 frames × 10 ticks = full loop every 20 ticks (1 second)
+  # ----------------------------------------------------------
+  blink:
+    interval: 10
+    frames:
+      - "&f★"
+      - "&7★"
+
+
+  # ----------------------------------------------------------
+  #  PULSE BLUE
+  #  A blue circle that gradually brightens then dims,
+  #  creating a calm heartbeat / breathing effect.
+  #
+  #  Usage:
+  #    footer: "{anim:pulse_blue} &7NA East &7(&#00A6FF%ping%ms&7)"
+  #
+  #  interval: 4  means each shade holds for 4 ticks (0.2s)
+  #  6 frames × 4 ticks = full loop every 24 ticks (1.2s)
+  # ----------------------------------------------------------
+  pulse_blue:
+    interval: 4
+    frames:
+      - "&#001FFF●"
+      - "&#0055FF●"
+      - "&#0088FF●"
+      - "&#00AAFF●"
+      - "&#0088FF●"
+      - "&#0055FF●"
+
+
+  # ----------------------------------------------------------
+  #  GRADIENT TITLE
+  #  Three alternating color gradients that cycle through
+  #  red, green, and blue tints.
+  #  Designed for use in the scoreboard title field.
+  #
+  #  Usage in config.yml scoreboard.title:
+  #    title: "{anim:gradient_title}"
+  #
+  #  interval: 15  means each gradient holds for 0.75 seconds.
+  #  3 frames × 15 ticks = full loop every 45 ticks (2.25s)
+  # ----------------------------------------------------------
+  gradient_title:
+    interval: 15
+    frames:
+      - "&#FF0000&lD&#FF3300&lo&#FF6600&ln&#FF9900&lu&#FFCC00&lt"
+      - "&#00FF00&lD&#00CC00&lo&#009900&ln&#006600&lu&#003300&lt"
+      - "&#0088FF&lD&#0066FF&lo&#0044FF&ln&#0022FF&lu&#0000FF&lt"

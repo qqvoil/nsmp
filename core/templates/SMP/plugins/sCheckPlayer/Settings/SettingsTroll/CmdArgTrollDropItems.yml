@@ -1,0 +1,35 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck troll dropitems command (Force a player to drop all items.).
+# Настройка команды /scheck troll dropitems (Заставить игрока выбросить все предметы.)
+Command-Arg-Troll-DropItems:
+  # You can disable the "troll dropitems" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "troll dropitems"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Troll-DropItems-Enabled: true
+  WhiteList-Players:
+    # Enables or disables the whitelist of players that the command will not work on.
+    # Включает или отключает белый список игроков, на которых команда не будет работать.
+    Enabled: false
+    # Specify a list of players.
+    # Укажите список игроков.
+    Players:
+    - Snon_SS
+  # Radius for item drop scatter (in blocks). Smaller value = smaller radius.
+  # Радиус разброса предметов (в блоках). Чем меньше значение, тем меньше радиус.
+  Drop-Radius: 16
+  # Delay before removing initiator from no-use list (in seconds).
+  # Задержка перед удалением инициатора из списка no-use (в секундах).
+  Cooldown-Delay-Seconds: 5

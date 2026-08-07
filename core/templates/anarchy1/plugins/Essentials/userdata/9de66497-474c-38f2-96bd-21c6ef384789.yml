@@ -1,0 +1,48 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 198.244.228.170
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1781634562597
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1781712648578
+  login: 1781710114752
+money: '0'
+last-account-name: Cfif2222452
+lastlocation:
+  world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+  world-name: world
+  x: -558.1724425726666
+  y: -35.0
+  z: 147.88121234468844
+  yaw: -56.89910888671875
+  pitch: 12.44999885559082
+homes:
+  home:
+    world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+    world-name: world
+    x: 4354.402294884707
+    y: -37.0
+    z: 4520.526623635323
+    yaw: -104.17626953125
+    pitch: 90.0
+logoutlocation:
+  world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+  world-name: world
+  x: 4356.106648174179
+  y: -37.0
+  z: 4521.840253704059
+  yaw: 104.18603515625
+  pitch: 11.849985122680664

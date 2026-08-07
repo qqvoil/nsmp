@@ -1,0 +1,302 @@
+menu_title: '&#5a5a5a&lСкупщик | Лут с мобов'
+open_command: seller_mobs
+size: 27
+
+items:
+  # --- СЕРЫЕ СТЕКЛЯННЫЕ ПАНЕЛИ НА ФОН ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-1
+      - 7-11
+      - 15-21
+      - 23-26
+    display_name: ' '
+
+  # --- ОГНЕННЫЙ СТЕРЖЕНЬ (Слот 2) ---
+  'sell_blaze_rod':
+    material: BLAZE_ROD
+    slot: 2
+    display_name: '&#ffff55&lОгненный стержень'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a10 монет'
+      - '&7Цена за 64 шт: &a640 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: BLAZE_ROD
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет огненных стержней!'
+    left_click_commands:
+      - '[console] clear %player_name% blaze_rod 1'
+      - '[console] eco give %player_name% 10'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: BLAZE_ROD
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака огненных стержней!'
+    right_click_commands:
+      - '[console] clear %player_name% blaze_rod 64'
+      - '[console] eco give %player_name% 640'
+
+  # --- ГНИЛАЯ ПЛОТЬ (Слот 3) ---
+  'sell_rotten_flesh':
+    material: ROTTEN_FLESH
+    slot: 3
+    display_name: '&#ffff55&lГнилая плоть'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a1 монета'
+      - '&7Цена за 64 шт: &a64 монеты'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: ROTTEN_FLESH
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет гнилой плоти!'
+    left_click_commands:
+      - '[console] clear %player_name% rotten_flesh 1'
+      - '[console] eco give %player_name% 1'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: ROTTEN_FLESH
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака гнилой плоти!'
+    right_click_commands:
+      - '[console] clear %player_name% rotten_flesh 64'
+      - '[console] eco give %player_name% 64'
+
+  # --- ПАУЧИЙ ГЛАЗ (Слот 4) ---
+  'sell_spider_eye':
+    material: SPIDER_EYE
+    slot: 4
+    display_name: '&#ffff55&lПаучий глаз'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a2 монеты'
+      - '&7Цена за 64 шт: &a128 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SPIDER_EYE
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет паучьих глаз!'
+    left_click_commands:
+      - '[console] clear %player_name% spider_eye 1'
+      - '[console] eco give %player_name% 2'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SPIDER_EYE
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака паучьих глаз!'
+    right_click_commands:
+      - '[console] clear %player_name% spider_eye 64'
+      - '[console] eco give %player_name% 128'
+
+  # --- ПАНЦИРЬ ШАЛКЕРА (Слот 5) ---
+  'sell_shulker_shell':
+    material: SHULKER_SHELL
+    slot: 5
+    display_name: '&#ffff55&lПанцирь шалкера'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a100 монет'
+      - '&7Цена per 64 шт: &a6400 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SHULKER_SHELL
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет панцирей шалкера!'
+    left_click_commands:
+      - '[console] clear %player_name% shulker_shell 1'
+      - '[console] eco give %player_name% 100'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SHULKER_SHELL
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака панцирей шалкера!'
+    right_click_commands:
+      - '[console] clear %player_name% shulker_shell 64'
+      - '[console] eco give %player_name% 6400'
+
+  # --- КУСОЧЕК ЗОЛОТА (Слот 6) ---
+  'sell_gold_nugget':
+    material: GOLD_NUGGET
+    slot: 6
+    display_name: '&#ffff55&lКусочек золота'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a1 монета'
+      - '&7Цена за 64 шт: &a64 монеты'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GOLD_NUGGET
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет кусочков золота!'
+    left_click_commands:
+      - '[console] clear %player_name% gold_nugget 1'
+      - '[console] eco give %player_name% 1'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GOLD_NUGGET
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака кусочков золота!'
+    right_click_commands:
+      - '[console] clear %player_name% gold_nugget 64'
+      - '[console] eco give %player_name% 64'
+
+  # --- СЛЕЗА ГАСТА (Слот 12) ---
+  'sell_ghast_tear':
+    material: GHAST_TEAR
+    slot: 12
+    display_name: '&#ffff55&lСлеза гаста'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a50 монет'
+      - '&7Цена за 64 шт: &a3200 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GHAST_TEAR
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет слёз гаста!'
+    left_click_commands:
+      - '[console] clear %player_name% ghast_tear 1'
+      - '[console] eco give %player_name% 50'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GHAST_TEAR
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака слёз гаста!'
+    right_click_commands:
+      - '[console] clear %player_name% ghast_tear 64'
+      - '[console] eco give %player_name% 3200'
+
+  # --- КОСТЬ (Слот 13) ---
+  'sell_bone':
+    material: BONE
+    slot: 13
+    display_name: '&#ffff55&lКость'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a5 монет'
+      - '&7Цена за 64 шт: &a320 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: BONE
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет костей!'
+    left_click_commands:
+      - '[console] clear %player_name% bone 1'
+      - '[console] eco give %player_name% 5'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: BONE
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака костей!'
+    right_click_commands:
+      - '[console] clear %player_name% bone 64'
+      - '[console] eco give %player_name% 320'
+
+  # --- ПОРОХ (Слот 14) ---
+  'sell_gunpowder':
+    material: GUNPOWDER
+    slot: 14
+    display_name: '&#ffff55&lПорох'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a2 монеты'
+      - '&7Цена за 64 шт: &a128 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GUNPOWDER
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет пороха!'
+    left_click_commands:
+      - '[console] clear %player_name% gunpowder 1'
+      - '[console] eco give %player_name% 2'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: GUNPOWDER
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака пороха!'
+    right_click_commands:
+      - '[console] clear %player_name% gunpowder 64'
+      - '[console] eco give %player_name% 128'
+
+  # --- СТРЕЛА НАЗАД (Слот 22) ---
+  'back_to_seller':
+    material: ARROW
+    slot: 22
+    display_name: '&c&lНазад'
+    click_commands:
+      - '[openmenu] seller'

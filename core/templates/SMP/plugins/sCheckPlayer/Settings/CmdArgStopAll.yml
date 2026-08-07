@@ -1,0 +1,120 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck stopall command (stop checking for all players).
+# Настройка команды /scheck stopall (остановить проверку для всех игроков)
+Command-Arg-StopAll:
+  # You can disable the "stopall" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "stopall"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-StopAll-Enabled: true
+  Console-Player:
+    # If set to true, the "stopall" argument can be used in both the game and the console.
+    # If set to false, the "stopall" argument can only be used in the console; it will not work in the game.
+    # Если значение установлено true, то аргумент "stopall" можно использовать как в игре, так и в консоли.
+    # Если значение установлено false, то аргумент "stopall" можно использовать только в консоли; в игре он не будет действовать.
+    Enabled: true
+  Teleport:
+    # Allow teleporting the target player back to their original location
+    # after executing the /scheck stopall command.
+    # Разрешить телепортацию целевого игрока обратно на исходное местоположение
+    # После команды /scheck stopall
+    Allow-Teleport-Back-Target-Player: true
+  Sound-StopAll-Check-Target:
+    # Is it necessary to turn on the sound of a player when stopping the check for all players?
+    # Нужно ли, включать звук игроку при остановке проверки для всех игроков?
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  Sound-StopAll-Check-Initiator:
+    # Is it necessary for the initiator to turn on the sound at the end of the check for all players?
+    # Нужно ли, включать звук инициатору при окончании проверки для всех игроков?
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  Title-StopAll-Target:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: false
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Title-StopAll-Initiator:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: false
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Notify-Message-Admin:
+    # Enables or disables messages to online admins.
+    # Включает или отключает сообщения онлайн админам.
+    Enabled: false
+    # Enables or disables console messages.
+    # Включает или отключает сообщения в консоль.
+    Notify-Message-Console: true

@@ -1,0 +1,24 @@
+menu_title: '&8Вернуться в лобби'
+open_command: lobby
+register_command: true
+size: 27
+items:
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-12
+      - 14-26
+    display_name: ' '
+
+  lobby_button:
+    material: GRASS_BLOCK
+    slot: 13
+    display_name: '&c&lВернуться в лобби'
+    lore:
+      - '&6Вернет вас в лобби'
+      - ' '
+      - '&eНажмите, чтобы вернуться в лобби'
+    left_click_commands:
+      - '[connect] lobby'
+      - '[message] &aВы вернулись в лобби!'
+  

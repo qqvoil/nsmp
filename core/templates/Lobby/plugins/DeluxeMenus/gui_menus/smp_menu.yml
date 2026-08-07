@@ -1,0 +1,36 @@
+menu_title: '&8SMP'
+open_command: smp
+register_command: true
+size: 27
+items:
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-26
+    display_name: ' '
+  smp1_button:
+    material: GRASS_BLOCK
+    slot: 12
+    display_name: '&a&lSMP1'
+    lore:
+      - ' '
+      - '&7Экономика'
+      - '&7Вайп раз в месяц'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[connect] smp1'
+      - '[message] &aВы перешли на сервер SMP1'
+  smp2_button:
+    material: GRASS_BLOCK
+    slot: 14
+    display_name: '&a&lSMP2'
+    lore:
+      - ' '
+      - '&7Экономика'
+      - '&7Вайп раз в три месяца'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[connect] smp2'
+      - '[message] &aВы перешли на сервер SMP2'

@@ -1,0 +1,47 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+Timed-Messages:
+  # Enables or disables sending messages on a timer.
+  # Включает или отключает отправку сообщений по таймеру.
+  Enabled: true
+  # - '30: time30: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=30: Stay-Time=90: Fade-Out-Time=100'
+  # The value '30' indicates that the message will start displaying after 30 seconds.
+  # 'time30' is the key for the message text in the localization files.
+  # 'ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0' specifies the sound type and its parameters, where 'ENTITY_EXPERIENCE_ORB_PICKUP' is the sound type and '1.0; 1.0' are the pitch and volume.
+  # 'FadeInTime=30' - the duration of the message fade-in animation (in milliseconds).
+  # 'Stay-Time=90' - the duration the message will remain visible (in milliseconds).
+  # 'Fade-Out-Time=100' - the duration of the message fade-out animation (in milliseconds).
+  #
+  # - '30: time30: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=30: Stay-Time=90: Fade-Out-Time=100'
+  # Значение '30' означает, что сообщение начнет отображаться через 30 секунд.
+  # 'time30' - это ключ для текста сообщения в файлах локализации.
+  # 'ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0' - тон и громкость.
+  # 'FadeInTime=30' - время анимации появления сообщения (в миллисекундах).
+  # 'Stay-Time=90' - время, которое сообщение будет оставаться видимым (в миллисекундах).
+  # 'Fade-Out-Time=100' - время анимации исчезновения сообщения (в миллисекундах).
+  Messages:
+  - '30: time30: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=10: Stay-Time=70:
+    Fade-Out-Time=20'
+  - '20: time20: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=10: Stay-Time=70:
+    Fade-Out-Time=20'
+  - '10: time10: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=10: Stay-Time=70:
+    Fade-Out-Time=20'
+  - '5: time5: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=10: Stay-Time=70:
+    Fade-Out-Time=20'
+  - '3: time3: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=10: Stay-Time=70:
+    Fade-Out-Time=20'
+  - '2: time2: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=10: Stay-Time=70:
+    Fade-Out-Time=20'
+  - '1: time1: ENTITY_EXPERIENCE_ORB_PICKUP; 1.0; 1.0: FadeInTime=10: Stay-Time=70:
+    Fade-Out-Time=20'

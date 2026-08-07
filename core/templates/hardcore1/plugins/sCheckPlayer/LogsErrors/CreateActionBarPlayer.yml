@@ -1,0 +1,624 @@
+[16:40:52 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:40:53 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:40:54 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:40:55 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:40:56 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:40:57 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:40:58 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:40:59 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:41:00 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:41:01 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:41:02 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:41:03 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:41:04 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:41:05 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:37 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:38 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:39 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:40 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:41 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:42 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:43 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:44 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:45 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:46 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:47 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:57:48 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:24 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:25 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:26 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:46 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:47 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:48 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:49 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:50 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:51 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:52 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:53 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:54 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:01 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:02 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:03 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:04 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:05 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:06 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:07 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:08 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:09 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:01:10 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer (Line: 24)
+java.lang.NullPointerException: Cannot invoke "String.replaceAll(String, String)" because "<local11>" is null
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.CreateActionBarPlayer.createActionBarPlayer(CreateActionBarPlayer.java:24)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.SendMessages.SendMessageTask.lambda$0(SendMessageTask.java:50)
+	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+

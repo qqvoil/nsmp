@@ -1,0 +1,66 @@
+combat-timers:
+  world: 20
+  world_nether: 20
+  world_the_end: 20
+
+disabled-worlds:
+  - example_disabled_world
+  - another_disabled_world
+
+combat-blocked-regions:
+  - pvp_safe
+  - spawn_safe
+
+blocked-commands:
+  - tpa
+  - tpaccept
+  - tpdeny
+  - tp
+  - rtp
+  - wild
+  - home
+  - sethome
+  - delhome
+  - team home
+  - team warp
+  - team war
+  - team
+  - spawn
+  - lobby
+  - hub
+  - warp
+  - warps
+  - arena
+  - shop
+  - ah
+  - auc
+  - ec
+  - enderchest
+  - trade
+  - menu
+  - shop
+
+blocked-items:       # На FunTime хорус полностью блокируют в бою
+  - ELYTRA              # Блокировка взлёта на элитрах в бою
+  - ENDER_CHEST         # Блокировка открытия эндер-сундука в бою
+
+messages:
+  combat-enter: "&cВы вступили в бой с %player%!"
+  enable-combat-enter: true
+
+  combat-exit: "&aВы больше не в бою."
+  enable-combat-exit: true
+
+  combat-log: "&cИгрок %player% вышел во время боя и был убит!"
+  enable-combat-log: true
+
+  combat-log-rejoin: "&cВы были убиты за выход из игры во время боя!"
+  enable-combat-log-rejoin: true
+
+  command-blocked: "&cВы не можете использовать эту команду во время боя!"
+  enable-command-blocked: true
+
+  item-blocked: "&cЭтот предмет запрещён во время боя!"
+  enable-item-blocked: true
+
+  action-bar: "&c&lРЕЖИМ БОЯ: &f%time% сек."

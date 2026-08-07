@@ -1,0 +1,297 @@
+##################################################
+##                                              ##
+##  _____ _    _ _____  _____ _                 ##
+## / ____| |  | |_   _|/ ____| |                ##
+##| |  __| |  | | | | | (___ | |__   ___  _ __  ##
+##| | |_ | |  | | | |  \___ \| '_ \ / _ \| '_ \ ##
+##| |__| | |__| |_| |_ ____) | | | | (_) | |_) |##
+## \_____|\____/|_____|_____/|_| |_|\___/| .__/ ##
+##                                       | |    ##
+##                                       |_|    ##
+##################################################
+#
+# GUIShop Configuration File
+# 
+# Documentation: https://github.com/pablo67340/GUIShop/wiki
+# Support: discord.gg/wm6zMzdBwf
+#
+##################################################
+
+
+# =============================================
+# COMMAND SETTINGS
+# =============================================
+
+# Commands to open the main shop menu (without leading slash)
+# Example: Adding 'store' would let players use /store
+buy-commands:
+  - 'buy'
+  - 'shop'
+
+# Commands to open the sell inventory (without leading slash)
+sell-commands:
+  - 'sell'
+
+# How commands are registered with the server:
+#   INTERCEPT - Catches commands without formal registration (no tab completion, no conflicts)
+#   REGISTER  - Formally registers commands (tab completion works, may conflict with other plugins)
+#   NONE      - No registration; use Bukkit's commands.yml to alias /guishopuser commands
+commands-mode: 'REGISTER'
+
+
+# =============================================
+# NAVIGATION SETTINGS
+# =============================================
+
+# ESC key behavior in shop/menu GUIs:
+#   true  = ESC closes the GUI completely
+#   false = ESC returns to the previous menu
+disable-escape-back: true
+
+# ESC key behavior in transaction/quantity GUI:
+#   true  = ESC closes the GUI completely
+#   false = ESC returns to the shop
+disable-escape-back-quantity: false
+
+
+# =============================================
+# SHOP FEATURES
+# =============================================
+
+# Play a sound effect when purchasing items
+enable-sound: true
+
+# Enable the in-game shop creator/editor (/gs edit)
+ingame-config: true
+
+# =============================================
+# ITEM VISIBILITY
+# =============================================
+
+# Hide items that can only be sold (no buy price) from the shop GUI
+# These items will still be sellable via /sell and show worth in lore
+# Useful for adding sell prices to many items without cluttering shops
+hide-non-buyable: false
+
+# Display prices in abbreviated format (1.5k, 2.5M) instead of full numbers
+abbreviate-prices: true
+
+
+# =============================================
+# SIGN SHOP
+# =============================================
+
+# Require players to use signs to access the shop (disables /shop command)
+signs-only: false
+
+# Text that identifies a sign as a shop sign (case-sensitive)
+sign-title: '&f[&cGUIShop&f]'
+
+
+# =============================================
+# SOUNDS
+# =============================================
+
+# Sound played on successful purchase
+# Valid sounds: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+purchase-sound: 'ENTITY_PLAYER_LEVELUP'
+
+
+# =============================================
+# SPAWNER SETTINGS
+# =============================================
+
+# Display name format for spawner items
+# %type% = The mob type (e.g., "Zombie", "Skeleton")
+spawner-name: '&c%type% &fSpawner'
+
+
+# =============================================
+# DEBUG & LOGGING
+# =============================================
+
+# Enable debug messages in console (for troubleshooting)
+debug-mode: false
+
+# Log all buy/sell transactions to console
+transaction-log: false
+
+
+# =============================================
+# BUTTON CONFIGURATION
+# =============================================
+# Customize the navigation buttons that appear in GUIs
+# Available properties: id, shop-name, name, shop-lore, lore, slot
+
+buttons:
+  # Forward button - go to next page
+  forward:
+    id: 'GHAST_TEAR'
+    shop-name: '&b&l» &fNext'
+    name: '&b&l» &fNext'
+    shop-lore: '&8Click to continue'
+    lore: '&8Click to continue'
+    slot: 52
+
+  # Backward button - go to previous page
+  backward:
+    id: 'GHAST_TEAR'
+    shop-name: '&b&l« &fBack'
+    name: '&b&l« &fBack'
+    shop-lore: '&8Click to go back'
+    lore: '&8Click to go back'
+    slot: 48
+
+  # Page indicator - shows current page number (non-clickable)
+  page-indicator:
+    id: 'NETHER_STAR'
+    name: '&e&l✦ &fPage &b%page% &7/ &b%maxpage% &e&l✦'
+    lore:
+      - '&8━━━━━━━━━━━━━━━━━━'
+      - '&7Browse through available'
+      - '&7items using the arrows.'
+      - '&8━━━━━━━━━━━━━━━━━━'
+
+
+# =============================================
+# GUI TITLES
+# =============================================
+# Customize the titles of all GUIs
+# Color codes: &0-9, &a-f, &l (bold), &o (italic), &n (underline), &m (strikethrough), &k (obfuscated)
+
+titles:
+  # Main shop menu title
+  # %page-number% = Current page indicator
+  menu: '&8&lShop %page-number%'
+
+  # Format for page number display in menu title
+  # %number% = Page number
+  menu-shop-pagenumber: '&f> Page: &7%number%'
+
+  # Individual shop inventory title
+  # %shopname% = Name of the shop being viewed
+  shop: '&8&lShop &f> &8&l%shopname%'
+
+  # Sell inventory title
+  sell: '&8&lShop &f> &8&lSell'
+
+  # Quantity selection inventory title
+  qty: '&8&lSelect Amount'
+
+  # /gs value command inventory title
+  value: '&8&lItem Values'
+
+  # Transaction GUI title (when clicking an item)
+  # %item% = Name of the item being purchased
+  transaction: '&8&l%item%'
+
+  # Buy button display name
+  # %amount% = Quantity being purchased
+  transaction-buy-button: '&a&lBuy %amount%'
+
+  # Sell button display name
+  # %amount% = Quantity being sold
+  transaction-sell-button: '&c&lSell %amount%'
+
+  # Buy button lore
+  # %amount% = Quantity, %price% = Total cost
+  transaction-buy-lore: '&7Click to buy %amount% for %price%'
+
+  # Sell button lore
+  # %amount% = Quantity, %price% = Total earnings
+  transaction-sell-lore: '&7Click to sell %amount% for %price%'
+
+  # Display when item cannot be sold
+  transaction-not-sellable: '&c&lItem Not Sellable'
+
+  # Display when item cannot be bought
+  transaction-not-buyable: '&c&lItem Not Buyable'
+
+  # Player head in transaction GUI
+  # %player% = Player's name
+  transaction-balance-title: '&6&l%player%'
+
+  # Player balance lore
+  # %balance% = Formatted balance amount
+  transaction-balance-lore: '&7Balance: &a%balance%'
+
+
+# =============================================
+# TRANSACTION GUI SETTINGS
+# =============================================
+# Configuration for the transaction GUI (when clicking an item to buy/sell)
+# This is the GUI that shows buy/sell buttons with quantity options
+
+transaction-gui:
+  # Materials for the buy/sell quantity buttons
+  buy-material: 'LIME_STAINED_GLASS_PANE'
+  sell-material: 'RED_STAINED_GLASS_PANE'
+  
+  # Material shown when item cannot be bought/sold
+  not-buyable-material: 'GRAY_STAINED_GLASS_PANE'
+  not-sellable-material: 'GRAY_STAINED_GLASS_PANE'
+
+  # Quantity amounts for the three buttons (closest to item, middle, furthest)
+  # These determine stack sizes for buy/sell buttons
+  quantity-1: 1
+  quantity-2: 32
+  quantity-3: 64
+
+
+# =============================================
+# DISABLED WORLDS
+# =============================================
+# Worlds where GUIShop commands are disabled
+
+disabled-worlds:
+  - 'SomeDisabledWorld'
+  - 'AnotherDisabledWorld'
+
+
+# =============================================
+# LORE TEMPLATES
+# =============================================
+# Templates for item lore in shop GUIs
+# Used for both normal players and creator mode
+
+lores:
+  # Price display
+  buy: '&fBuy: &c%amount%'
+  sell: '&fSell: &c%amount%'
+  free: '&fBuy: &aFREE'
+  cannot-buy: '&cCannot buy'
+  cannot-sell: '&cCannot sell'
+  
+  # Item properties (shown in creator mode)
+  nbt: '&fNBT: &c%nbt%'
+  shop-name: '&fShop-name: &c%name%'
+  name: '&fName: &c%name%'
+  buy-name: '&fBuy-name: &c%name%'
+  enchantments: '&fEnchantments: &c%enchantments%'
+  shop-lore: '&fShop-lore:'
+  buy-lore: '&fBuy-lore:'
+  lore: '&fLore:'
+  type: '&fItem-type: &c%type%'
+  commands: '&fCommands:'
+  mob-type: '&fMob-type: &c%type%'
+  target-shop: '&fTarget-shop: &c%shop%'
+  potion-info: '&fPotion info: &c%info%'
+  skull-uuid: '&fSkull-uuid: &c%uuid%'
+  quantity: '&fQuantity: &c%quantity%'
+  permission: '&fPermission: &c%permission%'
+
+
+# =============================================
+# SKULL/HEAD SETTINGS
+# =============================================
+
+# Separate player heads by UUID when determining sell price
+# true  = Each unique head has its own price
+# false = All player heads share the same price
+skull-uuid-selling: true
+
+
+################################
+##  Developed by pablo67340   ##
+##  Support: discord.gg/wm6zMzdBwf ##
+################################

@@ -1,0 +1,127 @@
+kits:
+  artemarcan:
+    delay: 1
+    items:
+    - slot:2 white_shulker_box 1
+    - slot:3 gray_shulker_box 1
+    - slot:4 red_shulker_box 1
+    - slot:5 shulker_box 1
+    - slot:6 purple_shulker_box 1
+  smppvp:
+    delay: 1
+    items:
+    - slot:0 water_bucket 1
+    - slot:1 cobweb 64
+    - slot:2 cobweb 64
+    - slot:3 shield 1 basecolor:16383998
+    - slot:4 diamond_leggings 1 mending:1 protection:4 unbreaking:3 trim:silence|iron
+    - slot:5 pink_shulker_box 1
+    - slot:6 diamond_helmet 1 mending:1 protection:4 unbreaking:3 trim:silence|iron
+    - slot:7 diamond_chestplate 1 mending:1 protection:4 unbreaking:3 trim:silence|iron
+    - slot:8 shield 1 unbreaking:3 basecolor:16383998
+    - slot:25 netherite_sword 1 fire_aspect:2 mending:1 sharpness:5 unbreaking:3
+    - slot:26 golden_apple 64
+    - slot:27 diamond_pickaxe 1 efficiency:5 mending:1 unbreaking:3
+    - slot:28 diamond_axe 1 efficiency:5 mending:1 unbreaking:3
+    - slot:29 cooked_beef 64
+    - slot:30 diamond_shovel 1 efficiency:3
+    - slot:31 ender_pearl 16
+    - slot:32 ender_pearl 16
+    - slot:33 ender_pearl 16
+    - slot:34 lava_bucket 1
+    - slot:35 diamond_boots 1 mending:1 protection:4 unbreaking:3 trim:silence|iron
+  mace:
+    delay: 1
+    items:
+    - slot:8 mace 1 density:5 mending:1 unbreaking:3 wind_burst:3
+  arbalet:
+    delay: 1
+    items:
+    - slot:0 crossbow 1 mending:1 multishot:1 quick_charge:3 unbreaking:3
+  cila2:
+    delay: 1
+    items:
+    - slot:0 strong_strength_splash_potion 1
+  skorka2:
+    delay: 1
+    items:
+    - slot:0 strong_swiftness_splash_potion 1
+  kopiyo:
+    delay: 1
+    items:
+    - slot:0 netherite_spear 1 fire_aspect:2 looting:3 lunge:3 mending:1 sharpness:5
+      unbreaking:3
+  totem:
+    delay: 1
+    items:
+    - slot:0 totem_of_undying 1
+  pvp:
+    delay: 1
+    items:
+    - slot:0 netherite_sword 1 fire_aspect:2 looting:3 mending:1 sharpness:5 unbreaking:3
+    - slot:1 crossbow 1 mending:1 multishot:1 quick_charge:3 unbreaking:3
+    - slot:2 golden_apple 16
+    - slot:3 enchanted_golden_apple 4
+    - slot:4 mace 1 density:5 mending:1 unbreaking:3 wind_burst:3
+    - slot:5 golden_carrot 64
+    - slot:6 ender_pearl 16
+    - slot:7 wind_charge 64
+    - slot:8 cobweb 32
+    - slot:9 totem_of_undying 1
+    - slot:10 milk_bucket 1
+    - slot:11 milk_bucket 1
+    - slot:12 milk_bucket 1
+    - slot:13 strong_strength_splash_potion 1
+    - slot:14 strong_strength_splash_potion 1
+    - slot:15 strong_strength_splash_potion 1
+    - slot:16 strong_strength_splash_potion 1
+    - slot:17 strong_strength_splash_potion 1
+    - slot:18 totem_of_undying 1
+    - slot:19 milk_bucket 1
+    - slot:22 strong_swiftness_splash_potion 1
+    - slot:23 strong_swiftness_splash_potion 1
+    - slot:24 strong_swiftness_splash_potion 1
+    - slot:25 strong_swiftness_splash_potion 1
+    - slot:26 strong_swiftness_splash_potion 1
+    - slot:27 totem_of_undying 1
+    - slot:28 spectral_arrow 64
+    - slot:29 obsidian 32
+    - slot:30 end_crystal 32
+    - slot:32 ender_pearl 16
+    - slot:33 ender_pearl 16
+    - slot:36 netherite_boots 1 depth_strider:3 mending:1 protection:4 soul_speed:3
+      unbreaking:3 trim:silence|quartz
+    - slot:37 netherite_leggings 1 mending:1 protection:4 unbreaking:3 trim:silence|quartz
+    - slot:38 netherite_chestplate 1 mending:1 protection:4 unbreaking:3 trim:silence|quartz
+    - slot:39 netherite_helmet 1 aqua_affinity:1 mending:1 protection:4 respiration:3
+      unbreaking:3 trim:silence|quartz
+    - slot:40 totem_of_undying 1
+  momentalki:
+    delay: 1
+    items:
+    - slot:0 strong_harming_tipped_arrow 8
+  plavki:
+    delay: 1
+    items:
+    - slot:0 long_slow_falling_tipped_arrow 8
+  almaz4:
+    delay: 1
+    items:
+    - slot:0 netherite_sword 1 sharpness:5 unbreaking:3 mending:1 fire_aspect:2
+    - slot:1 diamond_axe 1 unbreaking:3 efficiency:5 mending:1
+    - slot:2 golden_apple 12
+    - slot:3 diamond_pickaxe 1 unbreaking:3 efficiency:5 mending:1
+    - slot:4 ender_pearl 16
+    - slot:5 cooked_beef 64
+    - slot:6 cobweb 32
+    - slot:7 lava_bucket 1
+    - slot:8 water_bucket 1
+    - slot:9 diamond_shovel 1 efficiency:3
+    - slot:14 shield 1 basecolor:16383998
+    - slot:15 ender_pearl 16
+    - slot:17 ender_pearl 16
+    - slot:36 diamond_boots 1 unbreaking:3 mending:1 protection:4 trim:silence|iron
+    - slot:37 diamond_leggings 1 unbreaking:3 mending:1 protection:4 trim:silence|iron
+    - slot:38 diamond_chestplate 1 unbreaking:3 mending:1 protection:4 trim:silence|iron
+    - slot:39 diamond_helmet 1 unbreaking:3 mending:1 protection:4 trim:silence|iron
+    - slot:40 shield 1 unbreaking:3 basecolor:16383998

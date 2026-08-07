@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 109.225.41.17
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1781632027666
+  login: 1781631677863
+money: '0'
+last-account-name: kseniaivakova
+lastlocation:
+  world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+  world-name: world
+  x: -344.69999998807907
+  y: 61.0
+  z: 399.30000001192093
+  yaw: 107.6999740600586
+  pitch: 21.60000991821289
+logoutlocation:
+  world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+  world-name: world
+  x: -329.4458822260803
+  y: 60.0
+  z: 417.7486652253209
+  yaw: 179.25003051757812
+  pitch: 4.199998378753662

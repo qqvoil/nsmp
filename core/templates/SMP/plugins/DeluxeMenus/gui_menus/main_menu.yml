@@ -1,0 +1,49 @@
+menu_title: '&#5a5a5a&lГлавное меню'
+open_command: menu
+register_command: true
+size: 27
+
+items:
+  # --- СЕРЫЕ СТЕКЛЯННЫЕ ПАНЕЛИ НА ФОН ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-11
+      - 13
+      - 15-21
+      - 23-26
+    display_name: ' '
+
+  # --- МАГАЗИН (Тотем в слоте 12) ---
+  'open_shop':
+    material: TOTEM_OF_UNDYING
+    slot: 12
+    display_name: '&#ffff55&lМагазин'
+    lore:
+      - ''
+      - '&7Нажмите, чтобы открыть'
+      - '&7внутриигровой магазин.'
+      - ''
+      - '&eНажмите &7— Открыть магазин'
+    click_commands:
+      - '[openmenu] shop'
+
+  # --- СКУПЩИК (Пшеница в слоте 14) ---
+  'open_seller':
+    material: WHEAT
+    slot: 14
+    display_name: '&#ffff55&lСкупщик'
+    lore:
+      - ''
+      - '&7Нажмите, чтобы открыть'
+      - '&7меню продажи ресурсов.'
+      - ''
+      - '&eНажмите &7— Открыть скупщика'
+    click_commands:
+      - '[openmenu] seller'
+
+  # --- СТРЕЛА (Слот 22) ---
+  'arrow_decor':
+    material: ARROW
+    slot: 22
+    display_name: ' '

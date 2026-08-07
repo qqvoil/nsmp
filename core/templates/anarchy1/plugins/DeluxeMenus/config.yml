@@ -1,0 +1,41 @@
+# DeluxeMenus 1.14.1-Release main configuration file
+#
+# A full wiki on how to use this plugin can be found at:
+# https://wiki.helpch.at/helpchat-plugins/deluxemenus
+
+check_updates: true
+debug: LOW
+use_admin_commands_in_menus_list: false
+menus_list_page_size: 10
+metas_list_page_size: 15
+gui_menus:
+  main_menu:
+    file: main_menu.yml
+  rtp_menu:
+    file: rtp_menu.yml
+  advanced_menu:
+    file: advanced_menu.yml
+  basics_menu:
+    file: basics_menu.yml
+  coinshop:
+    file: coinshop.yml
+  exchange:
+    file: exchange.yml
+  requirements_menu:
+    file: requirements_menu.yml
+  shop:
+    file: shop.yml
+  seller:
+    file: seller.yml
+  lobby:
+    file: lobby_menu.yml
+  seller_farmer:
+    file: seller_farmer.yml
+  seller_mobs:
+    file: seller_mobs.yml
+  seller_jewels:
+    file: seller_jewels.yml
+  tokensshop:
+    file: tokenshop.yml
+  pvp_kit:
+    file: pvp_kit.yml

@@ -1,0 +1,41 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 127.0.0.1
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1785601842589
+  login: 1785601455519
+  kits:
+    pvp: 1785004758967
+money: '25.0'
+last-account-name: Xieras
+lastlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: -3.0108554686171836
+  y: 71.00133597911214
+  z: -5.714322867256747
+  yaw: 136.9499969482422
+  pitch: 34.20000457763672
+logoutlocation:
+  world: d27d3055-3d64-42b4-a583-40a11ee585a9
+  world-name: world
+  x: -448.69500431047794
+  y: 77.0
+  z: -999.8143854142902
+  yaw: -161.1129150390625
+  pitch: 30.15000343322754

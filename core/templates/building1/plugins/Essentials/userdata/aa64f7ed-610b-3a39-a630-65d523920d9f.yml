@@ -1,0 +1,39 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 91.198.249.79
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1781864042959
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1783707524379
+  login: 1783707335947
+money: '0'
+last-account-name: Shevn1x
+logoutlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: -52.72995626386315
+  y: 73.21945257574774
+  z: -64.6139283068544
+  yaw: 178.0927734375
+  pitch: 30.02099609375
+lastlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: -6.3445687583976405
+  y: 70.0
+  z: -5.125903240268404
+  yaw: -113.54974365234375
+  pitch: 56.70004653930664

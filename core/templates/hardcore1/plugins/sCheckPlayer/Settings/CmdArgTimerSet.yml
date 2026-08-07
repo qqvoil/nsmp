@@ -1,0 +1,138 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck timer set command (extend the timer for the player).
+# Настройка команды /scheck timer set (продлить таймер для игрока)
+Command-Arg-Timer-Set:
+  # You can disable the "timer set" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "timer set"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Timer-Set-Enabled: true
+  Time:
+    # Maximum time in seconds that can be used in the command /scheck timer set (time)
+    # Максимальное время в секундах которое можно использовать в команде /scheck timer set (время)
+    Max-Time-Timer-Set: 86400
+    # Minimum time in seconds that can be used in the /scheck timer set command (time)
+    # Минимальное время в секундах которое можно использовать в команде /scheck timer set (время)
+    Min-Time-Timer-Set: 1
+  Sound-Timer-Set-Check-Target:
+    # Enables or disables the player's sound when the player's timer is extended.
+    # Включает или отключает звук игроку когда для игрока продлили таймер.
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  Sound-Timer-Set-Check-Initiator:
+    # Enables or disables the sound to the initiator when the timer is extended for a player.
+    # Включает или отключает звук инициатору когда для игрока продлили таймер.
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  Command-Timer-Set-Limit:
+    # Do I need to enable a limit for the command?
+    # Нужно ли включать лимит для команды?
+    Enabled: true
+    # Enter here the number of times the command can be used.
+    # Укажите сюда число сколько раз можно использовать команду.
+    Limit: 5
+  Title-Timer-Set-Target:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: false
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Title-Timer-Set-Initiator:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: false
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Notify-Message-Admin:
+    # Enables or disables messages to online admins.
+    # Включает или отключает сообщения онлайн админам.
+    Enabled: false
+    # Enables or disables console messages.
+    # Включает или отключает сообщения в консоль.
+    Notify-Message-Console: true
+  Timer-Set-Values:
+    # Enables or disables tab-completion for the /scheck timer set (time) command.
+    # Включает или отключает автозаполнение (таб-комплит) для команды /scheck timer set (время).
+    Enabled: true
+    # List of values that will be displayed in the tab-completion
+    # for the /scheck timer set (time) command.
+    # Список значений, которые будут отображены в автозаполнении
+    # (таб-комплит) команды /scheck timer set (время).
+    #
+    # You need to restart the server or plugin for the new values to apply.
+    # Нужно перезагрузить сервер или плагин чтобы применились новые значения.
+    List:
+    - 5d
+    - 5h
+    - 5m
+    - 5s

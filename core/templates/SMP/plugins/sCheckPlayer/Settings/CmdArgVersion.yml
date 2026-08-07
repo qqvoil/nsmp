@@ -1,0 +1,33 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck version command (check the new version of the plugin).
+# Настройка команды /scheck version (проверить новую версию плагина)
+Command-Arg-Version:
+  # You can disable the "version" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "version"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Version-Enabled: true
+  # Determines whether to enable messages about new plugin versions when a player joins.
+  # Определяет, нужно ли включать сообщения о новых версиях плагина при присоединении игрока.
+  Checking-New-Version-Join-Player-Enabled: true
+  # Determines whether to enable automatic messages about new plugin versions for players.
+  # Определяет, нужно ли включать автоматические сообщения о новых версиях плагина для игроков.
+  Auto-Checking-New-Version-Players-Enabled: true
+  # Determines whether to enable automatic messages about new plugin versions for the console.
+  # Определяет, нужно ли включать автоматические сообщения о новых версиях плагина для консоли.
+  Auto-Checking-New-Version-Console-Enabled: true
+  # Frequency of checking for new plugin versions (in seconds) (1800 seconds = 30 minutes).
+  # Периодичность проверки о новых версиях плагина (в секундах) (1800 секунд = 30 минут)
+  Period-Checking-New-Version: 1800

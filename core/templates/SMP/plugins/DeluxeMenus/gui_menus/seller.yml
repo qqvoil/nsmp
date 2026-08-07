@@ -1,0 +1,57 @@
+menu_title: '&#5a5a5a&lСкупщик'
+open_command: seller
+register_command: true
+size: 27
+
+items:
+  # --- СЕРЫЕ СТЕКЛЯННЫЕ ПАНЕЛИ НА ФОН ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-10
+      - 12
+      - 14
+      - 16-21
+      - 23-26
+    display_name: ' '
+
+  # --- ПШЕНИЦА (Слот 11) ---
+  'sell_wheat':
+    material: WHEAT
+    slot: 11
+    display_name: '&#ffff55&lФермерство'
+    lore:
+      - ''
+      - '&e▶ Нажмите, чтобы открыть'
+    click_commands:
+      - '[openmenu] seller_farmer'
+
+  # --- ОГНЕННЫЙ СТЕРЖЕНЬ (Слот 13) ---
+  'sell_blaze_rod':
+    material: BLAZE_ROD
+    slot: 13
+    display_name: '&#ffaa00&lЛут с мобов'
+    lore:
+      - ''
+      - '&e▶ Нажмите, чтобы открыть'
+    click_commands:
+      - '[openmenu] seller_mobs'
+
+  # --- НЕЗЕРИТОВЫЙ СЛИТОК (Слот 15) ---
+  'sell_netherite':
+    material: NETHERITE_INGOT
+    slot: 15
+    display_name: '&#5a5a5a&lДрагоценности'
+    lore:
+      - ''
+      - '&e▶ Нажмите, чтобы открыть'
+    click_commands:
+      - '[openmenu] seller_jewels'
+
+  # --- СТРЕЛА НАЗАД (Слот 22) ---
+  'back_to_shop':
+    material: ARROW
+    slot: 22
+    display_name: '&c&lНазад'
+    click_commands:
+      - '[openmenu] shop'

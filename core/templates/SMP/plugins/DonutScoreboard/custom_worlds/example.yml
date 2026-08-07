@@ -1,0 +1,306 @@
+# ==========================================================
+#
+#         DonutScoreboard  —  custom_worlds/example.yml
+#                  by SirSnaryo
+#
+# ==========================================================
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                    HOW TO USE                           │
+# ├─────────────────────────────────────────────────────────┤
+# │  1. Copy this file and rename it to your world name.    │
+# │                                                         │
+# │     The file name MUST match the world name exactly,    │
+# │     including capital letters and underscores.          │
+# │                                                         │
+# │     Examples:                                           │
+# │       world.yml                                         │
+# │       world_nether.yml                                  │
+# │       world_the_end.yml                                 │
+# │       MySkyblockWorld.yml                               │
+# │                                                         │
+# │  2. Edit the title and lines below however you like.    │
+# │                                                         │
+# │  3. Save the file and run:                              │
+# │       /donutscoreboard reload                           │
+# │                                                         │
+# │  That world will now show this scoreboard instead of    │
+# │  the one in config.yml.  All other worlds continue      │
+# │  to use config.yml normally.                            │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │               IMPORTANT — FILE NAME = WORLD NAME        │
+# ├─────────────────────────────────────────────────────────┤
+# │  Minecraft world names are case-sensitive.              │
+# │  If your world is called "world_nether" and you name    │
+# │  this file "World_Nether.yml", it will NOT match.       │
+# │                                                         │
+# │  To find the exact name of every loaded world, run:     │
+# │    /donutscoreboard worlds                              │
+# │                                                         │
+# │  The command prints each world name with a tag showing  │
+# │  whether a custom override is already active for it.    │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                    COLOR CODES                          │
+# ├─────────────────────────────────────────────────────────┤
+# │  &f = white        &7 = gray         &0 = black        │
+# │  &a = green        &c = red          &e = yellow       │
+# │  &b = aqua         &9 = blue         &d = purple       │
+# │  &l = bold         &o = italic       &r = reset all    │
+# │  &#RRGGBB = any hex color  (e.g. &#FF5500 = orange)    │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                BUILT-IN TOKENS                          │
+# │    These work with no extra plugins installed           │
+# ├─────────────────────────────────────────────────────────┤
+# │  %kills%      →  total player kills                    │
+# │  %deaths%     →  total player deaths                   │
+# │  %ping%       →  player ping in ms                     │
+# │  %playtime%   →  time played  (e.g.  2d 4h  /  3h 20m)│
+# │  %keyall%     →  keyall countdown  (e.g.  47m 13s)     │
+# │                                                         │
+# │  %keyall% also works anywhere via PlaceholderAPI:       │
+# │  %donut_keyall_countdown%                               │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                ANIMATION PLACEHOLDERS                   │
+# ├─────────────────────────────────────────────────────────┤
+# │  Animations are defined in animations.yml.              │
+# │  You can use any animation from that file here          │
+# │  by typing its name inside {anim: }                     │
+# │                                                         │
+# │  Syntax:   {anim:animation_name}                        │
+# │                                                         │
+# │  Examples:                                              │
+# │    title:  "{anim:gradient_title}"                      │
+# │    line:   "{anim:rainbow_dot} &fKills &#FF0000%kills%" │
+# │    line:   "{anim:blink} &fKeyall &#00A6FF%keyall%"     │
+# │                                                         │
+# │  You can mix animations and regular text freely.        │
+# │  You can use multiple animations on the same line.      │
+# │                                                         │
+# │  If you type a name that does not exist in              │
+# │  animations.yml, the placeholder will show as           │
+# │  {anim:name?} on the scoreboard — that is the plugin    │
+# │  telling you the name was not found.  Check for typos.  │
+# │                                                         │
+# │  For smooth animations lower the update-interval        │
+# │  setting in config.yml to 2 or 3.                       │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │                   HOW LINES WORK                        │
+# ├─────────────────────────────────────────────────────────┤
+# │  Every line is a plain string.  What you type is        │
+# │  exactly what appears on the sidebar.                   │
+# │                                                         │
+# │  A line with just a space  ( " " )  is a blank gap.    │
+# │                                                         │
+# │  You can swap any token for hardcoded text.             │
+# │  For example:  &#FF0000%kills%  →  &#FF00005           │
+# └─────────────────────────────────────────────────────────┘
+#
+#
+# ┌─────────────────────────────────────────────────────────┐
+# │              KEYALL EXECUTE — PER WORLD                 │
+# ├─────────────────────────────────────────────────────────┤
+# │  Each world file can define its own keyall-execute       │
+# │  block.  When the global countdown hits zero:           │
+# │                                                         │
+# │  • Players currently IN this world → get THIS world's   │
+# │    commands and THIS world's notifications.             │
+# │                                                         │
+# │  • Players in worlds WITHOUT an override → get the      │
+# │    global keyall-execute from config.yml instead.       │
+# │                                                         │
+# │  This lets you give different rewards per world.        │
+# │  For example:                                           │
+# │    survival world  →  crates key give @a survival_key   │
+# │    skyblock world  →  crates key give @a skyblock_key   │
+# │    nether world    →  no keyall-execute (uses global)   │
+# │                                                         │
+# │  Commands run as the console — do NOT include a /       │
+# │  at the start.  The commands affect whoever your        │
+# │  command targets (e.g. @a = all players on the server). │
+# │  Write your commands carefully so they only affect the  │
+# │  players you intend.                                    │
+# │                                                         │
+# │  The timer itself is always the global one from         │
+# │  config.yml.  This block only controls what happens     │
+# │  when it reaches zero for players in this world.        │
+# └─────────────────────────────────────────────────────────┘
+#
+# ==========================================================
+
+
+scoreboard:
+
+  # ----------------------------------------------------------
+  #  TITLE
+  #  The text shown at the very top of the scoreboard sidebar.
+  #  This uses a hex gradient — each letter is a slightly
+  #  different shade of blue to create a smooth left-to-right
+  #  color shift spelling out "DonutSMP".
+  #  Change this to whatever fits your world theme.
+  #
+  #  You can also use an animation here:
+  #    title: "{anim:gradient_title}"
+  #  That animation must exist in animations.yml.
+  # ----------------------------------------------------------
+  title: "&#007DFC&lD&#0088FC&lo&#0092FC&ln&#009DFC&lu&#00A8FC&lt&#00B3FC&l S&#00BDFC&lM&#00C8FC&lP"
+
+
+  lines:
+
+    # ==========================================================
+    #  SPACER  —  blank line at the top
+    # ==========================================================
+    spacer-top: " "
+
+
+    # ==========================================================
+    #  MONEY
+    #  Shows:   $ Money 0
+    #
+    #  Animation example — replace the $ icon with a blinking one:
+    #    money: "{anim:blink} &fMoney &#00FF000"
+    # ==========================================================
+    money: "&f&#00FF00&l$ &fMoney &#00FF000"
+
+
+    # ==========================================================
+    #  SHARDS
+    #  Shows:   ★ Shards 0
+    # ==========================================================
+    shards: "&f&#A503FC★ &fShards &#A503FC0"
+
+
+    # ==========================================================
+    #  KILLS
+    #  Shows:   🗡 Kills 6
+    #
+    #  Animation example — add a rainbow dot before the icon:
+    #    kills: "{anim:rainbow_dot} &#FF0000\uD83D\uDDE1 &fKills &#FF0000%kills%"
+    # ==========================================================
+    kills: "&f&#FF0000\uD83D\uDDE1 &fKills &#FF0000%kills%"
+
+
+    # ==========================================================
+    #  DEATHS
+    #  Shows:   ☠ Deaths 22
+    # ==========================================================
+    deaths: "&f&#FC7703\u2620 &fDeaths &#FC7703%deaths%"
+
+
+    # ==========================================================
+    #  KEYALL COUNTDOWN
+    #  Shows:   ⌛ Keyall 47m 13s
+    # ==========================================================
+    keyall: "&f&#00A6FF\u231B &fKeyall &#00A6FF%keyall%"
+
+
+    # ==========================================================
+    #  PLAYTIME
+    #  Shows:   ⌚ Playtime 1d 6h
+    # ==========================================================
+    playtime: "&f&#FFE600\u231A &fPlaytime &#FFE600%playtime%"
+
+
+    # ==========================================================
+    #  TEAM
+    #  Shows:   🪓 Team none
+    # ==========================================================
+    team: "&#00A6FF\uD83E\uDE93 &#FFFFFFTeam &#00A6FFnone"
+
+
+    # ==========================================================
+    #  SPACER  —  blank line between stats and footer
+    # ==========================================================
+    spacer-mid: " "
+
+
+    # ==========================================================
+    #  FOOTER  —  region and ping
+    #  Shows:   NA East (215ms)
+    # ==========================================================
+    footer: "&f&7NA East &7(&#00A6FF%ping%ms&7)"
+
+
+# ----------------------------------------------------------
+#  KEYALL EXECUTE — WORLD OVERRIDE
+#  When the global keyall countdown hits zero, players who
+#  are currently in THIS world will receive the commands
+#  and notifications defined below, instead of the ones
+#  in config.yml.
+#
+#  Players in worlds without their own keyall-execute block
+#  continue to use the global config.yml settings.
+#
+#  enabled: false by default — set to true to activate.
+#
+#  commands  →  list of console commands to run when the
+#               timer hits zero for players in this world.
+#               Do NOT include the leading slash ( / ).
+#               These run as the server console and can
+#               target any players you choose.
+#
+#  notify    →  what to show players in this world when
+#               the commands fire.  Each notification type
+#               can be turned on or off independently.
+# ----------------------------------------------------------
+keyall-execute:
+
+  # Master switch — set to true to activate this world's override.
+  enabled: false
+
+  # Commands run as the console the instant the timer hits zero
+  # for players in this world.  Do NOT include a leading slash.
+  #
+  # Example for a Skyblock world that gives a different crate key:
+  #   commands:
+  #     - "crates key give @a skyblock_key"
+  #     - "broadcast &d&lSkyblock Keyall &7keys have been distributed!"
+  #
+  # Example for a Survival world:
+  #   commands:
+  #     - "crates key give @a survival_key"
+  #     - "broadcast &6&lSurvival Keyall &7keys have been distributed!"
+  commands:
+    - "crates key give @a example_key"
+    - "broadcast &6&lKeyall &7keys have been given in this world!"
+
+  notify:
+
+    # ------ Actionbar ----------------------------------------
+    # Shown above the hotbar for players in this world.
+    # Set actionbar-enabled to false to disable it.
+    actionbar-enabled: false
+    actionbar-message: "&#00A6FF&lKeyall &7keys have been given to everyone in this world!"
+
+    # ------ Title --------------------------------------------
+    # Big text shown in the center of the screen.
+    # Set title-enabled to false to disable it.
+    title-enabled: false
+    title-message:    "&#00A6FF&lKEYALL"
+    subtitle-message: "&7World keys have been distributed!"
+    title-fade-in:  10
+    title-stay:     60
+    title-fade-out: 10
+
+    # ------ Sound --------------------------------------------
+    # Played for every player in this world when commands fire.
+    # Set sound-enabled to false to disable it.
+    # Full list: hub.spigotmc.org/javadocs/spigot/org/bukkit/Sound.html
+    sound-enabled: false
+    sound: "ENTITY_PLAYER_LEVELUP"

@@ -1,0 +1,132 @@
+###########################################################################
+#                         FOOD SHOP                                       #
+#                                                                         #
+# Delicious food items to keep you fed and healthy                        #
+#                                                                         #
+# ROWS CONFIG (1-6):                                                      #
+#   - Set at SHOP level (below) to apply same size to ALL pages          #
+#   - Set at PAGE level to override for specific pages                   #
+#   - If neither set, rows auto-calculate based on item count            #
+#                                                                         #
+# SLOTS: Use 10-16 (row 2), 19-25 (row 3), 28-34 (row 4) for 7 items/row #
+###########################################################################
+
+# Shop title - displayed at top of inventory
+title: '&8&lFood'
+
+# Shop-level rows - applies to ALL pages (can be overridden per-page)
+rows: 6
+
+pages:
+  Page0:
+    # rows: 6  # Uncomment to override shop-level rows for this page only
+    items:
+      # --- Row 1: Cooked Meats ---
+      '10':
+          type: ITEM
+          id: WHEAT
+          slot: 10
+          name: '&eПшеница'
+          buy-price: false
+          sell-price: 3.0
+
+        '11':
+          type: ITEM
+          id: POTATO
+          slot: 11
+          name: '&6Картошка'
+          buy-price: false
+          sell-price: 4.0
+
+        '12':
+          type: ITEM
+          id: CARROT
+          slot: 12
+          name: '&6Морковь'
+          buy-price: false
+          sell-price: 4.0
+
+        '13':
+          type: ITEM
+          id: BEETROOT
+          slot: 13
+          name: '&cСвёкла'
+          buy-price: false
+          sell-price: 3.5
+
+        '14':
+          type: ITEM
+          id: SUGAR_CANE
+          slot: 14
+          name: '&aТростник'
+          buy-price: false
+          sell-price: 2.5
+
+        '15':
+          type: ITEM
+          id: CACTUS
+          slot: 15
+          name: '&2Кактус'
+          buy-price: false
+          sell-price: 2.0
+
+        '16':
+          type: ITEM
+          id: NETHER_WART
+          slot: 16
+          name: '&4Незер нарост'
+          buy-price: false
+          sell-price: 6.0
+
+        '17':
+          type: ITEM
+          id: NETHERITE_INGOT
+          slot: 20
+          name: '&8Незеритовый слиток'
+          buy-price: false
+          sell-price: 250.0
+
+        '18':
+          type: ITEM
+          id: IRON_INGOT
+          slot: 21
+          name: '&fЖелезо'
+          buy-price: false
+          sell-price: 15.0
+
+        '19':
+          type: ITEM
+          id: GOLD_INGOT
+          slot: 22
+          name: '&6Золото'
+          buy-price: false
+          sell-price: 30.0
+
+        '20':
+          type: ITEM
+          id: DIAMOND
+          slot: 23
+          name: '&bАлмаз'
+          buy-price: false
+          sell-price: 100.0
+
+        '21':
+          type: ITEM
+          id: COAL
+          slot: 24
+          name: '&8Уголь'
+          buy-price: false
+          sell-price: 5.0      
+      # --- Navigation Items (Bottom Row) ---
+      '45':
+        type: PLAYER_BALANCE
+        id: PLAYER_HEAD
+        name: '&a%player%''s Balance'
+        lore:
+          - '&7Balance: &a%balance%'
+      '53':
+        type: BACK
+        id: RED_STAINED_GLASS_PANE
+        name: '&c&lBack to Menu'
+        lore:
+          - '&7Click to return to menu'

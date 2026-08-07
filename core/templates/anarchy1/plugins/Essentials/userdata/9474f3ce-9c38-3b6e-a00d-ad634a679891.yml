@@ -1,0 +1,31 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 78.158.15.48
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1780078576390
+  login: 1780078204500
+money: '0'
+last-account-name: cracked
+logoutlocation:
+  world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+  world-name: world
+  x: -369.42536538768184
+  y: 62.11076431274413
+  z: 380.7788186502738
+  yaw: -64.72404479980469
+  pitch: 9.150215148925781

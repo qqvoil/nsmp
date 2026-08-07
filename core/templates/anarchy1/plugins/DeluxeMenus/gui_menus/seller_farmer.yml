@@ -1,0 +1,302 @@
+menu_title: '&#5a5a5a&lСкупщик | Фермер'
+open_command: seller_farmer
+size: 27
+
+items:
+  # --- СЕРЫЕ СТЕКЛЯННЫЕ ПАНЕЛИ НА ФОН (Заполняют ВСЕ пустые слоты) ---
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-1
+      - 7-11
+      - 15-21
+      - 23-26
+    display_name: ' '
+
+  # --- ТРОСТНИК (Слот 2) ---
+  'sell_sugar_cane':
+    material: SUGAR_CANE
+    slot: 2
+    display_name: '&#ffff55&lСахарный тростник'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a2 монеты'
+      - '&7Цена за 64 шт: &a128 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SUGAR_CANE
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет тростника!'
+    left_click_commands:
+      - '[console] clear %player_name% sugar_cane 1'
+      - '[console] eco give %player_name% 2'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SUGAR_CANE
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака тростника!'
+    right_click_commands:
+      - '[console] clear %player_name% sugar_cane 64'
+      - '[console] eco give %player_name% 128'
+
+  # --- ПЛОД ХОРУСА (Слот 3) ---
+  'sell_chorus_fruit':
+    material: CHORUS_FRUIT
+    slot: 3
+    display_name: '&#ffff55&lПлод хоруса'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a10 монет'
+      - '&7Цена за 64 шт: &a640 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: CHORUS_FRUIT
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет плодов хоруса!'
+    left_click_commands:
+      - '[console] clear %player_name% chorus_fruit 1'
+      - '[console] eco give %player_name% 10'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: CHORUS_FRUIT
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака плодов хоруса!'
+    right_click_commands:
+      - '[console] clear %player_name% chorus_fruit 64'
+      - '[console] eco give %player_name% 640'
+
+  # --- МОРКОВЬ (Слот 4) ---
+  'sell_carrot':
+    material: CARROT
+    slot: 4
+    display_name: '&#ffff55&lМорковь'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a2 монеты'
+      - '&7Цена за 64 шт: &a128 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: CARROT
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет моркови!'
+    left_click_commands:
+      - '[console] clear %player_name% carrot 1'
+      - '[console] eco give %player_name% 2'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: CARROT
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака моркови!'
+    right_click_commands:
+      - '[console] clear %player_name% carrot 64'
+      - '[console] eco give %player_name% 128'
+
+  # --- КАРТОФЕЛЬ (Слот 5) ---
+  'sell_potato':
+    material: POTATO
+    slot: 5
+    display_name: '&#ffff55&lКартофель'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a2 монеты'
+      - '&7Цена за 64 шт: &a128 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: POTATO
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет картофеля!'
+    left_click_commands:
+      - '[console] clear %player_name% potato 1'
+      - '[console] eco give %player_name% 2'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: POTATO
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака картофеля!'
+    right_click_commands:
+      - '[console] clear %player_name% potato 64'
+      - '[console] eco give %player_name% 128'
+
+  # --- СЛАДКИЕ ЯГОДЫ (Слот 6) ---
+  'sell_sweet_berries':
+    material: SWEET_BERRIES
+    slot: 6
+    display_name: '&#ffff55&lСладкие ягоды'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a5 монет'
+      - '&7Цена за 64 шт: &a320 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SWEET_BERRIES
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет сладких ягод!'
+    left_click_commands:
+      - '[console] clear %player_name% sweet_berries 1'
+      - '[console] eco give %player_name% 5'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: SWEET_BERRIES
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака сладких ягод!'
+    right_click_commands:
+      - '[console] clear %player_name% sweet_berries 64'
+      - '[console] eco give %player_name% 320'
+
+  # --- ЛОМТИК АРБУЗА (Слот 12) ---
+  'sell_melon_slice':
+    material: MELON_SLICE
+    slot: 12
+    display_name: '&#ffff55&lЛомтик арбуза'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a5 монет'
+      - '&7Цена за 64 шт: &a320 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: MELON_SLICE
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет арбуза!'
+    left_click_commands:
+      - '[console] clear %player_name% melon_slice 1'
+      - '[console] eco give %player_name% 5'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: MELON_SLICE
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака арбузов!'
+    right_click_commands:
+      - '[console] clear %player_name% melon_slice 64'
+      - '[console] eco give %player_name% 320'
+
+  # --- ЛАМИНАРИЯ (Слот 13) ---
+  'sell_kelp':
+    material: KELP
+    slot: 13
+    display_name: '&#ffff55&lЛаминария'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a1 монета'
+      - '&7Цена за 64 шт: &a64 монеты'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: KELP
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет ламинарии!'
+    left_click_commands:
+      - '[console] clear %player_name% kelp 1'
+      - '[console] eco give %player_name% 1'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: KELP
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака ламинарии!'
+    right_click_commands:
+      - '[console] clear %player_name% kelp 64'
+      - '[console] eco give %player_name% 64'
+
+  # --- ТЫКВА (Слот 14) ---
+  'sell_pumpkin':
+    material: PUMPKIN
+    slot: 14
+    display_name: '&#ffff55&lТыква'
+    lore:
+      - ''
+      - '&7Цена за 1 шт: &a15 монет'
+      - '&7Цена за 64 шт: &a960 монет'
+      - ''
+      - '&eЛКМ &7— Продать 1 шт.'
+      - '&6ПКМ &7— Продать стак (64 шт.)'
+    left_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: PUMPKIN
+          amount: 1
+          deny_commands:
+            - '[message] &cУ вас нет тыквы!'
+    left_click_commands:
+      - '[console] clear %player_name% pumpkin 1'
+      - '[console] eco give %player_name% 15'
+    right_click_requirement:
+      requirements:
+        item_check:
+          type: has item
+          material: PUMPKIN
+          amount: 64
+          deny_commands:
+            - '[message] &cУ вас нет стака тыкв!'
+    right_click_commands:
+      - '[console] clear %player_name% pumpkin 64'
+      - '[console] eco give %player_name% 960'
+
+  # --- СТРЕЛА НАЗАД (Слот 22 — Строго по центру нижнего ряда под ламинарией) ---
+  'back_to_seller':
+    material: ARROW
+    slot: 22
+    display_name: '&c&lНазад'
+    click_commands:
+      - '[openmenu] seller'

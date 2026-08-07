@@ -1,0 +1,794 @@
+Chat-Initiator-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the ChatInitiatorLogs.yml file will be saved
+  # This path should be without specifying the ChatInitiatorLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл ChatInitiatorLogs.yml
+  # Этот путь должен быть без указания имени файла ChatInitiatorLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the ChatInitiatorLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл ChatInitiatorLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Chat-Player-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the ChatPlayerLogs.yml file will be saved
+  # This path should be without specifying the ChatPlayerLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл ChatPlayerLogs.yml
+  # Этот путь должен быть без указания имени файла ChatPlayerLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the ChatPlayerLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл ChatPlayerLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Confess-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the ChatPlayerLogs.yml file will be saved
+  # This path should be without specifying the ChatPlayerLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл ChatPlayerLogs.yml
+  # Этот путь должен быть без указания имени файла ChatPlayerLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the ChatPlayerLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл ChatPlayerLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Confirm-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgConfirmLogs.yml file will be saved
+  # This path should be without specifying the CmdArgConfirmLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgConfirmLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgConfirmLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgConfirmLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgConfirmLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-KnockBack-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgKnockBackLogs.yml file will be saved
+  # This path should be without specifying the CmdArgKnockBackLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgKnockBackLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgKnockBackLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgKnockBackLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgKnockBackLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Spec-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgSpecLogs.yml file will be saved
+  # This path should be without specifying the CmdArgSpecLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgSpecLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgSpecLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgSpecLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgSpecLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Start-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgStartLogs.yml file will be saved
+  # This path should be without specifying the CmdArgStartLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgStartLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgStartLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgStartLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgStartLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-StopAll-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgStopAllLogs.yml file will be saved
+  # This path should be without specifying the CmdArgStopAllLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgStopAllLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgStopAllLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgStopAllLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgStopAllLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Stop-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgStopLogs.yml file will be saved
+  # This path should be without specifying the CmdArgStopLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgStopLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgStopLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgStopLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgStopLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Timer-Add-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgTimerAddLogs.yml file will be saved
+  # This path should be without specifying the CmdArgTimerAddLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgTimerAddLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgTimerAddLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgTimerAddLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgTimerAddLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Timer-Continue-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgTimerContinueLogs.yml file will be saved
+  # This path should be without specifying the CmdArgTimerContinueLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgTimerContinueLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgTimerContinueLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgTimerContinueLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgTimerContinueLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Timer-Set-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgTimerSetLogs.yml file will be saved
+  # This path should be without specifying the CmdArgTimerSetLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgTimerSetLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgTimerSetLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgTimerSetLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgTimerSetLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Timer-Stop-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgTimerStopLogs.yml file will be saved
+  # This path should be without specifying the CmdArgTimerStopLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgTimerStopLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgTimerStopLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgTimerStopLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgTimerStopLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Cmd-Arg-Brand-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the CmdArgBrandLogs.yml file will be saved
+  # This path should be without specifying the CmdArgBrandLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл CmdArgBrandLogs.yml
+  # Этот путь должен быть без указания имени файла CmdArgBrandLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the CmdArgBrandLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл CmdArgBrandLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+Target-Quit-Server-Logs-File:
+  # Enables or disables logging.
+  # Включает или отключает логи.
+  Enabled: true
+  # Time format for logs
+  # Формат времени для логов
+  Time: HH:mm:ss | dd.MM.yyyy
+  # When set to false, the default path \plugins\sCheckPlayer\Logs\ will be used
+  # When set to true, you need to specify your own path where the TargetQuitServerLogs.yml file will be saved
+  # This path should be without specifying the TargetQuitServerLogs.yml file name and should look something like this: \plugins\sCheckPlayer\CustomPath\
+  #
+  # Когда значение равно false, будет использован стандартный путь \plugins\sCheckPlayer\Logs\
+  # Когда значение равно true, вам необходимо указать собственный путь, куда будет сохранен файл TargetQuitServerLogs.yml
+  # Этот путь должен быть без указания имени файла TargetQuitServerLogs.yml и должен выглядеть примерно так: \plugins\sCheckPlayer\CustomPath\.
+  Path-Full-Enabled: false
+  # Specify your path where the TargetQuitServerLogs.yml file will be saved
+  # Укажите свой путь куда будет сохранен файл TargetQuitServerLogs.yml
+  Path-Full: \plugins\sCheckPlayer\CustomPath\
+
+de:
+  Chat-Initiator-Logs-File:
+    Description:
+    - '%initiator-player% schrieb:'
+    - '%message%'
+    - 'Zeit: %time%'
+    - ''
+  Chat-Player-Logs-File:
+    Description:
+    - '%target-player% schrieb:'
+    - '%message%'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-Confess-Logs-File:
+    Description:
+    - '%target-player% hat die Verwendung von Cheats gestanden.'
+    - 'Zeit: %time%'
+    - 'Überprüfungsdauer: %duration%'
+    - ''
+  Cmd-Arg-Confirm-Logs-File:
+    Description:
+    - 'Spieler, der %initiator-player% bestätigt hat: %target-player%'
+    - 'Überprüfungsdauer: %duration%'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-KnockBack-Logs-File:
+    Description:
+    - '%initiator-player% überprüft %target-player% auf Anti-Knockback.'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-Spec-Logs-File:
+    Description:
+    - '%initiator-player% beobachtet nun %target-player%'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-Start-Logs-File:
+    Description:
+    - 'Überprüfung gestartet von: %initiator-player%'
+    - 'Überprüfter Spieler: %target-player%'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-StopAll-Logs-File:
+    Description:
+    - '%initiator-player% hat die Überprüfung für alle Spieler gestoppt.'
+    - 'Anzahl der Spieler: %amount%'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-Stop-Logs-File:
+    Description:
+    - 'Für unschuldig erklärt von: %initiator-player%'
+    - 'Unschuldiger Spieler: %target-player%'
+    - 'Zeit: %time%'
+    - 'Überprüfungsdauer: %duration%'
+    - ''
+  Cmd-Arg-Timer-Add-Logs-File:
+    Description:
+    - '%initiator-player% hat den Timer für %target-player% verlängert'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-Timer-Continue-Logs-File:
+    Description:
+    - '%initiator-player% hat den Timer für %target-player% fortgesetzt'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-Timer-Set-Logs-File:
+    Description:
+    - '%initiator-player% hat den Timer für %target-player% gesetzt'
+    - 'Zeit: %time%'
+    - ''
+  Cmd-Arg-Timer-Stop-Logs-File:
+    Description:
+    - '%initiator-player% hat den Timer für %target-player% gestoppt'
+    - 'Zeit: %time%'
+    - ''
+  Target-Quit-Server-Logs-File:
+    Description:
+    - '%target-player% hat den Server während der Überprüfung verlassen.'
+    - 'Zeit: %time%'
+    - 'Überprüfungsdauer: %duration%'
+    - ''
+  Cmd-Arg-Brand-Logs-File:
+    Description:
+    - Client-Daten für %target-player%
+    - 'Client-Typ: %brand%'
+    - 'Moderator: %initiator-player%'
+    - 'Zeit: %time%'
+    - ''
+en:
+  Chat-Initiator-Logs-File:
+    Description:
+    - '%initiator-player% wrote:'
+    - '%message%'
+    - 'Time: %time%'
+    - ''
+  Chat-Player-Logs-File:
+    Description:
+    - '%target-player% wrote:'
+    - '%message%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-Confess-Logs-File:
+    Description:
+    - '%target-player% confessed to using cheats.'
+    - 'Time: %time%'
+    - 'Duration: %duration%'
+    - ''
+  Cmd-Arg-Confirm-Logs-File:
+    Description:
+    - 'Player who confirmed %initiator-player%: %target-player%'
+    - 'Duration: %duration%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-KnockBack-Logs-File:
+    Description:
+    - '%initiator-player% is checking %target-player% for anti-knockback.'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-Spec-Logs-File:
+    Description:
+    - '%initiator-player% started spectating %target-player%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-Start-Logs-File:
+    Description:
+    - 'Check initiated by: %initiator-player%'
+    - 'Player under review: %target-player%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-StopAll-Logs-File:
+    Description:
+    - '%initiator-player% stopped checks for all players.'
+    - 'Players under review: %amount%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-Stop-Logs-File:
+    Description:
+    - 'Cleared by: %initiator-player%'
+    - 'Player found innocent: %target-player%'
+    - 'Time: %time%'
+    - 'Duration: %duration%'
+    - ''
+  Cmd-Arg-Timer-Add-Logs-File:
+    Description:
+    - '%initiator-player% extended the timer for %target-player%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-Timer-Continue-Logs-File:
+    Description:
+    - '%initiator-player% resumed the timer for %target-player%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-Timer-Set-Logs-File:
+    Description:
+    - '%initiator-player% set the timer for %target-player%'
+    - 'Time: %time%'
+    - ''
+  Cmd-Arg-Timer-Stop-Logs-File:
+    Description:
+    - '%initiator-player% stopped the timer for %target-player%'
+    - 'Time: %time%'
+    - ''
+  Target-Quit-Server-Logs-File:
+    Description:
+    - '%target-player% left during the check.'
+    - 'Time: %time%'
+    - 'Duration: %duration%'
+    - ''
+  Cmd-Arg-Brand-Logs-File:
+    Description:
+    - Client data for %target-player%
+    - 'Client type: %brand%'
+    - 'Moderator: %initiator-player%'
+    - 'Time: %time%'
+    - ''
+fi:
+  Chat-Initiator-Logs-File:
+    Description:
+    - '%initiator-player% kirjoitti:'
+    - '%message%'
+    - 'Aika: %time%'
+    - ''
+  Chat-Player-Logs-File:
+    Description:
+    - '%target-player% kirjoitti:'
+    - '%message%'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-Confess-Logs-File:
+    Description:
+    - '%target-player% myönsi käyttäneensä huijauksia.'
+    - 'Aika: %time%'
+    - 'Tarkistuksen kesto: %duration%'
+    - ''
+  Cmd-Arg-Confirm-Logs-File:
+    Description:
+    - 'Pelaaja, joka vahvisti %initiator-player%: %target-player%'
+    - 'Tarkistuksen kesto: %duration%'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-KnockBack-Logs-File:
+    Description:
+    - '%initiator-player% tarkistaa pelaajaa %target-player% takaisinisku-estosta.'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-Spec-Logs-File:
+    Description:
+    - '%initiator-player% alkoi tarkkailla pelaajaa %target-player%'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-Start-Logs-File:
+    Description:
+    - 'Tarkistuksen aloitti: %initiator-player%'
+    - 'Tarkistettava pelaaja: %target-player%'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-StopAll-Logs-File:
+    Description:
+    - '%initiator-player% lopetti tarkistuksen kaikilta pelaajilta.'
+    - 'Pelaajia tarkistuksessa: %amount%'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-Stop-Logs-File:
+    Description:
+    - 'Syyttömäksi totesi: %initiator-player%'
+    - 'Syyttömäksi todettu pelaaja: %target-player%'
+    - 'Aika: %time%'
+    - 'Tarkistuksen kesto: %duration%'
+    - ''
+  Cmd-Arg-Timer-Add-Logs-File:
+    Description:
+    - '%initiator-player% pidensi pelaajan %target-player% ajastinta'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-Timer-Continue-Logs-File:
+    Description:
+    - '%initiator-player% jatkoi pelaajan %target-player% ajastinta'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-Timer-Set-Logs-File:
+    Description:
+    - '%initiator-player% asetti ajastimen pelaajalle %target-player%'
+    - 'Aika: %time%'
+    - ''
+  Cmd-Arg-Timer-Stop-Logs-File:
+    Description:
+    - '%initiator-player% pysäytti pelaajan %target-player% ajastimen'
+    - 'Aika: %time%'
+    - ''
+  Target-Quit-Server-Logs-File:
+    Description:
+    - '%target-player% poistui tarkistuksen aikana.'
+    - 'Aika: %time%'
+    - 'Tarkistuksen kesto: %duration%'
+    - ''
+  Cmd-Arg-Brand-Logs-File:
+    Description:
+    - Pelaajan %target-player% asiakastiedot
+    - 'Asiakasohjelman tyyppi: %brand%'
+    - 'Moderaattori: %initiator-player%'
+    - 'Aika: %time%'
+    - ''
+pl:
+  Chat-Initiator-Logs-File:
+    Description:
+    - '%initiator-player% napisał(a):'
+    - '%message%'
+    - 'Czas: %time%'
+    - ''
+  Chat-Player-Logs-File:
+    Description:
+    - '%target-player% napisał(a):'
+    - '%message%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-Confess-Logs-File:
+    Description:
+    - '%target-player% przyznał(a) się do używania cheatów.'
+    - 'Czas: %time%'
+    - 'Czas trwania: %duration%'
+    - ''
+  Cmd-Arg-Confirm-Logs-File:
+    Description:
+    - 'Gracz, który potwierdził %initiator-player%: %target-player%'
+    - 'Czas trwania: %duration%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-KnockBack-Logs-File:
+    Description:
+    - '%initiator-player% sprawdza gracza %target-player% pod kątem Anty-Knock.'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-Spec-Logs-File:
+    Description:
+    - '%initiator-player% zaczął śledzić gracza %target-player%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-Start-Logs-File:
+    Description:
+    - 'Sprawdzanie rozpoczęte przez: %initiator-player%'
+    - 'Sprawdzany gracz: %target-player%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-StopAll-Logs-File:
+    Description:
+    - '%initiator-player% zatrzymał sprawdzanie dla wszystkich graczy.'
+    - 'Liczba sprawdzanych graczy: %amount%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-Stop-Logs-File:
+    Description:
+    - 'Uznany za niewinnego przez: %initiator-player%'
+    - 'Gracz uznany za niewinnego: %target-player%'
+    - 'Czas: %time%'
+    - 'Czas trwania: %duration%'
+    - ''
+  Cmd-Arg-Timer-Add-Logs-File:
+    Description:
+    - '%initiator-player% przedłużył(a) czas dla gracza %target-player%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-Timer-Continue-Logs-File:
+    Description:
+    - '%initiator-player% wznowił(a) czas dla gracza %target-player%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-Timer-Set-Logs-File:
+    Description:
+    - '%initiator-player% ustawił(a) czas dla gracza %target-player%'
+    - 'Czas: %time%'
+    - ''
+  Cmd-Arg-Timer-Stop-Logs-File:
+    Description:
+    - '%initiator-player% zatrzymał(a) czas dla gracza %target-player%'
+    - 'Czas: %time%'
+    - ''
+  Target-Quit-Server-Logs-File:
+    Description:
+    - '%target-player% opuścił serwer podczas sprawdzania.'
+    - 'Czas: %time%'
+    - 'Czas trwania: %duration%'
+    - ''
+  Cmd-Arg-Brand-Logs-File:
+    Description:
+    - Dane klienta gracza %target-player%
+    - 'Typ klienta: %brand%'
+    - 'Moderator: %initiator-player%'
+    - 'Czas: %time%'
+    - ''
+ru:
+  Chat-Initiator-Logs-File:
+    Description:
+    - '%initiator-player% написал(а):'
+    - '%message%'
+    - 'Время: %time%'
+    - ''
+  Chat-Player-Logs-File:
+    Description:
+    - '%target-player% написал(а):'
+    - '%message%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-Confess-Logs-File:
+    Description:
+    - '%target-player% признался в использовании читов.'
+    - 'Время: %time%'
+    - 'Время проверки: %duration%'
+    - ''
+  Cmd-Arg-Confirm-Logs-File:
+    Description:
+    - 'Игрок который подтвердил %initiator-player%: %target-player%'
+    - 'Время проверки: %duration%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-KnockBack-Logs-File:
+    Description:
+    - '%initiator-player% проверяет игрока %target-player% на анти-откидывание.'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-Spec-Logs-File:
+    Description:
+    - '%initiator-player% начал(а) следить за игроком %target-player%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-Start-Logs-File:
+    Description:
+    - 'Кто вызвал проверку: %initiator-player%'
+    - 'Какой игрок на проверке: %target-player%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-StopAll-Logs-File:
+    Description:
+    - '%initiator-player% остановил проверку для всех игроков.'
+    - 'Игроков было на проверке: %amount%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-Stop-Logs-File:
+    Description:
+    - 'Кто признал невиновным игрока: %initiator-player%'
+    - 'Какой игрок был признан невиновным: %target-player%'
+    - 'Время: %time%'
+    - 'Время проверки: %duration%'
+    - ''
+  Cmd-Arg-Timer-Add-Logs-File:
+    Description:
+    - '%initiator-player% продлил(а) таймер для игрока %target-player%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-Timer-Continue-Logs-File:
+    Description:
+    - '%initiator-player% запустил(а) таймер для игрока %target-player%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-Timer-Set-Logs-File:
+    Description:
+    - '%initiator-player% установил(а) таймер для игрока %target-player%'
+    - 'Время: %time%'
+    - ''
+  Cmd-Arg-Timer-Stop-Logs-File:
+    Description:
+    - '%initiator-player% остановил(а) таймер для игрока %target-player%'
+    - 'Время: %time%'
+    - ''
+  Target-Quit-Server-Logs-File:
+    Description:
+    - '%target-player% вышел во время проверки.'
+    - 'Время: %time%'
+    - 'Время проверки: %duration%'
+    - ''
+  Cmd-Arg-Brand-Logs-File:
+    Description:
+    - Данные клиента игрока %target-player%
+    - 'Тип клиента: %brand%'
+    - 'Модератор: %initiator-player%'
+    - 'Время: %time%'
+    - ''
+ua:
+  Chat-Initiator-Logs-File:
+    Description:
+    - '%initiator-player% написав(ла):'
+    - '%message%'
+    - 'Час: %time%'
+    - ''
+  Chat-Player-Logs-File:
+    Description:
+    - '%target-player% написав(ла):'
+    - '%message%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-Confess-Logs-File:
+    Description:
+    - '%target-player% зізнався у використанні читів.'
+    - 'Час: %time%'
+    - 'Тривалість перевірки: %duration%'
+    - ''
+  Cmd-Arg-Confirm-Logs-File:
+    Description:
+    - 'Гравець, який підтвердив %initiator-player%: %target-player%'
+    - 'Тривалість перевірки: %duration%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-KnockBack-Logs-File:
+    Description:
+    - '%initiator-player% перевіряє гравця %target-player% на анти-відкидання.'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-Spec-Logs-File:
+    Description:
+    - '%initiator-player% почав(ла) стежити за гравцем %target-player%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-Start-Logs-File:
+    Description:
+    - 'Хто викликав на перевірку: %initiator-player%'
+    - 'Який гравець на перевірці: %target-player%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-StopAll-Logs-File:
+    Description:
+    - '%initiator-player% зупинив перевірку для всіх гравців.'
+    - 'Гравців було на перевірці: %amount%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-Stop-Logs-File:
+    Description:
+    - 'Хто визнав невинним: %initiator-player%'
+    - 'Якого гравця визнано невинним: %target-player%'
+    - 'Час: %time%'
+    - 'Тривалість перевірки: %duration%'
+    - ''
+  Cmd-Arg-Timer-Add-Logs-File:
+    Description:
+    - '%initiator-player% подовжив(ла) таймер для гравця %target-player%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-Timer-Continue-Logs-File:
+    Description:
+    - '%initiator-player% запустив(ла) таймер для гравця %target-player%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-Timer-Set-Logs-File:
+    Description:
+    - '%initiator-player% встановив(ла) таймер для гравця %target-player%'
+    - 'Час: %time%'
+    - ''
+  Cmd-Arg-Timer-Stop-Logs-File:
+    Description:
+    - '%initiator-player% зупинив(ла) таймер для гравця %target-player%'
+    - 'Час: %time%'
+    - ''
+  Target-Quit-Server-Logs-File:
+    Description:
+    - '%target-player% вийшов під час перевірки.'
+    - 'Час: %time%'
+    - 'Тривалість перевірки: %duration%'
+    - ''
+  Cmd-Arg-Brand-Logs-File:
+    Description:
+    - ''
+    - Дані клієнта гравця %target-player%
+    - 'Тип клієнта: %brand%'
+    - 'Модератор: %initiator-player%'
+    - 'Час: %time%'
+    - ''

@@ -1,0 +1,152 @@
+[16:42:32 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] while scanning for the next token
+found character '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 1, column 1:
+    		#
+    ^
+
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: org.yaml.snakeyaml.scanner.ScannerImpl (Line: 445)
+while scanning for the next token
+found character '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 1, column 1:
+    		#
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:445)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:238)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:210)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:152)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:156)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:178)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:493)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:446)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.parseIgnoredSections(FilesUpdater.java:123)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.processUpdate(FilesUpdater.java:62)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.update(FilesUpdater.java:34)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.update(FilesUpdater.java:22)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdate.filesUpdate(FilesUpdate.java:89)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Main.onEnable(Main.java:128)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:280)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:202)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:658)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:607)
+	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:743)
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:488)
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:322)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1163)
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:310)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[16:59:43 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] while scanning for the next token
+found character '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 1, column 1:
+    		#
+    ^
+
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: org.yaml.snakeyaml.scanner.ScannerImpl (Line: 445)
+while scanning for the next token
+found character '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 1, column 1:
+    		#
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:445)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:238)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:210)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:152)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:156)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:178)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:493)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:446)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.parseIgnoredSections(FilesUpdater.java:123)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.processUpdate(FilesUpdater.java:62)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.update(FilesUpdater.java:34)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.update(FilesUpdater.java:22)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.Files.FilesUpdate.filesUpdate(FilesUpdate.java:89)
+	at sCheckPlayer-1780235981808.jar//pl.snon_ss.scheckplayer.Main.onEnable(Main.java:128)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:280)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:202)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+	at PlugManX.jar//bukkit.com.rylinaux.plugman.pluginmanager.BukkitPluginManager.loadAndEnablePlugin(BukkitPluginManager.java:374)
+	at PlugManX.jar//bukkit.com.rylinaux.plugman.pluginmanager.BukkitPluginManager.load(BukkitPluginManager.java:358)
+	at PlugManX.jar//core.com.rylinaux.plugman.plugins.PluginManager.load(PluginManager.java:173)
+	at PlugManX.jar//paper.com.rylinaux.plugman.pluginmanager.PaperPluginManager.load(PaperPluginManager.java:59)
+	at PlugManX.jar//core.com.rylinaux.plugman.commands.executables.ReloadCommand.reloadPlugin(ReloadCommand.java:137)
+	at PlugManX.jar//core.com.rylinaux.plugman.commands.executables.ReloadCommand.execute(ReloadCommand.java:100)
+	at PlugManX.jar//bukkit.com.rylinaux.plugman.commands.PlugManCommandHandler.onCommand(PlugManCommandHandler.java:70)
+	at PlugManX.jar//paper.com.rylinaux.plugman.commands.PaperCommandCreator$1.execute(PaperCommandCreator.java:35)
+	at io.papermc.paper.command.brigadier.PaperCommands.lambda$register$2(PaperCommands.java:173)
+	at com.mojang.brigadier.context.ContextChain.runExecutable(ContextChain.java:73)
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:30)
+	at net.minecraft.commands.execution.tasks.ExecuteCommand.execute(ExecuteCommand.java:13)
+	at net.minecraft.commands.execution.UnboundEntryAction.lambda$bind$0(UnboundEntryAction.java:8)
+	at net.minecraft.commands.execution.CommandQueueEntry.execute(CommandQueueEntry.java:5)
+	at net.minecraft.commands.execution.ExecutionContext.runCommandQueue(ExecutionContext.java:105)
+	at net.minecraft.commands.Commands.executeCommandInContext(Commands.java:450)
+	at net.minecraft.commands.Commands.performCommand(Commands.java:357)
+	at net.minecraft.commands.Commands.performCommand(Commands.java:347)
+	at net.minecraft.commands.Commands.performCommand(Commands.java:341)
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.performUnsignedChatCommand(ServerGamePacketListenerImpl.java:2215)
+	at net.minecraft.server.network.ServerGamePacketListenerImpl.lambda$handleChatCommand$11(ServerGamePacketListenerImpl.java:2188)
+	at net.minecraft.server.TickTask.run(TickTask.java:18)
+	at net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:155)
+	at net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:24)
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:1448)
+	at net.minecraft.server.MinecraftServer.doRunTask(MinecraftServer.java:176)
+	at net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:129)
+	at net.minecraft.server.MinecraftServer.pollTaskInternal(MinecraftServer.java:1428)
+	at net.minecraft.server.MinecraftServer.pollTask(MinecraftServer.java:1422)
+	at net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:118)
+	at net.minecraft.server.MinecraftServer.waitUntilNextTick(MinecraftServer.java:1383)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1264)
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:310)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+
+[17:02:07 | 31.05.2026] [Paper 1.21.4-232-12d8fe0 (MC: 1.21.4)] while scanning for the next token
+found character '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 1, column 1:
+    		#
+    ^
+
+Java: 21.0.9 | Host: Windows 10 10.0 (amd64)
+Occurred at: org.yaml.snakeyaml.scanner.ScannerImpl (Line: 445)
+while scanning for the next token
+found character '\t(TAB)' that cannot start any token. (Do not use \t(TAB) for indentation)
+ in 'reader', line 1, column 1:
+    		#
+    ^
+
+	at org.yaml.snakeyaml.scanner.ScannerImpl.fetchMoreTokens(ScannerImpl.java:445)
+	at org.yaml.snakeyaml.scanner.ScannerImpl.checkToken(ScannerImpl.java:238)
+	at org.yaml.snakeyaml.parser.ParserImpl$ParseImplicitDocumentStart.produce(ParserImpl.java:210)
+	at org.yaml.snakeyaml.parser.ParserImpl.peekEvent(ParserImpl.java:161)
+	at org.yaml.snakeyaml.parser.ParserImpl.checkEvent(ParserImpl.java:152)
+	at org.yaml.snakeyaml.composer.Composer.getSingleNode(Composer.java:156)
+	at org.yaml.snakeyaml.constructor.BaseConstructor.getSingleData(BaseConstructor.java:178)
+	at org.yaml.snakeyaml.Yaml.loadFromReader(Yaml.java:493)
+	at org.yaml.snakeyaml.Yaml.load(Yaml.java:446)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.parseIgnoredSections(FilesUpdater.java:123)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.processUpdate(FilesUpdater.java:62)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.update(FilesUpdater.java:34)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdater.update(FilesUpdater.java:22)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Files.FilesUpdate.filesUpdate(FilesUpdate.java:89)
+	at sCheckPlayer-4.8.jar//pl.snon_ss.scheckplayer.Main.onEnable(Main.java:128)
+	at org.bukkit.plugin.java.JavaPlugin.setEnabled(JavaPlugin.java:280)
+	at io.papermc.paper.plugin.manager.PaperPluginInstanceManager.enablePlugin(PaperPluginInstanceManager.java:202)
+	at io.papermc.paper.plugin.manager.PaperPluginManagerImpl.enablePlugin(PaperPluginManagerImpl.java:109)
+	at org.bukkit.plugin.SimplePluginManager.enablePlugin(SimplePluginManager.java:520)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugin(CraftServer.java:658)
+	at org.bukkit.craftbukkit.CraftServer.enablePlugins(CraftServer.java:607)
+	at net.minecraft.server.MinecraftServer.loadWorld0(MinecraftServer.java:743)
+	at net.minecraft.server.MinecraftServer.loadLevel(MinecraftServer.java:488)
+	at net.minecraft.server.dedicated.DedicatedServer.initServer(DedicatedServer.java:322)
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:1163)
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:310)
+	at java.base/java.lang.Thread.run(Thread.java:1583)
+

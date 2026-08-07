@@ -1,0 +1,13 @@
+revive:
+  spawn: death
+  method: command
+  price:
+    ==: org.bukkit.inventory.ItemStack
+    v: 4189
+    type: NETHER_STAR
+  ritual:
+    price:
+      ==: org.bukkit.inventory.ItemStack
+      v: 4189
+      type: TOTEM_OF_UNDYING
+    ritualname: false

@@ -1,0 +1,229 @@
+menu_title: '&0Предпросмотр: Кит ПВП'
+open_command: pvpkitpreview
+size: 54
+
+items:
+  # --- РЯД 1 ---
+  'totem_r1':
+    material: TOTEM_OF_UNDYING
+    slot: 1
+    display_name: '&fТотем бессмертия'
+
+  'helmet':
+    material: NETHERITE_HELMET
+    slot: 2
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;4
+    display_name: '&fНезеритовый шлем'
+    lore:
+      - '&7Защита IV'
+      - '&7Подводное дыхание III'
+      - '&7Подводник'
+      - '&7Прочность III'
+      - '&7Починка'
+
+  'chestplate':
+    material: NETHERITE_CHESTPLATE
+    slot: 3
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;4
+    display_name: '&fНезеритовый нагрудник'
+    lore:
+      - '&7Защита IV'
+      - '&7Прочность IV'
+      - '&7Починка'
+
+  'leggings':
+    material: NETHERITE_LEGGINGS
+    slot: 4
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;4
+    display_name: '&fНезеритовые поножи'
+    lore:
+      - '&7Защита IV'
+      - '&7Прочность III'
+      - '&7Починка'
+
+  'boots':
+    material: NETHERITE_BOOTS
+    slot: 5
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;4
+    display_name: '&fНезеритовые ботинки'
+    lore:
+      - '&7Защита IV'
+      - '&7Скорость души III'
+      - '&7Подводная ходьба III'
+      - '&7Прочность III'
+      - '&7Починка'
+
+  'sword':
+    material: NETHERITE_SWORD
+    slot: 6
+    enchantments:
+      - DAMAGE_ALL;5
+    display_name: '&fНезеритовый меч'
+    lore:
+      - '&7Острота V'
+      - '&7Заговор огня II'
+      - '&7Добыча III'
+      - '&7Прочность III'
+      - '&7Починка'
+
+  'crossbow':
+    material: CROSSBOW
+    slot: 7
+    enchantments:
+      - MULTISHOT;1
+    display_name: '&fАрбалет'
+    lore:
+      - '&7Тройной выстрел'
+      - '&7Быстрая перезарядка III'
+      - '&7Прочность III'
+      - '&7Починка'
+
+  # --- РЯД 2 ---
+  'wind_charge_64':
+    material: WIND_CHARGE
+    slot: 10
+    amount: 64
+    display_name: '&fЗаряд ветра'
+
+  'cobweb_32':
+    material: COBWEB
+    slot: 11
+    amount: 32
+    display_name: '&fПаутина'
+
+  'golden_apple_16':
+    material: GOLDEN_APPLE
+    slot: 12
+    amount: 16
+    display_name: '&fЗолотое яблоко'
+
+  'mace':
+    material: MACE
+    slot: 13
+    enchantments:
+      - BREACH;5
+    display_name: '&fБулава'
+    lore:
+      - '&7Порыв ветра III'
+      - '&7Плотность V'
+      - '&7Прочность III'
+      - '&7Починка'
+
+  'enchanted_apple_2':
+    material: ENCHANTED_GOLDEN_APPLE
+    slot: 14
+    amount: 2
+    display_name: '&fЗачарованное золотое яблоко'
+
+  'golden_carrot_64':
+    material: GOLDEN_CARROT
+    slot: 15
+    amount: 64
+    display_name: '&fЗолотая морковь'
+
+  'spectral_arrow_64':
+    material: SPECTRAL_ARROW
+    slot: 16
+    amount: 64
+    display_name: '&fСпектральная стрела'
+
+  # --- РЯД 3 ---
+  'ender_pearl_1':
+    material: ENDER_PEARL
+    slot: 19
+    amount: 16
+    display_name: '&fЭндер жемчуг'
+
+  'str_potions':
+    material: SPLASH_POTION
+    slots: [20, 21, 22, 23, 24]
+    display_name: '&fВзрывное зелье силы II'
+    lore:
+      - '&7Сила II (1:30)'
+
+  'obsidian_32':
+    material: OBSIDIAN
+    slot: 25
+    amount: 32
+    display_name: '&fОбсидиан'
+
+  # --- РЯД 4 ---
+  'ender_pearl_2':
+    material: ENDER_PEARL
+    slot: 28
+    amount: 16
+    display_name: '&fЭндер жемчуг'
+
+  'speed_potions':
+    material: SPLASH_POTION
+    slots: [29, 30, 31, 32, 33]
+    display_name: '&fВзрывное зелье скорости II'
+    lore:
+      - '&7Скорость II (1:30)'
+
+  'end_crystal_32':
+    material: END_CRYSTAL
+    slot: 34
+    amount: 32
+    display_name: '&fКристалл Энда'
+
+  # --- РЯД 5 ---
+  'ender_pearl_3':
+    material: ENDER_PEARL
+    slot: 37
+    amount: 16
+    display_name: '&fЭндер жемчуг'
+
+  'milk_buckets':
+    material: MILK_BUCKET
+    slots: [38, 39, 40]
+    display_name: '&fВедро молока'
+
+  'totems_r5':
+    material: TOTEM_OF_UNDYING
+    slots: [41, 42, 43]
+    display_name: '&fТотем бессмертия'
+
+  # --- РЯД 6 (Кнопки управления) ---
+  'back_red_dye':
+    material: RED_DYE
+    slot: 47
+    display_name: '&cНазад в Шоп'
+    left_click_commands:
+      - '[player] tokenshop'
+
+  'buy_dye':
+    material: LIME_DYE
+    slot: 51
+    display_name: '&aКупить Кит PVP'
+    lore:
+      - '&7Цена: &b5000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 5000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов'
+        has_space:
+          type: has empty slots
+          amount: 20
+          deny_commands:
+            - '[message] &cОсвободите инвентарь! Вам нужно минимум 20 свободных слотов.'
+    left_click_commands:
+      - '[console] p take %player_name% 5000'
+      - '[console] kit pvp %player_name%'
+      - '[message] &aВы успешно купили Кит PVP!'
+      - '[close]'
+
+  # --- ЗАПОЛНЕНИЕ СЕРЫМ СТЕКЛОМ ---
+  'filler':
+    material: GRAY_STAINED_GLASS_PANE
+    slots: [0, 8, 9, 17, 18, 26, 27, 35, 36, 44, 45, 46, 48, 49, 50, 52, 53]
+    display_name: '&cЕсли у вас нету места не покупайте кит!'

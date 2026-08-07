@@ -1,0 +1,31 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 84.15.184.141
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 0
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1780082823289
+  login: 1780082807142
+money: '0'
+last-account-name: shalavamertvaia
+logoutlocation:
+  world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+  world-name: world
+  x: 102.1545381213767
+  y: 58.60834817548656
+  z: 460.96550931690683
+  yaw: -150.5997772216797
+  pitch: 34.05002975463867

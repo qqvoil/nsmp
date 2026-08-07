@@ -1,0 +1,36 @@
+menu_title: '&8Building'
+open_command: building
+register_command: true
+size: 27
+items:
+  'gray_background':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-26
+    display_name: ' '
+  smp1_button:
+    material: DIAMOND_PICKAXE
+    slot: 12
+    display_name: '&a&lBuilding1'
+    lore:
+      - ' '
+      - '&7Ванила'
+      - '&7Вайп раз в три месяца'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[connect] building1'
+      - '[message] &aВы перешли на сервер Building1'
+  smp2_button:
+    material: DIAMOND_PICKAXE
+    slot: 14
+    display_name: '&a&lBuilding2'
+    lore:
+      - ' '
+      - '&7Ванила'
+      - '&7Без вайпов'
+      - ' '
+      - '&eНажмите, чтобы войти'
+    left_click_commands:
+      - '[connect] building2'
+      - '[message] &aВы перешли на сервер Building2'

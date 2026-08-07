@@ -1,0 +1,186 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck timer stop command (stop the timer for a player).
+# Настройка команды /scheck timer stop (остановить таймер для игрока)
+Command-Arg-Timer-Stop:
+  # You can disable the "timer stop" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "timer stop"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Timer-Stop-Enabled: true
+  Sound-Timer-Stop-Check-Target:
+    # Enables or disables the player's sound when the player's timer is stopped.
+    # Включает или отключает звук игроку когда для игрока остановлен таймер.
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  Sound-Timer-Stop-Check-Initiator:
+    # Enables or disables the sound to the initiator when the timer is stopped for a player.
+    # Включает или отключает звук инициатору когда для игрока остановлен таймер.
+    Enabled: true
+    # You can set your own sound from the available list of sounds.
+    # The list of available sounds can be found at: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    # Здесь вы можете установить свой звук из списка доступных звуков.
+    # Список доступных звуков можно найти по ссылке: https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Sound.html
+    Sound: ENTITY_EXPERIENCE_ORB_PICKUP
+    # The "Volume" parameter determines the sound volume.
+    # The value "1.0" indicates maximum sound volume,
+    # and values less than "1.0" indicate quieter sounds.
+    #
+    # Параметр "Volume" отвечает за громкость звука.
+    # Значение "1.0" означает максимальную громкость звука,
+    # а значения менее "1.0" означают более тихие звуки.
+    Volume: 1.0
+    # The "Pitch" parameter determines the sound pitch.
+    # The value "1.0" indicates normal pitch,
+    # values less than "1.0" indicate a lower pitch,
+    # and values greater than "1.0" indicate a higher pitch.
+    #
+    # Параметр "Pitch" отвечает за тон звука.
+    # Значение "1.0" означает нормальный тон звука,
+    # а значения менее "1.0" означают более низкий тон,
+    # а значения больше "1.0" - более высокий тон.
+    Pitch: 1.0
+  BossBar:
+    # Does a player need to turn on the boss bar when the player's timer is paused?
+    # Нужно ли включать босс-бар игроку когда таймер игрока поставлен на паузу?
+    Enabled: true
+    # Determines the color of the boss bar.
+    # The value can be one of the predefined colors, for example:
+    # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+    #
+    # Определяет цвет босс-бара.
+    # Значение может быть одним из предопределенных цветов, например:
+    # PINK (розовый), BLUE (синий), RED (красный), GREEN (зеленый),
+    # YELLOW (желтый), PURPLE (пурпурный), WHITE (белый)
+    Boss-Bar-Color: RED
+    # Determines the style of the boss bar.
+    # The value can be one of the predefined styles, for example:
+    # SOLID (solid) means that the boss's health progress will be displayed
+    # as a continuous bar or filled color.
+    # SEGMENTED_6 (segmented with 6 segments) means that
+    # the health progress will be divided into 6 equal segments,
+    # and each segment will be displayed separately.
+    # SEGMENTED_10 (segmented with 10 segments) works similarly,
+    # but with 10 segments instead of 6.
+    # SEGMENTED_12 (segmented with 12 segments) displays the boss's health progress with 12 segments.
+    # SEGMENTED_20 (segmented with 20 segments) uses 20 segments
+    # to display the boss's health progress.
+    #
+    # Определяет стиль босс-бара.
+    # Значение может быть одним из предопределенных стилей, например:
+    # SOLID (твердый) означает, что прогресс здоровья босса будет отображаться
+    # как непрерывная полоса или заполненный цвет.
+    # SEGMENTED_6 (сегментированный с 6 сегментами) означает,
+    # что прогресс здоровья будет разбит на 6 равных сегментов,
+    # и каждый сегмент будет отображаться отдельно.
+    # SEGMENTED_10 (сегментированный с 10 сегментами) работает аналогично,
+    # но с 10 сегментами вместо 6.
+    # SEGMENTED_12 (сегментированный с 12 сегментами) отображает прогресс здоровья босса с 12 сегментами.
+    # SEGMENTED_20 (сегментированный с 20 сегментами) использует 20 сегментов
+    # для отображения прогресса здоровья босса.
+    Boss-Bar-Style: SOLID
+  BossBar-Sender:
+    # Should the reviewer turn on the boss bar when the player's timer is paused?
+    # Нужно ли включать босс-бар проверяющему когда таймер игрока поставлен на паузу?
+    Enabled: true
+    # Determines the color of the boss bar.
+    # The value can be one of the predefined colors, for example:
+    # PINK, BLUE, RED, GREEN, YELLOW, PURPLE, WHITE
+    #
+    # Определяет цвет босс-бара.
+    # Значение может быть одним из предопределенных цветов, например:
+    # PINK (розовый), BLUE (синий), RED (красный), GREEN (зеленый),
+    # YELLOW (желтый), PURPLE (пурпурный), WHITE (белый)
+    Boss-Bar-Color-Sender: RED
+    # Determines the style of the boss bar.
+    # The value can be one of the predefined styles, for example:
+    # SOLID (solid) means that the boss's health progress will be displayed
+    # as a continuous bar or filled color.
+    # SEGMENTED_6 (segmented with 6 segments) means that
+    # the health progress will be divided into 6 equal segments,
+    # and each segment will be displayed separately.
+    # SEGMENTED_10 (segmented with 10 segments) works similarly,
+    # but with 10 segments instead of 6.
+    # SEGMENTED_12 (segmented with 12 segments) displays the boss's health progress with 12 segments.
+    # SEGMENTED_20 (segmented with 20 segments) uses 20 segments
+    # to display the boss's health progress.
+    #
+    # Определяет стиль босс-бара.
+    # Значение может быть одним из предопределенных стилей, например:
+    # SOLID (твердый) означает, что прогресс здоровья босса будет отображаться
+    # как непрерывная полоса или заполненный цвет.
+    # SEGMENTED_6 (сегментированный с 6 сегментами) означает,
+    # что прогресс здоровья будет разбит на 6 равных сегментов,
+    # и каждый сегмент будет отображаться отдельно.
+    # SEGMENTED_10 (сегментированный с 10 сегментами) работает аналогично,
+    # но с 10 сегментами вместо 6.
+    # SEGMENTED_12 (сегментированный с 12 сегментами) отображает прогресс здоровья босса с 12 сегментами.
+    # SEGMENTED_20 (сегментированный с 20 сегментами) использует 20 сегментов
+    # для отображения прогресса здоровья босса.
+    Boss-Bar-Style-Sender: SOLID
+  Title-Timer-Stop-Target:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: false
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Title-Timer-Stop-Initiator:
+    # Enables or disables on-screen messages?
+    # Включает или отключает сообщения на экран?
+    Enabled: false
+    # Time in ticks for the title to fade in (1 second = 20 ticks).
+    # Время появления заголовка в тиках (1 секунда = 20 тиков).
+    Fade-In-Time: 10
+    # Time in ticks (1 second = 20 ticks) during which the title stays on the screen.
+    # Время, в тиках (1 секунда = 20 тиков), в течение которого заголовок остается на экране.
+    Stay-Time: 70
+    # Time in ticks for the title to fade out (1 second = 20 ticks).
+    # Время исчезновения заголовка в тиках (1 секунда = 20 тиков).
+    Fade-Out-Time: 20
+  Notify-Message-Admin:
+    # Enables or disables messages to online admins.
+    # Включает или отключает сообщения онлайн админам.
+    Enabled: false
+    # Enables or disables console messages.
+    # Включает или отключает сообщения в консоль.
+    Notify-Message-Console: true

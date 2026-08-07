@@ -1,0 +1,75 @@
+teleportenabled: true
+teleportauto: false
+godmode: false
+flymode: false
+muted: false
+jailed: false
+ip-address: 91.79.36.126
+afk: false
+socialspy: false
+npc: false
+powertoolsenabled: true
+accepting-pay: true
+baltop-exempt: false
+timestamps:
+  lastteleport: 1784731850340
+  lastheal: 0
+  mute: 0
+  jail: 0
+  onlinejail: 0
+  logout: 1784731884557
+  login: 1784731766369
+  kits:
+    smppvp: 1781549857461
+    artemarcan: 1781549848391
+money: '0'
+last-account-name: maksimivakov
+lastlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: 4342.953979865133
+  y: -12.668736804132006
+  z: 4515.339952421888
+  yaw: -170.92404174804688
+  pitch: 7.826353073120117
+logoutlocation:
+  world: 457c69b7-5bd3-4d01-aba6-043647775222
+  world-name: world
+  x: -9.54751955163892
+  y: 92.9947560897652
+  z: -5.5484648287017775
+  yaw: 70.87612915039062
+  pitch: 55.54011154174805
+homes:
+  sobaki:
+    world: 457c69b7-5bd3-4d01-aba6-043647775222
+    world-name: world
+    x: -511.3569183825807
+    y: -32.33323000810777
+    z: 15.8138807889977
+    yaw: -54.87342834472656
+    pitch: 36.01974105834961
+  dom:
+    world: 457c69b7-5bd3-4d01-aba6-043647775222
+    world-name: world
+    x: 4347.306415347107
+    y: -37.0
+    z: 4518.097601435942
+    yaw: -35.9761962890625
+    pitch: 28.068525314331055
+  basestart:
+    world: 457c69b7-5bd3-4d01-aba6-043647775222
+    world-name: world
+    x: -555.9926396641073
+    y: -35.0
+    z: 150.13969791867603
+    yaw: 60.5837516784668
+    pitch: 76.567138671875
+  base:
+    world: e8c29de7-547a-4bc2-acfb-18ecd884dcc4
+    world-name: world
+    x: -555.9926396641073
+    y: -35.0
+    z: 150.13969791867603
+    yaw: 60.5837516784668
+    pitch: 76.567138671875
