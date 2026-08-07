@@ -169,9 +169,26 @@ systemctl enable --now nsmp-web.service
 systemctl restart nsmp-web.service
 echo -e "${GREEN}✓ Сервис nsmp-web запущен и работает в фоновом режиме.${NC}"
 
-# 7. Комплексный Health Check
-echo -e "\n${YELLOW}🧪 [6/6] Проверка работы сервисов...${NC}"
-sleep 1
+# 7. Развертывание и запуск игровых Minecraft серверов
+echo -e "\n${YELLOW}🎮 [6/7] Проверка и запуск игровых серверов NeverSMP...${NC}"
+if [ -f "${BASE_DIR}/server.zip" ] && [ ! -d "${BASE_DIR}/server" ]; then
+    echo -e "${CYAN}📦 Распаковка архива игровых серверов server.zip...${NC}"
+    apt-get install -y -qq unzip
+    unzip -q "${BASE_DIR}/server.zip" -d "${BASE_DIR}/server"
+    echo -e "${GREEN}✓ Серверы распакованы в ${BASE_DIR}/server.${NC}"
+fi
+
+if [ -d "${BASE_DIR}/server" ]; then
+    chmod +x "${BASE_DIR}/scripts/server-manager.sh"
+    "${BASE_DIR}/scripts/server-manager.sh" start all || true
+    echo -e "${GREEN}✓ Игровые серверы запущены через tmux.${NC}"
+else
+    echo -e "${YELLOW}ℹ Каталог ${BASE_DIR}/server еще не загружен. Загрузите server.zip и запустите ./deploy.sh снова.${NC}"
+fi
+
+# 8. Комплексный Health Check
+echo -e "\n${YELLOW}🧪 [7/7] Проверка работы сервисов...${NC}"
+sleep 2
 API_RES=$(curl -s http://127.0.0.1:5000/api/catalog | grep -o '"success":true' || echo 'FAILED')
 if [ "$API_RES" = '"success":true' ]; then
     echo -e "${GREEN}✓ Backend REST API: OK (200)${NC}"
