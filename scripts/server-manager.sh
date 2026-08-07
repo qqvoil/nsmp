@@ -51,6 +51,14 @@ start_server() {
         return 1
     fi
 
+    if [[ ! -f "$target_dir/$jar" ]]; then
+        local found_jar
+        found_jar=$(find "$target_dir" -maxdepth 1 -name "*.jar" | head -n 1)
+        if [[ -n "$found_jar" ]]; then
+            jar=$(basename "$found_jar")
+        fi
+    fi
+
     echo "🚀 Запуск $srv ($dir) [RAM: $ram_max, Port: $port]..."
     if [[ "$srv" == "velocity" || "$srv" == "limbo" ]]; then
         tmux new-session -d -s "${TMUX_PREFIX}_${srv}" -c "$target_dir" \
