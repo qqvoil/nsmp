@@ -44,6 +44,13 @@ if ! command -v java &>/dev/null || [ "$(java -version 2>&1 | grep -o 'version "
 fi
 
 pip install --break-system-packages -q flask gunicorn requests python-dotenv 2>/dev/null || pip install -q flask gunicorn requests python-dotenv
+
+# Ensure system hostname is mapped in /etc/hosts for Java network stack
+SYS_HOSTNAME=$(cat /etc/hostname 2>/dev/null || hostname)
+if [[ -n "$SYS_HOSTNAME" ]] && ! grep -q "$SYS_HOSTNAME" /etc/hosts; then
+    echo "127.0.0.1 ${SYS_HOSTNAME}" >> /etc/hosts
+fi
+
 echo -e "${GREEN}✓ Системные пакеты, Java 21 и библиотеки Python установлены.${NC}"
 
 # 3. Конфигурация .env

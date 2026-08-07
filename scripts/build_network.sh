@@ -86,6 +86,9 @@ assemble_servers() {
             tar -xzf "${MAPS_DIR}/${map_archive}" -C "${srv_dir}/world"
         fi
     done
+
+    # Clean any stale session locks
+    find "${SERVER_DIR}" -name "session.lock" -delete 2>/dev/null || true
 }
 
 link_plugins() {
@@ -102,11 +105,13 @@ link_plugins() {
     # Paper Common plugins for all game servers
     local GAME_SERVERS=("Lobby" "SMP1" "SMP2" "anarchy1" "anarchy2" "hardcore1" "hardcore2" "building1" "building2")
     for srv in "${GAME_SERVERS[@]}"; do
+        # Clean any improperly placed velocity plugins in paper servers
+        rm -f "${SERVER_DIR}/${srv}/plugins/"*velocity* "${SERVER_DIR}/${srv}/plugins/"*Velocity* "${SERVER_DIR}/${srv}/plugins/"*TCPShield* "${SERVER_DIR}/${srv}/plugins/"*veloauth* 2>/dev/null || true
         for p in "${PLUGINS_POOL}"/*.jar; do
             local p_name
             p_name=$(basename "$p")
             # Skip velocity-only plugins
-            if [[ "$p_name" == *"velocity"* || "$p_name" == *"Geyser-Velocity"* || "$p_name" == *"TCPShield"* || "$p_name" == *"veloauth"* ]]; then
+            if [[ "$p_name" == *"[Vv]elocity"* || "$p_name" == *"Velocity"* || "$p_name" == *"velocity"* || "$p_name" == *"Geyser-Velocity"* || "$p_name" == *"TCPShield"* || "$p_name" == *"veloauth"* ]]; then
                 continue
             fi
             cp -u "$p" "${SERVER_DIR}/${srv}/plugins/" 2>/dev/null || cp "$p" "${SERVER_DIR}/${srv}/plugins/"
