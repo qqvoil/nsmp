@@ -31,8 +31,8 @@ fi
 echo -e "${YELLOW}📦 [1/6] Установка системных пакетов и зависимостей...${NC}"
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
-apt-get install -y -qq python3 python3-pip nginx certbot python3-certbot-nginx mariadb-server ethtool iptables tmux curl jq
-pip install --break-system-packages -q flask gunicorn requests python-dotenv
+apt-get install -y -qq python3 python3-pip nginx certbot python3-certbot-nginx mariadb-server ethtool iptables tmux curl jq openjdk-17-jre-headless
+pip install --break-system-packages -q flask gunicorn requests python-dotenv 2>/dev/null || pip install -q flask gunicorn requests python-dotenv
 echo -e "${GREEN}✓ Системные пакеты и библиотеки Python установлены.${NC}"
 
 # 3. Конфигурация .env
@@ -145,6 +145,7 @@ echo -e "${GREEN}✓ Nginx успешно обновлен и перезапущ
 
 # 6. Служба магазина nsmp-web (Gunicorn WSGI)
 echo -e "\n${YELLOW}🐍 [5/6] Настройка службы бэкенда nsmp-web...${NC}"
+GUNICORN_BIN=$(which gunicorn 2>/dev/null || echo "/usr/bin/gunicorn")
 cat << SYSEOF > /etc/systemd/system/nsmp-web.service
 [Unit]
 Description=NeverSMP Production Web Store & Admin Panel
@@ -154,7 +155,7 @@ After=network.target mariadb.service
 Type=simple
 User=root
 WorkingDirectory=${BASE_DIR}/backend
-ExecStart=/usr/local/bin/gunicorn -w 4 -b 127.0.0.1:5000 app:app
+ExecStart=${GUNICORN_BIN} -w 4 -b 127.0.0.1:5000 app:app
 Restart=always
 RestartSec=3
 EnvironmentFile=${BASE_DIR}/backend/.env
