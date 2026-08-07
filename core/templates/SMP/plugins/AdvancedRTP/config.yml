@@ -166,7 +166,7 @@ cooldown:
 
   # Message shown when a player is on cooldown.
   # Use {time} placeholder for remaining cooldown time.
-  message: "&cYou must wait {time} seconds before using RTP again!"
+  message: "&cПодождите {time} сек. перед следующим использованием RTP!"
 
   # Permission to bypass cooldown.
   # Players with this permission can use RTP without waiting.
@@ -186,7 +186,7 @@ economy:
 
   # Message shown when player doesn't have enough money.
   # Use {cost} placeholder for the cost amount.
-  insufficient-funds-message: "&cYou don't have enough money to use RTP! Cost: {cost}"
+  insufficient-funds-message: "&cНедостаточно средств для RTP! Стоимость: {cost}"
 
 
 # EFFECTS SETTINGS
@@ -256,50 +256,50 @@ effects:
 # Supports color codes using & (e.g., &a for green, &c for red).
 messages:
   # Message when RTP teleport is successful.
-  success: "&aSuccessfully teleported to a random location!"
+  success: "&aВы успешно телепортированы в случайную точку мира!"
 
   # Message when no safe location is found after maximum attempts.
-  no-safe-location: "&cCould not find a safe location after maximum attempts. Please try again."
+  no-safe-location: "&cНе удалось найти безопасное место. Попробуйте еще раз."
 
   # Message when the specified world is not found or is blacklisted.
-  world-not-found: "&cWorld not found or not allowed for RTP."
+  world-not-found: "&cМир не найден или запрещен для RTP."
 
   # Message when player doesn't have permission to use the command.
-  no-permission: "&cYou don't have permission to use this command."
+  no-permission: "&cУ вас нет прав для использования этой команды."
 
   # Message when configuration is reloading.
-  reloading: "&aReloading configuration..."
+  reloading: "&aПерезагрузка конфигурации..."
 
   # Message when configuration has been reloaded successfully.
-  reloaded: "&aConfiguration reloaded successfully!"
+  reloaded: "&aКонфигурация успешно перезагружена!"
 
   # Message when command usage is invalid.
-  invalid-command: "&cInvalid command usage. Use /rtp [world], /rtp <player>, /rtp <player> <world>, or /rtp reload"
+  invalid-command: "&cНеверное использование. /rtp [мир], /rtp <игрок> или /rtp reload"
 
   # Message when teleport countdown starts.
   # Use {time} placeholder for remaining time in seconds.
-  teleport-start: "&eTeleporting in {time} seconds... Don't move!"
+  teleport-start: "&eТелепортация через {time} сек... Не двигайтесь!"
 
   # Message when teleport is cancelled due to player movement.
-  teleport-cancelled: "&cTeleport cancelled! You moved."
+  teleport-cancelled: "&cТелепортация отменена! Вы пошевелились."
 
   # Title shown during teleport countdown.
-  teleport-countdown-title: "Teleporting..."
+  teleport-countdown-title: "&6&lТелепортация..."
 
   # Subtitle shown during teleport countdown.
   # Use {time} placeholder for remaining time in seconds.
-  teleport-countdown-subtitle: "&eDon't move for {time} seconds!"
+  teleport-countdown-subtitle: "&eНе двигайтесь {time} сек.!"
 
   # Title shown when teleport is cancelled.
-  teleport-cancelled-title: "Teleport Cancelled"
+  teleport-cancelled-title: "&c&lОтменено"
 
   # Subtitle shown when teleport is cancelled.
-  teleport-cancelled-subtitle: "&cYou moved!"
+  teleport-cancelled-subtitle: "&cВы сдвинулись с места!"
 
   # Message when admin teleports another player.
   # Use {player} and {world} placeholders.
-  rtp-other-player: "&aTeleported player {player} to a random location in {world}!"
+  rtp-other-player: "&aИгрок {player} телепортирован в случайную точку мира {world}!"
 
   # Message when specified player is not online.
   # Use {player} placeholder.
-  player-not-online: "&cPlayer {player} is not online."
+  player-not-online: "&cИгрок {player} сейчас не в сети."

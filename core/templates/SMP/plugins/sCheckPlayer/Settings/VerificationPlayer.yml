@@ -15,7 +15,7 @@ Settings:
   Verification:
     # Enable checking if a period .help needs to be entered in chat to continue the game
     # Нужно ли включать проверку на то чтобы нужно ввести в чат символ .help чтобы продолжить игру
-    Enabled: false
+    Enabled: true
     # Enables or disables re-checking for cheats after each re-entry to the server.
     # Включает или отключает повторную проверку на читы после каждого перезахода на сервер.
     Re-Check-After-Restart: false
@@ -28,7 +28,7 @@ Settings:
       Time: 10
     # Enables or disables kicking a player when time is up.
     # Включает или отключает кик игрока когда время вышло.
-    Player-Kick-Time-Out: false
+    Player-Kick-Time-Out: true
   Inventory-Hide:
     # Enables or disables hiding the player's inventory when starting a scan. After a successful check, the inventory is restored.
     # Включает или отключает скрытие инвентаря игрока при начале проверки. После успешной проверки инвентарь восстанавливается.
@@ -133,7 +133,7 @@ Settings:
     # Значение может быть одним из предопределенных цветов, например:
     # PINK (розовый), BLUE (синий), RED (красный), GREEN (зеленый),
     # YELLOW (желтый), PURPLE (пурпурный), WHITE (белый)
-    Boss-Bar-Color: RED
+    Boss-Bar-Color: YELLOW
     # Determines the style of the boss bar.
     # The value can be one of the predefined styles, for example:
     # SOLID (solid) means that the boss's health progress will be displayed
@@ -164,9 +164,13 @@ Settings:
     # Specify symbols here
     # Укажите здесь список символов.
     Symbols-List:
+    - never
+    - smp
+    - void
+    - 1234
+    - neversmp
     - .smp
     - .never
-    - .neversmp
   First-Point:
     # Do we need to enable player teleportation when a player needs to undergo inspection?
     # Нужно ли включать телепортацию игрока когда игроку требуется пройти проверку?

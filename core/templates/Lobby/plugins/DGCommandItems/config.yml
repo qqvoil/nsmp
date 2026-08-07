@@ -23,16 +23,16 @@ settings:
 # Messages (supports & color codes and hex &#RRGGBB)
 # =====================================================
 messages:
-  no-permission: '&cYou don''t have permission to use this!'
-  cooldown: '&cYou must wait &e%time%&c before using this again!'
-  item-created: '&aItem &e%id% &acreated successfully!'
-  item-deleted: '&aItem &e%id% &adeleted successfully!'
-  item-given: '&aGave &e%amount%x %id% &ato &e%player%&a!'
-  item-not-found: '&cItem with id &e%id% &cnot found!'
-  config-reloaded: '&aConfiguration reloaded successfully!'
-  no-item-in-hand: '&cYou must hold an item in your hand!'
-  invalid-usage: '&cInvalid usage! &7Try &e/dgci help'
-  player-not-found: '&cPlayer &e%player% &cnot found!'
+  no-permission: '&cУ вас нет прав для использования этого предмета!'
+  cooldown: '&cПодождите &e%time%&c перед повторным использованием!'
+  item-created: '&aПредмет &e%id% &aуспешно создан!'
+  item-deleted: '&aПредмет &e%id% &aуспешно удален!'
+  item-given: '&aВыдано &e%amount%x %id% &aигроку &e%player%&a!'
+  item-not-found: '&cПредмет с id &e%id% &cне найден!'
+  config-reloaded: '&aКонфигурация успешно перезагружена!'
+  no-item-in-hand: '&cВозьмите предмет в руку!'
+  invalid-usage: '&cНеверное использование! &7Используйте &e/dgci help'
+  player-not-found: '&cИгрок &e%player% &cне найден!'
 
 # =====================================================
 # Items - This is where the magic happens!

@@ -64,5 +64,5 @@ update-checker:
   check-interval-hours: 12
 
 messages:
-  prefix: '&6&lAuctionHouse &8» '
-  price-below-min: '&cMinimum auction price is &6%min_price%&c.'
+  prefix: '&6&lАукцион &8» '
+  price-below-min: '&cМинимальная цена на аукционе: &6%min_price%&c.'

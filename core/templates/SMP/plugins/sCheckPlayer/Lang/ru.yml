@@ -748,6 +748,63 @@ Command-Arg-Timer-Set-Messages:
   - '&b[sCheckPlayer] &8- &fИспользование &6/%command% timer set [время]'
   - '&b[sCheckPlayer] &8- &fУстановить таймер для игрока.'
 #■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Сообщения верификации игрока.
+Verification-Player-Messages:
+  Verification-Prompt:
+  - '&8▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+  - '&6⚡ &e&lNeverSMP &8| &b&lПРОВЕРКА НА БОТА &6⚡'
+  - ''
+  - '&fПодтвердите, что вы реальный игрок:'
+  - '&fНапишите в чат проверочный код: &a&l%random-symbols%'
+  - '&7(у вас есть &c30 секунд&7 на ввод)'
+  - '&8▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬'
+  Verification-Prompt-Repeated:
+  - '&6⚡ &e[NeverSMP] &fОтправьте проверочный код в чат: &a&l%random-symbols%'
+  Kick-Message:
+  - '&cВы не успели ввести проверочный код за 30 секунд.'
+  - '&eПерезайдите на сервер и напишите код из чата.'
+  Success-Message:
+  - '&a✔ &2Проверка успешно пройдена! Приятной игры на &6NeverSMP&2!'
+  Only-Symbol-Message:
+  - '&cДля прохождения проверки введите именно код: &e%symbols%'
+  Title-Time-Out:
+    Title-Text: '&c&lВремя вышло!'
+    Subtitle-Text: '&7Вы не прошли проверку на бота'
+  Title-Start-Check:
+    Title-Text: '&6&lПРОВЕРКА НА БОТА'
+    Subtitle-Text: '&eНапишите &a&l%random-symbols% &eв чат'
+  Title-Enter-Symbol:
+    Title-Text: '&a&l✔ Проверка пройдена!'
+    Subtitle-Text: '&fПриятной игры на NeverSMP'
+  BossBar:
+    BossBar: '&eПроверка: напишите &a&l%random-symbols% &eв чат &7(&c%seconds% %secondsLabel%&7)'
+    BossBar-Label-Day-1: день
+    BossBar-Label-Days-2: дня
+    BossBar-Label-Days-3: дней
+    BossBar-Label-Hour-1: час
+    BossBar-Label-Hours-2: часа
+    BossBar-Label-Hours-3: часов
+    BossBar-Label-Minute-1: мин.
+    BossBar-Label-Minutes-2: мин.
+    BossBar-Label-Minutes-3: мин.
+    BossBar-Label-Second-1: сек.
+    BossBar-Label-Seconds-2: сек.
+    BossBar-Label-Seconds-3: сек.
+  ActionBar:
+    ActionBar: '&eПроверка: напишите &a&l%random-symbols% &eв чат &7(&c%seconds% сек.&7)'
+    ActionBar-Label-Day-1: день
+    ActionBar-Label-Days-2: дня
+    ActionBar-Label-Days-3: дней
+    ActionBar-Label-Hour-1: час
+    ActionBar-Label-Hours-2: часа
+    ActionBar-Label-Hours-3: часов
+    ActionBar-Label-Minute-1: мин.
+    ActionBar-Label-Minutes-2: мин.
+    ActionBar-Label-Minutes-3: мин.
+    ActionBar-Label-Second-1: сек.
+    ActionBar-Label-Seconds-2: сек.
+    ActionBar-Label-Seconds-3: сек.
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
 # Сообщения команды /scheck version
 Command-Arg-Version-Messages:
   No-Permission:

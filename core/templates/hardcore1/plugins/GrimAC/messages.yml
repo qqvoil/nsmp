@@ -1,17 +1,17 @@
-# \u00BB это " (двойной >>), ANSI и UTF-8 интерпретируют это по-разному... вы можете даже увидеть "?" из-за этого
+# \u00BB это " (двойной >>)
 prefix: "&bGrim &8\u00BB"
 
 alerts-enabled: "%prefix% &fОповещения включены"
 alerts-disabled: "%prefix% &fОповещения отключены"
-verbose-enabled: "%prefix% &fVerbose enabled"
-verbose-disabled: "%prefix% &fVerbose disabled"
-brands-enabled: "%prefix% &fBrands enabled"
-brands-disabled: "%prefix% &fBrands disabled"
-client-brand-format: "%prefix% &f%player% присоединился, используя %brand%"
-console-specify-target: "%prefix% &cВы должны указать цель в качестве консоли!"
-reloading: "%prefix% &7Reloading config..."
-reloaded: "%prefix% &fConfig has been reloaded."
-reload-failed: "%prefix% &cFailed to reload config."
+verbose-enabled: "%prefix% &fПодробный режим включен"
+verbose-disabled: "%prefix% &fПодробный режим отключен"
+brands-enabled: "%prefix% &fОтображение брендов включено"
+brands-disabled: "%prefix% &fОтображение брендов отключено"
+client-brand-format: "%prefix% &f%player% присоединился, используя &e%brand%"
+console-specify-target: "%prefix% &cВы должны указать цель из консоли!"
+reloading: "%prefix% &7Перезагрузка конфигурации..."
+reloaded: "%prefix% &fКонфигурация успешно перезагружена."
+reload-failed: "%prefix% &cНе удалось перезагрузить конфигурацию."
 player-not-found: "%prefix% &cИгрок исключен или находится вне сети!"
 player-not-this-server: "%prefix% &cИгрок не находится на этом сервере!"
 sender-not-found: "%prefix% &cВы не можете использовать эту команду, если у вас есть исключение!"
@@ -25,14 +25,14 @@ upload-log-upload-failure: "%prefix% &cЧто-то пошло не так при
 disconnect:
     timeout: "<lang:disconnect.timeout>"
     closed: "<lang:disconnect.closed>"
-    error: "<red>An error occurred whilst processing packets. Please contact the administrators."
-    blacklisted-forge: "<red>Your forge version is blacklisted due to inbuilt reach hacks.<newline><gold>Versions affected: 1.18.2-1.19.3<newline><newline><red>Please see https://github.com/MinecraftForge/MinecraftForge/issues/9309."
+    error: "<red>Произошла ошибка при обработке пакетов. Пожалуйста, свяжитесь с администрацией."
+    blacklisted-forge: "<red>Ваша версия Forge заблокирована из-за встроенных уязвимостей.<newline><gold>Затронутые версии: 1.18.2-1.19.3"
 run-as-player: "%prefix% &cЭту команду могут использовать только игроки!"
 run-as-player-or-console: "%prefix% &cЭту команду могут использовать только игроки или консоль!"
-webhook-not-enabled: "Discord webhooks are not enabled!"
-webhook-test-message: "test message"
-webhook-test-succeeded: "Discord webhook test succeeded!"
-webhook-test-failed: "Discord webhook test failed!"
+webhook-not-enabled: "Вебхуки Discord не включены!"
+webhook-test-message: "Тестовое сообщение"
+webhook-test-succeeded: "Тест вебхука Discord успешен!"
+webhook-test-failed: "Тест вебхука Discord не удался!"
 
 # Допустимые заполнители:
 # %prefix%
@@ -41,7 +41,7 @@ webhook-test-failed: "Discord webhook test failed!"
 # %description%
 # %experimental%
 # %vl% - нарушения
-# %verbose% - дополнительная информация от проверки, например, смещения, не все проверки добавляют информацию.
+# %verbose% - дополнительная информация от проверки
 alerts-format: "%prefix% &f%player% &bпровалил &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
 alerts-format-proxy: "%prefix% &f[&cproxy&f] &f%player% &bпровалил &f%check_name%%experimental% &f(x&c%vl%&f) &7%verbose%"
 experimental-symbol: "*"
@@ -59,7 +59,7 @@ profile:
 help:
     - "&7======================"
     - "/grim alerts &f- &7Включить/выключить оповещения"
-    - "/grim brands &f- &7Toggle brands"
+    - "/grim brands &f- &7Включить/выключить отображение брендов клиентов"
     - "/grim profile <игрок> &f- &7Просмотреть информацию об игроке"
     - "/grim help &f- &7Просмотреть это сообщение помощи"
     - "/grim debug <игрок> &f- &7Вывод прогноза разработчика"
@@ -68,12 +68,10 @@ help:
     - "/grim spectate <игрок> &f- &7Наблюдать за игроком"
     - "/grim verbose &f- &7Показывает все флаги без буферов"
     - "/grim log [0-255] &f- &7Загружает журнал отладки для флагов предсказания"
-    - "/grim history <player> [страница] &f- &7Показывает предыдущие предупреждения игрока"
+    - "/grim history <игрок> [страница] &f- &7Показывает предыдущие предупреждения игрока"
     - "&7======================"
 
 grim-history-load-failure: "%prefix% &cНе удалось загрузить подсистему истории! Проверьте консоль сервера на наличие ошибок."
 grim-history-disabled: "%prefix% &cПодсистема истории отключена!"
-# Valid placeholders: %prefix% %player% %page% %maxPages%
 grim-history-header: "%prefix% &bПоказ журналов для &f%player% (&f%page%&b/&f%maxPages%&f)"
-# Valid placeholders: %prefix% %grim_version% %client_brand% %client_version% %server_version% %check% %vl% %verbose% %timeago% %server%
 grim-history-entry: "%prefix% &8[&f%server%&8] &bПровалено &f%check% (x&c%vl%&f) &7%verbose% (&b%timeago% назад&7)"

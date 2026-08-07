@@ -6,20 +6,19 @@
 on place:
     if player's world is "world":
         cancel the event
-        send action bar "&cНельзя ставить блоки!" to player
+        send action bar "&cНельзя ставить блоки в лобби!" to player
 
 # Запрет на разрушение блоков
 on break:
     if player's world is "world":
         cancel the event
-        send action bar "&cНельзя ломать блоки!" to player
+        send action bar "&cНельзя ломать блоки в лобби!" to player
 
 # Запрет на взаимодействие с блоками
 on rightclick:
     if clicked block is set:
         if player's world is "world":
             cancel the event
-            send action bar "&cНельзя взаимодействовать с блоками!" to player
 
 # ============================================
 # ВЫДАЧА КОМПАСА В СЛОТ 0
@@ -29,15 +28,15 @@ on join:
     wait 2 ticks
     teleport player to spawn of world("world")
     clear player's inventory
-    set {_c} to recovery compass named "&d&lMENU" with lore "&cАнархия (без вайпов)" and "&bСМП (с вайпами)"
+    set {_c} to recovery compass named "&6&lВЫБОР РЕЖИМА &7(ПКМ)" with lore "&7Нажмите правой кнопкой мыши," and "&7чтобы открыть меню серверов &eNeverSMP"
     enchant {_c} with unbreaking 1
     set slot 0 of player's inventory to {_c}
 
 # Открытие меню по клику на компас
 on rightclick:
-    if player's held item is recovery compass named "&d&lMENU":
+    if player's held item is recovery compass:
         cancel the event
-        make player execute command "dmenu open server_selector"
+        make player execute command "dm open server_selector"
 
 # ============================================
 # БЛОКИРОВКА СЛОТА 0 (НЕЛЬЗЯ ПЕРЕМЕСТИТЬ)
@@ -51,6 +50,6 @@ on inventory click:
 
 # Защита от выбрасывания (клавиша Q)
 on drop:
-    if event-item is recovery compass named "&d&lMENU":
+    if event-item is recovery compass:
         cancel the event
-        send action bar "&cНельзя выбросить компас!" to player
+        send action bar "&cНельзя выбросить компас меню!" to player

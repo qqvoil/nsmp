@@ -14,60 +14,60 @@
 
 messages:
   # The prefix for all messages
-  prefix: '&f[&cGUIShop&f]'
+  prefix: '&8[&aМагазин&8]'
 
   # The no permission message
-  no-permission: '&cNo permission!'
+  no-permission: '&cУ вас нет прав!'
 
   # Disabled world messages
-  disabled-world: '&cYou cannot use the shop from this world!'
+  disabled-world: '&cМагазин отключен в этом мире!'
 
   # Message when an error occurs while opening a shop
   # Placeholders: %reason%
-  open-shop-error: '&cCannot open shop. &fReason: &c%reason%'
+  open-shop-error: '&cНе удалось открыть магазин. &fПричина: &c%reason%'
 
   # The message when a purchase was made
   # Placeholders: %taken%
-  purchase: '&fA purchase was made, and &c%taken% &fwas taken from your account.'
+  purchase: '&fПокупка совершена! С вашего счёта списано &a%taken%&f.'
 
   # The message when a player doesn't have enough money to buy something
   # Placeholders: %needed%
-  not-enough-money: '&fYou need &c%needed% &fto purchase this!'
+  not-enough-money: '&cВам не хватает &e%needed% &cдля покупки!'
 
   # The message when a command item fails to execute
-  command-error: '&cThere was an error executing this command. Please contact an administrator.'
+  command-error: '&cОшибка выполнения команды товара. Обратитесь к администрации.'
 
   # The message when a player sold their items
   # Placeholders: %money%
-  sell: '&fYour items were sold, and &a%money% &fwas added to your account.'
+  sell: '&fПредметы проданы! На ваш счёт зачислено &a%money%&f.'
 
   # The message when something unexpected happened
-  something-wrong: '&cSomething went wrong, contact an admin.'
+  something-wrong: '&cПроизошла ошибка, обратитесь к администрации.'
 
   # The message when a player can't sell their things
   # Placeholders: %count%
-  cant-sell: '&c%count% item(s) of your items failed to sell &fand have been returned to your inventory.'
+  cant-sell: '&c%count% предм. не удалось продать &fи они возвращены в ваш инвентарь.'
   
   # Shown when trying to sell from a block that is not a container
-  not-a-container: '&cThat block is not a valid container (chest, barrel, etc.).'
+  not-a-container: '&cЭтот блок не является контейнером (сундук, бочка и т.д.).'
 
   # The message when a player can't buy an item
-  cant-buy: '&cSorry, but you are not able to buy that item.'
+  cant-buy: '&cК сожалению, вы не можете купить этот предмет.'
 
   # The message when the player has a full inventory
-  full-inventory: '&cPlease empty your inventory!'
+  full-inventory: '&cВаш инвентарь полон! Освободите место.'
   
   # The message when only some items could fit in inventory (rest dropped)
   # Placeholders: %amount%
-  partial-purchase: '&eOnly %amount% items fit in your inventory. The rest were dropped at your feet.'
+  partial-purchase: '&eВ инвентарь поместилось только %amount% шт. Остальное выпало рядом.'
 
   # Message when something went wrong while parsing an item
   # Placeholders:
-  went-wrong: '&cCannot buy an item that contains errors!\n&fError: &c%error%'
+  went-wrong: '&cНевозможно купить предмет с ошибкой!\n&fОшибка: &c%error%'
 
   # The message when a player tries to buy more items in one stack than possible
   # Placeholders: %max%
-  too-high-quantity: '&fYou can''t buy more than &c%max% &fitems of that type!'
+  too-high-quantity: '&fНельзя купить более &c%max% &fпредметов этого типа за раз!'
 
   # The currency prefix displayed in front of every money count
   currency-prefix: '$'
@@ -77,39 +77,38 @@ messages:
 
   # The message when a player tries to use the command while only signs is enabled
   # Placeholders: %sign_title%
-  signs-only: '&cYou can only access the shop by clicking a %sign_title% sign!'
+  signs-only: '&cМагазин доступен только по клику на табличку %sign_title%!'
 
   # The message when a shop couldn't be found
   # Placeholders: %shop%
-  shop-not-found: '&fCheck &cshops.yml &ffor shop &c%shop%. &fIt was not found.'
+  shop-not-found: '&cМагазин &e%shop% &cне найден.'
 
   # The message tries to sell more items than they have
   # Placeholders: %amount%
-  alt-sell-not-enough: '&fYou do not have &c%amount% &fsuch items to sell.'
+  alt-sell-not-enough: '&cУ вас нет &e%amount% &cтаких предметов для продажи.'
 
   # The message when there is no economy system
   no-economy-system:
-    - '&cNo economy system detected!'
-    - '&7Please contact a server administrator, or enable'
-    - '&7GUIShop''s internal economy in &feconomy.yml&7.'
+    - '&cЭкономическая система не обнаружена!'
+    - '&7Обратитесь к администратору сервера.'
 
   # The message for commands that can only be ran as a player
-  only-player: '&4You can only run this command as a player!'
+  only-player: '&cЭту команду может выполнять только игрок!'
 
   # Message when a player runs an unknown command
-  unknown-command: '&cUnknown command.'
+  unknown-command: '&cНеизвестная команда.'
 
   # When the player isn't holding an item while it is needed
-  need-item: '&cYou must be holding an item.'
+  need-item: '&cВозьмите предмет в руку.'
 
   # The message when an error occurs while saving a shop or menu
-  error-saving: '&cAn error occurred while saving the shops/menu! \n&fPlease check your console.'
+  error-saving: '&cОшибка при сохранении магазина/меню!\n&fПроверьте консоль.'
 
   # Message when a player tries to set a buy price for an item but enters invalid stuff
-  invalid-price-set: '&cPlease enter valid data. &fExample values: (0.0, 100.0, 100, false)'
+  invalid-price-set: '&cВведите корректное число. &fПримеры: (0.0, 100.0, 100, false)'
 
   # Message when the player doesn't have the required item permission
-  no-item-permission: '&cYou don''t have the required permission to buy this item!'
+  no-item-permission: '&cУ вас нет прав для покупки этого предмета!'
 
   ################################
   #    - /guishop messages -     #

@@ -30,7 +30,7 @@
 
 # ==== General Options ====
 
-language: english
+language: russian
 # Which language to use. Currently English, German, Korean, French, Polish, Russian, Japanese, Simplified Chinese, Turkish, Dutch, Spanish and Catalan
 # are included in the download, but custom languages can be created as well. Use the name in lowercase and no spaces as the value.
 # Please note that not everything can be translated yet, i.e. parts of Skript will still be english if you use another language.
