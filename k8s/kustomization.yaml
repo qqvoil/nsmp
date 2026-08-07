@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: neversmp
+
+resources:
+  - namespace.yaml
+  - database/mariadb.yaml
+  - core/velocity.yaml
+  - gamemodes/servers.yaml
+  - web/web-store.yaml
+  - cronjobs/nightly-maintenance.yaml
+  - monitoring/alerts-rules.yaml
+  - monitoring/alertmanager.yaml
+  - monitoring/prometheus.yaml
+  - monitoring/grafana.yaml
+
+commonLabels:
+  app.kubernetes.io/part-of: neversmp-network

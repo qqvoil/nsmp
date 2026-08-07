@@ -1,0 +1,39 @@
+# ==============================================================================
+# LimboAuth / VeloAuth Master Config (NeverSMP Single-Sign-On)
+# ==============================================================================
+
+# Database storage for synchronized authentication across all 11 servers
+database:
+  type: MySQL
+  host: 127.0.0.1
+  port: 3306
+  database: "neversmp"
+  username: "nsmp_user"
+  password: "YOUR_MYSQL_PASSWORD_HERE"
+  table: auth_users
+
+# Password hashing: modern Argon2ID or Bcrypt (Cost 12)
+password:
+  hashing: BCRYPT
+  bcrypt-rounds: 12
+
+# Session retention (players don't need to re-login if reconnecting from same IP)
+session:
+  enabled: true
+  duration: 43200 # 12 hours
+  verify-ip: true
+
+# Forward player directly to Lobby after successful login
+forward:
+  server: "lobby"
+  auth-server: "limbo"
+
+# Floodgate integration (Bedrock players automatically authenticated)
+floodgate:
+  auto-login: true
+
+# Anti-Bot & Rate Limits
+limits:
+  max-registrations-per-ip: 3
+  login-timeout-seconds: 60
+  join-rate-limit-per-second: 15

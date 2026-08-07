@@ -1,0 +1,83 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: alertmanager-config
+  namespace: neversmp
+data:
+  alertmanager.yml: |
+    global:
+      resolve_timeout: 5m
+
+    route:
+      group_by: ['alertname', 'server']
+      group_wait: 10s
+      group_interval: 30s
+      repeat_interval: 2h
+      receiver: 'telegram-admin'
+
+    receivers:
+      - name: 'telegram-admin'
+        telegram_configs:
+          - bot_token: '${BOT_TOKEN}'
+            chat_id: ${ADMIN_TG_ID}
+            send_resolved: true
+            parse_mode: 'HTML'
+            message: |
+              {{ if eq .Status "firing" }}🚨 <b>[NeverSMP ALERT]</b>{{ else }}✅ <b>[NeverSMP RESOLVED]</b>{{ end }}
+              <b>Alert:</b> {{ .CommonAnnotations.summary }}
+              <b>Description:</b> {{ .CommonAnnotations.description }}
+              <b>Severity:</b> <code>{{ .CommonLabels.severity }}</code>
+              <b>Time:</b> {{ .StartsAt.Format "15:04:05 02.01.2006" }}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: alertmanager
+  namespace: neversmp
+spec:
+  ports:
+    - port: 9093
+      targetPort: 9093
+      name: http
+  selector:
+    app: alertmanager
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: alertmanager
+  namespace: neversmp
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: alertmanager
+  template:
+    metadata:
+      labels:
+        app: alertmanager
+    spec:
+      containers:
+        - name: alertmanager
+          image: prom/alertmanager:v0.27.0
+          args:
+            - "--config.file=/etc/alertmanager/alertmanager.yml"
+            - "--storage.path=/alertmanager"
+          ports:
+            - containerPort: 9093
+              name: http
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "50m"
+            limits:
+              memory: "256Mi"
+              cpu: "200m"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/alertmanager
+      volumes:
+        - name: config-volume
+          configMap:
+            name: alertmanager-config

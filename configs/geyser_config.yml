@@ -1,0 +1,34 @@
+# ==============================================================================
+# Geyser-Velocity Master Configuration (NeverSMP Bedrock Gateway)
+# ==============================================================================
+
+bedrock:
+  address: 0.0.0.0
+  port: 19132
+  clone-remote-port: false
+  motd1: "§d⚔ NeverSMP §f• §e1.21.4"
+  motd2: "§aКроссплатформенная сеть §7| §cBedrock & Java"
+  server-name: "NeverSMP Network"
+  compression-level: 6
+  enable-proxy-connections: true
+
+remote:
+  address: 127.0.0.1
+  port: 25565
+  auth-type: floodgate
+  use-proxy-protocol: false
+
+floodgate:
+  key-file: key.pem
+
+# Performance and visual optimizations
+scoreboard-packet-threshold: 20
+enable-custom-skulls: true
+max-chunk-visualization: 10
+show-cooldown: title
+allow-third-party-capes: true
+show-coordinates: true
+custom-locale: "ru_RU"
+
+metrics:
+  enabled: false

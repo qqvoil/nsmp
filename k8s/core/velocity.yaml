@@ -1,0 +1,125 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: velocity-config
+  namespace: neversmp
+data:
+  velocity.toml: |
+    config-version = "2.7"
+    bind = "0.0.0.0:25565"
+    motd = "<gradient:#e056fd:#00ffff>⚔ NeverSMP ⚔</gradient> <white>•</white> <gold>1.21.4</gold>\n<gray>🔄 Вайп SMP & Анархии каждый месяц | Bedrock & Java</gray>"
+    show-max-players = 500
+    online-mode = false
+    force-key-authentication = false
+    player-info-forwarding-mode = "modern"
+    forwarding-secret-file = "forwarding.secret"
+
+    [servers]
+    limbo = "limbo.neversmp.svc.cluster.local:25565"
+    lobby = "lobby.neversmp.svc.cluster.local:25565"
+    smp1 = "smp1.neversmp.svc.cluster.local:25565"
+    smp2 = "smp2.neversmp.svc.cluster.local:25565"
+    hardcore1 = "hardcore1.neversmp.svc.cluster.local:25565"
+    hardcore2 = "hardcore2.neversmp.svc.cluster.local:25565"
+    anarchy1 = "anarchy1.neversmp.svc.cluster.local:25565"
+    anarchy2 = "anarchy2.neversmp.svc.cluster.local:25565"
+    building1 = "building1.neversmp.svc.cluster.local:25565"
+    building2 = "building2.neversmp.svc.cluster.local:25565"
+
+    try = [
+      "limbo",
+      "lobby"
+    ]
+
+    [forced-hosts]
+    "building.neversmp.ru" = ["building1"]
+    "anarchy.neversmp.ru" = ["anarchy1"]
+    "hardcore.neversmp.ru" = ["hardcore1"]
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: velocity-public
+  namespace: neversmp
+  labels:
+    app: velocity
+spec:
+  type: LoadBalancer
+  ports:
+    - name: minecraft-java
+      port: 25565
+      targetPort: 25565
+      protocol: TCP
+    - name: minecraft-bedrock
+      port: 19132
+      targetPort: 19132
+      protocol: UDP
+  selector:
+    app: velocity
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: velocity
+  namespace: neversmp
+  labels:
+    app: velocity
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: velocity
+  template:
+    metadata:
+      labels:
+        app: velocity
+    spec:
+      containers:
+        - name: velocity
+          image: itzg/bungeecord:latest
+          env:
+            - name: TYPE
+              value: "VELOCITY"
+            - name: INIT_MEMORY
+              value: "512M"
+            - name: MAX_MEMORY
+              value: "1G"
+          ports:
+            - containerPort: 25565
+              name: java-port
+              protocol: TCP
+            - containerPort: 19132
+              name: bedrock-port
+              protocol: UDP
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+            limits:
+              memory: "1.5Gi"
+              cpu: "2"
+          volumeMounts:
+            - name: velocity-storage
+              mountPath: /server
+            - name: config-volume
+              mountPath: /server/velocity.toml
+              subPath: velocity.toml
+      volumes:
+        - name: config-volume
+          configMap:
+            name: velocity-config
+        - name: velocity-storage
+          persistentVolumeClaim:
+            claimName: velocity-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: velocity-pvc
+  namespace: neversmp
+spec:
+  accessModes: ["ReadWriteOnce"]
+  resources:
+    requests:
+      storage: 5Gi

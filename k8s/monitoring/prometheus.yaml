@@ -1,0 +1,118 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+  namespace: neversmp
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 10s
+      evaluation_interval: 10s
+
+    rule_files:
+      - /etc/prometheus/rules/*.yml
+
+    alerting:
+      alertmanagers:
+        - static_configs:
+            - targets: ['alertmanager.neversmp.svc.cluster.local:9093']
+
+    scrape_configs:
+      # 1. Scrape Velocity Proxy (Total Online, Bedrock Count, Network Throughput)
+      - job_name: 'velocity'
+        static_configs:
+          - targets: ['velocity.neversmp.svc.cluster.local:9100']
+            labels:
+              server: 'velocity'
+
+      # 2. Scrape Minecraft Game Servers (TPS, MSPT, Chunks, Entities, JVM Memory)
+      - job_name: 'minecraft-nodes'
+        static_configs:
+          - targets: ['lobby.neversmp.svc.cluster.local:9225']
+            labels: { server: 'lobby', mode: 'hub' }
+          - targets: ['smp1.neversmp.svc.cluster.local:9225']
+            labels: { server: 'smp1', mode: 'smp' }
+          - targets: ['hardcore1.neversmp.svc.cluster.local:9225']
+            labels: { server: 'hardcore1', mode: 'hardcore' }
+          - targets: ['anarchy1.neversmp.svc.cluster.local:9225']
+            labels: { server: 'anarchy1', mode: 'anarchy' }
+          - targets: ['building1.neversmp.svc.cluster.local:9225']
+            labels: { server: 'building1', mode: 'building' }
+
+      # 3. Scrape MariaDB Database
+      - job_name: 'mariadb'
+        static_configs:
+          - targets: ['mariadb.neversmp.svc.cluster.local:9104']
+            labels:
+              service: 'mariadb'
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: prometheus
+  namespace: neversmp
+spec:
+  ports:
+    - port: 9090
+      targetPort: 9090
+      name: http
+  selector:
+    app: prometheus
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: prometheus
+  namespace: neversmp
+spec:
+  serviceName: prometheus
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template:
+    metadata:
+      labels:
+        app: prometheus
+    spec:
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v2.51.0
+          args:
+            - "--config.file=/etc/prometheus/prometheus.yml"
+            - "--storage.tsdb.path=/prometheus"
+            - "--storage.tsdb.retention.time=30d"
+            - "--web.enable-lifecycle"
+          ports:
+            - containerPort: 9090
+              name: http
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+          volumeMounts:
+            - name: config-volume
+              mountPath: /etc/prometheus
+            - name: rules-volume
+              mountPath: /etc/prometheus/rules
+            - name: data
+              mountPath: /prometheus
+      volumes:
+        - name: config-volume
+          configMap:
+            name: prometheus-config
+        - name: rules-volume
+          configMap:
+            name: prometheus-alerts-rules
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi

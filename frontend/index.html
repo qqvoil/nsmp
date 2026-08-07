@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeverSMP — Официальный магазин доната | donate.neversmp.ru</title>
+    <meta name="description" content="Официальный магазин NeverSMP 1.21.4. Премиум подписка (30/60/90 дней), токены со скидкой до 30%, пропуск на мирный сервер Building. Мгновенная автоматическая выдача.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Ambient Background Glows -->
+    <div class="bg-glow glow-top"></div>
+    <div class="bg-glow glow-bottom"></div>
+
+    <!-- Header Navigation -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo-wrapper">
+                <span class="logo-icon">⚔</span>
+                <span class="logo-text">Never<span class="logo-accent">SMP</span></span>
+            </div>
+            
+            <div class="server-ip-badge" id="copy-ip-btn" title="Нажмите, чтобы скопировать IP">
+                <span class="ip-status-dot"></span>
+                <span class="ip-text">mc.neversmp.ru</span>
+                <span class="copy-hint" id="copy-hint">Скопировать</span>
+            </div>
+
+            <nav class="header-nav">
+                <a href="#premium" class="nav-link">Премиум</a>
+                <a href="#tokens" class="nav-link">Токены</a>
+                <a href="#modes" class="nav-link">Режимы & Вайпы</a>
+                <a href="https://t.me/NeverSMP" target="_blank" class="nav-btn tg-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69a.2.2 0 00-.05-.18c-.06-.05-.14-.03-.21-.02-.09.02-1.49.95-4.22 2.79-.4.27-.76.41-1.08.4-.36-.01-1.04-.2-1.55-.37-.63-.2-1.12-.31-1.08-.66.02-.18.27-.36.74-.55 2.92-1.27 4.86-2.11 5.83-2.52 2.77-1.15 3.35-1.35 3.73-1.36.08 0 .27.02.39.12.1.08.13.19.14.27-.01.06.01.24 0 .38z"/></svg>
+                    Telegram
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <div class="container hero-container">
+                <div class="hero-tags-row">
+                    <span class="hero-badge">Версия 1.21.4 • Java & Bedrock</span>
+                    <span class="wipe-badge">🔄 Вайп SMP и Анархии каждый месяц</span>
+                </div>
+                
+                <h1 class="hero-title">Донат-магазин сети <span class="gradient-text">NeverSMP</span></h1>
+                <p class="hero-subtitle">Премиум-подписка со сквозными бонусами на всех режимах, токены со скидкой до 30% и доступ к мирному выживанию Building.</p>
+
+                <!-- Recent Purchases Live Bar -->
+                <div class="live-feed-bar" id="live-feed-bar">
+                    <span class="live-tag"><span class="pulse-dot"></span> Покупки онлайн:</span>
+                    <div class="feed-ticker-wrap" id="feed-ticker">
+                        <span class="feed-item">Загрузка последних покупок...</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Premium Subscription Feature Showcase -->
+        <section class="premium-section" id="premium">
+            <div class="container">
+                <div class="section-head">
+                    <div class="badge-pill">Главный статус проекта</div>
+                    <h2 class="section-title">Единая подписка <span class="purple-gradient-text">ПРЕМИУМ</span></h2>
+                    <p class="section-desc">Один статус действует сразу на всей сети серверов: SMP, Hardcore, Anarchy и открывает Building!</p>
+                </div>
+
+                <div class="premium-hero-card">
+                    <!-- Left: Perks list -->
+                    <div class="premium-perks-side">
+                        <div class="perks-heading">
+                            <span class="star-icon">★</span>
+                            <h3>Что дает подписка ПРЕМИУМ:</h3>
+                        </div>
+                        
+                        <div class="perks-grid">
+                            <div class="perk-item">
+                                <div class="perk-icon-wrap">⏳</div>
+                                <div class="perk-content">
+                                    <strong>Хардкор (Hardcore)</strong>
+                                    <p><strong>10 часов</strong> в безопасной зоне новичков вместо 5</p>
+                                </div>
+                            </div>
+                            <div class="perk-item">
+                                <div class="perk-icon-wrap">🛡️</div>
+                                <div class="perk-content">
+                                    <strong>Анархия (Anarchy)</strong>
+                                    <p><strong>6 приват-блоков</strong> вместо стандартных 3</p>
+                                </div>
+                            </div>
+                            <div class="perk-item">
+                                <div class="perk-icon-wrap">💰</div>
+                                <div class="perk-content">
+                                    <strong>Аукцион (SMP & Анархия)</strong>
+                                    <p><strong>10 слотов</strong> для продажи предметов вместо 5</p>
+                                </div>
+                            </div>
+                            <div class="perk-item">
+                                <div class="perk-icon-wrap">🏠</div>
+                                <div class="perk-content">
+                                    <strong>Точки дома (/sethome)</strong>
+                                    <p><strong>5 точек дома</strong> вместо 3 на SMP и Анархии</p>
+                                </div>
+                            </div>
+                            <div class="perk-item perk-highlight">
+                                <div class="perk-icon-wrap">🏰</div>
+                                <div class="perk-content">
+                                    <strong>Пропуск на сервер Building</strong>
+                                    <p>Полный доступ к серверу мирного и спокойного выживания</p>
+                                </div>
+                            </div>
+                            <div class="perk-item">
+                                <div class="perk-icon-wrap">💎</div>
+                                <div class="perk-content">
+                                    <strong>Торговля за Токены</strong>
+                                    <p>Право продавать свои редкие вещи на аукционе за Токены</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Auction Token earning tip -->
+                        <div class="token-earning-note">
+                            <span class="note-icon">💡</span>
+                            <div class="note-text">
+                                <strong>Как получить Премиум без реальных денег?</strong>
+                                <span>Продавайте ценные ресурсы на аукционе за донат-валюту (токены) другим игрокам и купите подписку прямо в игре за <strong>15 000 токенов</strong>!</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right: Duration Selector & Buy Box -->
+                    <div class="premium-buy-side">
+                        <div class="buy-side-header">
+                            <span class="buy-title">Выберите период:</span>
+                            <div class="currency-toggle">
+                                <button class="curr-btn active" id="curr-rub-btn">Рубли (₽)</button>
+                                <button class="curr-btn" id="curr-tok-btn">Токены (т)</button>
+                            </div>
+                        </div>
+
+                        <div class="tier-select-cards">
+                            <div class="tier-card active" data-tier="30" data-price-rub="99" data-price-tok="15000">
+                                <div class="tier-radio"><span class="radio-dot"></span></div>
+                                <div class="tier-info">
+                                    <span class="tier-name">30 дней</span>
+                                    <span class="tier-sub">Базовый период</span>
+                                </div>
+                                <div class="tier-cost">
+                                    <span class="price-val" data-rub="99 ₽" data-tok="15 000 т">99 ₽</span>
+                                </div>
+                            </div>
+
+                            <div class="tier-card" data-tier="60" data-price-rub="149" data-price-tok="25000">
+                                <div class="tier-badge-top">Выгодно -25%</div>
+                                <div class="tier-radio"><span class="radio-dot"></span></div>
+                                <div class="tier-info">
+                                    <span class="tier-name">60 дней</span>
+                                    <span class="tier-sub">Экономия 49 ₽</span>
+                                </div>
+                                <div class="tier-cost">
+                                    <span class="price-val" data-rub="149 ₽" data-tok="25 000 т">149 ₽</span>
+                                </div>
+                            </div>
+
+                            <div class="tier-card" data-tier="90" data-price-rub="249" data-price-tok="40000">
+                                <div class="tier-badge-top hot">Хит -35%</div>
+                                <div class="tier-radio"><span class="radio-dot"></span></div>
+                                <div class="tier-info">
+                                    <span class="tier-name">90 дней</span>
+                                    <span class="tier-sub">Максимальная выгода</span>
+                                </div>
+                                <div class="tier-cost">
+                                    <span class="price-val" data-rub="249 ₽" data-tok="40 000 т">249 ₽</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="buy-cta-box">
+                            <button class="primary-glow-btn" id="buy-premium-btn">
+                                <span>Оформить Премиум за <strong id="selected-tier-price">99 ₽</strong></span>
+                            </button>
+                            <span class="instant-delivery-text">⚡ Мгновенная автоматическая активация</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tokens Store & Interactive Calculator Section -->
+        <section class="tokens-section" id="tokens">
+            <div class="container">
+                <div class="section-head">
+                    <div class="badge-pill gold-pill">Донат-валюта</div>
+                    <h2 class="section-title">Магазин <span class="gold-gradient-text">Токенов</span></h2>
+                    <p class="section-desc">Курс: <strong>1 ₽ = 25 Токенов</strong>. Прогрессивная скидка до <strong>30%</strong> при покупке крупных пакетов!</p>
+                </div>
+
+                <!-- Interactive Token Slider / Calculator -->
+                <div class="token-calc-card">
+                    <div class="calc-top-row">
+                        <div class="calc-label-wrap">
+                            <span class="calc-label">Интерактивный калькулятор токенов</span>
+                            <span class="calc-hint">Двигайте ползунок или выберите готовый набор</span>
+                        </div>
+                        <div class="calc-discount-badge" id="calc-discount-badge">Скидка: 0%</div>
+                    </div>
+
+                    <div class="calc-display-wrap">
+                        <div class="display-tokens">
+                            <span class="tokens-num" id="calc-tokens-val">15 000</span>
+                            <span class="tokens-unit">Токенов</span>
+                        </div>
+                        <div class="display-equals">=</div>
+                        <div class="display-rub">
+                            <span class="rub-num" id="calc-price-val">539 ₽</span>
+                            <span class="rub-base-price" id="calc-base-price">600 ₽</span>
+                        </div>
+                    </div>
+
+                    <div class="slider-wrap">
+                        <input type="range" id="tokens-range-slider" min="1000" max="100000" step="1000" value="15000" class="custom-range">
+                        <div class="slider-ticks">
+                            <span>1k</span>
+                            <span>25k</span>
+                            <span>50k</span>
+                            <span>75k</span>
+                            <span>100k (🔥 30%)</span>
+                        </div>
+                    </div>
+
+                    <div class="calc-buy-action">
+                        <button class="gold-glow-btn" id="buy-calc-tokens-btn">
+                            Купить <span id="btn-tokens-amount">15 000</span> токенов за <span id="btn-tokens-price">539 ₽</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Preset Token Packages Grid -->
+                <div class="packages-grid" id="token-packages-grid">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Other Services (Building Pass & Unban) -->
+        <section class="services-section" id="services">
+            <div class="container">
+                <div class="section-head">
+                    <h2 class="section-title">Отдельные пропуска и услуги</h2>
+                    <p class="section-desc">Если вам не нужен полный Премиум, можно приобрести отдельный пропуск</p>
+                </div>
+
+                <div class="services-grid">
+                    <!-- Building Mode Solo Pass -->
+                    <div class="service-card building-card">
+                        <div class="service-icon">🏰</div>
+                        <div class="service-body">
+                            <div class="service-badge">Пропуск</div>
+                            <h3 class="service-title">Building Pass (Вечный доступ)</h3>
+                            <p class="service-desc">
+                                Отдельный вечный пропуск на сервер <strong>Building</strong>. Это такое же выживание, но только если вы хотите мирно и спокойно развиваться без классических тёрок, войн и токсичности.
+                            </p>
+                            <ul class="service-perks">
+                                <li>✓ Вечный доступ к Building 1 и Building 2</li>
+                                <li>✓ Защищенные просторные приваты</li>
+                                <li>✓ Уютное взрослое комьюнити</li>
+                            </ul>
+                        </div>
+                        <div class="service-bottom">
+                            <div class="service-price">149 ₽</div>
+                            <button class="service-buy-btn" onclick="openCheckoutModal('building_pass')">Купить пропуск</button>
+                        </div>
+                    </div>
+
+                    <!-- Hardcore Revive Service -->
+                    <div class="service-card hardcore-revive-card">
+                        <div class="service-icon">💀</div>
+                        <div class="service-body">
+                            <div class="service-badge hardcore-badge">Хардкор</div>
+                            <h3 class="service-title">Возрождение на Хардкоре</h3>
+                            <p class="service-desc">
+                                Мгновенное воскрешение персонажа после гибели на серверах Хардкора без ожидания вайпа сезона.
+                            </p>
+                            <ul class="service-perks">
+                                <li>✓ Мгновенный сброс смерти и разбан на Hardcore 1/2</li>
+                                <li>✓ Защитный бафф новичка на спавне</li>
+                                <li>✓ <strong>249 ₽</strong> на сайте или <strong>40 000 т</strong> в игре</li>
+                            </ul>
+                        </div>
+                        <div class="service-bottom">
+                            <div class="service-price">249 ₽ <small style="font-size:12px;color:#94a3b8;font-weight:400;">/ 40к т</small></div>
+                            <button class="service-buy-btn" onclick="openCheckoutModal('hardcore_revive')">Воскреснуть</button>
+                        </div>
+                    </div>
+
+                    <!-- Unban Service -->
+                    <div class="service-card unban-card">
+                        <div class="service-icon">🔓</div>
+                        <div class="service-body">
+                            <div class="service-badge unban-badge">Услуга</div>
+                            <h3 class="service-title">Разбан аккаунта</h3>
+                            <p class="service-desc">
+                                Моментальное снятие активной блокировки на всех игровых серверах сети NeverSMP и размут в общем чате.
+                            </p>
+                            <ul class="service-perks">
+                                <li>✓ Снятие перманентных и временных банов</li>
+                                <li>✓ Снятие мута чата</li>
+                                <li>✓ Автоматический разбан за 3 секунды</li>
+                            </ul>
+                        </div>
+                        <div class="service-bottom">
+                            <div class="service-price">149 ₽</div>
+                            <button class="service-buy-btn" onclick="openCheckoutModal('unban')">Разбанить</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Server Modes & Wipe Schedule Showcase -->
+        <section class="modes-section" id="modes">
+            <div class="container">
+                <div class="section-head">
+                    <div class="badge-pill">Сетевая связка</div>
+                    <h2 class="section-title">Игровые миры & Расписание вайпов</h2>
+                    <p class="section-desc">Единая сеть NeverSMP под управлением Velocity Proxy</p>
+                </div>
+
+                <div class="modes-grid">
+                    <div class="mode-card">
+                        <div class="mode-top-row">
+                            <span class="mode-icon">⚔</span>
+                            <span class="mode-tag tag-wipe">🔄 Вайп каждый месяц</span>
+                        </div>
+                        <h3 class="mode-name">SMP Выживание</h3>
+                        <p class="mode-desc">Классическое выживание с экономикой, аукционом, кланами и развитой торговлей. Ежемесячный вайп гарантирует равные условия для всех игроков.</p>
+                        <div class="mode-footer">
+                            <span class="mode-status status-open">Доступно всем</span>
+                        </div>
+                    </div>
+
+                    <div class="mode-card">
+                        <div class="mode-top-row">
+                            <span class="mode-icon">💣</span>
+                            <span class="mode-tag tag-wipe">🔄 Вайп каждый месяц</span>
+                        </div>
+                        <h3 class="mode-name">Анархия (Anarchy)</h3>
+                        <p class="mode-desc">Полная свобода действий, кристалл-PvP, взрывы и рейды баз. Премиум дает 6 приват-блоков вместо 3 для надежной защиты схронов.</p>
+                        <div class="mode-footer">
+                            <span class="mode-status status-open">Доступно всем</span>
+                        </div>
+                    </div>
+
+                    <div class="mode-card">
+                        <div class="mode-top-row">
+                            <span class="mode-icon">💀</span>
+                            <span class="mode-tag tag-hardcore">1 Жизнь</span>
+                        </div>
+                        <h3 class="mode-name">Хардкор (Hardcore)</h3>
+                        <p class="mode-desc">Экстремальный режим. Премиум дает в 2 раза больше времени в зоне новичков, чтобы освоиться и экипироваться перед опасным миром.</p>
+                        <div class="mode-footer">
+                            <span class="mode-status status-open">Доступно всем</span>
+                        </div>
+                    </div>
+
+                    <div class="mode-card mode-card-building">
+                        <div class="mode-top-row">
+                            <span class="mode-icon">🏰</span>
+                            <span class="mode-tag tag-peace">🕊️ Мирный режим</span>
+                        </div>
+                        <h3 class="mode-name">Building (Мирный мир)</h3>
+                        <p class="mode-desc">То же самое выживание, но без классических тёрок и агрессии. Идеальное место для красивых построек, ферм и спокойного отдыха.</p>
+                        <div class="mode-footer">
+                            <span class="mode-status status-vip">🔒 Доступ по Премиуму / Building Pass</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal Purchase Checkout -->
+    <div class="modal-overlay" id="checkout-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="modal-close-btn">&times;</button>
+            
+            <div class="modal-header">
+                <div class="item-preview-badge" id="modal-item-badge">Подписка</div>
+                <h3 class="modal-title" id="modal-item-name">Премиум (30 дней)</h3>
+                <div class="modal-price" id="modal-item-price">99 ₽</div>
+            </div>
+
+            <form id="purchase-form" class="modal-form">
+                <div class="platform-toggle-group">
+                    <button type="button" class="platform-tab active" data-platform="java">☕ Java Edition (ПК)</button>
+                    <button type="button" class="platform-tab" data-platform="bedrock">📱 Bedrock (Телефон)</button>
+                </div>
+
+                <div class="form-group">
+                    <label for="player-nick" id="nick-field-label">Ваш никнейм в Java Edition</label>
+                    <div class="input-with-avatar">
+                        <img src="https://minotar.net/helm/Steve/40.png" alt="Skin preview" class="player-avatar-preview" id="avatar-preview">
+                        <input type="text" id="player-nick" placeholder="Например: qqvoil" required minlength="3" maxlength="17" autocomplete="off">
+                    </div>
+                    <small class="field-hint" id="nick-field-hint">Убедитесь в правильности написания ника (с учетом регистра).</small>
+                </div>
+
+                <div class="form-group">
+                    <label for="server-select">Сервер для выдачи</label>
+                    <select id="server-select" class="form-select">
+                        <option value="global" selected>Вся сеть (Global • Премиум действует везде)</option>
+                        <option value="smp1">SMP-1 (Выживание)</option>
+                        <option value="hardcore1">Hardcore-1 (Хардкор)</option>
+                        <option value="anarchy1">Anarchy-1 (Анархия)</option>
+                        <option value="building1">Building-1 (Мирный сервер)</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="promo-code">Промокод на скидку</label>
+                    <div class="promo-input-row">
+                        <input type="text" id="promo-code" placeholder="NEVER2026" maxlength="20">
+                        <button type="button" class="promo-apply-btn" id="apply-promo-btn">Применить</button>
+                    </div>
+                    <small class="promo-msg" id="promo-msg"></small>
+                </div>
+
+                <div class="payment-summary">
+                    <div class="summary-row">
+                        <span>Итого к оплате:</span>
+                        <strong class="summary-final-price" id="summary-final-price">99 ₽</strong>
+                    </div>
+                    <div class="summary-features">
+                        <span>✓ Мгновенная выдача за 3 секунды через RCON</span>
+                        <span>✓ Оплата СБП, Mir, Visa, Mastercard, Карты РФ</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-pay-btn" id="submit-pay-btn">
+                    <span class="btn-text">Перейти к оплате</span>
+                    <span class="btn-loader" style="display:none;">Оформление...</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-card success-card">
+            <button class="modal-close" id="success-close-btn">&times;</button>
+            <div class="success-icon">🎉</div>
+            <h3 class="modal-title">Оплата успешно проведена!</h3>
+            <p class="success-desc">Привилегии уже активированы на сервере NeverSMP. Если вы в игре, перезайдите для обновления префикса.</p>
+
+            <button class="action-btn back-to-shop-btn" id="finish-success-btn">Вернуться в магазин</button>
+        </div>
+    </div>
+
+    <!-- In-Game Token Purchase Instruction Modal -->
+    <div class="modal-overlay" id="token-purchase-modal">
+        <div class="modal-card">
+            <button class="modal-close" id="token-modal-close-btn">&times;</button>
+            <div class="token-modal-head">
+                <div class="item-preview-badge gold-pill">Покупка за Токены</div>
+                <h3 class="modal-title">Как купить Премиум за Токены:</h3>
+            </div>
+            
+            <div class="token-instructions-list">
+                <div class="inst-step">
+                    <span class="step-num">1</span>
+                    <div>
+                        <strong>Зайдите на сервер NeverSMP</strong>
+                        <p>Подключитесь по адресу <code>mc.neversmp.ru</code> на версии 1.21.4.</p>
+                    </div>
+                </div>
+                <div class="inst-step">
+                    <span class="step-num">2</span>
+                    <div>
+                        <strong>Откройте меню доната в игре</strong>
+                        <p>Напишите в чате команду <code>/shop</code> или <code>/donate</code>.</p>
+                    </div>
+                </div>
+                <div class="inst-step">
+                    <span class="step-num">3</span>
+                    <div>
+                        <strong>Выберите Премиум на 30 дней (15 000 т)</strong>
+                        <p>Если у вас не хватает токенов, вы можете продать свои ценные вещи на аукционе (<code>/ah</code>) за токены другим игрокам или докупить их в калькуляторе выше!</p>
+                    </div>
+                </div>
+            </div>
+
+            <button class="primary-glow-btn full-width" id="close-token-inst-btn">Понятно, спасибо!</button>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <div class="footer-left">
+                <div class="footer-logo">⚔ NeverSMP Network</div>
+                <p class="footer-copy">© 2026 NeverSMP. Все права защищены. Сервер не является официальным продуктом Mojang или Microsoft.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://t.me/NeverSMP" target="_blank">Telegram канал</a>
+                <a href="#modes">Расписание вайпов</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>

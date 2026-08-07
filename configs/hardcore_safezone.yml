@@ -1,0 +1,35 @@
+# ==============================================================================
+# NeverSMP — Hardcore Newbie Safe Zone Mechanics
+# ==============================================================================
+
+safe_zone:
+  enabled: true
+  world_name: "world"
+  region_name: "newbie_safe_zone"
+  
+  # Durations in seconds
+  durations:
+    default_player: 18000  # 5 hours
+    premium_player: 36000  # 10 hours (2x boost)
+  
+  # Warning notifications before time expires
+  warnings:
+    - time_remaining: 3600 # 1 hour
+      message: "<gold>⚠ [Хардкор]</gold> <white>До окончания действия безопасной зоны остался</white> <yellow>1 час</yellow>! Подготовьте ресурсы для ухода со спавна."
+    - time_remaining: 1800 # 30 minutes
+      message: "<gold>⚠ [Хардкор]</gold> <white>До окончания безопасной зоны осталось</white> <yellow>30 минут</yellow>! Не задерживайтесь."
+    - time_remaining: 600  # 10 minutes
+      message: "<red>⚠ [ВНИМАНИЕ]</red> <white>Осталось всего</white> <red>10 минут</red>! Вы будете принудительно телепортированы на общий опасный спавн!"
+
+  # Action when timer expires
+  on_expire:
+    action: "TELEPORT_SPAWN"
+    teleport_location:
+      world: "world"
+      x: 0.5
+      y: 75.0
+      z: 0.5
+      yaw: 0.0
+      pitch: 0.0
+    broadcast_to_player: "<red>☠ Время безопасной зоны истекло!</red> <white>Вы перемещены на общий спавн. Да начнется выживание!</white>"
+    sound: "entity.ender_dragon.growl"

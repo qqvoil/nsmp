@@ -1,0 +1,314 @@
+import os
+import logging
+import json
+import urllib.request
+import urllib.error
+
+# Load .env if python-dotenv is available, otherwise read os.environ
+try:
+    from dotenv import load_dotenv
+    load_dotenv()
+except ImportError:
+    pass
+
+from flask import Flask, request, jsonify, redirect, send_from_directory
+from catalog import CATALOG, TOKEN_PACKAGES, PREMIUM_TIERS, calculate_custom_tokens
+from database import init_db, create_invoice, get_invoice, get_invoice_by_payload, mark_invoice_paid, get_recent_donates, get_db
+from rcon_client import execute_rcon_command
+
+logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(message)s")
+
+app = Flask(__name__, static_folder="../frontend", static_url_path="")
+app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "nsmp-dev-secret-key-2026")
+
+# Initialize database
+init_db()
+
+# --- Configs & Environment Variables ---
+PLATEGA_PROJECT_ID = os.environ.get("PLATEGA_PROJECT_ID")
+PLATEGA_SECRET_KEY = os.environ.get("PLATEGA_SECRET_KEY")
+ADMIN_TG_ID = os.environ.get("ADMIN_TG_ID")
+BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("TG_BOT_TOKEN")
+
+# RCON configuration for primary servers
+RCON_SERVERS = {
+    "lobby": {"host": os.environ.get("RCON_LOBBY_HOST", "127.0.0.1"), "port": int(os.environ.get("RCON_LOBBY_PORT", 25575)), "pass": os.environ.get("RCON_PASS", "")},
+    "smp1": {"host": os.environ.get("RCON_SMP1_HOST", "127.0.0.1"), "port": int(os.environ.get("RCON_SMP1_PORT", 25576)), "pass": os.environ.get("RCON_PASS", "")},
+}
+
+def notify_admin(message: str):
+    """Send notification to admin's Telegram using standard urllib."""
+    if ADMIN_TG_ID and BOT_TOKEN:
+        try:
+            tg_api_server = os.environ.get("TG_API_SERVER", "https://api.telegram.org")
+            url = f"{tg_api_server}/bot{BOT_TOKEN}/sendMessage"
+            payload = json.dumps({
+                "chat_id": ADMIN_TG_ID,
+                "text": message,
+                "parse_mode": "HTML"
+            }).encode("utf-8")
+            req = urllib.request.Request(url, data=payload, headers={"Content-Type": "application/json"})
+            urllib.request.urlopen(req, timeout=4)
+        except Exception as e:
+            logging.error(f"Failed to send Telegram notification: {e}")
+
+def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int = 0):
+    """Execute LuckPerms and Minecraft commands via RCON."""
+    commands = []
+    if item_id == "custom_tokens" and custom_tokens > 0:
+        commands = [f"p give {{player}} {custom_tokens}"]
+    else:
+        item = CATALOG.get(item_id)
+        if item:
+            commands = item.get("commands", [])
+        else:
+            logging.error(f"Item {item_id} not found in catalog during reward execution")
+            return
+
+    for srv_name, srv_conf in RCON_SERVERS.items():
+        for cmd_template in commands:
+            cmd = cmd_template.format(player=player_name)
+            try:
+                logging.info(f"Executing RCON on {srv_name}: {cmd}")
+                resp = execute_rcon_command(srv_conf["host"], srv_conf["port"], srv_conf["pass"], cmd)
+                logging.info(f"RCON response from {srv_name}: {resp}")
+            except Exception as e:
+                logging.error(f"Failed RCON command '{cmd}' on {srv_name}: {e}")
+
+# --- Frontend Routes ---
+
+@app.route("/")
+def serve_index():
+    return send_from_directory(app.static_folder, "index.html")
+
+# --- API Endpoints ---
+
+@app.route("/api/catalog", methods=["GET"])
+def get_catalog():
+    return jsonify({
+        "success": True,
+        "items": list(CATALOG.values()),
+        "token_packages": TOKEN_PACKAGES,
+        "premium_tiers": PREMIUM_TIERS
+    })
+
+@app.route("/api/calculate_tokens", methods=["GET"])
+def calc_tokens():
+    tokens_str = request.args.get("tokens", "1000")
+    try:
+        tokens = int(tokens_str)
+    except ValueError:
+        tokens = 1000
+    calc = calculate_custom_tokens(tokens)
+    return jsonify({"success": True, "data": calc})
+
+@app.route("/api/create_payment", methods=["POST"])
+def create_payment():
+    data = request.json or {}
+    player_name = (data.get("player_name") or "").strip()
+    item_id = data.get("item_id")
+    server_target = data.get("server_target", "global")
+    promo_code = (data.get("promo_code") or "").strip().upper()
+    custom_tokens = int(data.get("custom_tokens", 0))
+
+    if not player_name or len(player_name) < 3 or len(player_name) > 16:
+        return jsonify({"success": False, "error": "Введите корректный ник в Minecraft (3-16 символов)"}), 400
+
+    if item_id == "custom_tokens" and custom_tokens >= 1000:
+        calc = calculate_custom_tokens(custom_tokens)
+        amount = calc["price"]
+        item_name = f"{custom_tokens:,} Токенов (Скидка {calc['discount_percent']}%)".replace(",", " ")
+    else:
+        item = CATALOG.get(item_id)
+        if not item:
+            return jsonify({"success": False, "error": "Выбран несуществующий товар"}), 400
+        amount = item["price"]
+        item_name = item["name"]
+
+    # Check promo code
+    used_promo = None
+    if promo_code:
+        with get_db() as conn:
+            promo = conn.execute("SELECT * FROM mc_promocodes WHERE code = ?", (promo_code,)).fetchone()
+            if promo and (promo["max_uses"] == 0 or promo["current_uses"] < promo["max_uses"]):
+                discount = promo["discount_percent"]
+                amount = max(1, int(amount * (1 - discount / 100.0)))
+                used_promo = promo["code"]
+                conn.execute("UPDATE mc_promocodes SET current_uses = current_uses + 1 WHERE code = ?", (promo["code"],))
+                conn.commit()
+
+    invoice_id, payload = create_invoice(player_name, item_id, item_name, amount, server_target, used_promo)
+
+    # If Platega credentials are configured, create transaction
+    if PLATEGA_PROJECT_ID and PLATEGA_SECRET_KEY:
+        try:
+            url = "https://app.platega.io/v2/transaction/process"
+            return_url = os.environ.get("SITE_URL", "https://donate.neversmp.ru")
+            req_payload = {
+                "paymentDetails": {
+                    "amount": int(float(amount)),
+                    "currency": "RUB"
+                },
+                "description": f"NeverSMP: {item_name} ({player_name})",
+                "return": f"{return_url}/?success=1&id={invoice_id}",
+                "failedUrl": f"{return_url}/?failed=1",
+                "payload": payload
+            }
+            json_bytes = json.dumps(req_payload).encode("utf-8")
+            req = urllib.request.Request(url, data=json_bytes, headers={
+                "X-MerchantId": PLATEGA_PROJECT_ID,
+                "X-Secret": PLATEGA_SECRET_KEY,
+                "Content-Type": "application/json"
+            })
+            with urllib.request.urlopen(req, timeout=10) as resp:
+                resp_data = json.loads(resp.read().decode("utf-8"))
+                payment_url = resp_data.get("url")
+                if payment_url:
+                    return jsonify({"success": True, "payment_url": payment_url, "invoice_id": invoice_id})
+            
+            return jsonify({"success": False, "error": "Ошибка платежной системы. Попробуйте позже."}), 502
+        except Exception as e:
+            logging.error(f"Platega request failed: {e}")
+            return jsonify({"success": False, "error": "Не удалось связаться с кассой."}), 500
+    else:
+        # Development / Simulation mode
+        logging.warning("Platega credentials not set. Returning simulation URL.")
+        return jsonify({
+            "success": True,
+            "payment_url": f"/api/simulate_pay/{invoice_id}",
+            "invoice_id": invoice_id,
+            "is_dev": True
+        })
+
+@app.route("/api/webhook/platega", methods=["POST"])
+def platega_webhook():
+    secret_key = os.environ.get("PLATEGA_SECRET_KEY")
+    incoming_secret = request.headers.get("X-Secret")
+    if secret_key and incoming_secret != secret_key:
+        return "Unauthorized", 401
+
+    data = request.json or {}
+    status = data.get("status")
+    payload = data.get("payload")
+
+    logging.info(f"Received Platega webhook: {data}")
+
+    if status == "CONFIRMED" and payload:
+        invoice = get_invoice_by_payload(payload)
+        if invoice and invoice["status"] == "pending":
+            mark_invoice_paid(invoice["id"])
+
+            # Issue Minecraft rewards via RCON
+            execute_donation_rewards(invoice["player_name"], invoice["item_id"])
+
+            # Send Telegram Alert
+            tg_text = (
+                f"⚔ <b>Новый донат NeverSMP!</b>\n"
+                f"👤 Игрок: <code>{invoice['player_name']}</code>\n"
+                f"🎁 Товар: <b>{invoice['item_name']}</b>\n"
+                f"💰 Сумма: <b>{invoice['amount']} ₽</b>"
+            )
+            notify_admin(tg_text)
+
+            return "OK", 200
+
+    return "Ignored", 200
+
+@app.route("/api/simulate_pay/<int:invoice_id>", methods=["GET"])
+def simulate_payment(invoice_id: int):
+    """Dev helper to simulate payment confirmation."""
+    invoice = get_invoice(invoice_id)
+    if invoice and invoice["status"] == "pending":
+        mark_invoice_paid(invoice_id)
+        execute_donation_rewards(invoice["player_name"], invoice["item_id"])
+        notify_admin(f"🧪 [DEV TEST] Донат подтвержден: {invoice['player_name']} купил {invoice['item_name']} ({invoice['amount']}₽)")
+        return redirect(f"/?success=1&id={invoice_id}")
+    return redirect("/")
+
+@app.route("/api/invoice/<int:invoice_id>", methods=["GET"])
+def check_invoice(invoice_id: int):
+    invoice = get_invoice(invoice_id)
+    if not invoice:
+        return jsonify({"success": False, "error": "Счет не найден"}), 404
+    return jsonify({
+        "success": True,
+        "invoice": {
+            "id": invoice["id"],
+            "player_name": invoice["player_name"],
+            "item_name": invoice["item_name"],
+            "amount": invoice["amount"],
+            "status": invoice["status"],
+            "paid_at": invoice["paid_at"]
+        }
+    })
+
+from flask import Flask, request, jsonify, redirect, send_from_directory, render_template
+
+@app.route("/admin")
+def admin_page():
+    return render_template("admin.html")
+
+@app.route("/api/admin/invoices", methods=["GET"])
+def admin_invoices():
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT id, player_name, item_id, item_name, amount, status, server_target, created_at, paid_at FROM mc_invoices ORDER BY id DESC LIMIT 100")
+    rows = cursor.fetchall()
+    conn.close()
+    invoices = [
+        {
+            "id": r["id"],
+            "player_name": r["player_name"],
+            "item_id": r["item_id"],
+            "item_name": r["item_name"],
+            "amount": r["amount"],
+            "status": r["status"],
+            "server_target": r["server_target"],
+            "created_at": r["created_at"],
+            "paid_at": r["paid_at"]
+        }
+        for r in rows
+    ]
+    return jsonify({"success": True, "invoices": invoices})
+
+@app.route("/api/admin/transfer_invoice", methods=["POST"])
+def admin_transfer_invoice():
+    data = request.get_json() or {}
+    inv_id = data.get("invoice_id")
+    new_nick = (data.get("new_nick") or "").strip()
+    if not inv_id or not new_nick:
+        return jsonify({"success": False, "message": "Заполните ID счета и новый никнейм"}), 400
+
+    conn = get_db()
+    cursor = conn.cursor()
+    cursor.execute("SELECT * FROM mc_invoices WHERE id = ?", (inv_id,))
+    inv = cursor.fetchone()
+    if not inv:
+        conn.close()
+        return jsonify({"success": False, "message": "Счет не найден"}), 404
+
+    old_nick = inv["player_name"]
+    cursor.execute("UPDATE mc_invoices SET player_name = ? WHERE id = ?", (new_nick, inv_id))
+    conn.commit()
+    conn.close()
+
+    # Deliver rewards to new nickname via RCON
+    execute_donation_rewards(new_nick, inv["item_id"])
+    notify_admin(f"🔄 <b>[ADMIN] Платеж перепривязан!</b>\nСчет #{inv_id}: <code>{old_nick}</code> ➔ <code>{new_nick}</code> ({inv['item_name']})")
+    
+    return jsonify({"success": True, "message": f"Счет #{inv_id} перепривязан с '{old_nick}' на '{new_nick}'. Награда выдана!"})
+
+@app.route("/api/admin/manual_give", methods=["POST"])
+def admin_manual_give():
+    data = request.get_json() or {}
+    nick = (data.get("player_name") or "").strip()
+    item_id = data.get("item_id")
+    if not nick or not item_id:
+        return jsonify({"success": False, "message": "Заполните никнейм и товар"}), 400
+
+    execute_donation_rewards(nick, item_id)
+    notify_admin(f"🎁 <b>[ADMIN] Ручная выдача:</b>\nИгроку <code>{nick}</code> выдан товар <b>{item_id}</b>.")
+    return jsonify({"success": True, "message": f"Товар '{item_id}' успешно выдан игроку '{nick}'!"})
+
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=5000, debug=True)

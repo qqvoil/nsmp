@@ -1,0 +1,106 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: web-store
+  namespace: neversmp
+  labels:
+    app: web-store
+spec:
+  ports:
+    - port: 80
+      targetPort: 5000
+      name: http
+  selector:
+    app: web-store
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: web-store
+  namespace: neversmp
+  labels:
+    app: web-store
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: web-store
+  template:
+    metadata:
+      labels:
+        app: web-store
+    spec:
+      containers:
+        - name: web-store
+          image: python:3.11-slim
+          command: ["/bin/sh", "-c"]
+          args:
+            - |
+              pip install --no-cache-dir flask &&
+              python /app/backend/app.py
+          env:
+            - name: SITE_URL
+              value: "https://donate.neversmp.ru"
+            - name: RCON_LOBBY_HOST
+              value: "lobby.neversmp.svc.cluster.local"
+            - name: RCON_LOBBY_PORT
+              value: "25575"
+            - name: RCON_SMP1_HOST
+              value: "smp1.neversmp.svc.cluster.local"
+            - name: RCON_SMP1_PORT
+              value: "25575"
+            - name: RCON_PASS
+              value: "YOUR_RCON_PASSWORD"
+          ports:
+            - containerPort: 5000
+              name: http
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "1"
+          volumeMounts:
+            - name: app-code
+              mountPath: /app
+      volumes:
+        - name: app-code
+          persistentVolumeClaim:
+            claimName: web-store-pvc
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: web-store-pvc
+  namespace: neversmp
+spec:
+  accessModes: ["ReadWriteMany"]
+  resources:
+    requests:
+      storage: 2Gi
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: web-store-ingress
+  namespace: neversmp
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    cert-manager.io/cluster-issuer: letsencrypt-prod
+spec:
+  tls:
+    - hosts:
+        - donate.neversmp.ru
+      secretName: donate-neversmp-tls
+  rules:
+    - host: donate.neversmp.ru
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: web-store
+                port:
+                  number: 80

@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-alerts-rules
+  namespace: neversmp
+data:
+  alerts.yml: |
+    groups:
+      - name: neversmp-minecraft-alerts
+        rules:
+          # 1. Alert when TPS drops below 18.0 for 2 minutes
+          - alert: MinecraftLowTPS
+            expr: mc_server_tps < 18.0
+            for: 2m
+            labels:
+              severity: warning
+            annotations:
+              summary: "⚠️ Low TPS detected on {{ $labels.server }}"
+              description: "Server {{ $labels.server }} TPS dropped to {{ $value }} (threshold: 18.0)."
+
+          # 2. Alert when Server MSPT is critically high (> 45ms)
+          - alert: MinecraftHighMSPT
+            expr: mc_server_mspt > 45.0
+            for: 1m
+            labels:
+              severity: warning
+            annotations:
+              summary: "⏳ High Tick Duration (Lag) on {{ $labels.server }}"
+              description: "Tick duration on {{ $labels.server }} is {{ $value }}ms."
+
+          # 3. Alert when JVM Heap memory > 90%
+          - alert: MinecraftJVMHeapHigh
+            expr: (jvm_memory_used_bytes{area="heap"} / jvm_memory_max_bytes{area="heap"}) * 100 > 90
+            for: 3m
+            labels:
+              severity: critical
+            annotations:
+              summary: "🚨 JVM Heap Near OOM on {{ $labels.pod }}"
+              description: "JVM Heap usage is {{ $value }}% on {{ $labels.pod }}."
+
+          # 4. Alert if any game server pod is down or crash-looping
+          - alert: ServerPodNotReady
+            expr: kube_pod_status_phase{namespace="neversmp", phase!="Running"} > 0
+            for: 1m
+            labels:
+              severity: critical
+            annotations:
+              summary: "💥 Pod is DOWN: {{ $labels.pod }}"
+              description: "Pod {{ $labels.pod }} is not running in namespace neversmp."
+
+          # 5. Alert if MariaDB database is down
+          - alert: MariaDBDown
+            expr: mysql_up == 0
+            for: 1m
+            labels:
+              severity: critical
+            annotations:
+              summary: "🛑 MariaDB Database is UNREACHABLE"
+              description: "NeverSMP MariaDB instance is down. Authentication and permissions affected!"

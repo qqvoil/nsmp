@@ -1,0 +1,59 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: nightly-maintenance-restart
+  namespace: neversmp
+spec:
+  # 03:00 MSK is 00:00 UTC
+  schedule: "0 0 * * *"
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: neversmp-admin
+          restartPolicy: OnFailure
+          containers:
+            - name: kubectl-restart
+              image: bitnami/kubectl:latest
+              command: ["/bin/sh", "-c"]
+              args:
+                - |
+                  echo "[$(date)] Triggering rolling restart for all NeverSMP game servers..." &&
+                  kubectl -n neversmp rollout restart statefulset/lobby &&
+                  kubectl -n neversmp rollout restart statefulset/smp1 &&
+                  kubectl -n neversmp rollout restart statefulset/anarchy1 &&
+                  kubectl -n neversmp rollout restart statefulset/hardcore1 &&
+                  kubectl -n neversmp rollout restart statefulset/building1 &&
+                  echo "[$(date)] Rolling restart triggered successfully!"
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: neversmp-admin
+  namespace: neversmp
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: neversmp-rollout-role
+  namespace: neversmp
+rules:
+  - apiGroups: ["apps"]
+    resources: ["statefulsets", "deployments"]
+    verbs: ["get", "list", "watch", "patch", "update"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: neversmp-rollout-binding
+  namespace: neversmp
+subjects:
+  - kind: ServiceAccount
+    name: neversmp-admin
+    namespace: neversmp
+roleRef:
+  kind: Role
+  name: neversmp-rollout-role
+  apiGroup: rbac.authorization.k8s.io

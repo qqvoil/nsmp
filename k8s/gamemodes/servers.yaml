@@ -1,0 +1,442 @@
+# Template Helper for NeverSMP Game Servers
+{{- /* Game servers are provisioned as individual StatefulSets with dedicated PVCs and DNS services */ -}}
+
+---
+# 1. Limbo (Auth Holding World)
+apiVersion: v1
+kind: Service
+metadata:
+  name: limbo
+  namespace: neversmp
+spec:
+  ports:
+    - port: 25565
+      name: mc
+  clusterIP: None
+  selector:
+    app: limbo
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: limbo
+  namespace: neversmp
+spec:
+  serviceName: limbo
+  replicas: 1
+  selector:
+    matchLabels:
+      app: limbo
+  template:
+    metadata:
+      labels:
+        app: limbo
+    spec:
+      containers:
+        - name: limbo
+          image: itzg/minecraft-server:latest
+          env:
+            - name: TYPE
+              value: "CUSTOM"
+            - name: MEMORY
+              value: "256M"
+            - name: EULA
+              value: "TRUE"
+          ports:
+            - containerPort: 25565
+              name: mc
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "100m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 2Gi
+
+---
+# 2. Lobby (Hub Server)
+apiVersion: v1
+kind: Service
+metadata:
+  name: lobby
+  namespace: neversmp
+spec:
+  ports:
+    - port: 25565
+      name: mc
+    - port: 25575
+      name: rcon
+  clusterIP: None
+  selector:
+    app: lobby
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: lobby
+  namespace: neversmp
+spec:
+  serviceName: lobby
+  replicas: 1
+  selector:
+    matchLabels:
+      app: lobby
+  template:
+    metadata:
+      labels:
+        app: lobby
+    spec:
+      containers:
+        - name: lobby
+          image: itzg/minecraft-server:latest
+          env:
+            - name: TYPE
+              value: "PAPER"
+            - name: VERSION
+              value: "1.21.4"
+            - name: MEMORY
+              value: "2G"
+            - name: EULA
+              value: "TRUE"
+            - name: RCON_ENABLED
+              value: "true"
+            - name: RCON_PASSWORD
+              value: "YOUR_RCON_PASSWORD"
+            - name: ONLINE_MODE
+              value: "FALSE"
+          ports:
+            - containerPort: 25565
+              name: mc
+            - containerPort: 25575
+              name: rcon
+          resources:
+            requests:
+              memory: "1.5Gi"
+              cpu: "500m"
+            limits:
+              memory: "3Gi"
+              cpu: "2"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 10Gi
+
+---
+# 3. SMP-1 (Survival Primary)
+apiVersion: v1
+kind: Service
+metadata:
+  name: smp1
+  namespace: neversmp
+spec:
+  ports:
+    - port: 25565
+      name: mc
+    - port: 25575
+      name: rcon
+  clusterIP: None
+  selector:
+    app: smp1
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: smp1
+  namespace: neversmp
+spec:
+  serviceName: smp1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: smp1
+  template:
+    metadata:
+      labels:
+        app: smp1
+    spec:
+      containers:
+        - name: smp1
+          image: itzg/minecraft-server:latest
+          env:
+            - name: TYPE
+              value: "PAPER"
+            - name: VERSION
+              value: "1.21.4"
+            - name: MEMORY
+              value: "5G"
+            - name: EULA
+              value: "TRUE"
+            - name: RCON_ENABLED
+              value: "true"
+            - name: RCON_PASSWORD
+              value: "YOUR_RCON_PASSWORD"
+            - name: ONLINE_MODE
+              value: "FALSE"
+          ports:
+            - containerPort: 25565
+              name: mc
+            - containerPort: 25575
+              name: rcon
+          resources:
+            requests:
+              memory: "3Gi"
+              cpu: "1"
+            limits:
+              memory: "6Gi"
+              cpu: "4"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 25Gi
+
+---
+# 4. Anarchy-1 (Grief & Crystal PvP)
+apiVersion: v1
+kind: Service
+metadata:
+  name: anarchy1
+  namespace: neversmp
+spec:
+  ports:
+    - port: 25565
+      name: mc
+    - port: 25575
+      name: rcon
+  clusterIP: None
+  selector:
+    app: anarchy1
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: anarchy1
+  namespace: neversmp
+spec:
+  serviceName: anarchy1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: anarchy1
+  template:
+    metadata:
+      labels:
+        app: anarchy1
+    spec:
+      containers:
+        - name: anarchy1
+          image: itzg/minecraft-server:latest
+          env:
+            - name: TYPE
+              value: "PAPER"
+            - name: VERSION
+              value: "1.21.4"
+            - name: MEMORY
+              value: "5G"
+            - name: EULA
+              value: "TRUE"
+            - name: RCON_ENABLED
+              value: "true"
+            - name: RCON_PASSWORD
+              value: "YOUR_RCON_PASSWORD"
+            - name: ONLINE_MODE
+              value: "FALSE"
+          ports:
+            - containerPort: 25565
+              name: mc
+            - containerPort: 25575
+              name: rcon
+          resources:
+            requests:
+              memory: "3Gi"
+              cpu: "1"
+            limits:
+              memory: "6Gi"
+              cpu: "4"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 25Gi
+
+---
+# 5. Hardcore-1 (1 Life Extreme)
+apiVersion: v1
+kind: Service
+metadata:
+  name: hardcore1
+  namespace: neversmp
+spec:
+  ports:
+    - port: 25565
+      name: mc
+    - port: 25575
+      name: rcon
+  clusterIP: None
+  selector:
+    app: hardcore1
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: hardcore1
+  namespace: neversmp
+spec:
+  serviceName: hardcore1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hardcore1
+  template:
+    metadata:
+      labels:
+        app: hardcore1
+    spec:
+      containers:
+        - name: hardcore1
+          image: itzg/minecraft-server:latest
+          env:
+            - name: TYPE
+              value: "PAPER"
+            - name: VERSION
+              value: "1.21.4"
+            - name: HARDCORE
+              value: "true"
+            - name: MEMORY
+              value: "4G"
+            - name: EULA
+              value: "TRUE"
+            - name: RCON_ENABLED
+              value: "true"
+            - name: RCON_PASSWORD
+              value: "YOUR_RCON_PASSWORD"
+            - name: ONLINE_MODE
+              value: "FALSE"
+          ports:
+            - containerPort: 25565
+              name: mc
+            - containerPort: 25575
+              name: rcon
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "1"
+            limits:
+              memory: "5Gi"
+              cpu: "3"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 20Gi
+
+---
+# 6. Building-1 (Peaceful Survival)
+apiVersion: v1
+kind: Service
+metadata:
+  name: building1
+  namespace: neversmp
+spec:
+  ports:
+    - port: 25565
+      name: mc
+    - port: 25575
+      name: rcon
+  clusterIP: None
+  selector:
+    app: building1
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: building1
+  namespace: neversmp
+spec:
+  serviceName: building1
+  replicas: 1
+  selector:
+    matchLabels:
+      app: building1
+  template:
+    metadata:
+      labels:
+        app: building1
+    spec:
+      containers:
+        - name: building1
+          image: itzg/minecraft-server:latest
+          env:
+            - name: TYPE
+              value: "PAPER"
+            - name: VERSION
+              value: "1.21.4"
+            - name: MEMORY
+              value: "3G"
+            - name: EULA
+              value: "TRUE"
+            - name: RCON_ENABLED
+              value: "true"
+            - name: RCON_PASSWORD
+              value: "YOUR_RCON_PASSWORD"
+            - name: ONLINE_MODE
+              value: "FALSE"
+          ports:
+            - containerPort: 25565
+              name: mc
+            - containerPort: 25575
+              name: rcon
+          resources:
+            requests:
+              memory: "2Gi"
+              cpu: "500m"
+            limits:
+              memory: "4Gi"
+              cpu: "3"
+          volumeMounts:
+            - name: data
+              mountPath: /data
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 15Gi

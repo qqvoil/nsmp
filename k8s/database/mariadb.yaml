@@ -1,0 +1,116 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mariadb-init-schema
+  namespace: neversmp
+data:
+  01-schema.sql: |
+    CREATE DATABASE IF NOT EXISTS `neversmp` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+    USE `neversmp`;
+
+    CREATE TABLE IF NOT EXISTS `auth_users` (
+        `id` INT AUTO_INCREMENT PRIMARY KEY,
+        `username` VARCHAR(32) NOT NULL,
+        `realname` VARCHAR(32) NOT NULL,
+        `uuid` VARCHAR(36) NOT NULL,
+        `password_hash` VARCHAR(255) NOT NULL,
+        `ip_address` VARCHAR(45) NOT NULL,
+        `reg_date` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        `last_login` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        `is_bedrock` TINYINT(1) DEFAULT 0,
+        UNIQUE KEY `uk_username` (`username`),
+        KEY `idx_uuid` (`uuid`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE IF NOT EXISTS `player_tokens` (
+        `uuid` VARCHAR(36) NOT NULL PRIMARY KEY,
+        `username` VARCHAR(32) NOT NULL,
+        `tokens_balance` BIGINT UNSIGNED NOT NULL DEFAULT 0,
+        `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+        KEY `idx_username` (`username`)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+    CREATE TABLE IF NOT EXISTS `store_invoices` (
+        `id` INT AUTO_INCREMENT PRIMARY KEY,
+        `player_name` VARCHAR(32) NOT NULL,
+        `item_id` VARCHAR(64) NOT NULL,
+        `item_name` VARCHAR(128) NOT NULL,
+        `amount` DECIMAL(10,2) NOT NULL,
+        `status` ENUM('pending', 'paid', 'cancelled') DEFAULT 'pending',
+        `server_target` VARCHAR(32) DEFAULT 'global',
+        `payload` VARCHAR(64) UNIQUE,
+        `created_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        `paid_at` TIMESTAMP NULL
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mariadb
+  namespace: neversmp
+  labels:
+    app: mariadb
+spec:
+  ports:
+    - port: 3306
+      name: mysql
+  clusterIP: None
+  selector:
+    app: mariadb
+---
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: mariadb
+  namespace: neversmp
+spec:
+  serviceName: mariadb
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mariadb
+  template:
+    metadata:
+      labels:
+        app: mariadb
+    spec:
+      containers:
+        - name: mariadb
+          image: mariadb:10.11-jammy
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              value: "YOUR_MYSQL_ROOT_PASSWORD"
+            - name: MYSQL_DATABASE
+              value: "neversmp"
+            - name: MYSQL_USER
+              value: "nsmp_user"
+            - name: MYSQL_PASSWORD
+              value: "YOUR_MYSQL_USER_PASSWORD"
+          ports:
+            - containerPort: 3306
+              name: mysql
+          resources:
+            requests:
+              memory: "512Mi"
+              cpu: "250m"
+            limits:
+              memory: "2Gi"
+              cpu: "2"
+          volumeMounts:
+            - name: data
+              mountPath: /var/lib/mysql
+            - name: init-scripts
+              mountPath: /docker-entrypoint-initdb.d
+      volumes:
+        - name: init-scripts
+          configMap:
+            name: mariadb-init-schema
+  volumeClaimTemplates:
+    - metadata:
+        name: data
+      spec:
+        accessModes: ["ReadWriteOnce"]
+        resources:
+          requests:
+            storage: 15Gi
