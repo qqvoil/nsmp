@@ -9,16 +9,16 @@ TMUX_PREFIX="nsmp"
 # Server definitions: [name]="DIR|PORT|RAM_MIN|RAM_MAX|JAR_NAME"
 declare -A SERVERS=(
     ["velocity"]="velocity|25565|512M|1G|velocity.jar"
-    ["limbo"]="Limbo|25567|128M|256M|limbo"
+    ["limbo"]="Limbo|25567|128M|256M|limbo.jar"
     ["lobby"]="Lobby|25566|1G|2G|server.jar"
-    ["smp1"]="SMP1|25590|3G|5G|server.jar"
-    ["smp2"]="SMP2|25587|3G|5G|server.jar"
+    ["smp1"]="SMP1|25590|2G|4G|server.jar"
+    ["smp2"]="SMP2|25587|2G|4G|server.jar"
     ["hardcore1"]="hardcore1|25589|2G|4G|server.jar"
     ["hardcore2"]="hardcore2|25586|2G|4G|server.jar"
-    ["anarchy1"]="anarchy1|25588|3G|5G|server.jar"
-    ["anarchy2"]="anarchy2|25585|3G|5G|server.jar"
-    ["building1"]="building1|25583|2G|3G|server.jar"
-    ["building2"]="building2|25584|2G|3G|server.jar"
+    ["anarchy1"]="anarchy1|25588|2G|4G|server.jar"
+    ["anarchy2"]="anarchy2|25585|2G|4G|server.jar"
+    ["building1"]="building1|25583|1G|2G|server.jar"
+    ["building2"]="building2|25584|1G|2G|server.jar"
 )
 
 # Startup order (Auth/Proxy first, then Lobby, then Game servers)
@@ -53,7 +53,7 @@ start_server() {
 
     if [[ ! -f "$target_dir/start.sh" ]]; then
         if [[ "$srv" == "limbo" ]]; then
-            echo -e "#!/usr/bin/env bash\nchmod +x ./limbo 2>/dev/null || true\nexec ./limbo" > "$target_dir/start.sh"
+            echo -e "#!/usr/bin/env bash\nexec java -Xms${ram_min} -Xmx${ram_max} -jar limbo.jar" > "$target_dir/start.sh"
         elif [[ "$srv" == "velocity" ]]; then
             echo -e "#!/usr/bin/env bash\nexec java -Xms${ram_min} -Xmx${ram_max} -jar velocity.jar" > "$target_dir/start.sh"
         else

@@ -67,12 +67,10 @@ assemble_servers() {
 exec java -Xms512M -Xmx1G -jar velocity.jar
 EOF
         elif [[ "$jar_type" == "limbo" ]]; then
-            cp "${JARS_DIR}/limbo" "${srv_dir}/limbo"
-            chmod +x "${srv_dir}/limbo"
+            cp "${JARS_DIR}/limbo.jar" "${srv_dir}/limbo.jar"
             cat << 'EOF' > "${srv_dir}/start.sh"
 #!/usr/bin/env bash
-chmod +x ./limbo 2>/dev/null || true
-exec ./limbo
+exec java -Xms128M -Xmx256M -jar limbo.jar
 EOF
         else
             cp "${JARS_DIR}/paper-1.21.4.jar" "${srv_dir}/server.jar"
