@@ -1,4 +1,4 @@
-menu_title: '&8Hardcore'
+menu_title: '&8Хардкор Серверы'
 open_command: hardcore
 register_command: true
 size: 27
@@ -6,31 +6,49 @@ items:
   'gray_background':
     material: GRAY_STAINED_GLASS_PANE
     slots:
-      - 0-26
+      - 0-11
+      - 13
+      - 15-21
+      - 23-26
     display_name: ' '
-  smp1_button:
+  hardcore1_button:
     material: DIAMOND_AXE
     slot: 12
-    display_name: '&c&lHardcore1'
+    display_name: '&c&lХардкор-1'
     lore:
       - ' '
-      - '&7Ванила'
-      - '&7Вайп раз в три месяца'
+      - '&7• Ванильное выживание'
+      - '&7• Сложность Hard'
+      - '&7• Механика возрождения'
+      - '&7• Вайп: &fраз в три месяца'
       - ' '
       - '&eНажмите, чтобы войти'
     left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] hardcore1'
-      - '[message] &aВы перешли на сервер Hardcore1'
-  smp2_button:
+      - '[message] &aПодключение к серверу Hardcore1...'
+  hardcore2_button:
     material: DIAMOND_AXE
     slot: 14
-    display_name: '&c&lHardcore2'
+    display_name: '&c&lХардкор-2'
     lore:
       - ' '
-      - '&7Ванила'
-      - '&7Вайпов нет'
+      - '&7• Ванильное выживание'
+      - '&7• Сложность Hard'
+      - '&7• Механика возрождения'
+      - '&7• Вайп: &fбез вайпов'
       - ' '
       - '&eНажмите, чтобы войти'
     left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] hardcore2'
-      - '[message] &aВы перешли на сервер Hardcore2'
+      - '[message] &aПодключение к серверу Hardcore2...'
+  back_button:
+    material: ARROW
+    slot: 22
+    display_name: '&c&l« НАЗАД В МЕНЮ'
+    lore:
+      - '&7Вернуться к выбору режимов'
+    left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+      - '[openmenu] server_selector'

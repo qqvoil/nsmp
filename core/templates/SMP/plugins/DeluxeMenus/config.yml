@@ -39,3 +39,5 @@ gui_menus:
     file: tokenshop.yml
   pvp_kit:
     file: pvp_kit.yml
+  pvp_kit_almaz:
+    file: pvp_kit_almaz.yml

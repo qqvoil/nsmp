@@ -27,7 +27,7 @@ items:
       - ''
       - '&e▶ Клик — Что бы посмотреть что внутри'
     click_commands:
-      - '[openmenu] pvp_kit'
+      - '[openmenu] pvp_kit_almaz'
 
   # --- КРИСТАЛЛ ЭНДА ---
   'end_crystal_shop':

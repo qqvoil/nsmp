@@ -17,8 +17,8 @@ header-footer:
         - ""
       footer:
         - ""
-        - " &fНаш сайт: donate.neversmp.ru&d"
-        - " &fНаш тгк: t.me/NeverSMP&d"
+        - " &fНаш сайт: &ddonate.neversmp.ru"
+        - " &fНаш тгк: &dt.me/NeverSMP"
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Tablist-name-formatting
 tablist-name-formatting:

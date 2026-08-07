@@ -191,8 +191,13 @@ items:
           amount: 5000
           deny_commands:
             - '[message] &cУ вас недостаточно монет!'
+        has_space:
+          type: has empty slots
+          amount: 20
+          deny_commands:
+            - '[message] &cОсвободите инвентарь! Вам нужно минимум 20 свободных слотов.'
     left_click_commands:
       - '[console] eco take %player_name% 5000'
-      - '[openmenu] pvp_kit'
+      - '[console] kit almaz4 %player_name%'
       - '[message] &aВы успешно приобрели Кит ПВП за 5000 монет!'
       - '[close]'

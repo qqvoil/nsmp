@@ -17,8 +17,8 @@ header-footer:
         - ""
       footer:
         - ""
-        - " &fНаш сайт: donate.neversmp.ru&d"
-        - " &fНаш тгк: t.me/NeverSMP&d"
+        - " &fНаш сайт: &ddonate.neversmp.ru"
+        - " &fНаш тгк: &dt.me/NeverSMP"
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Tablist-name-formatting
 tablist-name-formatting:
@@ -71,7 +71,7 @@ bossbar:
       style: "PROGRESS" # for 1.9+: PROGRESS, NOTCHED_6, NOTCHED_10, NOTCHED_12, NOTCHED_20
       color: "%animation:barcolors%" # for 1.9+: BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
       progress: "100" # in %
-      text: "&fWebsite: &bwww.domain.com"
+      text: "&fWebsite: &bwww.neversmp.ru"
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Scoreboard
 scoreboard:
@@ -82,7 +82,7 @@ scoreboard:
   delay-on-join-milliseconds: 0
   scoreboards:
     scoreboard-1.20.3+:
-      title: " &7⚔ &d&lNeverSmp &7⚔"
+      title: " &7⚔ &d&lNeverSMP &7⚔"
       display-condition: "%player-version-id%>=765;%bedrock%=false" # Only display it to players using 1.20.3+ AND NOT bedrock edition
       lines:
         - "&d┌"
@@ -95,20 +95,17 @@ scoreboard:
         - "&d│ &fНаиграно: &d%statistic_hours_played%ч."
         - "&d└&f"
     scoreboard:
-      title: "<#E0B11E>MyServer</#FF0000>"
+      title: " &7⚔ &d&lNeverSMP &7⚔"
       lines:
-        - "&7%date%"
-        - "%animation:MyAnimation1%"
-        - "&6Online:"
-        - "* &eOnline&7: &f%online%"
-        - "* &eCurrent World&7: &f%worldonline%"
-        - "* &eStaff&7: &f%staffonline%"
-        - ""
-        - "&6Personal Info:"
-        - "* &bRank&7: &f%group%"
-        - "* &bPing&7: &f%ping%&8ms"
-        - "* &bWorld&7: &f%world%"
-        - "%animation:MyAnimation1%"
+        - "&d┌"
+        - "&d│ &fНик: &d%player_name%"
+        - "&d│ &fДонат: %luckperms_prefix%"
+        - "&d│"
+        - "&d│ &fУ/С: &a%statistic_player_kills%&f/&c%statistic_deaths%"
+        - "&d│ &fБаланс: &e%vault_eco_balance_fixed%⛁"
+        - "&d│ &fТокены: &d%playerpoints_points%⛁"
+        - "&d│ &fНаиграно: &d%statistic_hours_played%ч."
+        - "&d└&f"
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Layout
 layout:

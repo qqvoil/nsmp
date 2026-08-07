@@ -1,4 +1,4 @@
-menu_title: '&8Building'
+menu_title: '&8Билдинг Серверы'
 open_command: building
 register_command: true
 size: 27
@@ -6,31 +6,47 @@ items:
   'gray_background':
     material: GRAY_STAINED_GLASS_PANE
     slots:
-      - 0-26
+      - 0-11
+      - 13
+      - 15-21
+      - 23-26
     display_name: ' '
-  smp1_button:
+  building1_button:
     material: DIAMOND_PICKAXE
     slot: 12
-    display_name: '&a&lBuilding1'
+    display_name: '&a&lБилдинг-1'
     lore:
       - ' '
-      - '&7Ванила'
-      - '&7Вайп раз в три месяца'
+      - '&7• Строительство и архитектура'
+      - '&7• Ванильный мир'
+      - '&7• Вайп: &fраз в три месяца'
       - ' '
       - '&eНажмите, чтобы войти'
     left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] building1'
-      - '[message] &aВы перешли на сервер Building1'
-  smp2_button:
+      - '[message] &aПодключение к серверу Building1...'
+  building2_button:
     material: DIAMOND_PICKAXE
     slot: 14
-    display_name: '&a&lBuilding2'
+    display_name: '&a&lБилдинг-2'
     lore:
       - ' '
-      - '&7Ванила'
-      - '&7Без вайпов'
+      - '&7• Строительство и архитектура'
+      - '&7• Ванильный мир'
+      - '&7• Вайп: &fбез вайпов'
       - ' '
       - '&eНажмите, чтобы войти'
     left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] building2'
-      - '[message] &aВы перешли на сервер Building2'
+      - '[message] &aПодключение к серверу Building2...'
+  back_button:
+    material: ARROW
+    slot: 22
+    display_name: '&c&l« НАЗАД В МЕНЮ'
+    lore:
+      - '&7Вернуться к выбору режимов'
+    left_click_commands:
+      - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
+      - '[openmenu] server_selector'
