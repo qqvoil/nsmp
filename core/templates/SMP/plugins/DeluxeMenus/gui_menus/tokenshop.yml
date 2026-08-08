@@ -50,7 +50,7 @@ items:
             - '[message] &cУ вас недостаточно токенов'
     left_click_commands:
       - '[console] p take %player_name% 1000'
-      - '[console] kit elytra %player_name%'
+      - '[console] give %player_name% elytra 1 unbreaking:3 mending:1'
       - '[message] &aВы успешно купили Элитры!'
 
   'crossbow':
@@ -411,7 +411,7 @@ items:
             - '[message] &cУ вас недостаточно токенов'
     left_click_commands:
       - '[console] p take %player_name% 10'
-      - '[console] give %player_name% end_pearl 16'
+      - '[console] give %player_name% ender_pearl 16'
       - '[message] &aВы успешно купили Эндер жемчуг!'
 
   'potion_strength':

@@ -125,3 +125,7 @@ kits:
     - slot:38 diamond_chestplate 1 unbreaking:3 mending:1 protection:4 trim:silence|iron
     - slot:39 diamond_helmet 1 unbreaking:3 mending:1 protection:4 trim:silence|iron
     - slot:40 shield 1 unbreaking:3 basecolor:16383998
+  elytra:
+    delay: 1
+    items:
+    - slot:0 elytra 1 unbreaking:3 mending:1
