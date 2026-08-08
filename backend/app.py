@@ -380,12 +380,31 @@ def admin_manual_give():
     data = request.get_json() or {}
     nick = (data.get("player_name") or "").strip()
     item_id = data.get("item_id")
+    custom_tokens = int(data.get("custom_tokens", 0))
     if not nick or not item_id:
         return jsonify({"success": False, "message": "Заполните никнейм и товар"}), 400
 
-    execute_donation_rewards(nick, item_id)
-    notify_admin(f"🎁 <b>[ADMIN] Ручная выдача:</b>\nИгроку <code>{nick}</code> выдан товар <b>{item_id}</b>.")
-    return jsonify({"success": True, "message": f"Товар '{item_id}' успешно выдан игроку '{nick}'!"})
+    if item_id == "custom_tokens" and custom_tokens > 0:
+        execute_donation_rewards(nick, "custom_tokens", custom_tokens=custom_tokens)
+        notify_admin(f"🎁 <b>[ADMIN] Ручная выдача:</b>\nИгроку <code>{nick}</code> выдано <b>{custom_tokens} токенов</b>.")
+        return jsonify({"success": True, "message": f"{custom_tokens} токенов успешно выдано игроку '{nick}'!"})
+    elif item_id == "tokens_30k":
+        execute_donation_rewards(nick, "custom_tokens", custom_tokens=30000)
+        notify_admin(f"🎁 <b>[ADMIN] Ручная выдача:</b>\nИгроку <code>{nick}</code> выдано <b>30 000 токенов</b>.")
+        return jsonify({"success": True, "message": f"30 000 токенов успешно выдано игроку '{nick}'!"})
+    elif item_id == "tokens_15k":
+        execute_donation_rewards(nick, "custom_tokens", custom_tokens=15000)
+        return jsonify({"success": True, "message": f"15 000 токенов успешно выдано игроку '{nick}'!"})
+    elif item_id == "tokens_50k":
+        execute_donation_rewards(nick, "custom_tokens", custom_tokens=50000)
+        return jsonify({"success": True, "message": f"50 000 токенов успешно выдано игроку '{nick}'!"})
+    elif item_id == "tokens_100k":
+        execute_donation_rewards(nick, "custom_tokens", custom_tokens=100000)
+        return jsonify({"success": True, "message": f"100 000 токенов успешно выдано игроку '{nick}'!"})
+    else:
+        execute_donation_rewards(nick, item_id)
+        notify_admin(f"🎁 <b>[ADMIN] Ручная выдача:</b>\nИгроку <code>{nick}</code> выдан товар <b>{item_id}</b>.")
+        return jsonify({"success": True, "message": f"Товар '{item_id}' успешно выдан игроку '{nick}'!"})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
