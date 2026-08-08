@@ -3,17 +3,8 @@
 # ==============================================================================
 
 options:
-    # Длительность бана после смерти (в секундах: 86400 = 24 часа)
     deathban_duration: 86400
-    deathban_duration_text: "24 часа"
-    
-    # Стоимость возрождения токенами
     revive_cost_tokens: 500
-    
-    spawn_world: "world"
-    spawn_x: 0.5
-    spawn_y: 80.0
-    spawn_z: 0.5
 
 # ==============================================================================
 # СОБЫТИЕ: СМЕРТЬ НА ХАРДКОРЕ -> БАН И КИК В ЛОББИ
@@ -41,23 +32,22 @@ on death of player:
     # Оповещение на весь сервер
     broadcast "&8&m--------------------------------------------------"
     broadcast "&c&l☠ ГИБЕЛЬ НА ХАРДКОРЕ!"
-    broadcast "&fИгрок &e%victim's name% &fпогиб и заблокирован на &c{@deathban_duration_text}&f!"
+    broadcast "&fИгрок &e%victim's name% &fпогиб и заблокирован на &c24 часа&f!"
     broadcast "&7Координаты гибели: &eX: %{_x}%, Y: %{_y}%, Z: %{_z}%"
     broadcast "&8&m--------------------------------------------------"
     
     # Выполнение консольного бана в TempBan / Essentials для надёжности
-    make console execute command "tempban ban %victim's name% {@deathban_duration} Смерть_на_Хардкоре"
-    make console execute command "tempban %victim's name% 24h &cСмерть на Хардкоре"
+    execute console command "tempban ban %victim's name% {@deathban_duration} Смерть_на_Хардкоре"
     
-    # Задержка 1 тик для обработки дропа вещей и кик с причиной
+    # Кик игрока с сервера с подробным экраном
     wait 1 tick
-    kick victim due to "&c&lNeverSMP — ХАРДКОР%nl%%nl%&fВы погибли на сервере &cHardcore&f!%nl%&7Координаты гибели: &eX: %{_x}%, Y: %{_y}%, Z: %{_z}%%nl%&7Срок бана: &c{@deathban_duration_text}%nl%%nl%&aТиммейты могут воскресить вас: &e/revive %victim's name%%nl%&aРазбан на сайте: &ddonate.neversmp.ru"
+    execute console command "kick %victim's name% §c§lNeverSMP — ХАРДКОР\n\n§fВы погибли на сервере §cHardcore§f!\n§7Координаты гибели: §eX: %{_x}%, Y: %{_y}%, Z: %{_z}%\n§7Срок бана: §c24 часа\n\n§aТиммейты могут воскресить вас: §e/revive %victim's name%\n§aРазбан на сайте: §ddonate.neversmp.ru"
 
 # ==============================================================================
 # ПРОВЕРКА ПРИ ВХОДЕ НА ХАРДКОР
 # ==============================================================================
 
-on connect:
+on join:
     if player is op:
         stop
     if player has permission "neversmp.hardcore.bypass":
@@ -71,8 +61,9 @@ on connect:
             # Срок бана истёк — снимаем бан
             delete {hardcore_deathban::%player's uuid%}
             delete {hardcore_death_loc::%player's uuid%}
-            make console execute command "tempban unban %player's name%"
-            make console execute command "pardon %player's name%"
+            execute console command "tempban unban %player's name%"
+            execute console command "pardon %player's name%"
+            send "&aВаш срок бана на Хардкоре истёк! Добро пожаловать обратно в игру." to player
         else:
             # Бан ещё действует — вычисляем оставшееся время
             set {_diff} to {_expire} - {_now}
@@ -80,7 +71,7 @@ on connect:
             set {_mins} to floor(mod({_diff}, 3600) / 60)
             set {_secs} to mod({_diff}, 60)
             
-            kick player due to "&c&lNeverSMP — ХАРДКОР%nl%%nl%&fВы заблокированы из-за гибели на Хардкоре!%nl%&7До разбана осталось: &e%{_hours}% ч. %{_mins}% мин. %{_secs}% сек.%nl%%nl%&aТиммейты могут воскресить вас: &e/revive %player's name%%nl%&aРазбан на сайте: &ddonate.neversmp.ru"
+            execute console command "kick %player's name% §c§lNeverSMP — ХАРДКОР\n\n§fВы заблокированы из-за гибели на Хардкоре!\n§7До разбана осталось: §e%{_hours}% ч. %{_mins}% мин. %{_secs}% сек.\n\n§aТиммейты могут воскресить вас: §e/revive %player's name%\n§aРазбан на сайте: §ddonate.neversmp.ru"
 
 # ==============================================================================
 # КОМАНДЫ ВОСКРЕШЕНИЯ ТИММЕЙТОВ: /revive <ник>
@@ -93,7 +84,7 @@ command /revive [<text>]:
             send "&8&m--------------------------------------------------" to player
             send "&6&l⚔ NeverSMP — Воскрешение на Хардкоре" to player
             send "&e/revive <ник_игрока> &7— воскресить погибшего тиммейта" to player
-            send "&7Требуется: &eТотем бессмертия &7или &e{@revive_cost_tokens} токенов" to player
+            send "&7Требуется: &eТотем бессмертия &7в руке" to player
             send "&8&m--------------------------------------------------" to player
             stop
             
@@ -101,7 +92,6 @@ command /revive [<text>]:
         set {_target_uuid} to {hardcore_dead_by_name::%{_target_name}%}
         
         if {_target_uuid} is not set:
-            # Попробуем найти uuid среди всех забаненных
             loop {hardcore_deathban::*}:
                 if {hardcore_dead_name::%loop-index%} is {_target_name}:
                     set {_target_uuid} to loop-index
@@ -119,13 +109,13 @@ command /revive [<text>]:
             stop
             
         # Способ 1: Воскрешение Тотемом бессмертия из рук
-        if player's held item is totem of undying:
+        if player's tool is totem of undying:
             remove 1 totem of undying from player's inventory
             
             delete {hardcore_deathban::%{_target_uuid}%}
             delete {hardcore_death_loc::%{_target_uuid}%}
-            make console execute command "tempban unban %{_target_name}%"
-            make console execute command "pardon %{_target_name}%"
+            execute console command "tempban unban %{_target_name}%"
+            execute console command "pardon %{_target_name}%"
             
             broadcast "&8&m--------------------------------------------------"
             broadcast "&a&l✦ РИТУАЛ ВОСКРЕШЕНИЯ!"
@@ -134,24 +124,7 @@ command /revive [<text>]:
             play sound "ui.toast.challenge_complete" at player to player
             stop
             
-        # Способ 2: Воскрешение за токены
-        set {_tokens} to placeholder "playerpoints_points" from player parsed as integer
-        if {_tokens} >= {@revive_cost_tokens}:
-            make console execute command "p take %player's name% {@revive_cost_tokens}"
-            
-            delete {hardcore_deathban::%{_target_uuid}%}
-            delete {hardcore_death_loc::%{_target_uuid}%}
-            make console execute command "tempban unban %{_target_name}%"
-            make console execute command "pardon %{_target_name}%"
-            
-            broadcast "&8&m--------------------------------------------------"
-            broadcast "&a&l✦ ВОСКРЕШЕНИЕ ЗА ТОКЕНЫ!"
-            broadcast "&fИгрок &e%player's name% &fвоскресил &a%{_target_name}% &fза &e{@revive_cost_tokens} токенов&f!"
-            broadcast "&8&m--------------------------------------------------"
-            play sound "ui.toast.challenge_complete" at player to player
-            stop
-            
-        send "&cДля воскрешения возьмите в руку &eТотем Бессмертия &cили накопите &e{@revive_cost_tokens} токенов &c(У вас: %{_tokens}%)." to player
+        send "&cДля воскрешения возьмите в руку &eТотем Бессмертия&c!" to player
 
 # Команда админа для сброса бана смерти
 command /unbanhardcore <text>:
@@ -163,6 +136,6 @@ command /unbanhardcore <text>:
             delete {hardcore_deathban::%{_uuid}%}
             delete {hardcore_death_loc::%{_uuid}%}
         delete {hardcore_deathban::%{_name}%}
-        make console execute command "tempban unban %{_name}%"
-        make console execute command "pardon %{_name}%"
+        execute console command "tempban unban %{_name}%"
+        execute console command "pardon %{_name}%"
         send "&aСмерть-бан игрока %{_name}% успешно сброшен!" to player
