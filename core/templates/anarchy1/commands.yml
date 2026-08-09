@@ -4,4 +4,4 @@ aliases:
   icanhasbukkit:
   - version $1-
   rtp:
-  - dm open rtp_menu
+  - rtpmenu

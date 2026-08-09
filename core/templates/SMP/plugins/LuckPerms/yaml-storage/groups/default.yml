@@ -100,6 +100,16 @@ permissions:
     value: true
 - simpletpa.tpatoggle:
     value: true
+- essentials.tpa:
+    value: true
+- essentials.tpaccept:
+    value: true
+- essentials.tpdeny:
+    value: true
+- essentials.tpacancel:
+    value: true
+- essentials.tpahere:
+    value: true
 - weight.10:
     value: true
 - prefix.10.&7Игрок &f:
