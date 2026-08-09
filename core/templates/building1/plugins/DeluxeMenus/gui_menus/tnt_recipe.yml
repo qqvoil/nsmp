@@ -1,0 +1,68 @@
+menu_title: '&8Крафт: Обси-ТНТ'
+open_command: tnt_recipe
+register_command: false
+size: 45
+
+items:
+  'bg':
+    material: GRAY_STAINED_GLASS_PANE
+    slots:
+      - 0-9
+      - 13-18
+      - 22-23
+      - 25-27
+      - 31-44
+    display_name: ' '
+    
+  'gunpowder_1':
+    material: GUNPOWDER
+    slot: 10
+    display_name: '&fПорох'
+  'tnt_1':
+    material: TNT
+    slot: 11
+    display_name: '&fДинамит'
+  'gunpowder_2':
+    material: GUNPOWDER
+    slot: 12
+    display_name: '&fПорох'
+
+  'tnt_2':
+    material: TNT
+    slot: 19
+    display_name: '&fДинамит'
+  'diamond':
+    material: DIAMOND
+    slot: 20
+    display_name: '&bАлмаз'
+  'tnt_3':
+    material: TNT
+    slot: 21
+    display_name: '&fДинамит'
+
+  'gunpowder_3':
+    material: GUNPOWDER
+    slot: 28
+    display_name: '&fПорох'
+  'tnt_4':
+    material: TNT
+    slot: 29
+    display_name: '&fДинамит'
+  'gunpowder_4':
+    material: GUNPOWDER
+    slot: 30
+    display_name: '&fПорох'
+
+  'result':
+    material: TNT
+    slot: 24
+    display_name: '&c&lОбси-ТНТ'
+    lore:
+      - '&7Может взрывать обсидиан!'
+
+  'back':
+    material: ARROW
+    slot: 31
+    display_name: '&cНазад'
+    click_commands:
+      - '[openmenu] tokenshop'

@@ -45,3 +45,7 @@ gui_menus:
     file: pvp_kit.yml
   pvp_kit_almaz:
     file: pvp_kit_almaz.yml
+  protection_shop:
+    file: protection_shop.yml
+  tnt_recipe:
+    file: tnt_recipe.yml
