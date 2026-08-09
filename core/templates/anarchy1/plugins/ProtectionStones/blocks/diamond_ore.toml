@@ -1,0 +1,37 @@
+# name of block (must be unique)
+type = "diamond_ore"
+# block type/alias (can be multiple for the same type of PS region)
+aliases = ["diamond_ore"]
+
+# Set whether this block should be allowed to be placed without creating a region.
+# Only players with the permission 'protectionstones.allow_place_unprotected' will be able to do this.
+restrict_obtaining = false
+
+[region]
+# size of the region from the protection block
+radius_x = 10
+radius_y = 10
+radius_z = 10
+
+# Flags to set on the region by default
+# For WorldGuard 7+ (1.13+), you can use placeholders %player% and %uuid%
+flags = [
+    "pvp deny",
+    "greeting &aВы вошли в регион &e%player%",
+    "farewell &cВы покинули регион &e%player%",
+    "creeper-explosion deny",
+    "tnt deny",
+    "build deny",
+    "interact deny"
+]
+
+# Set the maximum number of regions this block can create
+# Set to -1 for unlimited
+max_regions = -1
+
+[block_data]
+display_name = "&bПриват 10x10x10"
+lore = [
+    "&7Поставьте этот блок на землю,",
+    "&7чтобы заприватить территорию!"
+]

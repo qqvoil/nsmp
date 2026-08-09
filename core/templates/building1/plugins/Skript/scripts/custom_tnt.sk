@@ -1,0 +1,21 @@
+on load:
+    register new shaped recipe for tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!" using gunpowder, tnt, gunpowder, tnt, diamond, tnt, gunpowder, tnt, gunpowder
+
+on place of tnt:
+    if name of player's tool is "&c&lОбси-ТНТ":
+        add location of event-block to {obsidian_tnt::*}
+
+on break of tnt:
+    if {obsidian_tnt::*} contains location of event-block:
+        remove location of event-block from {obsidian_tnt::*}
+        cancel event
+        set event-block to air
+        drop 1 tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!" at event-location
+
+on explode:
+    if {obsidian_tnt::*} contains location of event-block:
+        remove location of event-block from {obsidian_tnt::*}
+        loop blocks in radius 4 around event-location:
+            if loop-block is obsidian:
+                set loop-block to air
+                drop 1 obsidian at loop-block's location
