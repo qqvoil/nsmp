@@ -189,9 +189,31 @@ items:
           deny_commands:
             - '[message] &cУ вас недостаточно токенов! Нужно &b800'
 
+  'mace':
+    material: MACE
+    slot: 14
+    display_name: '&dБулава'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &b3000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 3000'
+      - '[console] kit mace %player_name%'
+      - '[message] &aВы успешно купили Булаву за &b3000 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 3000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b3000'
+
   'totem':
     material: TOTEM_OF_UNDYING
-    slot: 14
+    slot: 23
     display_name: '&eТотем бессмертия'
     lore:
       - ''
@@ -211,10 +233,10 @@ items:
           deny_commands:
             - '[message] &cУ вас недостаточно токенов! Нужно &b500'
 
-  'golden_apple':
-    material: GOLDEN_APPLE
-    slot: 23
-    display_name: '&eЗолотое яблоко'
+  'enchanted_apple':
+    material: ENCHANTED_GOLDEN_APPLE
+    slot: 32
+    display_name: '&dЗачарованное яблоко'
     lore:
       - ''
       - '&7Количество: &f16 шт.'
@@ -223,8 +245,8 @@ items:
       - '&e▶ Нажмите для покупки'
     left_click_commands:
       - '[console] p take %player_name% 800'
-      - '[console] give %player_name% golden_apple 16'
-      - '[message] &aВы успешно купили Золотое яблоко за &b800 токенов!'
+      - '[console] give %player_name% enchanted_golden_apple 16'
+      - '[message] &aВы успешно купили Зачарованное яблоко за &b800 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
@@ -233,31 +255,53 @@ items:
           deny_commands:
             - '[message] &cУ вас недостаточно токенов! Нужно &b800'
 
-  'blaze_rod':
-    material: BLAZE_ROD
-    slot: 32
-    display_name: '&6Огненный стержень'
+  'golden_apple':
+    material: GOLDEN_APPLE
+    slot: 41
+    display_name: '&eЗолотое яблоко'
     lore:
       - ''
-      - '&7Количество: &f32 шт.'
-      - '&7Цена: &b400 токенов'
+      - '&7Количество: &f64 шт.'
+      - '&7Цена: &b500 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
     left_click_commands:
-      - '[console] p take %player_name% 400'
-      - '[console] give %player_name% blaze_rod 32'
-      - '[message] &aВы успешно купили Огненный стержень за &b400 токенов!'
+      - '[console] p take %player_name% 500'
+      - '[console] give %player_name% golden_apple 64'
+      - '[message] &aВы успешно купили Золотое яблоко за &b500 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
-          expression: '%playerpoints_points% >= 400'
+          expression: '%playerpoints_points% >= 500'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов! Нужно &b400'
+            - '[message] &cУ вас недостаточно токенов! Нужно &b500'
+
+  'golden_carrot':
+    material: GOLDEN_CARROT
+    slot: 16
+    display_name: '&6Золотая морковь'
+    lore:
+      - ''
+      - '&7Количество: &f32 шт.'
+      - '&7Цена: &b500 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] give %player_name% golden_carrot 32'
+      - '[message] &aВы успешно купили Золотую морковь за &b500 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 500'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b500'
 
   'pvp_shulker':
     material: ORANGE_SHULKER_BOX
-    slot: 41
+    slot: 25
     display_name: '&6Шалкер с PvP набором'
     lore:
       - ''
@@ -279,7 +323,7 @@ items:
 
   'coins_100k':
     material: GOLD_INGOT
-    slot: 16
+    slot: 34
     display_name: '&e100,000 Монет'
     lore:
       - ''
@@ -301,7 +345,7 @@ items:
 
   'coins_1m':
     material: GOLD_BLOCK
-    slot: 25
+    slot: 43
     display_name: '&e1,000,000 Монет'
     lore:
       - ''
