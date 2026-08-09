@@ -169,7 +169,7 @@ stats:
   forced-stats: {}
 commands:
   tab-complete: 0
-  send-namespaced: true
+  send-namespaced: false
   spam-exclusions:
   - /skill
   replace-commands:
