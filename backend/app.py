@@ -4,6 +4,8 @@ import json
 import functools
 import urllib.request
 import urllib.error
+import subprocess
+import re
 
 # Load .env if python-dotenv is available, otherwise read os.environ
 try:
@@ -405,6 +407,46 @@ def admin_manual_give():
         execute_donation_rewards(nick, item_id)
         notify_admin(f"🎁 <b>[ADMIN] Ручная выдача:</b>\nИгроку <code>{nick}</code> выдан товар <b>{item_id}</b>.")
         return jsonify({"success": True, "message": f"Товар '{item_id}' успешно выдан игроку '{nick}'!"})
+
+@app.route("/api/admin/console/<server_name>", methods=["GET"])
+@require_admin
+def admin_console_get(server_name):
+    # Regex to remove ANSI escape codes
+    ansi_escape = re.compile(r'\x1B(?:[@-Z\\-_]|\[[0-?]*[ -/]*[@-~])')
+    
+    session_name = f"nsmp_{server_name}"
+    try:
+        # Capture last 100 lines of tmux pane
+        result = subprocess.run(
+            ["tmux", "capture-pane", "-pt", session_name, "-S", "-100"],
+            capture_output=True, text=True, check=True
+        )
+        clean_text = ansi_escape.sub('', result.stdout)
+        # Fix line endings to just \n
+        clean_text = clean_text.replace('\r\n', '\n')
+        return jsonify({"success": True, "log": clean_text})
+    except subprocess.CalledProcessError:
+        return jsonify({"success": False, "log": f"[Сервер {server_name} не запущен или консоль недоступна]"})
+
+@app.route("/api/admin/console/<server_name>/send", methods=["POST"])
+@require_admin
+def admin_console_send(server_name):
+    data = request.get_json() or {}
+    command = data.get("command", "").strip()
+    if not command:
+        return jsonify({"success": False, "message": "Пустая команда"})
+        
+    session_name = f"nsmp_{server_name}"
+    try:
+        # Send keys to tmux session
+        subprocess.run(
+            ["tmux", "send-keys", "-t", session_name, command, "ENTER"],
+            check=True
+        )
+        notify_admin(f"💻 <b>[ADMIN] Консоль ({server_name}):</b>\nВыполнена команда: <code>{command}</code>")
+        return jsonify({"success": True, "message": "Команда отправлена"})
+    except subprocess.CalledProcessError:
+        return jsonify({"success": False, "message": "Ошибка: Сервер не запущен"})
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)

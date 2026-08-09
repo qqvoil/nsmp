@@ -168,7 +168,13 @@
             </div>
         </header>
 
-        <div class="stats-grid">
+        <div class="tabs" style="display: flex; gap: 10px; margin-bottom: 20px;">
+            <button class="btn-primary tab-btn active" id="btn-tab-dashboard" onclick="switchTab('dashboard')" style="opacity: 1;">Дашборд</button>
+            <button class="btn-primary tab-btn" id="btn-tab-consoles" onclick="switchTab('consoles')" style="opacity: 0.6; background: rgba(255,255,255,0.1);">Консоли Серверов</button>
+        </div>
+
+        <div id="tab-dashboard" class="tab-content">
+            <div class="stats-grid">
             <div class="stat-card">
                 <div class="stat-title">Всего заказов</div>
                 <div class="stat-val" id="stat-total-orders">--</div>
@@ -236,8 +242,40 @@
                 </tbody>
             </table>
         </div>
-    </div>
+        </div> <!-- Close tab-dashboard -->
 
+        <div id="tab-consoles" class="tab-content" style="display: none;">
+            <div class="actions-panel" style="margin-bottom: 20px;">
+                <h3 class="section-title">💻 Интерактивные Консоли Серверов</h3>
+                <div class="form-row">
+                    <select id="console-server-select" onchange="switchConsoleServer()">
+                        <option value="lobby">Lobby</option>
+                        <option value="smp1" selected>SMP1 (Основной)</option>
+                        <option value="smp2">SMP2</option>
+                        <option value="anarchy1">Anarchy 1</option>
+                        <option value="anarchy2">Anarchy 2</option>
+                        <option value="hardcore1">Hardcore 1</option>
+                        <option value="hardcore2">Hardcore 2</option>
+                        <option value="building1">Building 1</option>
+                        <option value="building2">Building 2</option>
+                    </select>
+                    <button class="btn-primary" onclick="fetchConsole()">Обновить</button>
+                    <label style="display:flex; align-items:center; gap:8px; font-size:13px; color:var(--text-muted);">
+                        <input type="checkbox" id="auto-refresh-logs" checked onchange="toggleAutoRefresh()"> Автообновление
+                    </label>
+                </div>
+            </div>
+
+            <div style="background: #000; border: 1px solid var(--border-color); border-radius: 8px; padding: 12px; height: 500px; overflow-y: auto; margin-bottom: 12px;" id="console-output-container">
+                <pre id="console-output" style="color: #fff; font-family: var(--font-mono); font-size: 13px; white-space: pre-wrap; word-wrap: break-word; margin: 0;">Загрузка логов...</pre>
+            </div>
+
+            <div class="form-row" style="display:flex; gap:10px;">
+                <input type="text" id="console-command-input" placeholder="Введите команду (например, say Hello или stop)..." style="flex: 1;" onkeypress="if(event.key === 'Enter') sendConsoleCommand()">
+                <button class="btn-primary" onclick="sendConsoleCommand()">Отправить</button>
+            </div>
+        </div>
+    </div>
     <script>
         async function checkAuth() {
             try {
@@ -374,9 +412,109 @@
             loadData();
         }
 
+        // --- Console Logic ---
+        let consoleAutoRefreshInterval = null;
+        let isConsoleAutoScrolled = true;
+        let currentConsoleLog = "";
+
+        function switchTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.style.display = 'none');
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active');
+                el.style.opacity = '0.6';
+                el.style.background = 'rgba(255,255,255,0.1)';
+            });
+
+            document.getElementById('tab-' + tabId).style.display = 'block';
+            const btn = document.getElementById('btn-tab-' + tabId);
+            if (btn) {
+                btn.classList.add('active');
+                btn.style.opacity = '1';
+                btn.style.background = 'linear-gradient(135deg, #e056fd, #9b59b6)';
+            }
+
+            if (tabId === 'consoles') {
+                fetchConsole();
+                toggleAutoRefresh(); // Start auto-refresh if checked
+            } else {
+                if (consoleAutoRefreshInterval) clearInterval(consoleAutoRefreshInterval);
+            }
+        }
+
+        function switchConsoleServer() {
+            document.getElementById('console-output').textContent = "Загрузка логов...";
+            currentConsoleLog = "";
+            fetchConsole();
+        }
+
+        async function fetchConsole() {
+            const serverName = document.getElementById('console-server-select').value;
+            try {
+                const resp = await fetch(`/api/admin/console/${serverName}`);
+                if (resp.status === 401) {
+                    showLogin();
+                    return;
+                }
+                const data = await resp.json();
+                if (data.success || data.log) {
+                    const out = document.getElementById('console-output');
+                    const container = document.getElementById('console-output-container');
+                    
+                    // Check if user has scrolled up
+                    const isAtBottom = container.scrollHeight - container.clientHeight <= container.scrollTop + 20;
+                    
+                    out.textContent = data.log;
+                    
+                    if (isAtBottom) {
+                        container.scrollTop = container.scrollHeight;
+                    }
+                }
+            } catch (e) {
+                console.error("Error fetching console", e);
+            }
+        }
+
+        async function sendConsoleCommand() {
+            const serverName = document.getElementById('console-server-select').value;
+            const input = document.getElementById('console-command-input');
+            const cmd = input.value.trim();
+            if (!cmd) return;
+
+            input.disabled = true;
+            try {
+                const resp = await fetch(`/api/admin/console/${serverName}/send`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ command: cmd })
+                });
+                const data = await resp.json();
+                if (data.success) {
+                    input.value = '';
+                    setTimeout(fetchConsole, 500); // refresh shortly after send
+                } else {
+                    alert(data.message || "Ошибка отправки команды");
+                }
+            } catch (e) {
+                alert("Ошибка сети");
+            }
+            input.disabled = false;
+            input.focus();
+        }
+
+        function toggleAutoRefresh() {
+            const checked = document.getElementById('auto-refresh-logs').checked;
+            if (consoleAutoRefreshInterval) {
+                clearInterval(consoleAutoRefreshInterval);
+                consoleAutoRefreshInterval = null;
+            }
+            if (checked && document.getElementById('tab-consoles').style.display !== 'none') {
+                consoleAutoRefreshInterval = setInterval(fetchConsole, 1500);
+            }
+        }
+
         checkAuth();
         setInterval(() => {
-            if (document.getElementById('dashboard-container').style.display !== 'none') {
+            if (document.getElementById('tab-dashboard').style.display !== 'none' && document.getElementById('dashboard-container').style.display !== 'none') {
                 loadData();
             }
         }, 10000);
