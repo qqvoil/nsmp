@@ -73,7 +73,7 @@ attempt-delay: 100
 # min-radius: Minimum distance from center point (spawn/player) for teleportation
 # max-radius: Maximum distance from center point for teleportation
 min-radius: 1000
-max-radius: 5000
+max-radius: 2500
 
 
 # TELEPORT DELAY
