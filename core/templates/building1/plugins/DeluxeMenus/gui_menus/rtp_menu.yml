@@ -24,7 +24,7 @@ items:
       - '&eНажмите, чтобы телепортироваться'
     left_click_commands:
       - '[close]'
-      - '[console] advancedrtp:rtp %player_name%'
+      - '[player] advancedrtp:rtp'
 
   info:
     material: BOOK
