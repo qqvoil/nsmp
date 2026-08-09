@@ -39,7 +39,7 @@ items:
       - '&a▶ ПКМ для просмотра крафта'
     left_click_commands:
       - '[console] p take %player_name% 500'
-      - '[console] give %player_name% tnt 1 name:&c&lОбси-ТНТ lore:&7Может_взрывать_обсидиан!'
+      - '[console] giveobsitnt %player_name% 1'
       - '[message] &aВы успешно купили Обси-ТНТ (x1) за &b500 токенов!'
     left_click_requirement:
       requirements:
