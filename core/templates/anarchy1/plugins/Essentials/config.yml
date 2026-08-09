@@ -159,7 +159,7 @@ warn-on-smite: true
 drop-items-if-full: true
 
 # Should Essentials notify players if they have no new mail?
-notify-no-new-mail: true
+notify-no-new-mail: false
 
 # Specifies the cooldown duration, in seconds, between mail notifications for a player.
 # Useful for servers with high mail traffic.
