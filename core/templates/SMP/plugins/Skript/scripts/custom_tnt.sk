@@ -1,17 +1,14 @@
-on load:
-    register new shaped recipe for tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!" using gunpowder, tnt, gunpowder, tnt, diamond, tnt, gunpowder, tnt, gunpowder
-
 on place of tnt:
     if name of player's tool is "&c&lОбси-ТНТ":
-        set {_x} to x-coordinate of event-block
-        set {_y} to y-coordinate of event-block
-        set {_z} to z-coordinate of event-block
+        set {_x} to floor(x-coordinate of event-block)
+        set {_y} to floor(y-coordinate of event-block)
+        set {_z} to floor(z-coordinate of event-block)
         set {obsi_tnt::%{_x}%_%{_y}%_%{_z}%} to true
 
 on break of tnt:
-    set {_x} to x-coordinate of event-block
-    set {_y} to y-coordinate of event-block
-    set {_z} to z-coordinate of event-block
+    set {_x} to floor(x-coordinate of event-block)
+    set {_y} to floor(y-coordinate of event-block)
+    set {_z} to floor(z-coordinate of event-block)
     if {obsi_tnt::%{_x}%_%{_y}%_%{_z}%} is true:
         delete {obsi_tnt::%{_x}%_%{_y}%_%{_z}%}
         cancel event
