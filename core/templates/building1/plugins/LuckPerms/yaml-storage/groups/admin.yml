@@ -2,7 +2,7 @@ name: admin
 parents:
 - vip
 prefixes:
-- '&cАдмин':
+- '&cАдмин &f':
     priority: 90
 permissions:
 - '*':
