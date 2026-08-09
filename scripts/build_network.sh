@@ -87,8 +87,10 @@ EOF
 
         # Adjust server.properties port if file exists
         if [[ -f "${srv_dir}/server.properties" ]]; then
+            rcon_port=$((port - 14))
             sed -i.bak "s/^server-port=.*/server-port=${port}/" "${srv_dir}/server.properties" 2>/dev/null || true
             sed -i.bak "s/^query.port=.*/query.port=${port}/" "${srv_dir}/server.properties" 2>/dev/null || true
+            sed -i.bak "s/^rcon.port=.*/rcon.port=${rcon_port}/" "${srv_dir}/server.properties" 2>/dev/null || true
             rm -f "${srv_dir}/server.properties.bak"
         fi
 
