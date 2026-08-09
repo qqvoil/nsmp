@@ -89,4 +89,5 @@ permissions:
 - simpletpa.tpatoggle:
     value: true
 - weight.10:
-    value: true
+- prefix.10.&7Игрок:
+    value: true    value: true
