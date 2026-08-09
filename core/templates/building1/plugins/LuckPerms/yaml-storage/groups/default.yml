@@ -89,5 +89,28 @@ permissions:
 - simpletpa.tpatoggle:
     value: true
 - weight.10:
-- prefix.10.- prefix.10.&7Игрок:8Отсутствует:
-    value: true    value: true
+    value: true
+- prefix.10.&7Игрок &f:
+    value: true
+- deluxemenus.menu.coinshop:
+    value: true
+- deluxemenus.menu.coinshop2:
+    value: true
+- deluxemenus.menu.coinshop3:
+    value: true
+- deluxemenus.menu.seller:
+    value: true
+- deluxemenus.menu.seller_farmer:
+    value: true
+- deluxemenus.menu.seller_jewels:
+    value: true
+- deluxemenus.menu.seller_mobs:
+    value: true
+- voicechat.listen:
+    value: true
+- voicechat.speak:
+    value: true
+- deluxemenus.menu.main_menu:
+    value: true
+- bungeecord.command.server:
+    value: true

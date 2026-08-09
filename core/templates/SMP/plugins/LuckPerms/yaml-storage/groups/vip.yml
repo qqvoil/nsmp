@@ -11,3 +11,7 @@ permissions:
     value: true
 - weight.50:
     value: true
+- essentials.back:
+    value: true
+- essentials.back.ondeath:
+    value: true
