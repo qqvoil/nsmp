@@ -26,6 +26,12 @@ permissions:
     value: true
 - deluxemenus.menu.lobby:
     value: true
+- advancedrtp.world.world:
+    value: true
+- advancedrtp.world.world_nether:
+    value: true
+- advancedrtp.world.world_the_end:
+    value: true
 - essentials.afk:
     value: true
 - essentials.balance:
