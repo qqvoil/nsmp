@@ -82,7 +82,7 @@ def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int 
     if (item_id == "custom_tokens" or item_id.startswith("tokens_")) and custom_tokens > 0:
         commands = [
             f"p give {{player}} {custom_tokens}",
-            f"broadcast <gradient:#f9ca24:#f0932b>⭐ NeverSMP ⭐</gradient> <white>Игрок</white> <gold>{{player}}</gold> <white>получил</white> <yellow>{custom_tokens:,} Токенов</yellow>!"
+            f'tellraw @a ["",{{"text":"⭐ NeverSMP ⭐ ","color":"#f9ca24"}},{{"text":"Игрок ","color":"white"}},{{"text":"{{player}}","color":"gold"}},{{"text":" получил ","color":"white"}},{{"text":"{custom_tokens:,} Токенов!","color":"yellow"}}]'
         ]
     else:
         item = CATALOG.get(item_id)
