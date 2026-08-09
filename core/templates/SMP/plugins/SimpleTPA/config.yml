@@ -46,6 +46,7 @@ messages: # Supports both legacy § color codes and MiniMessage tags (e.g. <gree
   tpa_toggle_enabled: "§8[§dTPA§8] §cВы запретили присылать вам запросы."
   tpa_toggle_disabled: "§8[§dTPA§8] §aТеперь вам снова можно присылать запросы."
   tpa_target_not_accepting: "§8[§dTPA§8] §cИгрок §d%target% §cотключил прием запросов."
+  tpa_deny_notify: "§8[§dTPA§8] §c%player% отклонил ваш запрос."
   version_info: ""
   update_available_console: ""
   update_available_player: ""
