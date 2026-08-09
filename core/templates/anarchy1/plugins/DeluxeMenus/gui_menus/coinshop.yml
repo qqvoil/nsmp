@@ -1,15 +1,6 @@
-menu_title: '&#5a5a5a&lМагазин (Уровень 1)'
+menu_title: '&#5a5a5a&lМагазин'
 open_command: coinshop
 size: 54
-open_requirement:
-  requirements:
-    exp:
-      type: '>='
-      input: '%player_level%'
-      output: '10'
-      deny_commands:
-        - '[message] &cМагазин доступен с 10 уровня опыта!'
-
 items:
   'bg':
     material: PURPLE_STAINED_GLASS_PANE
