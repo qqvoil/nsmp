@@ -15,9 +15,21 @@ items:
     material: PURPLE_STAINED_GLASS_PANE
     slots:
       - 0-9
+      - 11
+      - 13
+      - 15
       - 17-18
+      - 20
+      - 22
+      - 24
       - 26-27
+      - 29
+      - 31
+      - 33
       - 35-36
+      - 38
+      - 40
+      - 42
       - 44-53
     display_name: ' '
 
@@ -384,6 +396,28 @@ items:
           amount: 15000
           deny_commands:
             - '[message] &cУ вас недостаточно монет! Нужно &e15000'
+
+  'totem':
+    material: TOTEM_OF_UNDYING
+    slot: 41
+    display_name: '&eТотем бессмертия'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e50000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 50000'
+      - '[console] give %player_name% totem_of_undying 1'
+      - '[message] &aВы успешно купили Тотем бессмертия за &e50000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 50000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e50000'
 
   'pot_turtle':
     material: POTION
