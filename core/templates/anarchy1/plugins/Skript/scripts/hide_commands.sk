@@ -1,0 +1,3 @@
+on player command send:
+    if player does not have permission "group.admin":
+        remove "permission", "permissions", "perms", "luckperms", "lp", "plugman", "plugins", "pl", "about", "ver", "version", "papi", "placeholderapi", "lightitemcooldown", "dm", "deluxemenus", "dmenu", "deluxemenu", "icanhasbukkit" from event-commands

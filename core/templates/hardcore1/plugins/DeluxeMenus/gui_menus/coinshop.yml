@@ -1,0 +1,356 @@
+menu_title: '&#5a5a5a&lМагазин (Уровень 1)'
+open_command: coinshop
+size: 54
+open_requirement:
+  requirements:
+    exp:
+      type: '>='
+      input: '%player_level%'
+      output: '10'
+      deny_commands:
+        - '[message] &cМагазин доступен с 10 уровня опыта!'
+
+items:
+  'bg':
+    material: PURPLE_STAINED_GLASS_PANE
+    slots:
+      - 0-9
+      - 11
+      - 13
+      - 15
+      - 17-18
+      - 20
+      - 22
+      - 24
+      - 26-27
+      - 29
+      - 31
+      - 33
+      - 35-36
+      - 38
+      - 40
+      - 42
+      - 44-53
+    display_name: ' '
+
+  'iron_helmet':
+    material: IRON_HELMET
+    slot: 10
+    display_name: '&fЖелезный шлем'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e500 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 500'
+      - '[console] give %player_name% iron_helmet 1'
+      - '[message] &aВы успешно купили Железный шлем за &e500 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 500
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e500'
+
+  'iron_chestplate':
+    material: IRON_CHESTPLATE
+    slot: 19
+    display_name: '&fЖелезная кираса'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e800 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 800'
+      - '[console] give %player_name% iron_chestplate 1'
+      - '[message] &aВы успешно купили Железная кираса за &e800 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 800
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e800'
+
+  'iron_leggings':
+    material: IRON_LEGGINGS
+    slot: 28
+    display_name: '&fЖелезные поножи'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e700 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 700'
+      - '[console] give %player_name% iron_leggings 1'
+      - '[message] &aВы успешно купили Железные поножи за &e700 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 700
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e700'
+
+  'iron_boots':
+    material: IRON_BOOTS
+    slot: 37
+    display_name: '&fЖелезные ботинки'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e400 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 400'
+      - '[console] give %player_name% iron_boots 1'
+      - '[message] &aВы успешно купили Железные ботинки за &e400 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 400
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e400'
+
+  'iron_sword':
+    material: IRON_SWORD
+    slot: 12
+    display_name: '&fЖелезный меч'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e600 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 600'
+      - '[console] give %player_name% iron_sword 1'
+      - '[message] &aВы успешно купили Железный меч за &e600 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 600
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e600'
+
+  'iron_pickaxe':
+    material: IRON_PICKAXE
+    slot: 21
+    display_name: '&fЖелезная кирка'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e700 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 700'
+      - '[console] give %player_name% iron_pickaxe 1'
+      - '[message] &aВы успешно купили Железная кирка за &e700 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 700
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e700'
+
+  'iron_axe':
+    material: IRON_AXE
+    slot: 30
+    display_name: '&fЖелезный топор'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e650 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 650'
+      - '[console] give %player_name% iron_axe 1'
+      - '[message] &aВы успешно купили Железный топор за &e650 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 650
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e650'
+
+  'iron_shovel':
+    material: IRON_SHOVEL
+    slot: 39
+    display_name: '&fЖелезная лопата'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e300 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 300'
+      - '[console] give %player_name% iron_shovel 1'
+      - '[message] &aВы успешно купили Железная лопата за &e300 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 300
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e300'
+
+  'water_bucket':
+    material: WATER_BUCKET
+    slot: 14
+    display_name: '&fВедро воды'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e800 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 800'
+      - '[console] give %player_name% water_bucket 1'
+      - '[message] &aВы успешно купили Ведро воды за &e800 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 800
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e800'
+
+  'gold_ingot':
+    material: GOLD_INGOT
+    slot: 23
+    display_name: '&fЗолотой слиток'
+    lore:
+      - ''
+      - '&7Количество: &f16 шт.'
+      - '&7Цена: &e150 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 150'
+      - '[console] give %player_name% gold_ingot 16'
+      - '[message] &aВы успешно купили Золотой слиток за &e150 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 150
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e150'
+
+  'iron_ingot':
+    material: IRON_INGOT
+    slot: 32
+    display_name: '&fЖелезный слиток'
+    lore:
+      - ''
+      - '&7Количество: &f16 шт.'
+      - '&7Цена: &e100 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 100'
+      - '[console] give %player_name% iron_ingot 16'
+      - '[message] &aВы успешно купили Железный слиток за &e100 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 100
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e100'
+
+  'coal':
+    material: COAL
+    slot: 41
+    display_name: '&fУголь'
+    lore:
+      - ''
+      - '&7Количество: &f16 шт.'
+      - '&7Цена: &e200 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 200'
+      - '[console] give %player_name% coal 16'
+      - '[message] &aВы успешно купили Уголь за &e200 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 200
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e200'
+
+  'bread':
+    material: BREAD
+    slot: 16
+    display_name: '&fХлеб'
+    lore:
+      - ''
+      - '&7Количество: &f32 шт.'
+      - '&7Цена: &e250 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 250'
+      - '[console] give %player_name% bread 32'
+      - '[message] &aВы успешно купили Хлеб за &e250 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 250
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e250'
+
+  'planks':
+    material: OAK_PLANKS
+    slot: 25
+    display_name: '&fДоски'
+    lore:
+      - ''
+      - '&7Количество: &f16 шт.'
+      - '&7Цена: &e100 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 100'
+      - '[console] give %player_name% oak_planks 16'
+      - '[message] &aВы успешно купили Доски за &e100 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 100
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e100'
+
+  'prev':
+    material: BREEZE_ROD
+    slot: 48
+    display_name: '&cВыход'
+    click_commands:
+      - '[close]'
+
+  'next':
+    material: BLAZE_ROD
+    slot: 50
+    display_name: '&aСледующая страница'
+    click_commands:
+      - '[openmenu] coinshop2'
