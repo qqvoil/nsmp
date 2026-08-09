@@ -16,6 +16,7 @@ items:
       - 24
       - 26-27
       - 29
+      - 31
       - 33
       - 35-36
       - 38
@@ -26,20 +27,20 @@ items:
 
   'obsi_tnt':
     material: TNT
-    slot: 31
-    display_name: '&c&lОбси-ТНТ &8(x16)'
+    slot: 14
+    display_name: '&c&lОбси-ТНТ &8(x1)'
     lore:
       - ''
       - '&7Может взрывать обсидиан!'
-      - '&7Количество: &f16 шт.'
+      - '&7Количество: &f1 шт.'
       - '&7Цена: &b500 токенов'
       - ''
       - '&e▶ ЛКМ для покупки'
       - '&a▶ ПКМ для просмотра крафта'
     left_click_commands:
       - '[console] p take %player_name% 500'
-      - '[console] give %player_name% tnt 16 name:&c&lОбси-ТНТ lore:&7Может_взрывать_обсидиан!'
-      - '[message] &aВы успешно купили Обси-ТНТ (x16) за &b500 токенов!'
+      - '[console] give %player_name% tnt 1 name:&c&lОбси-ТНТ lore:&7Может_взрывать_обсидиан!'
+      - '[message] &aВы успешно купили Обси-ТНТ (x1) за &b500 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
@@ -204,31 +205,9 @@ items:
           deny_commands:
             - '[message] &cУ вас недостаточно токенов! Нужно &b1700'
 
-  'netherite_shovel':
-    material: NETHERITE_SHOVEL
-    slot: 39
-    display_name: '&5Незеритовая лопата'
-    lore:
-      - ''
-      - '&7Количество: &f1 шт.'
-      - '&7Цена: &b800 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_commands:
-      - '[console] p take %player_name% 800'
-      - '[console] give %player_name% netherite_shovel 1'
-      - '[message] &aВы успешно купили Незеритовая лопата за &b800 токенов!'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 800'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов! Нужно &b800'
-
   'mace':
     material: MACE
-    slot: 14
+    slot: 39
     display_name: '&dБулава'
     lore:
       - ''

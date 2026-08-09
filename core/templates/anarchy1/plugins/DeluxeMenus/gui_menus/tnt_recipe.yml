@@ -65,4 +65,4 @@ items:
     slot: 31
     display_name: '&cНазад'
     click_commands:
-      - '[openmenu] tokenshop'
+      - '[openmenu] tokensshop'
