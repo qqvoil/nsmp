@@ -40,7 +40,7 @@ items:
             - '[message] &cУ вас недостаточно токенов! Нужно &b10000'
 
   'prev_page':
-    material: ARROW
+    material: BLAZE_ROD
     slot: 45
     display_name: '&aПредыдущая страница'
     click_commands:

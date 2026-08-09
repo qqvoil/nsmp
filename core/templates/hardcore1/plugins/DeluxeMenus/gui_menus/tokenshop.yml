@@ -382,7 +382,7 @@ items:
           deny_commands:
             - '[message] &cУ вас недостаточно токенов! Нужно &b10000'
   'next_page':
-    material: ARROW
+    material: BLAZE_ROD
     slot: 53
     display_name: '&aСледующая страница &7(VIP)'
     click_commands:
