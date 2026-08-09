@@ -9,17 +9,17 @@ settings:
   teleport_warmup_seconds: 5 # Time in Seconds the requester has to stand still before being teleported. Only used if teleport_warmup_enabled is true.
   allow_multiple_requests: true # If enabled, Players can send TPA-Requests to multiple different Players at the same time, and receive multiple incoming Requests at once.
 sounds:
-  tpa_request_sent: "ENTITY_EXPERIENCE_ORB_PICKUP"
-  tpa_request_received: "ENTITY_PLAYER_LEVELUP"
-  tpa_accept: "ENTITY_ENDERMAN_TELEPORT"
-  tpa_deny: "ENTITY_VILLAGER_NO"
-  tpa_expired: "ENTITY_ITEM_BREAK"
-  tpa_toggle_enabled: "BLOCK_NOTE_BLOCK_BASS"
-  tpa_toggle_disabled: "BLOCK_NOTE_BLOCK_PLING"
-  tpa_teleport_cancelled: "ENTITY_VILLAGER_NO"
+  tpa_request_sent: "entity.experience_orb.pickup"
+  tpa_request_received: "entity.player.levelup"
+  tpa_accept: "entity.enderman.teleport"
+  tpa_deny: "entity.villager.no"
+  tpa_expired: "entity.item.break"
+  tpa_toggle_enabled: "block.note_block.bass"
+  tpa_toggle_disabled: "block.note_block.pling"
+  tpa_teleport_cancelled: "entity.villager.no"
 messages: # Supports both legacy § color codes and MiniMessage tags (e.g. <green>, <gradient:blue:aqua>, <hover:show_text:'...'>).
-  tpa_request_sent: "<gold>➤ <yellow>Вы отправили запрос на телепортацию к <gold>%target%<yellow>. Ожидайте ответа..."
-  tpa_request_received: "<newline><gold>➤ <yellow>Игрок <gold>%player% <yellow>хочет телепортироваться к вам!<newline><newline>  <green><click:run_command:'/tpaccept %player%'><hover:show_text:'<green>Нажмите, чтобы принять!'><b>[✔ ПРИНЯТЬ]</b></hover></click></green>   <gray>|</gray>   <red><click:run_command:'/tpdeny %player%'><hover:show_text:'<red>Нажмите, чтобы отклонить!'><b>[✖ ОТКЛОНИТЬ]</b></hover></click></red><newline>"
+  tpa_request_sent: "§6➤ §eВы отправили запрос на телепортацию к §6%target%§e. Ожидайте ответа..."
+  tpa_request_received: "\n§6➤ §eИгрок §6%player% §eхочет телепортироваться к вам!\n"
   tpa_accept_success: "§aВы приняли запрос на телепортацию от %player% ."
   tpa_accept_teleport: "§aВы были телепортированы к %player% ."
   tpa_teleport_warmup_started: "§eТелепортация к %player% через %seconds% сек. Не двигайтесь!"
@@ -51,14 +51,14 @@ messages: # Supports both legacy § color codes and MiniMessage tags (e.g. <gree
   update_available_player: "§eДоступна новая версия (%version%) SimpleTPA! §fСсылка: %url%"
 
 clickable_messages:
-  accept_text: ""
-  accept_hover: ""
-  accept_command: ""
+  accept_text: "[✔ ПРИНЯТЬ]"
+  accept_hover: "Нажмите, чтобы принять запрос!"
+  accept_command: "/tpaccept"
   accept_color: "GREEN"
 
-  deny_text: ""
-  deny_hover: ""
-  deny_command: ""
+  deny_text: "[✖ ОТКЛОНИТЬ]"
+  deny_hover: "Нажмите, чтобы отклонить запрос!"
+  deny_command: "/tpdeny"
   deny_color: "RED"
 
 help_messages:
