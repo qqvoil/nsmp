@@ -2,7 +2,7 @@ name: vip
 parents:
 - default
 prefixes:
-- '&a[VIP] ':
+- '&aПремиум':
     priority: 50
 permissions:
 - crazyauctions.amount.7:

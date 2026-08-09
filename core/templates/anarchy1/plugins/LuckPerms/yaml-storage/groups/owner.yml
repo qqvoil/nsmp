@@ -2,7 +2,7 @@ name: owner
 parents:
 - admin
 prefixes:
-- '&4[Owner] ':
+- '&4Владелец':
     priority: 100
 permissions:
 - '*':
