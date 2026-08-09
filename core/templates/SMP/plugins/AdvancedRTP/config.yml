@@ -143,7 +143,7 @@ performance:
   preloading:
     # Enable chunk pre-loading to improve RTP success rate.
     # May cause slight lag when teleporting.
-    enabled: true
+    enabled: false
 
     # Maximum number of chunks to pre-load per RTP attempt.
     # Higher values improve success rate but may cause lag.
