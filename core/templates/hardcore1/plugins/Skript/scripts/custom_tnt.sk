@@ -3,18 +3,31 @@ on load:
 
 on place of tnt:
     if name of player's tool is "&c&lОбси-ТНТ":
-        add location of event-block to {obsidian_tnt::*}
+        set {_x} to x-coordinate of event-block
+        set {_y} to y-coordinate of event-block
+        set {_z} to z-coordinate of event-block
+        set {obsi_tnt::%{_x}%_%{_y}%_%{_z}%} to true
 
 on break of tnt:
-    if {obsidian_tnt::*} contains location of event-block:
-        remove location of event-block from {obsidian_tnt::*}
+    set {_x} to x-coordinate of event-block
+    set {_y} to y-coordinate of event-block
+    set {_z} to z-coordinate of event-block
+    if {obsi_tnt::%{_x}%_%{_y}%_%{_z}%} is true:
+        delete {obsi_tnt::%{_x}%_%{_y}%_%{_z}%}
         cancel event
         set event-block to air
         drop 1 tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!" at event-location
 
+on spawn of primed tnt:
+    set {_x} to floor(x-coordinate of event-entity)
+    set {_y} to floor(y-coordinate of event-entity)
+    set {_z} to floor(z-coordinate of event-entity)
+    if {obsi_tnt::%{_x}%_%{_y}%_%{_z}%} is true:
+        delete {obsi_tnt::%{_x}%_%{_y}%_%{_z}%}
+        set metadata value "obsi" of event-entity to true
+
 on explode:
-    if {obsidian_tnt::*} contains location of event-block:
-        remove location of event-block from {obsidian_tnt::*}
+    if metadata value "obsi" of event-entity is true:
         loop blocks in radius 4 around event-location:
             if loop-block is obsidian:
                 set loop-block to air
