@@ -20,6 +20,12 @@ permissions:
     value: true
 - deluxemenus.menu.tokenshop:
     value: true
+- deluxemenus.menu.tokensshop:
+    value: true
+- deluxemenus.menu.rtp_menu:
+    value: true
+- deluxemenus.menu.lobby:
+    value: true
 - essentials.afk:
     value: true
 - essentials.balance:
