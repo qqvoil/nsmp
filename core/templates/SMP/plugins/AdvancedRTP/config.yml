@@ -162,7 +162,7 @@ cooldown:
 
   # Cooldown duration in seconds.
   # Players must wait this long before using RTP again.
-  duration: 10
+  duration: 60
 
   # Message shown when a player is on cooldown.
   # Use {time} placeholder for remaining cooldown time.
