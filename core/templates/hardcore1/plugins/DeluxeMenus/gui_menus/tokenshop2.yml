@@ -1,0 +1,54 @@
+menu_title: '&#000000&lТокен Шоп &8(Страница 2)'
+open_command: tokenshop2
+size: 54
+
+items:
+  'bg':
+    material: PURPLE_STAINED_GLASS_PANE
+    slots:
+      - 0-30
+      - 32-44
+      - 46-48
+      - 50-53
+    display_name: ' '
+
+  'vip_rank':
+    material: DIAMOND
+    slot: 31
+    display_name: '&b&lVIP Статус &7(на 30 дней)'
+    lore:
+      - ''
+      - '&7Особый статус, который дает:'
+      - '&8- &fБольше слотов на аукционе'
+      - '&8- &fУникальный префикс'
+      - '&8- &fДополнительные возможности'
+      - ''
+      - '&7Цена: &b10000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 10000'
+      - '[console] lp user %player_name% parent addtemp vip 30d'
+      - '[message] &aВы успешно приобрели статус &b&lVIP&a на 30 дней за &b10000 токенов!'
+      - '[broadcast] &b&l%player_name% &aтолько что купил статус &b&lVIP&a в магазине!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 10000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b10000'
+
+  'prev_page':
+    material: ARROW
+    slot: 45
+    display_name: '&aПредыдущая страница'
+    click_commands:
+      - '[openmenu] tokensshop'
+
+  'close':
+    material: BARRIER
+    slot: 49
+    display_name: '&cЗакрыть'
+    click_commands:
+      - '[close]'

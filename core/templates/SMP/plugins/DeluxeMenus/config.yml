@@ -41,6 +41,8 @@ gui_menus:
     file: seller_jewels.yml
   tokensshop:
     file: tokenshop.yml
+  tokenshop2:
+    file: tokenshop2.yml
   pvp_kit:
     file: pvp_kit.yml
   pvp_kit_almaz:
