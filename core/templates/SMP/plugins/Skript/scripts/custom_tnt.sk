@@ -1,7 +1,10 @@
+on load:
+    set {obsi_tnt_item} to tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!"
+
 command /giveobsitnt <player> <integer>:
     permission: op
     trigger:
-        give arg-2 of tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!" to arg-1
+        give arg-2 of {obsi_tnt_item} to arg-1
 
 on place of tnt:
     if name of player's tool is "&c&lОбси-ТНТ":
@@ -18,7 +21,7 @@ on break of tnt:
         delete {obsi_tnt::%{_x}%_%{_y}%_%{_z}%}
         cancel event
         set event-block to air
-        drop 1 tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!" at event-location
+        drop 1 of {obsi_tnt_item} at event-location
 
 on spawn of primed tnt:
     set {_x} to floor(x-coordinate of event-entity)
@@ -30,7 +33,6 @@ on spawn of primed tnt:
 
 on explode:
     if metadata value "obsi" of event-entity is true:
-        create an explosion of force 12 at event-location
-        loop blocks in radius 12 around event-location:
+        loop blocks in radius 1.5 around event-location:
             if loop-block is obsidian:
                 add loop-block to exploded blocks
