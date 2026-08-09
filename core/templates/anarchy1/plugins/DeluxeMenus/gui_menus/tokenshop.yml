@@ -1,505 +1,329 @@
-menu_title: '&0Токен Шоп'
+menu_title: '&#000000&lТокен Шоп'
 open_command: tokenshop
 size: 54
 
 items:
-  # --- РЯД 2 ---
-  'obsidian':
-    material: OBSIDIAN
-    slot: 11
-    display_name: '&fОбсидиан'
+  'bg':
+    material: PURPLE_STAINED_GLASS_PANE
+    slots:
+      - 0-9
+      - 17-18
+      - 26-27
+      - 35-36
+      - 44-53
+    display_name: ' '
+
+  'netherite_helmet':
+    material: NETHERITE_HELMET
+    slot: 10
+    display_name: '&5Незеритовый шлем'
     lore:
+      - ''
       - '&7Количество: &f1 шт.'
-      - ''
-      - '&7Цена: &b50 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 50'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 50'
-      - '[console] give %player_name% obsidian 1'
-      - '[message] &aВы успешно купили Обсидиан!'
-
-  'elytra':
-    material: ELYTRA
-    slot: 12
-    enchantments:
-      - DURABILITY;3
-      - MENDING;1
-    display_name: '&fЭлитры'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - '&8• &7Прочность III'
-      - '&8• &7Починка'
-      - ''
-      - '&7Цена: &b1000 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 1000'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 1000'
-      - '[console] kit elytra %player_name%'
-      - '[message] &aВы успешно купили Элитры!'
-
-  'crossbow':
-    material: CROSSBOW
-    slot: 13
-    enchantments:
-      - MULTISHOT;1
-      - DURABILITY;3
-      - MENDING;1
-    display_name: '&fАрбалет'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - '&8• &7Тройной выстрел'
-      - '&8• &7Прочность III'
-      - '&8• &7Починка'
-      - ''
-      - '&7Цена: &b1000 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 1000'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 1000'
-      - '[console] kit arbalet %player_name%'
-      - '[message] &aВы успешно купили Арбалет!'
-
-  'fireworks':
-    material: FIREWORK_ROCKET
-    slot: 14
-    amount: 16
-    display_name: '&fФейерверк'
-    lore:
-      - '&7Количество: &f16 шт.'
-      - ''
-      - '&7Цена: &b100 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 100'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 100'
-      - '[console] give %player_name% firework_rocket 16'
-      - '[message] &aВы успешно купили Фейерверки!'
-
-  'golden_apple':
-    material: GOLDEN_APPLE
-    slot: 15
-    display_name: '&fЗолотое яблоко'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - ''
-      - '&7Цена: &b50 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 50'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 50'
-      - '[console] give %player_name% golden_apple 1'
-      - '[message] &aВы успешно купили Золотое яблоко!'
-
-  # --- РЯД 3 ---
-  'glowstone':
-    material: GLOWSTONE
-    slot: 19
-    display_name: '&fСветокаменный блок'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - ''
-      - '&7Цена: &b100 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 100'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 100'
-      - '[console] give %player_name% glowstone 1'
-      - '[message] &aВы успешно купили Светокаменный блок!'
-
-  'wind_charge':
-    material: WIND_CHARGE
-    slot: 20
-    amount: 32
-    display_name: '&fЗаряд ветра'
-    lore:
-      - '&7Количество: &f32 шт.'
-      - ''
-      - '&7Цена: &b500 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 500'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 500'
-      - '[console] give %player_name% wind_charge 32'
-      - '[message] &aВы успешно купили Заряды ветра!'
-
-  'respawn_anchor':
-    material: RESPAWN_ANCHOR
-    slot: 21
-    display_name: '&fЯкорь возрождения'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - ''
-      - '&7Цена: &b100 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 100'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 100'
-      - '[console] give %player_name% respawn_anchor 1'
-      - '[message] &aВы успешно купили Якорь возрождения!'
-
-  'mace_enchanted':
-    material: MACE
-    slot: 22
-    enchantments:
-      - WIND_BURST;3
-      - DURABILITY;3
-      - MENDING;1
-      - BREACH;5
-    display_name: '&fБулава'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - '&8• &7Порыв ветра III'
-      - '&8• &7Прочность III'
-      - '&8• &7Починка'
-      - '&8• &7Плотность V'
-      - ''
       - '&7Цена: &b1500 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 1500'
+      - '[console] give %player_name% netherite_helmet 1'
+      - '[message] &aВы успешно купили Незеритовый шлем за &b1500 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
           expression: '%playerpoints_points% >= 1500'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
+            - '[message] &cУ вас недостаточно токенов! Нужно &b1500'
+
+  'netherite_chestplate':
+    material: NETHERITE_CHESTPLATE
+    slot: 19
+    display_name: '&5Незеритовая кираса'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &b2500 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 2500'
+      - '[console] give %player_name% netherite_chestplate 1'
+      - '[message] &aВы успешно купили Незеритовая кираса за &b2500 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 2500'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b2500'
+
+  'netherite_leggings':
+    material: NETHERITE_LEGGINGS
+    slot: 28
+    display_name: '&5Незеритовые поножи'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &b2200 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 2200'
+      - '[console] give %player_name% netherite_leggings 1'
+      - '[message] &aВы успешно купили Незеритовые поножи за &b2200 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 2200'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b2200'
+
+  'netherite_boots':
+    material: NETHERITE_BOOTS
+    slot: 37
+    display_name: '&5Незеритовые ботинки'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &b1500 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
     left_click_commands:
       - '[console] p take %player_name% 1500'
-      - '[console] kit mace %player_name%'
-      - '[message] &aВы успешно купили Булаву!'
+      - '[console] give %player_name% netherite_boots 1'
+      - '[message] &aВы успешно купили Незеритовые ботинки за &b1500 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 1500'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b1500'
 
-  'enchanted_apple':
-    material: ENCHANTED_GOLDEN_APPLE
-    slot: 23
-    display_name: '&fЗачарованное яблоко'
+  'netherite_sword':
+    material: NETHERITE_SWORD
+    slot: 12
+    display_name: '&5Незеритовый меч'
     lore:
+      - ''
       - '&7Количество: &f1 шт.'
-      - ''
-      - '&7Цена: &b50 токенов'
+      - '&7Цена: &b2000 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 2000'
+      - '[console] give %player_name% netherite_sword 1'
+      - '[message] &aВы успешно купили Незеритовый меч за &b2000 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
-          expression: '%playerpoints_points% >= 50'
+          expression: '%playerpoints_points% >= 2000'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 50'
-      - '[console] give %player_name% enchanted_golden_apple 1'
-      - '[message] &aВы успешно купили Зачарованное яблоко!'
+            - '[message] &cУ вас недостаточно токенов! Нужно &b2000'
 
-  'chorus_fruit':
-    material: CHORUS_FRUIT
-    slot: 24
-    amount: 32
-    display_name: '&fХорус'
+  'netherite_pickaxe':
+    material: NETHERITE_PICKAXE
+    slot: 21
+    display_name: '&5Незеритовая кирка'
     lore:
-      - '&7Количество: &f32 шт.'
       - ''
-      - '&7Цена: &b50 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 50'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 50'
-      - '[console] give %player_name% chorus_fruit 32'
-      - '[message] &aВы успешно купили Хорус!'
-
-  'golden_carrot':
-    material: GOLDEN_CARROT
-    slot: 25
-    amount: 16
-    display_name: '&fЗолотая морковь'
-    lore:
-      - '&7Количество: &f16 шт.'
-      - ''
-      - '&7Цена: &b100 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 100'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 100'
-      - '[console] give %player_name% golden_carrot 16'
-      - '[message] &aВы успешно купили Золотую морковь!'
-
-  # --- РЯД 4 ---
-  'orange_shulker':
-    material: ORANGE_SHULKER_BOX
-    slot: 28
-    display_name: '&6&lОранжевый шалкер'
-    lore:
       - '&7Количество: &f1 шт.'
-      - '&7Внутри: &eКит ПВП'
-      - ''
-      - '&7Цена: &b3500 токенов'
-      - ''
-      - '&e▶ Нажмите, чтобы посмотреть состав'
-    left_click_commands:
-      - '[player] pvpkitpreview'
-
-  'end_crystal':
-    material: END_CRYSTAL
-    slot: 29
-    display_name: '&fКристалл Энда'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - ''
-      - '&7Цена: &b10 токенов'
+      - '&7Цена: &b1800 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 1800'
+      - '[console] give %player_name% netherite_pickaxe 1'
+      - '[message] &aВы успешно купили Незеритовая кирка за &b1800 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
-          expression: '%playerpoints_points% >= 10'
+          expression: '%playerpoints_points% >= 1800'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 10'
-      - '[console] give %player_name% end_crystal 1'
-      - '[message] &aВы успешно купили Кристалл Энда!'
+            - '[message] &cУ вас недостаточно токенов! Нужно &b1800'
 
-  'tnt':
-    material: TNT
+  'netherite_axe':
+    material: NETHERITE_AXE
     slot: 30
-    amount: 4
-    display_name: '&fДинамит'
+    display_name: '&5Незеритовый топор'
     lore:
-      - '&7Количество: &f4 шт.'
       - ''
-      - '&7Цена: &b50 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 50'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 50'
-      - '[console] give %player_name% tnt 4'
-      - '[message] &aВы успешно купили Динамит!'
-
-  'orange_shulker_2':
-    material: ORANGE_SHULKER_BOX
-    slot: 31
-    display_name: '&6&lКит ПВП'
-    lore:
       - '&7Количество: &f1 шт.'
-      - '&7Внутри: &eКит ПВП'
-      - ''
-      - '&7Цена: &b3500 токенов'
-      - ''
-      - '&e▶ Нажмите, чтобы посмотреть состав'
-    left_click_commands:
-      - '[player] pvpkitpreview'
-
-  'potion_speed':
-    material: SPLASH_POTION
-    slot: 32
-    display_name: '&fЗелье скорости II'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - '&8• &7Эффект: Скорость II (1:30)'
-      - ''
-      - '&7Цена: &b50 токенов'
+      - '&7Цена: &b1700 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 1700'
+      - '[console] give %player_name% netherite_axe 1'
+      - '[message] &aВы успешно купили Незеритовый топор за &b1700 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
-          expression: '%playerpoints_points% >= 50'
+          expression: '%playerpoints_points% >= 1700'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 50'
-      - '[console] kit skorka2 %player_name%'
-      - '[message] &aВы успешно купили Зелье скорости II!'
+            - '[message] &cУ вас недостаточно токенов! Нужно &b1700'
 
-  'ender_pearl':
-    material: ENDER_PEARL
-    slot: 33
-    amount: 16
-    display_name: '&fЭндер жемчуг'
-    lore:
-      - '&7Количество: &f16 шт.'
-      - ''
-      - '&7Цена: &b10 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 10'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 10'
-      - '[console] give %player_name% end_pearl 16'
-      - '[message] &aВы успешно купили Эндер жемчуг!'
-
-  'potion_strength':
-    material: SPLASH_POTION
-    slot: 34
-    display_name: '&fЗелье силы II'
-    lore:
-      - '&7Количество: &f1 шт.'
-      - '&8• &7Эффект: Сила II (1:30)'
-      - ''
-      - '&7Цена: &b50 токенов'
-      - ''
-      - '&e▶ Нажмите для покупки'
-    left_click_requirement:
-      requirements:
-        has_tokens:
-          type: javascript
-          expression: '%playerpoints_points% >= 50'
-          deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 50'
-      - '[console] kit cila2 %player_name%'
-      - '[message] &aВы успешно купили Зелье силы II!'
-
-  # --- РЯД 5 ---
-  'arrow_left':
-    material: TIPPED_ARROW
+  'netherite_shovel':
+    material: NETHERITE_SHOVEL
     slot: 39
-    amount: 8
-    potion_effects:
-      - SLOW_FALLING;30;1
-    display_name: '&fСтрела плавного падения'
+    display_name: '&5Незеритовая лопата'
     lore:
-      - '&7Количество: &f8 шт.'
-      - '&8• &7Эффект: Плавное падение (0:30)'
       - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &b800 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 800'
+      - '[console] give %player_name% netherite_shovel 1'
+      - '[message] &aВы успешно купили Незеритовая лопата за &b800 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 800'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b800'
+
+  'totem':
+    material: TOTEM_OF_UNDYING
+    slot: 14
+    display_name: '&eТотем бессмертия'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
       - '&7Цена: &b500 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 500'
+      - '[console] give %player_name% totem_of_undying 1'
+      - '[message] &aВы успешно купили Тотем бессмертия за &b500 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
           expression: '%playerpoints_points% >= 500'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 500'
-      - '[console] kit plavki %player_name%'
-      - '[message] &aВы успешно купили Стрелы плавного падения!'
+            - '[message] &cУ вас недостаточно токенов! Нужно &b500'
 
-  'arrow_right':
-    material: TIPPED_ARROW
-    slot: 41
-    amount: 8
-    potion_effects:
-      - HARM;1;1
-    display_name: '&fСтрела моментального урона'
+  'golden_apple':
+    material: GOLDEN_APPLE
+    slot: 23
+    display_name: '&eЗолотое яблоко'
     lore:
-      - '&7Количество: &f8 шт.'
-      - '&8• &7Эффект: Моментальный урон II'
       - ''
-      - '&7Цена: &b100 токенов'
+      - '&7Количество: &f16 шт.'
+      - '&7Цена: &b800 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 800'
+      - '[console] give %player_name% golden_apple 16'
+      - '[message] &aВы успешно купили Золотое яблоко за &b800 токенов!'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
-          expression: '%playerpoints_points% >= 100'
+          expression: '%playerpoints_points% >= 800'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов'
-    left_click_commands:
-      - '[console] p take %player_name% 100'
-      - '[console] kit momentalki %player_name%'
-      - '[message] &aВы успешно купили Стрелы моментального урона!'
+            - '[message] &cУ вас недостаточно токенов! Нужно &b800'
 
-  # --- РЯД 6 (Кнопка Назад) ---
-  'back_dye':
-    material: RED_DYE
+  'blaze_rod':
+    material: BLAZE_ROD
+    slot: 32
+    display_name: '&6Огненный стержень'
+    lore:
+      - ''
+      - '&7Количество: &f32 шт.'
+      - '&7Цена: &b400 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 400'
+      - '[console] give %player_name% blaze_rod 32'
+      - '[message] &aВы успешно купили Огненный стержень за &b400 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 400'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b400'
+
+  'pvp_shulker':
+    material: ORANGE_SHULKER_BOX
+    slot: 41
+    display_name: '&6Шалкер с PvP набором'
+    lore:
+      - ''
+      - '&7Внутри: &eТоп PvP экипировка'
+      - '&7Цена: &b5000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 5000'
+      - '[console] kit pvp %player_name%'
+      - '[message] &aВы успешно купили Шалкер с PvP набором за &b5000 токенов!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 5000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b5000'
+
+  'coins_100k':
+    material: GOLD_INGOT
+    slot: 16
+    display_name: '&e100,000 Монет'
+    lore:
+      - ''
+      - '&7Обмен токенов на монеты'
+      - '&7Цена: &b1000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 1000'
+      - '[console] eco give %player_name% 100000'
+      - '[message] &aВы успешно обменяли &b1000 токенов &aна &e100,000 монет!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 1000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b1000'
+
+  'coins_1m':
+    material: GOLD_BLOCK
+    slot: 25
+    display_name: '&e1,000,000 Монет'
+    lore:
+      - ''
+      - '&7Обмен токенов на монеты'
+      - '&7Цена: &b10000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 10000'
+      - '[console] eco give %player_name% 1000000'
+      - '[message] &aВы успешно обменяли &b10000 токенов &aна &e1,000,000 монет!'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 10000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &b10000'
+
+  'close':
+    material: BARRIER
     slot: 49
-    display_name: '&cНазад в Шоп'
-    left_click_commands:
-      - '[player] shop'
-
-  # --- ЗАПОЛНЕНИЕ СЕРЫМ СТЕКЛОМ ---
-  'filler':
-    material: GRAY_STAINED_GLASS_PANE
-    slots: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 16, 17, 18, 26, 27, 35, 36, 37, 38, 40, 42, 43, 44, 45, 46, 47, 48, 50, 51, 52, 53]
-    display_name: ' '
+    display_name: '&cЗакрыть'
+    click_commands:
+      - '[close]'
