@@ -1,0 +1,344 @@
+menu_title: '&#5a5a5a&lМагазин (Уровень 2)'
+open_command: coinshop2
+size: 54
+open_requirement:
+  requirements:
+    exp:
+      type: '>='
+      input: '%player_level%'
+      output: '20'
+      deny_commands:
+        - '[message] &cЭта страница доступна с 20 уровня опыта!'
+
+items:
+  'bg':
+    material: PURPLE_STAINED_GLASS_PANE
+    slots:
+      - 0-9
+      - 17-18
+      - 26-27
+      - 35-36
+      - 44-53
+    display_name: ' '
+
+  'dia_helmet':
+    material: DIAMOND_HELMET
+    slot: 10
+    display_name: '&bАлмазный шлем'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e5000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 5000'
+      - '[console] give %player_name% diamond_helmet 1'
+      - '[message] &aВы успешно купили Алмазный шлем за &e5000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 5000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e5000'
+
+  'dia_chestplate':
+    material: DIAMOND_CHESTPLATE
+    slot: 19
+    display_name: '&bАлмазная кираса'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e8000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 8000'
+      - '[console] give %player_name% diamond_chestplate 1'
+      - '[message] &aВы успешно купили Алмазная кираса за &e8000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 8000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e8000'
+
+  'dia_leggings':
+    material: DIAMOND_LEGGINGS
+    slot: 28
+    display_name: '&bАлмазные поножи'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e7000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 7000'
+      - '[console] give %player_name% diamond_leggings 1'
+      - '[message] &aВы успешно купили Алмазные поножи за &e7000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 7000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e7000'
+
+  'dia_boots':
+    material: DIAMOND_BOOTS
+    slot: 37
+    display_name: '&bАлмазные ботинки'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e4000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 4000'
+      - '[console] give %player_name% diamond_boots 1'
+      - '[message] &aВы успешно купили Алмазные ботинки за &e4000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 4000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e4000'
+
+  'dia_sword':
+    material: DIAMOND_SWORD
+    slot: 12
+    display_name: '&bАлмазный меч'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e6000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 6000'
+      - '[console] give %player_name% diamond_sword 1'
+      - '[message] &aВы успешно купили Алмазный меч за &e6000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 6000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e6000'
+
+  'dia_pickaxe':
+    material: DIAMOND_PICKAXE
+    slot: 21
+    display_name: '&bАлмазная кирка'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e7000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 7000'
+      - '[console] give %player_name% diamond_pickaxe 1'
+      - '[message] &aВы успешно купили Алмазная кирка за &e7000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 7000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e7000'
+
+  'dia_axe':
+    material: DIAMOND_AXE
+    slot: 30
+    display_name: '&bАлмазный топор'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e6500 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 6500'
+      - '[console] give %player_name% diamond_axe 1'
+      - '[message] &aВы успешно купили Алмазный топор за &e6500 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 6500
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e6500'
+
+  'dia_shovel':
+    material: DIAMOND_SHOVEL
+    slot: 39
+    display_name: '&bАлмазная лопата'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e3000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 3000'
+      - '[console] give %player_name% diamond_shovel 1'
+      - '[message] &aВы успешно купили Алмазная лопата за &e3000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 3000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e3000'
+
+  'cobweb':
+    material: COBWEB
+    slot: 14
+    display_name: '&fПаутина'
+    lore:
+      - ''
+      - '&7Количество: &f32 шт.'
+      - '&7Цена: &e2000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 2000'
+      - '[console] give %player_name% cobweb 32'
+      - '[message] &aВы успешно купили Паутина за &e2000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 2000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e2000'
+
+  'wind_charge':
+    material: WIND_CHARGE
+    slot: 23
+    display_name: '&fЗаряд ветра'
+    lore:
+      - ''
+      - '&7Количество: &f32 шт.'
+      - '&7Цена: &e3000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 3000'
+      - '[console] give %player_name% wind_charge 32'
+      - '[message] &aВы успешно купили Заряд ветра за &e3000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 3000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e3000'
+
+  'lapis':
+    material: LAPIS_LAZULI
+    slot: 32
+    display_name: '&9Лазурит'
+    lore:
+      - ''
+      - '&7Количество: &f16 шт.'
+      - '&7Цена: &e1000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 1000'
+      - '[console] give %player_name% lapis_lazuli 16'
+      - '[message] &aВы успешно купили Лазурит за &e1000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 1000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e1000'
+
+  'emerald':
+    material: EMERALD
+    slot: 41
+    display_name: '&aИзумруд'
+    lore:
+      - ''
+      - '&7Количество: &f16 шт.'
+      - '&7Цена: &e1500 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 1500'
+      - '[console] give %player_name% emerald 16'
+      - '[message] &aВы успешно купили Изумруд за &e1500 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 1500
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e1500'
+
+  'gapple':
+    material: GOLDEN_APPLE
+    slot: 16
+    display_name: '&eЗолотое яблоко'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e3000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 3000'
+      - '[console] give %player_name% golden_apple 1'
+      - '[message] &aВы успешно купили Золотое яблоко за &e3000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 3000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e3000'
+
+  'potion':
+    material: POTION
+    slot: 25
+    display_name: '&dЗелье лечения'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e5000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 5000'
+      - '[console] give %player_name% strong_healing_potion 1'
+      - '[message] &aВы успешно купили Зелье лечения за &e5000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 5000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e5000'
+
+  'prev':
+    material: BREEZE_ROD
+    slot: 48
+    display_name: '&cПредыдущая страница'
+    click_commands:
+      - '[openmenu] coinshop'
+
+  'next':
+    material: BLAZE_ROD
+    slot: 50
+    display_name: '&aСледующая страница'
+    click_commands:
+      - '[openmenu] coinshop3'

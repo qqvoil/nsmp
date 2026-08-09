@@ -19,6 +19,10 @@ gui_menus:
     file: basics_menu.yml
   coinshop:
     file: coinshop.yml
+  coinshop2:
+    file: coinshop2.yml
+  coinshop3:
+    file: coinshop3.yml
   exchange:
     file: exchange.yml
   requirements_menu:

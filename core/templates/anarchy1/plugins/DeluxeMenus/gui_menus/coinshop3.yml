@@ -1,0 +1,422 @@
+menu_title: '&#5a5a5a&lМагазин (Уровень 3)'
+open_command: coinshop3
+size: 54
+open_requirement:
+  requirements:
+    exp:
+      type: '>='
+      input: '%player_level%'
+      output: '30'
+      deny_commands:
+        - '[message] &cЭта страница доступна с 30 уровня опыта!'
+
+items:
+  'bg':
+    material: PURPLE_STAINED_GLASS_PANE
+    slots:
+      - 0-9
+      - 17-18
+      - 26-27
+      - 35-36
+      - 44-53
+    display_name: ' '
+
+  'dia_helmet_e':
+    material: DIAMOND_HELMET
+    slot: 10
+    display_name: '&bАлмазный шлем'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;2
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Защита III'
+      - '&8• &7Прочность II'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e30000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 30000'
+      - '[console] give %player_name% diamond_helmet 1 protection:3 unbreaking:2'
+      - '[message] &aВы успешно купили Алмазный шлем за &e30000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 30000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e30000'
+
+  'dia_chestplate_e':
+    material: DIAMOND_CHESTPLATE
+    slot: 19
+    display_name: '&bАлмазная кираса'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;2
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Защита III'
+      - '&8• &7Прочность II'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e50000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 50000'
+      - '[console] give %player_name% diamond_chestplate 1 protection:3 unbreaking:2'
+      - '[message] &aВы успешно купили Алмазная кираса за &e50000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 50000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e50000'
+
+  'dia_leggings_e':
+    material: DIAMOND_LEGGINGS
+    slot: 28
+    display_name: '&bАлмазные поножи'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;2
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Защита III'
+      - '&8• &7Прочность II'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e45000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 45000'
+      - '[console] give %player_name% diamond_leggings 1 protection:3 unbreaking:2'
+      - '[message] &aВы успешно купили Алмазные поножи за &e45000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 45000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e45000'
+
+  'dia_boots_e':
+    material: DIAMOND_BOOTS
+    slot: 37
+    display_name: '&bАлмазные ботинки'
+    enchantments:
+      - PROTECTION_ENVIRONMENTAL;3
+      - DURABILITY;2
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Защита III'
+      - '&8• &7Прочность II'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e30000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 30000'
+      - '[console] give %player_name% diamond_boots 1 protection:3 unbreaking:2'
+      - '[message] &aВы успешно купили Алмазные ботинки за &e30000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 30000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e30000'
+
+  'dia_sword_e':
+    material: DIAMOND_SWORD
+    slot: 12
+    display_name: '&bАлмазный меч'
+    enchantments:
+      - DAMAGE_ALL;3
+      - DURABILITY;1
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Острота III'
+      - '&8• &7Прочность I'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e40000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 40000'
+      - '[console] give %player_name% diamond_sword 1 sharpness:3 unbreaking:1'
+      - '[message] &aВы успешно купили Алмазный меч за &e40000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 40000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e40000'
+
+  'dia_pickaxe_e':
+    material: DIAMOND_PICKAXE
+    slot: 21
+    display_name: '&bАлмазная кирка'
+    enchantments:
+      - DIG_SPEED;3
+      - DURABILITY;2
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Эффективность III'
+      - '&8• &7Прочность II'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e45000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 45000'
+      - '[console] give %player_name% diamond_pickaxe 1 efficiency:3 unbreaking:2'
+      - '[message] &aВы успешно купили Алмазная кирка за &e45000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 45000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e45000'
+
+  'dia_axe_e':
+    material: DIAMOND_AXE
+    slot: 30
+    display_name: '&bАлмазный топор'
+    enchantments:
+      - DIG_SPEED;3
+      - DURABILITY;2
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Эффективность III'
+      - '&8• &7Прочность II'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e35000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 35000'
+      - '[console] give %player_name% diamond_axe 1 efficiency:3 unbreaking:2'
+      - '[message] &aВы успешно купили Алмазный топор за &e35000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 35000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e35000'
+
+  'dia_shovel_e':
+    material: DIAMOND_SHOVEL
+    slot: 39
+    display_name: '&bАлмазная лопата'
+    enchantments:
+      - DIG_SPEED;3
+      - DURABILITY;2
+    lore:
+      - ''
+      - '&dЗачарования:'
+      - '&8• &7Эффективность III'
+      - '&8• &7Прочность II'
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e20000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 20000'
+      - '[console] give %player_name% diamond_shovel 1 efficiency:3 unbreaking:2'
+      - '[message] &aВы успешно купили Алмазная лопата за &e20000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 20000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e20000'
+
+  'mending_book':
+    material: ENCHANTED_BOOK
+    slot: 14
+    display_name: '&dЗачарованная книга (Починка)'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e25000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 25000'
+      - '[console] give %player_name% enchanted_book 1 mending:1'
+      - '[message] &aВы успешно купили Зачарованная книга (Починка) за &e25000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 25000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e25000'
+
+  'gapple2':
+    material: GOLDEN_APPLE
+    slot: 23
+    display_name: '&eЗолотое яблоко'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e8000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 8000'
+      - '[console] give %player_name% golden_apple 1'
+      - '[message] &aВы успешно купили Золотое яблоко за &e8000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 8000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e8000'
+
+  'gcarrot':
+    material: GOLDEN_CARROT
+    slot: 32
+    display_name: '&6Золотая морковь'
+    lore:
+      - ''
+      - '&7Количество: &f32 шт.'
+      - '&7Цена: &e7000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 7000'
+      - '[console] give %player_name% golden_carrot 32'
+      - '[message] &aВы успешно купили Золотая морковь за &e7000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 7000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e7000'
+
+  'pot_strength':
+    material: POTION
+    slot: 16
+    display_name: '&cЗелье силы'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e20000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 20000'
+      - '[console] give %player_name% strong_strength_potion 1'
+      - '[message] &aВы успешно купили Зелье силы за &e20000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 20000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e20000'
+
+  'pot_fire':
+    material: POTION
+    slot: 25
+    display_name: '&6Зелье огнестойкости'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e18000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 18000'
+      - '[console] give %player_name% long_fire_resistance_potion 1'
+      - '[message] &aВы успешно купили Зелье огнестойкости за &e18000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 18000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e18000'
+
+  'pot_speed':
+    material: POTION
+    slot: 34
+    display_name: '&bЗелье скорости'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e15000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 15000'
+      - '[console] give %player_name% strong_swiftness_potion 1'
+      - '[message] &aВы успешно купили Зелье скорости за &e15000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 15000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e15000'
+
+  'pot_turtle':
+    material: POTION
+    slot: 43
+    display_name: '&2Зелье черепашьей мощи'
+    lore:
+      - ''
+      - '&7Количество: &f1 шт.'
+      - '&7Цена: &e25000 монет'
+      - ''
+      - '&a▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] eco take %player_name% 25000'
+      - '[console] give %player_name% strong_turtle_master_potion 1'
+      - '[message] &aВы успешно купили Зелье черепашьей мощи за &e25000 монет!'
+    left_click_requirement:
+      requirements:
+        money:
+          type: 'has money'
+          amount: 25000
+          deny_commands:
+            - '[message] &cУ вас недостаточно монет! Нужно &e25000'
+
+  'prev':
+    material: BREEZE_ROD
+    slot: 48
+    display_name: '&cПредыдущая страница'
+    click_commands:
+      - '[openmenu] coinshop2'
+
+  'next':
+    material: BLAZE_ROD
+    slot: 50
+    display_name: '&8Следующая страница'
+    lore:
+      - '&7Больше страниц нет'
