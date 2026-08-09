@@ -1,5 +1,5 @@
 menu_title: '&8Телепортация RTP'
-open_command: rtpmenu
+open_command: _rtp_internal
 register_command: true
 size: 27
 
