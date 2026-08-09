@@ -33,6 +33,7 @@ on spawn of primed tnt:
 
 on explode:
     if metadata value "obsi" of event-entity is true:
+        create an explosion of force 12 at event-location
         loop blocks in radius 1.5 around event-location:
-            if loop-block is obsidian:
+            if loop-block is obsidian or crying obsidian or reinforced deepslate:
                 add loop-block to exploded blocks
