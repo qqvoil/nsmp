@@ -1,5 +1,6 @@
 on load:
     set {obsi_tnt_item} to tnt named "&c&lОбси-ТНТ" with lore "&7Может взрывать обсидиан!"
+    register new shaped recipe for {obsi_tnt_item} using obsidian, obsidian, obsidian, obsidian, tnt, obsidian, obsidian, obsidian, obsidian with id "obsi_tnt"
 
 command /giveobsitnt <player> <integer>:
     permission: op
