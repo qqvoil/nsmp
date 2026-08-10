@@ -55,7 +55,7 @@ on command:
 on rightclick:
     if player's held item is recovery compass:
         cancel the event
-        make player execute command "dm open server_selector"
+        make player execute command "menu"
 
 # ============================================
 # БЛОКИРОВКА СЛОТА 0 (НЕЛЬЗЯ ПЕРЕМЕСТИТЬ)
