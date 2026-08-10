@@ -1,0 +1,5 @@
+bedrock:
+    clone-remote-port: true
+    port: 14391
+remote:
+    auth-type: floodgate

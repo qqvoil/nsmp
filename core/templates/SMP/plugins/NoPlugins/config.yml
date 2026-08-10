@@ -1,0 +1,35 @@
+# ============================================
+#       NoPlugins - Configuration
+# ============================================
+
+# Enable anonymous statistics collection (bStats)
+# This helps the developer track plugin usage. No personal data is collected.
+metrics-enabled: true
+
+# Plugin mode:
+# BLACKLIST = hide listed commands
+# WHITELIST = only listed commands allowed
+mode: BLACKLIST
+
+# Commands to hide or allow (depending on mode)
+commands:
+  - "plugins"
+  - "pl"
+  - "bukkit:plugins"
+  - "about"
+  - "version"
+  - "ver"
+  - "?"
+  - "icanhasbukkit"
+  - "minecraft:*"
+  - "datapack"
+
+# Regex patterns to hide commands (works regardless of mode)
+regex-patterns:
+  - "^bukkit:.*"
+
+# Message shown when a hidden command is executed (supports MiniMessage)
+# Supports PlaceholderAPI placeholders if PAPI is installed
+# Use \n for multi-line messages
+# Leave empty "" to show nothing
+deny-message: "<red>Unknown command. Type <yellow>/help</yellow> for a list of commands."

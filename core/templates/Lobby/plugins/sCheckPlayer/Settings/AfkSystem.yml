@@ -1,0 +1,85 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+Afk-System:
+  # Enables or disables the AFK system.
+  # When enabled (true), the system will monitor player activity and mark them as AFK
+  # if they have not performed any actions for a certain period of time.
+  # The initiator of the check will be notified that the player is AFK,
+  # and the check will be automatically triggered when the player returns from AFK.
+  #
+  # Включает или отключает систему AFK.
+  # Если включено (true), система будет отслеживать активность игроков и помечать их как AFK,
+  # если они не выполняли действий в течение определенного времени.
+  # Инициатор проверки будет уведомлен, что игрок находится в режиме AFK,
+  # и вызов на проверку будет выполнен автоматически, когда игрок вернется из AFK.
+  Enabled: false
+  # The time in seconds after which a player will be considered AFK if they haven't shown any activity (e.g., haven't moved).
+  # If a player does not perform any actions within this time, they will automatically be marked as AFK.
+  # 300 seconds = 5 minutes
+  # 600 seconds = 10 minutes
+  # 900 seconds = 15 minutes
+  #
+  # Время в секундах, через которое игрок будет считаться AFK, если он не проявлял активности (например, не двигался).
+  # Если игрок не выполняет никаких действий в течение этого времени, он автоматически будет помечен как AFK.
+  # 300 секунд = 5 минут
+  # 600 секунд = 10 минут
+  # 900 секунд = 15 минут
+  Time-Out-Afk: 300
+  # The interval in seconds at which the system will check the status of each player for activity.
+  # This determines how frequently the task runs to check if a player has gone AFK.
+  # Lower values make the check more frequent.
+  #
+  # Интервал в секундах, через который система будет проверять состояние каждого игрока на активности.
+  # Это влияет на частоту выполнения задачи, которая определяет, ушел ли игрок в режим AFK.
+  # Меньшие значения делают проверку более частой.
+  Task-Interval: 1
+  # When enabled, the system checks for mouse movement.
+  # When disabled, it checks for movement from block to block.
+  # Enabling this check may increase server load.
+  # (If it does not cause lag, you can leave it enabled).
+  #
+  # Когда включено игрока проверяет на движение мыши.
+  # Когда отключено игрока проверяет на перемещение с блока на блок.
+  # Включения проверки может увеличить нагрузку на сервер.
+  # (если функция не вызывает лагов, то можно оставить включенной).
+  Check-Movements-Completely: false
+  # The value indicates how sensitive the system is to changes in the player's view direction.
+  # A lower value makes the sensitivity higher.
+  # A higher value makes the sensitivity lower.
+  # You need to restart the plugin for this to take effect.
+  #
+  # Значение указывает, насколько чувствительно система реагирует на изменение направления взгляда игрока.
+  # Меньшее значение делает проверку более чувствительной.
+  # Большее значение делает проверку менее чувствительной.
+  # Нужно перезагрузить плагин чтобы это применилось.
+  Mouse-Movement-Sensitivity: 1
+  # "int" for using integers.
+  # "double" to use numbers with a dot.
+  # Intended for Mouse-Movement-Sensitivity
+  #
+  # "int" для использования целых чисел.
+  # "double" для использования чисел с точкой.
+  # Предназначено для Mouse-Movement-Sensitivity
+  Type-Variables: int
+  WhiteList-Players:
+    # Should I include a whitelist of players that the AFK system won't work on?
+    # Нужно ли включать белый список игроков, на которых не будет работать AFK-система?
+    Enabled: false
+    # Specify a list of players.
+    # Укажите список игроков.
+    Players:
+    - Snon_SS
+  # Enables or disables automatic player checking when the player has gone AFK.
+  # Включает или отключает автоматическую проверку игрока когда игрок вышел из АФК.
+  Run-Check-Exited-Afk-Enabled: true

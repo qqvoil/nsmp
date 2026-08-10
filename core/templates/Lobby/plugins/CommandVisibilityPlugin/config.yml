@@ -1,0 +1,11 @@
+# List of commands to show in tab-completion
+shown-commands:
+  - help
+  - menu
+  - smp
+  - anarchy
+  - building
+  - hardcore
+  - msg
+  - tell
+  - voicechat

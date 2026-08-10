@@ -1,0 +1,186 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+Settings:
+  # If this parameter is enabled true, files will be automatically updated
+  # and supplemented with new content after the plugin is activated.
+  # This eliminates the need to manually update files.
+  # If this parameter is disabled false, files will remain unchanged after the plugin starts.
+  # Better not to touch this unless you know what you're doing.
+  #
+  # Если параметр включен true, файлы будут автоматически обновляться и
+  # дополняться новым содержимым после включения плагина.
+  # Это избавляет от необходимости вручную обновлять файлы.
+  # Если параметр выключен false, файлы останутся без изменений после запуска плагина.
+  # Лучше не трогать, если не уверены, что делаете.
+  Update-Files-With-New-Content-After-Plugin-Enabled: true
+  # A list of files or folders that should not be automatically updated with new content after the plugin starts.
+  # Specify the relative path from the plugin folder (for example: Lang/ru.yml).
+  # You can use wildcards:
+  # - "*" — ignore all files.
+  # - "folder/*" — ignore all files inside a specific folder.
+  # Empty entries are ignored.
+  # Example:
+  # Update-Files-With-New-Content-After-Plugin-Ignore:
+  # - Lang/ru.yml
+  # - Settings/GlobalFile.yml
+  # - Lang/*
+  # - *
+  #
+  # Список файлов или папок, которые не нужно автоматически обновлять новым содержимым после запуска плагина.
+  # Указывается относительный путь от папки плагина (например: Lang/ru.yml).
+  # Можно использовать подстановочные символы:
+  # - "*" — игнорировать все файлы.
+  # - "папка/*" — игнорировать все файлы внутри указанной папки.
+  # Пустые строки игнорируются.
+  # Пример:
+  # Update-Files-With-New-Content-After-Plugin-Ignore:
+  # - Lang/ru.yml
+  # - Settings/GlobalFile.yml
+  # - Lang/*
+  # - *
+  Update-Files-With-New-Content-After-Plugin-Ignore:
+  - ''
+  # List of commands to register
+  # Each command can be listed separately or specified through commas in one line.
+  # Commands "- cmd,cmd1,cmd2" will be registered simultaneously.
+  # !!! To apply the changes, you need to restart the server or the plugin(completely not via /scheck reload) !!!
+  #
+  # Список команд для регистрации
+  # Каждую команду можно перечислить отдельно или указать их через запятую в одной строке.
+  # Команды "- cmd,cmd1,cmd2" будут зарегистрированы одновременно
+  # !!! Для того чтобы изменения вступили в силу, необходимо перезагрузить сервер или плагин(полностью не через /scheck reload). !!!
+  Commands:
+  - scheck
+  # Enables or disables automatic file reloading upon changes.
+  # When set to true, any changes made to the relevant files will automatically
+  # trigger a reload without needing to restart the plugin or server.
+  # When set to false, file reloading must be done manually via a command.
+  # !!! If it doesn't work the first time, restart the server, or the plugin completely !!!
+  #
+  # Включает или отключает автоматическую перезагрузку файлов при их изменениях.
+  # При значении true, любые изменения в соответствующих файлах автоматически
+  # приведут к их перезагрузке без необходимости перезагружать плагин или сервер.
+  # При значении false перезагрузка файлов должна быть выполнена вручную через команду.
+  # !!! Если с первого раза не сработало, перезагрузите сервер, или плагин полностью !!!
+  Files-Auto-Reload-Enabled: true
+  # A list of files or folders that should not be automatically reloaded.
+  # Specify the relative path from the plugin folder (for example: Lang/ru.yml).
+  # You can also use wildcards:
+  # - Use "*" to ignore all files.
+  # - Use "folder/*" to ignore all files inside a specific folder.
+  # Empty entries are ignored.
+  # Example:
+  # Files-Auto-Reload-Ignore:
+  # - Lang/ru.yml
+  # - Settings/CmdArgStart.yml
+  # - Lang/*
+  # - *
+  #
+  # Список файлов или папок, которые не нужно автоматически перезагружать.
+  # Указывается относительный путь от папки плагина (например: Lang/ru.yml).
+  # Также можно использовать подстановочные символы:
+  # - "*" — игнорировать все файлы.
+  # - "папка/*" — игнорировать все файлы внутри указанной папки.
+  # Пустые строки игнорируются.
+  # Пример:
+  # Files-Auto-Reload-Ignore:
+  # - Lang/ru.yml
+  # - Settings/CmdArgStart.yml
+  # - Lang/*
+  # - *
+  Files-Auto-Reload-Ignore:
+  - Settings/GlobalFile.yml
+  # -----------------------------------------------------------------------------------
+  # EXPERIMENTAL FEATURE
+  # -----------------------------------------------------------------------------------
+  # Enabling this option allows automatic updating of the Discord log JSON file
+  # on plugin start. Only the DiscordLogsJsonFormats.json file will be updated.
+  # Use with caution!!!
+  #
+  # Recommendations:
+  # - Enable only if you want the plugin to automatically update log templates.
+  # - Experimental feature; behavior may change in future versions.
+  #
+  # -----------------------------------------------------------------------------------
+  # ЭКСПЕРИМЕНТАЛЬНАЯ ФУНКЦИЯ
+  # -----------------------------------------------------------------------------------
+  # Включение этой опции позволит автоматически обновлять JSON-файл логов Discord
+  # при запуске плагина. Обновляется только файл DiscordLogsJsonFormats.json.
+  # Используйте с осторожностью!!!
+  #
+  # Рекомендации:
+  # - Включайте только если хотите, чтобы плагин автоматически обновлял шаблоны логов.
+  # - Экспериментальная функция, её работа может измениться в будущих версиях.
+  #
+  Discord-Logs-File-Json-Update-On-Start: true
+  # -----------------------------------------------------------------------------------
+  # EXPERIMENTAL FEATURE
+  # -----------------------------------------------------------------------------------
+  # Enabling this option allows the plugin to automatically reload
+  # the DiscordLogsJsonFormats.json file when it is modified.
+  # This is useful if you edit messages or log templates so that
+  # changes take effect without restarting the plugin.
+  #
+  # Recommendations:
+  # - Use only for convenient application of template/message changes.
+  # - Experimental feature; behavior may change in future versions.
+  #
+  # -----------------------------------------------------------------------------------
+  # ЭКСПЕРИМЕНТАЛЬНАЯ ФУНКЦИЯ
+  # -----------------------------------------------------------------------------------
+  # Включение этой опции позволяет плагину автоматически перезагружать
+  # файл DiscordLogsJsonFormats.json при его изменении. Это удобно, если
+  # вы редактируете сообщения или шаблоны логов, чтобы изменения
+  # применялись без перезапуска плагина.
+  #
+  # Рекомендации:
+  # - Используйте только для удобного применения изменений в шаблонах сообщений.
+  # - Экспериментальная функция; работа может измениться в будущих версиях.
+  #
+  Discord-Logs-File-Json-Auto-Reload: false
+  # Enables or disables automatic backup creation before file changes.
+  # When set to true, a backup will be created in the "Backups" folder.
+  # When set to false, no automatic backups will be created.
+  #
+  # Включает или отключает автоматическое создание бэкапов перед изменением файлов.
+  # При значении true, копия файла будет сохранена в папку "Backups".
+  # При значении false, автоматические бэкапы создаваться не будут.
+  Files-Backups-Create: true
+  # A list of files or folders that should be ignored by the backup system.
+  # Specify the relative path from the plugin folder (for example: Lang/ru.yml).
+  # You can also use wildcards:
+  # - Use "*" to ignore all files.
+  # - Use "folder/*" to ignore all files inside a specific folder.
+  # Empty entries are ignored.
+  # Example:
+  # Files-Backups-Create-Ignore:
+  # - Lang/ru.yml
+  # - Settings/CmdArgStart.yml
+  # - Lang/*
+  # - *
+  #
+  # Список файлов или папок, для которых не нужно создавать бэкапы.
+  # Указывается относительный путь от папки плагина (например: Lang/ru.yml).
+  # Также можно использовать подстановочные символы:
+  # - "*" — игнорировать вообще все файлы.
+  # - "папка/*" — не делать бэкапы файлов внутри указанной папки.
+  # Пустые строки игнорируются.
+  # Пример:
+  # Files-Backups-Create-Ignore:
+  # - Lang/ru.yml
+  # - Settings/CmdArgStart.yml
+  # - Lang/*
+  # - *
+  Files-Backups-Create-Ignore:
+  - ''

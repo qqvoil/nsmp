@@ -1,0 +1,1377 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Creator of the Snon_S plugin - https://www.spigotmc.org/members/vitalikspigo.769951/
+# Discord - snon_s
+
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+# Color support in &4 and RGB format &#123456 works from 1.16+
+
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck start command
+Command-Arg-Start-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the &6start &cargument.'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  No-Permission-Afk-Remove-Click:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission to remove players from &6AFK'
+  - '&b[sCheckPlayer] &8- &cYou need to have the &6%permission% &cpermission'
+  Only-Players-Start:
+  - '&b[sCheckPlayer] &8- &cYou can only use this command in-game!'
+  No-Player-Start-Check:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Player-Already-Checked:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis already under investigation!
+    Checks it out &6%initiator-player%'
+  Player-Already-Checked-Verification:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis already under another check!'
+  Player-Check-Initiated:
+  - '&b[sCheckPlayer] &8- &aYou have successfully initiated a check on &6%target-player%!'
+  - '%target-accounts%'
+  Command-Blocking-During-Check:
+  - '&b[sCheckPlayer] &8- &cThe command &6%command% &cis not allowed during a check!'
+  - '%allowed-commands-message%'
+  Allowed-Commands-Message:
+  - '&b[sCheckPlayer] &8- &cAllowed commands: &6%allowed-commands%'
+  Command-Blocking-Initiator:
+  - '&b[sCheckPlayer] &8- &cThe command &6%command% &cis blocked during the check! Allowed
+    commands: &6%allowed-commands%'
+  Player-Chat-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot send messages like &6%message% &cduring a check.'
+  Block-Break-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot break blocks like &6%block-break% &cduring a
+    check.'
+  Block-Place-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot place blocks like &6%block-place% &cduring a
+    check.'
+  Entity-Damage-By-Entity-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot deal damage to &6%damaged-entity% &cduring a
+    check.'
+  Entity-Damage-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot deal damage to &6%target-player% &cduring a check.'
+  Inventory-Click-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot use the inventory during a check.'
+  Player-Drop-Item-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot drop items like &6%item-drop% &cduring a check.'
+  Player-Item-Consume-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot consume items like &6%item-consume% &cduring
+    a check.'
+  Player-Item-Held-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot change held items during a check.'
+  Player-Pickup-Item-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot pick up items like &6%item-pickup% &cduring a
+    check.'
+  Player-Swap-Hand-Items-Blocked:
+  - '&b[sCheckPlayer] &8- &cYou cannot swap hand items during a check.'
+  Player-Protection:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &chas protection against check
+    initiation.'
+  Player-Quit-Server:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cleft the server during the check.'
+  Player-Quit-Server-Sender:
+  - '&b[sCheckPlayer] &8- &cThe check was suspended because the player &6%initiator-player%
+    &cleft the server.'
+  Time-Expired-Target-Sender-Name:
+  - '&b[sCheckPlayer] &8- &cCheck time for player &6%target-player% &chas expired.'
+  Hover-Text-Player-Check-Initiated:
+  - ''
+  - '&6&l&nClick to confess to cheats.'
+  - ''
+  Chat:
+    Check-Start-Target:
+    - ''
+    - '&f &6&l╓       &c&l!!! CHECK !!!'
+    - '&f &6&l║ &fYou have been summoned for a check'
+    - '&f &6&l║ &fSuspected of using cheats!'
+    - '&f &6&l║'
+    - '&f &6&l║ &fSend your Discord/Skype to the moderator: &6&l%initiator-player%'
+    - '&f &6&l║'
+    - '&f &6&l║ &fAfter the time expires, you will be'
+    - '&f &6&l║ &fbanned for &e30 &fdays or you can simply'
+    - '&f &6&l║'
+    - '&f &6&l║ &fConfess to using cheats: &a/scheck confess'
+    - '&f &6&l╚'
+    - ''
+    Check-Start-Target-Repeat:
+    - ''
+    - '&f &6&l╓       &c&l!!! CHECK !!!'
+    - '&f &6&l║ &fYou are suspected of using cheats!'
+    - '&f &6&l║'
+    - '&f &6&l║ &fSend your Discord/Skype to the moderator: &6&l%initiator-player%'
+    - '&f &6&l║'
+    - '&f &6&l║ &fAfter the time expires, you will be'
+    - '&f &6&l║ &fbanned for &e30 &fdays or you can simply'
+    - '&f &6&l║'
+    - '&f &6&l║ &fConfess to using cheats: &a/scheck confess'
+    - '&f &6&l║ &fTime remaining until check ends: &6%days% %daysLabel% %hours% %hoursLabel%
+      %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    - '&f &6&l╚'
+    - ''
+    Chat-Label-Day-1: day
+    Chat-Label-Days-2: days
+    Chat-Label-Days-3: days
+    Chat-Label-Hour-1: hour
+    Chat-Label-Hours-2: hours
+    Chat-Label-Hours-3: hours
+    Chat-Label-Minute-1: minute
+    Chat-Label-Minutes-2: minutes
+    Chat-Label-Minutes-3: minutes
+    Chat-Label-Second-1: second
+    Chat-Label-Seconds-2: seconds
+    Chat-Label-Seconds-3: seconds
+  BossBar:
+    Boss-Bar: '&fTime remaining until inspection ends: &6%days% %daysLabel% %hours% %hoursLabel%
+      %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    Boss-Bar-Label-Day-1: day
+    Boss-Bar-Label-Days-2: days
+    Boss-Bar-Label-Days-3: days
+    Boss-Bar-Label-Hour-1: hour
+    Boss-Bar-Label-Hours-2: hours
+    Boss-Bar-Label-Hours-3: hours
+    Boss-Bar-Label-Minute-1: minute
+    Boss-Bar-Label-Minutes-2: minutes
+    Boss-Bar-Label-Minutes-3: minutes
+    Boss-Bar-Label-Second-1: second
+    Boss-Bar-Label-Seconds-2: seconds
+    Boss-Bar-Label-Seconds-3: seconds
+  ActionBar-Player:
+    Action-Bar: '&fTime remaining until inspection ends: &6%days% %daysLabel% %hours%
+      %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    Action-Bar-Label-Day-1: day
+    Action-Bar-Label-Days-2: days
+    Action-Bar-Label-Days-3: days
+    Action-Bar-Label-Hour-1: hour
+    Action-Bar-Label-Hours-2: hours
+    Action-Bar-Label-Hours-3: hours
+    Action-Bar-Label-Minute-1: minute
+    Action-Bar-Label-Minutes-2: minutes
+    Action-Bar-Label-Minutes-3: minutes
+    Action-Bar-Label-Second-1: second
+    Action-Bar-Label-Seconds-2: seconds
+    Action-Bar-Label-Seconds-3: seconds
+  ActionBar-Initiator:
+    Action-Bar: '&fTime remaining until inspection ends: &6%days% %daysLabel% %hours%
+      %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    Action-Bar-Label-Day-1: day
+    Action-Bar-Label-Days-2: days
+    Action-Bar-Label-Days-3: days
+    Action-Bar-Label-Hour-1: hour
+    Action-Bar-Label-Hours-2: hours
+    Action-Bar-Label-Hours-3: hours
+    Action-Bar-Label-Minute-1: minute
+    Action-Bar-Label-Minutes-2: minutes
+    Action-Bar-Label-Minutes-3: minutes
+    Action-Bar-Label-Second-1: second
+    Action-Bar-Label-Seconds-2: seconds
+    Action-Bar-Label-Seconds-3: seconds
+  Title-Start-Target:
+    Title-Text: '&e&lINSPECTION'
+    Subtitle-Text: '&fSee in the chat!'
+  Title-Start-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Timer-End-Target:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Timer-End-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Move-Player:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Trigger-Words-Player:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Trigger-Words-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Only-One-Player-On-Check-Allowed:
+  - '&b[sCheckPlayer] &8- &cYou cannot call more than one player for verification!'
+  BossBar-Sender:
+    Boss-Bar-Sender: '&fPlayer &6%target-player% &fstill has to be checked: &6%days% %daysLabel%
+      %hours% %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    Boss-Bar-Sender-Label-Day-1: day
+    Boss-Bar-Sender-Label-Days-2: days
+    Boss-Bar-Sender-Label-Days-3: days
+    Boss-Bar-Sender-Label-Hour-1: hour
+    Boss-Bar-Sender-Label-Hours-2: hours
+    Boss-Bar-Sender-Label-Hours-3: hours
+    Boss-Bar-Sender-Label-Minute-1: minute
+    Boss-Bar-Sender-Label-Minutes-2: minutes
+    Boss-Bar-Sender-Label-Minutes-3: minutes
+    Boss-Bar-Sender-Label-Second-1: second
+    Boss-Bar-Sender-Label-Seconds-2: seconds
+    Boss-Bar-Sender-Label-Seconds-3: seconds
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6started checking
+    player &a%target-player%'
+  # CHAT FOR PLAYER FOR CHECKING.
+  Initiator-No-Seen-Messages-Player:
+  - '&b[sCheckPlayer] &8- &cInitiator of check &6%initiator-player% &cdid not see your
+    message within a radius of &6%radius% &cblocks from you!'
+  Online-Players-No-Seen-Messages-Player:
+  - '&b[sCheckPlayer] &8- &cNo player saw your message within a radius of &6%radius%
+    &cblocks from you!'
+  Chat-Messages-Player-In-Check-Seen-Initiator:
+  - ''
+  - '&b[sCheckPlayer] &8- &fPlayer &6%luckperms_prefix%%target-player%%luckperms_suffix%
+    &fsent messages: &6%messages%'
+  - ''
+  Chat-Messages-Player-In-Check-Seen-Online-Players:
+  - ''
+  - '&b[sCheckPlayer] &8- &fInitiator of check &6%initiator-player%'
+  - '&b[sCheckPlayer] &8- &fPlayer &6%luckperms_prefix%%target-player%%luckperms_suffix%
+    &fsent messages: &6%messages%'
+  - ''
+  Notify-Admin-Player-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%target-player% &6wrote in chat:
+    &f%message%'
+  # CHAT FOR CHECK INITIATOR.
+  Player-No-Seen-Messages-Initiator:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cdid not see your message within
+    a radius of &6%radius% &cblocks from you!'
+  Online-Players-No-Seen-Messages-Initiator:
+  - '&b[sCheckPlayer] &8- &cNo players saw your message within a radius of &6%radius%
+    &cblocks from you!'
+  Chat-Messages-Initiator-In-Check-Seen-Player:
+  - ''
+  - '&b[sCheckPlayer] &8- &fInitiator of the check &6%luckperms_prefix%%initiator-player%%luckperms_suffix%
+    &fwrote messages: &6%messages%'
+  - ''
+  Chat-Messages-Initiator-In-Check-Seen-Online-Players:
+  - ''
+  - '&b[sCheckPlayer] &8- &fChecking player &6%target-player%'
+  - '&b[sCheckPlayer] &8- &fInitiator of the check &6%luckperms_prefix%%initiator-player%%luckperms_suffix%
+    &fwrote messages: &6%messages%'
+  - ''
+  Notify-Admin-Initiator-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6wrote in
+    chat: &f%message%'
+  Max-Message-Length-Blocked:
+  - '&b[sCheckPlayer] &8- &cYour message is too long. The limit is &6%maxLength% &ccharacters.
+    &cPlease use a shorter message. Exceeding by &6%excessLength% &ccharacters.'
+  Min-Message-Length-Blocked:
+  - '&b[sCheckPlayer] &8- &cYour message is too short. Please use a longer message.
+    You need to add &6%deficitLength% &ccharacters.'
+  Chat-Cooldown:
+  - '&b[sCheckPlayer] &8- &cPlease wait &6%time% seconds &cbefore sending the next message
+    in the chat.'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player''s name length cannot exceed &6%limit% &ccharacters.
+    Excess: &6%excess% &ccharacters.'
+  World-Not-Found-Message:
+  - '&b[sCheckPlayer] &8- &cWorld &6%world% &cnot found for teleporting player &6%target-player%.
+    &cCheck canceled!'
+  Proximity-Warning:
+  - '&b[sCheckPlayer] &8- &cYou cannot get closer than &6%radius% &cblocks to player
+    &6%target-player% &cat the check.'
+  Command-Executed:
+  - '&b[sCheckPlayer] &8- &6Player &e%target-player% &6executed command: &6%command%'
+  Plugin-Disabled-Message-Initiator:
+  - '&b[sCheckPlayer] &8- &cThe plugin has been disabled! When you were checking player
+    &6%target-player%'
+  Plugin-Disabled-Message-Target-Player:
+  - '&b[sCheckPlayer] &8- &cThe plugin has been disabled! When you were checked by player
+    &6%initiator-player%'
+  Cannot-Start-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot initiate a check on yourself!'
+  Player-Came-Out-Of-Afk:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ahas come out of &6AFK &aand has
+    been called for a check!'
+  Player-Away-From-Afk:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ahas left &6AFK, &aand you can
+    call the player for a check!'
+  Player-Join-Start-Check:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ahas joined the server and has
+    been called for a check!'
+  - '%target-accounts%'
+  Afk-Notify-Initiator:
+  - ''
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ais currently in &6AFK, &athey
+    will be checked once they return from &6AFK.'
+  - '%message-click%'
+  Afk-Click-Cancel:
+  - ''
+  - '&6Click to remove the player from AFK check.'
+  - ''
+  Afk-Click-Cancel-Hover:
+  - ''
+  - '&a -> Click to remove <-'
+  - ''
+  Afk-Player-Removed:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ahas been successfully removed
+    from &6AFK &acheck!'
+  Afk-Player-Not-Removed:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis not in &6AFK, &cnothing to
+    remove!'
+  Already-Checked-Afk:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &chas already been selected for
+    a check, please wait until they return from &6AFK.'
+  Trigger-Action-Message:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &a wrote in the chat &6%trigger-words%
+    &a and was punished!'
+  Both-Parameters-Enabled:
+  - '&b[sCheckPlayer] &8- &cYou cannot use the command when both &6Allow-Teleport-To-Executor
+    &cand &6Allow-Teleport-To-Executor-At-Distance &care enabled simultaneously!'
+  Timed-Messages:
+  - 'time30: &b[sCheckPlayer] &8- &fTimer will expire in &6%days% %daysLabel% %hours%
+    %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%\n: title=: subtitle='
+  - 'time20: &b[sCheckPlayer] &8- &fTimer will expire in &6%days% %daysLabel% %hours%
+    %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%\n: title=: subtitle='
+  - 'time10: &b[sCheckPlayer] &8- &fTimer will expire in &6%days% %daysLabel% %hours%
+    %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%\n: title=: subtitle='
+  - 'time5: &b[sCheckPlayer] &8- &fTimer will expire in &6%days% %daysLabel% %hours%
+    %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%\n: title=: subtitle='
+  - 'time3: &b[sCheckPlayer] &8- &fTimer will expire in &6%days% %daysLabel% %hours%
+    %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%\n: title=: subtitle='
+  - 'time2: &b[sCheckPlayer] &8- &fTimer will expire in &6%days% %daysLabel% %hours%
+    %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%\n: title=: subtitle='
+  - 'time1: &b[sCheckPlayer] &8- &fTimer will expire in &6%days% %daysLabel% %hours%
+    %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%\n: title=: subtitle='
+  Timed-Messages-Title-Chat:
+    Label-Day-1: day
+    Label-Days-2: days
+    Label-Days-3: days
+    Label-Hour-1: hour
+    Label-Hours-2: hours
+    Label-Hours-3: hours
+    Label-Minute-1: minute
+    Label-Minutes-2: minutes
+    Label-Minutes-3: minutes
+    Label-Second-1: second
+    Label-Seconds-2: seconds
+    Label-Seconds-3: seconds
+  Account-Under-Check:
+  - '&b[sCheckPlayer] &8- &cAccount &6%target-player% &cis currently under verification.
+    You cannot move from other accounts!'
+  Blocked-Accounts:
+  - '&6Your other blocked accounts: &e'
+  Check-Completed:
+  - '&b[sCheckPlayer] &8- &aThe verification for account &6%target-player% &ahas been
+    completed. You can now move freely.'
+  Other-Accounts-List:
+  - '&6Other accounts with this IP: &e%target-accounts%'
+  Player-Message-Not-Join-Initiator:
+  - '&b[sCheckPlayer] &8- &cThe initiator &6%initiator-player% &cdid not join the server,
+    and the check has been completed!'
+  BossBar-Player-Quit-Initiator:
+    Boss-Bar: '&fWait for the initiator online: &6%days% %daysLabel% %hours% %hoursLabel%
+      %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    Boss-Bar-Label-Day-1: day
+    Boss-Bar-Label-Days-2: days
+    Boss-Bar-Label-Days-3: days
+    Boss-Bar-Label-Hour-1: hour
+    Boss-Bar-Label-Hours-2: hours
+    Boss-Bar-Label-Hours-3: hours
+    Boss-Bar-Label-Minute-1: minute
+    Boss-Bar-Label-Minutes-2: minutes
+    Boss-Bar-Label-Minutes-3: minutes
+    Boss-Bar-Label-Second-1: second
+    Boss-Bar-Label-Seconds-2: seconds
+    Boss-Bar-Label-Seconds-3: seconds
+  Checking-ArmorStand-ActionBar-Messages:
+  - '&fPerforming movement check'
+  - '&fAnalyzing behavior'
+  - '&c[Scheck] Entering session...'
+  - '&c[Scheck] &fPing %d'
+  ArmorStand-Hit-Messages:
+  - '&b[sCheckPlayer] &8- &6Player &e%target-player% &6hit an armor stand and was punished'
+  Clickable-Tags:
+    Hover-Text:
+    - '&7Click to copy: %text%'
+    Click-Text: (CLICK)
+  Command-Arg-Start-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6start &cargument is disabled!'
+  Command-Arg-Afk-Remove-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cArgument &6scheck afk &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% start [nickname]'
+  - '&b[sCheckPlayer] &8- &fInitiate an inspection for a player'
+  Usage-Afk-Remove:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% afk [nickname] --remove'
+  - '&b[sCheckPlayer] &8- &fRemoves a player from AFK check'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck stop command
+Command-Arg-Stop-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the &6stop &cargument.'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  Only-Players-Stop:
+  - '&b[sCheckPlayer] &8- &cYou can only use this command in-game!'
+  Player-Removed-Check:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ahas been successfully declared
+    innocent!'
+  Innocent-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%initiator-player% &cdeclared you innocent! Enjoy
+    your game!'
+  No-Player-Stop-Check:
+  - '&b[sCheckPlayer] &8- &cYou do not have a player under check right now! Command
+    canceled!'
+  Title-Stop-Check:
+    Title-Text: '&aYou have been declared clean!'
+    Subtitle-Text: '&aGood luck without cheats!'
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6finished
+    checking player &a%target-player%'
+  Command-Arg-Stop-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6stop &cargument is disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% stop'
+  - '&b[sCheckPlayer] &8- &fStop the inspection for a player (during inspection)'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck confess command
+Command-Arg-Confess-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the &6confess &cargument.'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  Only-Players-Confess:
+  - '&b[sCheckPlayer] &8- &cYou can only use this command in-game!'
+  Not-On-Check:
+  - '&b[sCheckPlayer] &8- &cYou are not currently being inspected!'
+  Confess-Message-Sender-Name:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &aconfessed to using cheats.'
+  Self-Confess-Message:
+  - '&b[sCheckPlayer] &8- &dYou confessed to using cheats.'
+  Title-Confess-Check:
+    Title-Text: '&aThank you for confessing.'
+    Subtitle-Text: '&6Good luck without cheats!'
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%target-player% &6confessed to
+    using cheats!'
+  Command-Arg-Confess-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6confess &cargument is disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% confess'
+  - '&b[sCheckPlayer] &8- &fConfess to using cheats (during inspection)'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck reload command
+Command-Arg-Reload-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the &6reload &cargument.'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  Successfully-Reload:
+  - '&b[sCheckPlayer] &8- &aPlugin reloaded successfully. %mc% ms'
+  Command-Arg-Reload-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6reload &cargument is disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% reload'
+  - '&b[sCheckPlayer] &8- &fReload the config and localization files.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck list command
+Command-Arg-List-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the &6list &cargument.'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  No-Players:
+  - '&b[sCheckPlayer] &8- &cNo players are currently being inspected.'
+  Invalid-Page:
+  - '&b[sCheckPlayer] &8- &cInvalid page number.'
+  List-Header:
+  - ''
+  - '&6List of players being inspected (Page: %page%/%total-pages% | Total players:
+    %all-players%):'
+  - ''
+  Button-Back-Hover-Text:
+  - Click to go back
+  Button-Back: '&eBack'
+  Separator: ' | '
+  Button-Forward-Hover-Text:
+  - Click to go forward
+  Button-Forward: '&eForward'
+  Player-Info-Message:
+  - '&6%target-player% &f(Initiator of inspection: &e%initiator-player%) &b%number%'
+  Command-Arg-List-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6list &cargument is disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% list [1,2,3]'
+  - '&b[sCheckPlayer] &8- &fList all players being inspected.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck confirm command
+Command-Arg-Confirm-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the &6confirm &cargument.'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  No-Player-Confirm:
+  - '&b[sCheckPlayer] &8- &cYou do not have a player under check right now! Command
+    canceled!'
+  Confirmation-Sender:
+  - '&b[sCheckPlayer] &8- &aYou have successfully confirmed that player &6%target-player%
+    &ais cheating!'
+  Confirmation-Target:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%initiator-player% &cconfirmed that you are cheating!'
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6confirmed
+    that player &a%target-player% &6is using cheats!'
+  Title-Confirm:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Only-Players-Confirm:
+  - '&b[sCheckPlayer] &8- &cYou can only use this command in-game!'
+  Reason-Not-Found:
+  - '&b[sCheckPlayer] &8- &cReason &6%reason% &cnot found'
+  Reason-Not-Provided:
+  - '&b[sCheckPlayer] &8- &cReason not provided. Please specify a reason.'
+  Reason-Function-Is-Disabled: ''
+  Command-Arg-Confirm-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6confirm &cargument is disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage: &6/%command% confirm'
+  - '&b[sCheckPlayer] &8- &fConfirm that the player is cheating.'
+  Usage-Reason:
+  - '&b[sCheckPlayer] &8- &fUsage: &6/%command% confirm [reason]'
+  - '&b[sCheckPlayer] &8- &fConfirm that the player is cheating.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck stopall command
+Command-Arg-StopAll-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the &6stopall &cargument.'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  Player-Console-StopAll:
+  - '&b[sCheckPlayer] &8- &cThe &6stopall &cargument can only be used in the console!'
+  No-Players-StopAll:
+  - '&b[sCheckPlayer] &8- &cNo players are currently being checked!'
+  StopAll-Successfully-Sender:
+  - '&b[sCheckPlayer] &8- &aYou have successfully stopped the check for all players.
+    Number of players checked: &6%amount%'
+  StopAll-Successfully-Target:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%initiator-player% &cstopped the check for all
+    players!'
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6stopped checking
+    for all players: &a%amount%'
+  Title-StopAll:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Console-Name-StopAll: Console
+  Command-Arg-StopAll-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6stopall &cargument is disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage: &6/%command% stopall'
+  - '&b[sCheckPlayer] &8- &fStop the check for all players.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck timer continue command
+Command-Arg-Timer-Continue-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6timer continue'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  No-Player-Timer-Continue:
+  - '&b[sCheckPlayer] &8- &cYou do not have a player under check right now! Command
+    canceled!'
+  Timer-Already-Active:
+  - '&b[sCheckPlayer] &8- &cTimer for player &6%target-player% &calready active!'
+  Timer-Successfully-Started:
+  - '&b[sCheckPlayer] &8- &aTimer successfully started for player &6%target-player%'
+  Timer-Successfully-Started-Target:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%initiator-player% &alaunched a timer for you!!!'
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6started a
+    timer for player &a%target-player%'
+  Title-Timer-Continue:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in the game!'
+  Command-Arg-Timer-Continue-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6timer continue &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% timer continue'
+  - '&b[sCheckPlayer] &8- &fStart a timer for the player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck timer stop command
+Command-Arg-Timer-Stop-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6timer stop'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  No-Player-Timer-Stop:
+  - '&b[sCheckPlayer] &8- &cYou do not have a player under check right now! Command
+    canceled!'
+  Timer-Already-Paused:
+  - '&b[sCheckPlayer] &8- &cTimer for player &6%target-player% &cis already paused!'
+  Timer-Successfully-Paused:
+  - '&b[sCheckPlayer] &8- &aTimer successfully paused for player &6%target-player%'
+  Timer-Successfully-Paused-Target:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%initiator-player% &astopped your timer!!!'
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6stopped the
+    timer for player &a%target-player%'
+  Title-Timer-Stop:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in the game!'
+  Boss-Bar-Timer-Stop-Target: '&6The scan is paused because the timer is paused!'
+  Boss-Bar-Timer-Stop-Initiator: '&eThe scan is paused because the timer is paused!'
+  Command-Arg-Timer-Stop-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6timer stop &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% timer stop'
+  - '&b[sCheckPlayer] &8- &fStop the timer for the player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck timer add command
+Command-Arg-Timer-Add-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for argument &6timer add'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  No-Player-Timer-Add:
+  - '&b[sCheckPlayer] &8- &cYou do not have a player under check right now! Command
+    canceled!'
+  Cannot-Add-Timer-Paused:
+  - '&b[sCheckPlayer] &8- &cFor player &6%target-player% &ctimer cannot be extended
+    as it is paused!'
+  Timer-Add-Target-Player:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%initiator-player% &aextended your timer by &6%days%
+    %daysLabel% %hours% %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%'
+  Timer-Add-Initiator-Player:
+  - '&b[sCheckPlayer] &8- &aTimer successfully extended for player &6%target-player%
+    &aby &6%days% %daysLabel% %hours% %hoursLabel% %minutes% %minutesLabel% %seconds%
+    %secondsLabel% %limit-command-enabled-message%'
+  Timer-Add-Label:
+    Label-Day-1: day
+    Label-Days-2: days
+    Label-Days-3: days
+    Label-Hour-1: hour
+    Label-Hours-2: hours
+    Label-Hours-3: hours
+    Label-Minute-1: minute
+    Label-Minutes-2: minutes
+    Label-Minutes-3: minutes
+    Label-Second-1: second
+    Label-Seconds-2: seconds
+    Label-Seconds-3: seconds
+  Limit-Command-Enabled-Message: '&cCommand limit is &6%limit% &cthe remaining limit
+    is &6%remainder-limit%'
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notification] &6Player &a%initiator-player% &6extended
+    the timer for player &a%target-player%'
+  Title-Target:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in the game!'
+  Command-Usage-Limit-Exceeded:
+  - '&b[sCheckPlayer] &8- &cYou have exceeded the command usage limit. Limit: &6%limit%'
+  Max-Time-Exceeded:
+  - '&b[sCheckPlayer] &8- &cTime cannot exceed the maximum allowable value: &6%max_time%
+    &cseconds.'
+  Min-Time-Exceeded:
+  - '&b[sCheckPlayer] &8- &cTime cannot be less than the minimum allowed value: &6%min_time%
+    &cseconds.'
+  Invalid-Time-Value:
+  - '&b[sCheckPlayer] &8- &cInvalid value &6%value% &cfor time. Please enter an integer.'
+  Command-Arg-Timer-Add-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cArgument &6timer add &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% timer add [time]'
+  - '&b[sCheckPlayer] &8- &fExtend the timer for a player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# /scheck timer set Command Messages
+Command-Arg-Timer-Set-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6timer set'
+  - '&b[sCheckPlayer] &8- &cYou need to have the permission &6%permission%'
+  No-Player-Timer-Set:
+  - '&b[sCheckPlayer] &8- &cYou do not currently have a player to check! Command canceled!'
+  Cannot-Set-Timer-Paused:
+  - '&b[sCheckPlayer] &8- &cCannot set a timer for player &6%target-player% &cbecause
+    the timer is paused!'
+  Timer-Set-Target-Player:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%initiator-player% &aset a timer for you for &6%days%
+    %daysLabel% %hours% %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%'
+  Timer-Set-Initiator-Player:
+  - '&b[sCheckPlayer] &8- &aSuccessfully set a timer for player &6%target-player% &afor
+    &6%days% %daysLabel% %hours% %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%
+    %limit-command-enabled-message%'
+  Timer-Set-Label:
+    Label-Day-1: day
+    Label-Days-2: days
+    Label-Days-3: days
+    Label-Hour-1: hour
+    Label-Hours-2: hours
+    Label-Hours-3: hours
+    Label-Minute-1: minute
+    Label-Minutes-2: minutes
+    Label-Minutes-3: minutes
+    Label-Second-1: second
+    Label-Seconds-2: seconds
+    Label-Seconds-3: seconds
+  Limit-Command-Enabled-Message: '&cCommand limit &6%limit% &cremaining limit &6%remainder-limit%'
+  Notify-Admin-Message:
+  - '&b[sCheckPlayer] &8- &d[Notifications] &6Player &a%initiator-player% &6set a timer
+    for player &a%target-player%'
+  Title-Target:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Initiator:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  Command-Usage-Limit-Exceeded:
+  - '&b[sCheckPlayer] &8- &cYou have exceeded the command usage limit. Limit: &6%limit%'
+  Max-Time-Exceeded:
+  - '&b[sCheckPlayer] &8- &cTime cannot exceed the maximum allowed value: &6%max_time%
+    &cseconds.'
+  Min-Time-Exceeded:
+  - '&b[sCheckPlayer] &8- &cTime cannot be less than the minimum allowed value: &6%min_time%
+    &cseconds.'
+  Invalid-Time-Value:
+  - '&b[sCheckPlayer] &8- &cInvalid value &6%value% &cfor time. Please enter an integer.'
+  Command-Arg-Timer-Set-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cArgument &6timer set &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% timer set [time]'
+  - '&b[sCheckPlayer] &8- &fSet a timer for a player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck version command
+Command-Arg-Version-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6version'
+  - '&b[sCheckPlayer] &8- &cYou need the &6%permission% &cpermission.'
+  Checking-Version:
+  - '&b[sCheckPlayer] &8- &6Checking for a new plugin version...'
+  Latest-Version-Message:
+  - '&b[sCheckPlayer] &8- &eYour plugin is up to date with the latest version: &6%latest-version%'
+  New-Version-Message:
+  - '&b[sCheckPlayer] &8- &aA new version of the plugin is available: &6%new-version%.
+    &aYour current version: &6%old-version%.'
+  - '&b[sCheckPlayer] &8- &aYou can download it at: &6https://www.spigotmc.org/resources/scheckplayer-plugin-that-allows-checking-players-for-cheats.114512/updates'
+  Error-Checking-Version-Message:
+  - '&b[sCheckPlayer] &8- &cError checking for a new plugin version. &6%error%'
+  Command-Arg-Version-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe &6version &cargument is disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage: &6/%command% version'
+  - '&b[sCheckPlayer] &8- &fCheck for a new plugin version.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the command /scheck offline --remove
+Command-Arg-Offline-Remove-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6offline --remove'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  Player-Removed-Offline-Success:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ahas been successfully removed
+    from offline check.'
+  Player-Not-In-List-Offline:
+  - '&b[sCheckPlayer] &8- &cYou do not have a player on offline check.'
+  Command-Arg-Offline-Remove-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cArgument &6offline --remove &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% offline --remove'
+  - '&b[sCheckPlayer] &8- &fRemoves the player from offline check.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the command /scheck offline --info
+Command-Arg-Offline-Info-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6offline --info'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  Player-On-Offline-Check:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &ais currently on offline check
+    with you.'
+  No-Player-On-Offline-Check:
+  - '&b[sCheckPlayer] &8- &cYou do not have a player on offline check.'
+  Command-Arg-Offline-Info-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cArgument &6offline --info &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% offline --info'
+  - '&b[sCheckPlayer] &8- &fShows the player who is on offline check.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck offline --start
+Command-Arg-Offline-Start-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6offline --start'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Player-Not-Online-Pending:
+  - '&b[sCheckPlayer] &8- &aThe check will be performed once player &6%target-player%
+    &ais online!'
+  Player-Offline-Check-Already-Initiated:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis already being checked offline
+    by &6%initiator-player%'
+  Player-Never-Joined:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &chas never joined the server!'
+  Player-Already-Checked-Offline:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis already in the check list.'
+  Player-Online-Blocked-Argument:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis currently online, the argument
+    &6offline --start &ccannot be used.'
+  Command-Arg-Offline-Start-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6offline --start &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% offline --start [nickname]'
+  - '&b[sCheckPlayer] &8- &fCall the player for offline check.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck info command
+Command-Arg-Info-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6info'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  No-Player-Info:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  # Plugin support PlaceholderAPI - https://github.com/PlaceholderAPI/PlaceholderAPI/wiki/Placeholders
+  Player-Info:
+  - '&b&l┏'
+  - '&b&l┃ &dPlayer Information:'
+  - '&b&l┃ &6%player%: &fPlayer Name.'
+  - '&b&l┃ &6%ip%: &fPlayer IP Address.'
+  - '&b&l┃ &6%food%: &fPlayer Food Level.'
+  - '&b&l┃ &6%health%: &fPlayer Health.'
+  - '&b&l┃ &6%level%: &fPlayer Experience Level.'
+  - '&b&l┃ &6%exp%: &fTotal Player Experience.'
+  - '&b&l┃ &6%world%: &fWorld Name where the player is.'
+  - '&b&l┃ &6%x%: &fPlayer X Coordinate.'
+  - '&b&l┃ &6%y%: &fPlayer Y Coordinate.'
+  - '&b&l┃ &6%z%: &fPlayer Z Coordinate.'
+  - '&b&l┃ &6%gamemode%: &fCurrent Player Game Mode.'
+  - '&b&l┃ &6%biome%: &fBiome where the player is.'
+  - '&b&l┃ &6%is_flying%: &fIs the player currently flying.'
+  - '&b&l┃ &6%is_op%: &fIs the player an operator or not.'
+  - '&b&l┗'
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  Cannot-Info-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot verify information about yourself!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cPlayer name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  Command-Arg-Info-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cArgument &6info &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% info [nickname]'
+  - '&b[sCheckPlayer] &8- &fView player information.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck knockback command
+Command-Arg-KnockBack-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6knockback'
+  - '&b[sCheckPlayer] &8- &cYou need to have the permission &6%permission%'
+  No-Player-KnockBack:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Checking-Player:
+  - '&b[sCheckPlayer] &8- &6Checking player &a%target-player%'
+  Already-Checking-Player:
+  - '&b[sCheckPlayer] &8- &cYou are already checking player &6%target-player%'
+  KnockBack-Success:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &asuccessfully flew away!'
+  KnockBack-Failure:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cfailed to fly away!'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cPlayer name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  Cannot-KnockBack-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot check yourself for knockback resistance!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  Command-Arg-KnockBack-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6knockback &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% knockback [nickname]'
+  - '&b[sCheckPlayer] &8- &fCheck player for anti-knockback.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck spec command
+Command-Arg-Spec-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6spec'
+  - '&b[sCheckPlayer] &8- &cYou need to have permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cPlayer name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player-Spec:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Spec-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot spectate yourself!'
+  Start-Watch:
+  - '&b[sCheckPlayer] &8- &aYou have successfully started spectating player &6%target-player%'
+  Stop-Watch:
+  - '&b[sCheckPlayer] &8- &aYou have successfully stopped spectating player &6%target-player%'
+  Player-Quit-Active-Spectator:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cyou were spectating has left
+    the server!'
+  Already-Watching-Another:
+  - '&b[sCheckPlayer] &8- &cYou are already spectating player &6%target-player%. &cTo
+    spectate another player, stop spectating the current one.'
+  Plugin-Disabled-Spectator-Exit:
+  - '&b[sCheckPlayer] &8- &cYou have exited spectator mode for player &6%target-player%
+    &cbecause the plugin was disabled!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis whitelisted.'
+  Already-Being-Watched-By-Another:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis already being watched by player
+    &6%initiator-player%.'
+  Only-Players:
+  - '&b[sCheckPlayer] &8- &cThis command can only be used in-game!'
+  Command-Arg-Spec-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cArgument &6spec &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage: &6/%command% spec [nickname]'
+  - '&b[sCheckPlayer] &8- &fSpectating a player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Player verification messages.
+Verification-Player-Messages:
+  Verification-Prompt:
+  - ''
+  - '&c!!! Verification !!!'
+  - ''
+  - '&b[sCheckPlayer] &8- &6Type one of the following symbols: &e%symbols% &6in the
+    chat'
+  - '&b[sCheckPlayer] &8- &6For example: &e%random-symbols% &6within &e30 seconds, &6to
+    pass the verification.'
+  - ''
+  - '&c!!! Verification !!!'
+  - ''
+  Verification-Prompt-Repeated:
+  - '&b[sCheckPlayer] &8- &6Type one of the following symbols: &e%symbols% &6in the
+    chat'
+  - '&b[sCheckPlayer] &8- &6For example: &e%random-symbols% &6within &e30 seconds, &6to
+    pass the verification.'
+  Kick-Message:
+  - '&cYou failed to pass the verification in &630 seconds.'
+  Success-Message:
+  - '&b[sCheckPlayer] &8- &aYou have successfully passed the verification!'
+  Only-Symbol-Message:
+  - '&b[sCheckPlayer] &8- &cYou can only submit &6%symbols% &cto pass the verification.'
+  Title-Time-Out:
+    Title-Text: '&cTime is up!'
+    Subtitle-Text: ''
+  Title-Start-Check:
+    Title-Text: ''
+    Subtitle-Text: ''
+  Title-Enter-Symbol:
+    Title-Text: '&aVerification passed!'
+    Subtitle-Text: ''
+  BossBar:
+    BossBar: '&fTime remaining until verification ends: &6%days% %daysLabel% %hours% %hoursLabel%
+      %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    BossBar-Label-Day-1: day
+    BossBar-Label-Days-2: days
+    BossBar-Label-Days-3: days
+    BossBar-Label-Hour-1: hour
+    BossBar-Label-Hours-2: hours
+    BossBar-Label-Hours-3: hours
+    BossBar-Label-Minute-1: minute
+    BossBar-Label-Minutes-2: minutes
+    BossBar-Label-Minutes-3: minutes
+    BossBar-Label-Second-1: second
+    BossBar-Label-Seconds-2: seconds
+    BossBar-Label-Seconds-3: seconds
+  ActionBar:
+    ActionBar: '&fTime remaining until verification ends: &6%days% %daysLabel% %hours%
+      %hoursLabel% %minutes% %minutesLabel% %seconds% %secondsLabel%'
+    ActionBar-Label-Day-1: day
+    ActionBar-Label-Days-2: days
+    ActionBar-Label-Days-3: days
+    ActionBar-Label-Hour-1: hour
+    ActionBar-Label-Hours-2: hours
+    ActionBar-Label-Hours-3: hours
+    ActionBar-Label-Minute-1: minute
+    ActionBar-Label-Minutes-2: minutes
+    ActionBar-Label-Minutes-3: minutes
+    ActionBar-Label-Second-1: second
+    ActionBar-Label-Seconds-2: seconds
+    ActionBar-Label-Seconds-3: seconds
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Plugin messages
+Server-Messages:
+  Plugin-Enabled-Message:
+  - ''
+  - '&b[sCheckPlayer] &8- &aThe plugin is enabled! &b%mc% ms'
+  - '&b[sCheckPlayer] &8- &aServer version: &b%server-version%'
+  - '&b[sCheckPlayer] &8- &aJava version: &b%java-version-server% &8| &aHost: &b%os-version%'
+  - ''
+  Plugin-Disabled-Message:
+  - ''
+  - '&b[sCheckPlayer] &8- &cThe plugin is disabled! %mc% ms'
+  - ''
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Messages for the /scheck command
+Command-Arg-Usage-Messages:
+  Usage:
+  - '&b&l┏'
+  - '&b&l┃ &dPlugin Commands:'
+  - '&b&l┃  &6/%command% start [nickname] &8- &fCall the player for a check.'
+  - '&b&l┃  &6/%command% stop &8- &fStop inspection for a player (during inspection).'
+  - '&b&l┃  &6/%command% confess &8- &fConfess to using cheats (during inspection).'
+  - '&b&l┃  &6/%command% reload &8- &fReload all files.'
+  - '&b&l┃  &6/%command% list [1,2,3] &8- &fList all players being inspected.'
+  - '&b&l┃  &6/%command% confirm [cause] &8- &fConfirm that the player is cheating.'
+  - '&b&l┃  &6/%command% stopall &8- &fStop checking for all players.'
+  - '&b&l┃  &6/%command% timer continue &8- &fStart a timer for the player (during inspection).'
+  - '&b&l┃  &6/%command% timer stop &8- &fStop the timer for the player (during inspection).'
+  - '&b&l┃  &6/%command% timer add [time] &8- &fExtend the timer for a player (during
+    a check).'
+  - '&b&l┃  &6/%command% timer set [time] &8- &fSets the time for the player.'
+  - '&b&l┃  &6/%command% offline --remove &8- &fRemoves the player from offline check.'
+  - '&b&l┃  &6/%command% offline --info &8- &fShows the player who is on offline check.'
+  - '&b&l┃  &6/%command% offline --start [nickname] &8- &fCall a player for offline
+    check.'
+  - '&b&l┃  &6/%command% version &8- &fCheck the new version of the plugin.'
+  - '&b&l┃  &6/%command% info [nickname] &8- &fView player information.'
+  - '&b&l┃  &6/%command% knockback [nickname] &8- &fCheck player for anti-knockback.'
+  - '&b&l┃  &6/%command% spec [nickname] &8- &fPlayer Surveillance.'
+  - '&b&l┃  &6/%command% brand [player] &8- &fView the player''s client brand.'
+  - '&b&l┃  &6/%command% troll &8- &fCommands for trolling.'
+  - '&b&l┗'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+
+#================================================================================================
+#================================================================================================
+
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll crash
+Command-Arg-Troll-Crash-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll crash'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Crash-Game:
+  - '&b[sCheckPlayer] &8- &aYou successfully crashed the game of player &6%target-player%'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll crash &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] crash'
+  - '&b[sCheckPlayer] &8- &fCrash the player’s game.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll invclear
+Command-Arg-Troll-InvClear-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll invclear'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Clear-Inventory:
+  - '&b[sCheckPlayer] &8- &aYou successfully cleared the inventory (completely) of player
+    &6%target-player%'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll invclear &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] invclear'
+  - '&b[sCheckPlayer] &8- &fClear the player’s inventory.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll pumpkin
+Command-Arg-Troll-Pumpkin-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll pumpkin'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Equip-Pumpkin:
+  - '&b[sCheckPlayer] &8- &aYou successfully placed a pumpkin on player &6%target-player%\''s
+    head'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll pumpkin &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] pumpkin'
+  - '&b[sCheckPlayer] &8- &fPut a pumpkin on the player\''s head.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll randomtp
+Command-Arg-Troll-RandomTp-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll randomtp'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Start-Random-Tp:
+  - '&b[sCheckPlayer] &8- &aYou have successfully started randomly teleporting player
+    &6%target-player%'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Already-No-Use:
+  - '&b[sCheckPlayer] &8- &cYou cannot use this again!'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll randomtp &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] randomtp'
+  - '&b[sCheckPlayer] &8- &fRandom teleportation of the player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll rotatemouse
+Command-Arg-Troll-RotateMouse-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll rotatemouse'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Start-Mouse-Rotate:
+  - '&b[sCheckPlayer] &8- &aYou have successfully started randomly rotating the mouse
+    of player &6%target-player%'
+  Already-No-Use:
+  - '&b[sCheckPlayer] &8- &cYou cannot use this again!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll rotatemouse &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] rotatemouse'
+  - '&b[sCheckPlayer] &8- &fRandomly rotates the mouse of the player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll spam
+Command-Arg-Troll-Spam-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll spam'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Start-Spam:
+  - '&b[sCheckPlayer] &8- &aYou have successfully started spamming player &6%target-player%
+    &ain the chat!'
+  Already-No-Use:
+  - '&b[sCheckPlayer] &8- &cYou cannot use this again!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll spam &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] spam'
+  - '&b[sCheckPlayer] &8- &fSpams the player in chat.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll launch
+Command-Arg-Troll-Launch-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll launch'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Launch-To-Sky:
+  - '&b[sCheckPlayer] &8- &aYou have successfully launched player &6%target-player%
+    &ainto the sky!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll launch &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] launch'
+  - '&b[sCheckPlayer] &8- &fLaunch the player into the sky.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll down
+Command-Arg-Troll-Down-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll down'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Bury-Underground:
+  - '&b[sCheckPlayer] &8- &aYou have successfully buried player &6%target-player% &abelow
+    the ground!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll down &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] down'
+  - '&b[sCheckPlayer] &8- &fBury the player underground.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll nearby
+Command-Arg-Troll-Nearby-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll nearby'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name cannot exceed &6%limit% &ccharacters. Excess:
+    &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Teleport-To-Random:
+  - '&b[sCheckPlayer] &8- &aPlayer &6%target-player% &awas teleported to a random nearby
+    player &6%random-player%'
+  No-Players-Nearby:
+  - '&b[sCheckPlayer] &8- &cWithin &6%radius% &cblocks, there are no other players.'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll nearby &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [nickname] nearby'
+  - '&b[sCheckPlayer] &8- &fTeleport the player to a random nearby player.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll invdirt
+Command-Arg-Troll-InvDirt-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll invdirt'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cPlayer name length cannot exceed &6%limit% &ccharacters.
+    Excess: &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this on yourself!'
+  Inv-Dirt-Inventory:
+  - '&b[sCheckPlayer] &8- &aYou have successfully turned the entire inventory of player
+    &6%target-player% &ainto dirt.'
+  Already-No-Use:
+  - '&b[sCheckPlayer] &8- &cYou cannot use this again!'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll invdirt &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage: &6/%command% troll [nickname] invdirt'
+  - '&b[sCheckPlayer] &8- &fDistribute a player’s inventory.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll apple
+Command-Arg-Troll-Apple-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll apple'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cPlayer name length cannot exceed &6%limit% &ccharacters.
+    Excess: &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this on yourself!'
+  Apple-Inventory:
+  - '&b[sCheckPlayer] &8- &aYou have successfully given player &6%target-player% &aan
+    apple of death.'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll apple &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage: &6/%command% troll [nickname] apple'
+  - '&b[sCheckPlayer] &8- &fGive the player a deadly apple.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command messages for /scheck troll dropitems
+Command-Arg-Troll-DropItems-Messages:
+  No-Permission:
+  - '&b[sCheckPlayer] &8- &cYou do not have permission for the argument &6troll dropitems'
+  - '&b[sCheckPlayer] &8- &cYou need the permission &6%permission%'
+  Exceed-Character-Limit:
+  - '&b[sCheckPlayer] &8- &cThe player name length cannot exceed &6%limit% &ccharacters.
+    Excess: &6%excess% &ccharacters.'
+  No-Player:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cnot found!'
+  Cannot-Self:
+  - '&b[sCheckPlayer] &8- &cYou cannot do this to yourself!'
+  Inventory-DropItems:
+  - '&b[sCheckPlayer] &8- &aAll items of the player &6%target-player% &ahave been successfully
+    dropped.'
+  Inventory-DropItems-Select:
+  - '&b[sCheckPlayer] &8- &aItem from slot &6%slot% &afor player &6%target-player% &ahas
+    been successfully dropped.'
+  Invalid-Slot-Message:
+  - '&b[sCheckPlayer] &8- &cInvalid slot! Valid slots: &6%valid-slots%.'
+  WhiteList-Message:
+  - '&b[sCheckPlayer] &8- &cPlayer &6%target-player% &cis on the whitelist.'
+  Already-No-Use:
+  - '&b[sCheckPlayer] &8- &cYou cannot use this again!'
+  Command-Arg-Disabled-Message:
+  - '&b[sCheckPlayer] &8- &cThe argument &6troll dropitems &cis disabled!'
+  Usage:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [name] dropitems'
+  - '&b[sCheckPlayer] &8- &fForce a player to drop all items.'
+  Usage-DropItems-Args:
+  - '&b[sCheckPlayer] &8- &fUsage &6/%command% troll [player] dropitems [slot]'
+  - '&b[sCheckPlayer] &8- &fForces a player to drop items from a specific slot.'
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+# Command usage messages for /scheck troll
+Command-Arg-Usage-Troll-Messages:
+  Usage:
+  - '&b&l┏'
+  - '&b&l┃ &dTrolling commands:'
+  - '&b&l┃  &6/%command% troll [nickname] crash &8- &fCrash the player.'
+  - '&b&l┃  &6/%command% troll [nickname] invclear &8- &fClear the player\''s inventory.'
+  - '&b&l┃  &6/%command% troll [nickname] pumpkin &8- &fPut a pumpkin on the player\''s
+    head.'
+  - '&b&l┃  &6/%command% troll [nickname] randomtp &8- &fRandomly teleport the player.'
+  - '&b&l┃  &6/%command% troll [nickname] rotatemouse &8- &fRandomly rotate the player\''s
+    mouse.'
+  - '&b&l┃  &6/%command% troll [nickname] spam &8- &fSpam the player in chat.'
+  - '&b&l┃  &6/%command% troll [nickname] launch &8- &fLaunch the player into the sky.'
+  - '&b&l┃  &6/%command% troll [nickname] down &8- &fBury the player underground.'
+  - '&b&l┃  &6/%command% troll [nickname] nearby &8- &fTeleport the player to a random
+    nearby player.'
+  - '&b&l┃  &6/%command% troll [nickname] invdirt &8- &fReplaces all player inventory
+    with ground.'
+  - '&b&l┃  &6/%command% troll [nickname] dropitems &8- &fForce the player to drop all
+    items.'
+  - '&b&l┗'

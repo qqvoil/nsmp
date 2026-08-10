@@ -1,0 +1,52 @@
+combat-timers:
+  world: 10
+  world_nether: 10
+  world_the_end: 10
+
+disabled-worlds:
+  - example_disabled_world
+  - another_disabled_world
+
+combat-blocked-regions:
+  - put_your_safe_regions_here
+
+blocked-commands:
+  - tpa
+  - tpahere
+  - rtp
+  - home
+  - team home
+  - team warp
+  - team war
+  - team
+  - spawn
+  - lobby
+  - warp
+  - warps
+  - arena
+  - tp
+
+blocked-items:
+  - example_item
+  - item_name
+
+messages:
+  combat-enter: "&cYou are now in combat with %player%!"
+  enable-combat-enter: true
+
+  combat-exit: "&aYou are no longer in combat."
+  enable-combat-exit: true
+
+  combat-log: "&c%player% combat logged and was killed!"
+  enable-combat-log: true
+
+  combat-log-rejoin: "&cYou were killed for combat logging!"
+  enable-combat-log-rejoin: true
+
+  command-blocked: "&cYou cannot use this command while in combat!"
+  enable-command-blocked: true
+
+  item-blocked: "&cYou cannot use this item while in combat!"
+  enable-item-blocked: true
+
+  action-bar: "&bCombat: &f%time%s"

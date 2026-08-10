@@ -1,0 +1,40 @@
+# Cooldown durations for each item (in seconds)
+cooldown-durations:
+  shield: 30 #seconds
+  bow: 20 #seconds
+  trident: 40 #seconds
+  riptide_trident: 50 #seconds
+  crossbow: 25 #seconds
+  ender_pearl: 10 #seconds
+  golden_apple: 15 #seconds
+  enchanted_golden_apple: 60 #seconds
+
+# Should OPs bypass the cooldown? Set to true or false.
+op-bypass: false
+
+# Should the cooldown indicator appear on the item slot in the inventory? Set to true or false.
+slot-cooldown: true
+
+# Enable or disable cooldowns for specific items
+enable-cooldowns:
+  shield: true
+  bow: true
+  trident: true
+  riptide_trident: true
+  crossbow: true
+  ender_pearl: true
+  golden_apple: true
+  enchanted_golden_apple: true
+
+# World blacklist feature - disable cooldowns in certain worlds.
+# If enabled, players in the listed worlds will not have item cooldowns applied.
+blacklist-world:
+  enabled: false
+  worlds:
+    - example1
+    - example2
+
+# Message displayed when the plugin is reloaded
+reload-message: "&bʟɪɢʜᴛɪᴛᴇᴍᴄᴏᴏʟᴅᴏᴡɴ➜ #f5d984Configuration reloaded successfully."
+usage: "#ff1100Usage: #dcadff/lightitemcooldown reload | /lightitemcooldown discord"
+invalid-command: "#ff1100Invalid command. Usage: #dcadff/lightitemcooldown reload | /lightitemcooldown discord"

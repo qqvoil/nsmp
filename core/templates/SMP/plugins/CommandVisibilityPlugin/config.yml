@@ -1,0 +1,25 @@
+# List of commands to show in tab-completion
+shown-commands:
+  - rtp
+  - discord
+  - help
+  - rules
+  - menu
+  - shop
+  - tpa
+  - lobby
+  - bal
+  - balance
+  - balancetop
+  - home
+  - sethome
+  - delhome
+  - ah
+  - tpaccept
+  - tpacancel
+  - tpdeny
+  - msg
+  - tell
+  - help
+  - voicechat
+  - seller

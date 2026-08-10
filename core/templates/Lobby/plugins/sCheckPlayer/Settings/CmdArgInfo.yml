@@ -1,0 +1,29 @@
+#
+#          ▄▄█▀▀▀▄█ ▀██                      ▀██      ▀██▀▀█▄  ▀██
+#  ▄▄▄▄  ▄█▀     ▀   ██ ▄▄     ▄▄▄▄    ▄▄▄▄   ██  ▄▄   ██   ██  ██   ▄▄▄▄    ▄▄▄▄ ▄▄▄   ▄▄▄▄  ▄▄▄ ▄▄
+# ██▄ ▀  ██          ██▀ ██  ▄█▄▄▄██ ▄█   ▀▀  ██ ▄▀    ██▄▄▄█▀  ██  ▀▀ ▄██    ▀█▄  █  ▄█▄▄▄██  ██▀ ▀▀
+# ▄ ▀█▄▄ ▀█▄      ▄  ██  ██  ██      ██       ██▀█▄    ██       ██  ▄█▀ ██     ▀█▄█   ██       ██
+# █▀▄▄█▀  ▀▀█▄▄▄▄▀  ▄██▄ ██▄  ▀█▄▄▄▀  ▀█▄▄▄▀ ▄██▄ ██▄ ▄██▄     ▄██▄ ▀█▄▄▀█▀     ▀█     ▀█▄▄▄▀ ▄██▄
+#                                                                            ▄▄ █
+#                                                                             ▀▀
+# Discord - snon_s
+#
+#■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■
+#
+
+# Setting up the /scheck info command (view player information under review).
+# Настройка команды /scheck info (просмотр информации о игроке на проверке)
+Command-Arg-Info:
+  # You can disable the "info" command argument
+  # by setting the value to false, and to enable it - true.
+  # Вы можете отключить аргумент команды "info"
+  # Установив значения false, а чтобы включить - true
+  Command-Arg-Info-Enabled: true
+  WhiteList-Players:
+    # Should I include a whitelist of players whose information cannot be viewed?
+    # Нужно ли включать белый список игроков, про которых нельзя просмотреть информацию?
+    Enabled: false
+    # Specify a list of players.
+    # Укажите список игроков.
+    Players:
+    - Snon_SS

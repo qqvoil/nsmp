@@ -1,0 +1,1079 @@
+{
+  "Chat-Initiator-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Chat-Player-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Confess-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Confirm-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-KnockBack-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Spec-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Start-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-StopAll-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Stop-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Timer-Add-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Timer-Continue-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Timer-Set-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Timer-Stop-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Cmd-Arg-Brand-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "Target-Quit-Server-Logs-Discord": {
+    "Enabled": false,
+    "Time": "HH:mm:ss | dd.MM.yyyy",
+    "Web-Hook": "https://discord.com/api/webhooks/0000000000000000/0-0"
+  },
+  "de": {
+    "Chat-Initiator-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 **%initiator-player%** hat geschrieben:\n> **%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Chat-Player-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💬 **%target-player%** hat geschrieben:\n**%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Confess-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16711680,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💀 Spieler **%target-player%** hat Cheaten gestanden.\n\n🕒 `%time%`\nÜberprüfungsdauer: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Confirm-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16753920,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🧾 Bestätigt von **%initiator-player%**: **%target-player%**\n\n🕒 `%time%`\nÜberprüfungsdauer: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-KnockBack-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛡️ Spieler **%initiator-player%** überprüft Spieler **%target-player%** auf Knockback.\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Spec-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 1752220,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "👁️ Spieler **%initiator-player%** beobachtet Spieler **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Start-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 Wer hat die Überprüfung gestartet: **%initiator-player%**\nWelcher Spieler wird überprüft: **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-StopAll-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 10197915,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛑 Spieler **%initiator-player%** hat die Überprüfung für alle gestoppt.\n👥 Spieler überprüft: **%amount%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "✅ Spieler für unschuldig erklärt von: **%initiator-player%**\n👤 Spieler: **%target-player%**\n\n🕒 `%time%`Überprüfungsdauer: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Add-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15844367,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🔁 Spieler **%initiator-player%** hat den Timer für Spieler **%target-player%** verlängert\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Continue-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3066993,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏳ Spieler **%initiator-player%** hat den Timer für Spieler **%target-player%** gestartet\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Set-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15105570,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🕒 Spieler **%initiator-player%** hat den Timer für Spieler **%target-player%** gesetzt\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏹️ Spieler **%initiator-player%** hat den Timer für Spieler **%target-player%** gestoppt\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Target-Quit-Server-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🚪 Spieler **%target-player%** hat den Server während der Überprüfung verlassen\n\n🕒 `%time%`Überprüfungsdauer: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Brand-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🔍 Client-Daten für Spieler **%target-player%**\n\n💻 Client-Brand: `%brand%` \n👤 Moderator: `%initiator-player%` \n🕒 Zeit: `%time%`"
+        }
+      ]
+    }
+  },
+  "en": {
+    "Chat-Initiator-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 **%initiator-player%** wrote:\n> **%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Chat-Player-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💬 **%target-player%** wrote:\n**%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Confess-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16711680,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💀 Player **%target-player%** confessed to cheating.\n\n🕒 `%time%`\nDuration: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Confirm-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16753920,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🧾 Confirmed by **%initiator-player%**: **%target-player%**\n\n🕒 `%time%`\nDuration: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-KnockBack-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛡️ Player **%initiator-player%** is checking player **%target-player%** for knockback.\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Spec-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 1752220,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "👁️ Player **%initiator-player%** started spectating player **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Start-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 Who started the check: **%initiator-player%**\nWhich player is being checked: **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-StopAll-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 10197915,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛑 Player **%initiator-player%** stopped all checks.\n👥 Players being checked: **%amount%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "✅ Player declared innocent by: **%initiator-player%**\n👤 Player: **%target-player%**\n\n🕒 `%time%`\nDuration: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Add-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15844367,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🔁 Player **%initiator-player%** extended the timer for player **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Continue-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3066993,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏳ Player **%initiator-player%** started the timer for player **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Set-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15105570,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🕒 Player **%initiator-player%** set the timer for player **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏹️ Player **%initiator-player%** stopped the timer for player **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Target-Quit-Server-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🚪 Player **%target-player%** left the server during the check\n\n🕒 `%time%`\nDuration: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Brand-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🔍 Client data for player **%target-player%**\n\n💻 Client Brand: `%brand%` \n👤 Moderator: `%initiator-player%` \n🕒 Time: `%time%`"
+        }
+      ]
+    }
+  },
+  "fi": {
+    "Chat-Initiator-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 **%initiator-player%** kirjoitti:\n> **%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Chat-Player-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💬 **%target-player%** kirjoitti:\n**%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Confess-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16711680,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💀 Pelaaja **%target-player%** myönsi käyttäneensä huijausta.\n\n🕒 `%time%`\nTarkistuksen kesto: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Confirm-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16753920,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🧾 Vahvistettu pelaajalta **%initiator-player%**: **%target-player%**\n\n🕒 `%time%`\nTarkistuksen kesto: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-KnockBack-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛡️ Pelaaja **%initiator-player%** tarkistaa pelaajaa **%target-player%** takapotkusuojauksen varalta.\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Spec-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 1752220,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "👁️ Pelaaja **%initiator-player%** aloitti seuraamaan pelaajaa **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Start-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 Kuka aloitti tarkistuksen: **%initiator-player%**\nKumpaa pelaajaa tarkistetaan: **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-StopAll-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 10197915,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛑 Pelaaja **%initiator-player%** lopetti kaikki tarkistukset.\n👥 Tarkistettavia pelaajia: **%amount%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "✅ Pelaaja julistettiin syyttömäksi: **%initiator-player%**\n👤 Pelaaja: **%target-player%**\n\n🕒 `%time%`\nTarkistuksen kesto: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Add-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15844367,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🔁 Pelaaja **%initiator-player%** pidenti ajastinta pelaajalle **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Continue-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3066993,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏳ Pelaaja **%initiator-player%** käynnisti ajastimen pelaajalle **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Set-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15105570,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🕒 Pelaaja **%initiator-player%** asetti ajastimen pelaajalle **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏹️ Pelaaja **%initiator-player%** pysäytti ajastimen pelaajalta **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Target-Quit-Server-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🚪 Pelaaja **%target-player%** poistui palvelimelta tarkistuksen aikana\n\n🕒 `%time%`\nTarkistuksen kesto: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Brand-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🔍 Pelaajan **%target-player%** asiakastiedot\n\n💻 Asiakasohjelma: `%brand%` \n👤 Moderaattori: `%initiator-player%` \n🕒 Aika: `%time%`"
+        }
+      ]
+    }
+  },
+  "pl": {
+    "Chat-Initiator-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 **%initiator-player%** napisał(a):\n> **%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Chat-Player-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💬 **%target-player%** napisał(a):\n**%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Confess-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16711680,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💀 Gracz **%target-player%** przyznał się do używania cheatów.\n\n🕒 `%time%`\nCzas trwania: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Confirm-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16753920,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🧾 Gracz, który potwierdził **%initiator-player%**: **%target-player%**\n\n🕒 `%time%`\nCzas trwania: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-KnockBack-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛡️ Gracz **%initiator-player%** sprawdza gracza **%target-player%** pod kątem anty-odrzutu.\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Spec-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 1752220,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "👁️ Gracz **%initiator-player%** rozpoczął obserwację gracza **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Start-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 Kto rozpoczął sprawdzenie: **%initiator-player%**\nKtóry gracz jest sprawdzany: **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-StopAll-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 10197915,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛑 Gracz **%initiator-player%** zatrzymał wszystkie sprawdzenia.\n👥 Liczba graczy na sprawdzeniu: **%amount%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "✅ Kto uznał gracza za niewinnego: **%initiator-player%**\n👤 Gracz: **%target-player%**\n\n🕒 `%time%`\nCzas trwania: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Add-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15844367,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🔁 Gracz **%initiator-player%** przedłużył timer dla gracza **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Continue-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3066993,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏳ Gracz **%initiator-player%** uruchomił timer dla gracza **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Set-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15105570,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🕒 Gracz **%initiator-player%** ustawił timer dla gracza **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏹️ Gracz **%initiator-player%** zatrzymał timer dla gracza **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Target-Quit-Server-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🚪 Gracz **%target-player%** opuścił serwer podczas sprawdzenia.\n\n🕒 `%time%`\nCzas trwania: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Brand-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🔍 Dane klienta gracza **%target-player%**\n\n💻 Marka klienta: `%brand%` \n👤 Moderator: `%initiator-player%` \n🕒 Czas: `%time%`"
+        }
+      ]
+    }
+  },
+  "ru": {
+    "Chat-Initiator-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 **%initiator-player%** написал(а):\n> **%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Chat-Player-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💬 **%target-player%** написал(а)\n**%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Confess-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16711680,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💀 Игрок **%target-player%** признался в использовании читов.\n\n🕒 `%time%`\nВремя проверки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Confirm-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16753920,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🧾 Игрок который подтвердил **%initiator-player%**: **%target-player%**\n\n🕒 `%time%`\nВремя проверки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-KnockBack-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛡️ Игрок **%initiator-player%** проверяет игрока **%target-player%** на анти-откидывание.\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Spec-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 1752220,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "👁️ Игрок **%initiator-player%** начал(а) следить за игроком **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Start-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 Кто вызвал проверку: **%initiator-player%**\nКакой игрок на проверке: **%target-player%** \n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-StopAll-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 10197915,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛑 Игрок **%initiator-player%** остановил проверку для всех игроков.\n👥 Игроков было на проверке: **%amount%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "✅ Кто признал невиновным игрока: **%initiator-player%**\n👤 Какой игрок был признан невиновным: **%target-player%**\n\n🕒 `%time%`\nВремя проверки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Add-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15844367,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🔁 Игрок **%initiator-player%** продлил(а) таймер для игрока **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Continue-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3066993,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏳ Игрок **%initiator-player%** запустил(а) таймер для игрока **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Set-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15105570,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🕒 Игрок **%initiator-player%** установил(а) таймер для игрока **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏹️ Игрок **%initiator-player%** остановил(а) таймер для игрока **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Target-Quit-Server-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🚪 Игрок **%target-player%** вышел во время проверки.\n\n🕒 `%time%`\nВремя проверки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Brand-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🔍 Данные клиента игрока **%target-player%**\n\n💻 Тип клиента: `%brand%` \n👤 Модератор: `%initiator-player%` \n🕒 Время: `%time%`"
+        }
+      ]
+    }
+  },
+  "ua": {
+    "Chat-Initiator-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 **%initiator-player%** написав(ла):\n> **%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Chat-Player-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💬 **%target-player%** написав(ла):\n**%message%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Confess-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16711680,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "💀 Гравець **%target-player%** зізнався у використанні читів.\n\n🕒 `%time%`\nТривалість перевірки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Confirm-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 16753920,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🧾 Гравець, який підтвердив **%initiator-player%**: **%target-player%**\n\n🕒 `%time%`\nТривалість перевірки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-KnockBack-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛡️ Гравець **%initiator-player%** перевіряє гравця **%target-player%** на анти-кік.\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Spec-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 1752220,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "👁️ Гравець **%initiator-player%** почав спостерігати за гравцем **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Start-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "💬 Хто розпочав перевірку: **%initiator-player%**\nЯкий гравець перевіряється: **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-StopAll-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 10197915,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🛑 Гравець **%initiator-player%** зупинив перевірку для всіх гравців.\n👥 Гравців на перевірці було: **%amount%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3447003,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "✅ Хто визнав гравця невинним: **%initiator-player%**\n👤 Який гравець: **%target-player%**\n\n🕒 `%time%`\nТривалість перевірки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Add-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15844367,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🔁 Гравець **%initiator-player%** продовжив таймер для гравця **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Continue-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 3066993,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏳ Гравець **%initiator-player%** запустив таймер для гравця **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Set-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15105570,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "🕒 Гравець **%initiator-player%** встановив таймер для гравця **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Cmd-Arg-Timer-Stop-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%initiator-player%/128"
+          },
+          "description": "⏹️ Гравець **%initiator-player%** зупинив таймер для гравця **%target-player%**\n\n🕒 `%time%`"
+        }
+      ]
+    },
+    "Target-Quit-Server-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🚪 Гравець **%target-player%** вийшов під час перевірки.\n\n🕒 `%time%`\nТривалість перевірки: %duration%"
+        }
+      ]
+    },
+    "Cmd-Arg-Brand-Logs-Discord": {
+      "embeds": [
+        {
+          "color": 15158332,
+          "thumbnail": {
+            "url": "https://mc-heads.net/avatar/%target-player%/128"
+          },
+          "description": "🔍 Дані клієнта гравця **%target-player%**\n\n💻 Тип клієнта: `%brand%` \n👤 Модератор: `%initiator-player%` \n🕒 Час: `%time%`"
+        }
+      ]
+    }
+  }
+}
