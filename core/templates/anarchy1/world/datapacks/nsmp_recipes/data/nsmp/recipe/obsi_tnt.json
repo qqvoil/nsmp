@@ -14,9 +14,9 @@
     "id": "minecraft:tnt",
     "count": 1,
     "components": {
-      "minecraft:custom_name": "{\"text\":\"Обси-ТНТ\",\"color\":\"red\",\"bold\":true,\"italic\":false}",
+      "minecraft:custom_name": "{\"bold\":true,\"color\":\"red\",\"italic\":false,\"obfuscated\":false,\"strikethrough\":false,\"text\":\"Обси-ТНТ\",\"underlined\":false}",
       "minecraft:lore": [
-        "{\"text\":\"Может взрывать обсидиан!\",\"color\":\"gray\",\"italic\":false}"
+        "{\"bold\":false,\"color\":\"gray\",\"italic\":false,\"obfuscated\":false,\"strikethrough\":false,\"text\":\"Может взрывать обсидиан!\",\"underlined\":false}"
       ]
     }
   }
