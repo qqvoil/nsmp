@@ -61,6 +61,9 @@ wipe_single_server() {
 
     echo "[4/4] Запуск свежего сервера ${srv} с новой генерацией мира..."
     bash "$(dirname "$0")/server-manager.sh" start "${srv}"
+    echo "[5/5] Ожидание запуска для старта прогрузки чанков (Chunky)..."
+    sleep 40
+    bash "$(dirname "$0")/pregenerate_worlds.sh" "${srv}"
     echo "✅ Вайп сервера ${srv} успешно завершен!"
 }
 
