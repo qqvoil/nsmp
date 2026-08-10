@@ -1,16 +1,19 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "OOO",
-    "OTO",
-    "OOO"
+    "GTG",
+    "TDT",
+    "GTG"
   ],
   "key": {
-    "O": {
-      "item": "minecraft:obsidian"
+    "G": {
+      "item": "minecraft:gunpowder"
     },
     "T": {
       "item": "minecraft:tnt"
+    },
+    "D": {
+      "item": "minecraft:diamond"
     }
   },
   "result": {
