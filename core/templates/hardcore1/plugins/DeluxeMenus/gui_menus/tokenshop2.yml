@@ -1,4 +1,4 @@
-menu_title: '&#000000&lТокен Шоп &8(Страница 2)'
+menu_title: '&#000000&lТокен Шоп &8(Премиум)'
 open_command: tokenshop2
 size: 54
 
@@ -6,45 +6,109 @@ items:
   'bg':
     material: PURPLE_STAINED_GLASS_PANE
     slots:
-      - 0-30
-      - 32-44
+      - 0-9
+      - 11
+      - 13
+      - 15
+      - 17-18
+      - 20
+      - 24
+      - 26-27
+      - 29
+      - 31
+      - 33
+      - 35-44
       - 46-48
       - 50-53
     display_name: ' '
 
-  'vip_rank':
-    material: DIAMOND
-    slot: 31
-    display_name: '&b&lVIP Статус &7(на 30 дней)'
+  'premium_30':
+    material: AMETHYST_CLUSTER
+    slot: 21
+    display_name: '&#e056fd&lПремиум &7(30 дней)'
     lore:
       - ''
       - '&7Особый статус, который дает:'
-      - '&8- &fБольше слотов на аукционе'
-      - '&8- &fУникальный префикс'
-      - '&8- &fДополнительные возможности'
+      - '&8- &fХардкор: в 2 раза больше времени'
+      - '&8- &fАнархия: 6 приват-блоков'
+      - '&8- &f10 слотов на аукционе'
+      - '&8- &f5 точек дома'
+      - '&8- &fДоступ на сервер мирного выживания'
+      - '&8- &fЭксклюзивный префикс &d[PREMIUM]&f'
       - ''
-      - '&7Цена: &b10000 токенов'
+      - '&7Цена: &#f9ca2415,000 токенов'
       - ''
       - '&e▶ Нажмите для покупки'
     left_click_commands:
-      - '[console] p take %player_name% 10000'
-      - '[console] lp user %player_name% parent addtemp vip 30d'
-      - '[message] &aВы успешно приобрели статус &b&lVIP&a на 30 дней за &b10000 токенов!'
-      - '[broadcast] &b&l%player_name% &aтолько что купил статус &b&lVIP&a в магазине!'
+      - '[console] p take %player_name% 15000'
+      - '[console] lp user %player_name% parent addtemp premium 30d'
+      - '[console] lp user %player_name% permission settemp neversmp.server.building true 30d'
+      - '[message] &aВы успешно приобрели &dПРЕМИУМ&a на 30 дней!'
+      - '[console] broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>%player_name%</gradient> <white>приобрел</white> <light_purple>ПРЕМИУМ на 30 дней</light_purple> <white>в игре!</white>'
     left_click_requirement:
       requirements:
         has_tokens:
           type: javascript
-          expression: '%playerpoints_points% >= 10000'
+          expression: '%playerpoints_points% >= 15000'
           deny_commands:
-            - '[message] &cУ вас недостаточно токенов! Нужно &b10000'
+            - '[message] &cУ вас недостаточно токенов! Нужно &#f9ca2415,000'
+
+  'premium_60':
+    material: AMETHYST_CLUSTER
+    slot: 22
+    display_name: '&#e056fd&lПремиум &7(60 дней)'
+    lore:
+      - ''
+      - '&7Полный набор привилегий с экономией &a25%&7!'
+      - ''
+      - '&7Цена: &#f9ca2425,000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 25000'
+      - '[console] lp user %player_name% parent addtemp premium 60d'
+      - '[console] lp user %player_name% permission settemp neversmp.server.building true 60d'
+      - '[message] &aВы успешно приобрели &dПРЕМИУМ&a на 60 дней!'
+      - '[console] broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>%player_name%</gradient> <white>приобрел</white> <light_purple>ПРЕМИУМ на 60 дней</light_purple> <white>в игре!</white>'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 25000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &#f9ca2425,000'
+
+  'premium_90':
+    material: AMETHYST_CLUSTER
+    slot: 23
+    display_name: '&#e056fd&lПремиум &7(90 дней)'
+    lore:
+      - ''
+      - '&7Максимальный срок привилегий с экономией &a35%&7!'
+      - ''
+      - '&7Цена: &#f9ca2440,000 токенов'
+      - ''
+      - '&e▶ Нажмите для покупки'
+    left_click_commands:
+      - '[console] p take %player_name% 40000'
+      - '[console] lp user %player_name% parent addtemp premium 90d'
+      - '[console] lp user %player_name% permission settemp neversmp.server.building true 90d'
+      - '[message] &aВы успешно приобрели &dПРЕМИУМ&a на 90 дней!'
+      - '[console] broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>%player_name%</gradient> <white>приобрел</white> <light_purple>ПРЕМИУМ на 90 дней</light_purple> <white>в игре!</white>'
+    left_click_requirement:
+      requirements:
+        has_tokens:
+          type: javascript
+          expression: '%playerpoints_points% >= 40000'
+          deny_commands:
+            - '[message] &cУ вас недостаточно токенов! Нужно &#f9ca2440,000'
 
   'prev_page':
     material: BLAZE_ROD
     slot: 45
     display_name: '&aПредыдущая страница'
     click_commands:
-      - '[openmenu] tokensshop'
+      - '[openmenu] tokenshop'
 
   'close':
     material: BARRIER

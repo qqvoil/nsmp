@@ -384,7 +384,7 @@ items:
   'next_page':
     material: BLAZE_ROD
     slot: 53
-    display_name: '&aСледующая страница &7(VIP)'
+    display_name: '&aСледующая страница &7(Премиум)'
     click_commands:
       - '[openmenu] tokenshop2'
 
