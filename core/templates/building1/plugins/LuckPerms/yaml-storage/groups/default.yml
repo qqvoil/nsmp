@@ -1,92 +1,138 @@
 name: default
 permissions:
-- simpleclans.leader.*
-- simpleclans.member.*
-- discord.*:
-    value: false
-- patpat.*:
-    value: false
-- plugman.*:
-    value: false
-- tempban.*:
-    value: false
-- advancedrtp.rtp
-- advancedrtp.use
-- advancedrtp.world.world
-- advancedrtp.world.world_nether
-- advancedrtp.world.world_the_end
-- bukkit.command.plugins:
-    value: false
-- bungeecord.command.server
-- crazyauctions.access
-- crazyauctions.bid.5
-- crazyauctions.buy
-- crazyauctions.sell
-- crazyauctions.sell.5
-- deluxemenus.menu.coinshop
-- deluxemenus.menu.coinshop2
-- deluxemenus.menu.coinshop3
-- deluxemenus.menu.lobby
-- deluxemenus.menu.main_menu
-- deluxemenus.menu.pvp_kit
-- deluxemenus.menu.pvp_kit_preview
-- deluxemenus.menu.rtp_menu
-- deluxemenus.menu.seller
-- deluxemenus.menu.seller_farmer
-- deluxemenus.menu.seller_jewels
-- deluxemenus.menu.seller_mobs
-- deluxemenus.menu.server_selector
-- deluxemenus.menu.tokenshop
-- deluxemenus.menu.tokensshop
-- essentials.afk
-- essentials.balance
-- essentials.balancetop
-- essentials.delhome
-- essentials.ewho:
-    value: false
-- essentials.help
-- essentials.home
-- essentials.ignore
+- advancedrtp.rtp:
+    value: true
+- advancedrtp.use:
+    value: true
+- crazyauctions.access:
+    value: true
+- crazyauctions.amount.3:
+    value: true
+- crazyauctions.buy:
+    value: true
+- crazyauctions.sell:
+    value: true
+- deluxemenus.menu.pvp_kit:
+    value: true
+- deluxemenus.menu.pvp_kit_preview:
+    value: true
+- deluxemenus.menu.server_selector:
+    value: true
+- deluxemenus.menu.tokenshop:
+    value: true
+- deluxemenus.menu.tokensshop:
+    value: true
+- deluxemenus.menu.rtp_menu:
+    value: true
+- deluxemenus.menu.lobby:
+    value: true
+- advancedrtp.world.world:
+    value: true
+- advancedrtp.world.world_nether:
+    value: true
+- advancedrtp.world.world_the_end:
+    value: true
+- essentials.afk:
+    value: true
+- essentials.balance:
+    value: true
+- essentials.balancetop:
+    value: true
+- essentials.delhome:
+    value: true
+- essentials.help:
+    value: true
+- essentials.home:
+    value: true
+- essentials.ignore:
+    value: true
 - essentials.list:
-    value: false
-- essentials.mail
-- essentials.mail.send
-- essentials.motd
-- essentials.msg
-- essentials.pay
-- essentials.r
-- essentials.rules
-- essentials.sethome
-- essentials.sethome.multiple
-- essentials.sethome.multiple.default
-- essentials.spawn
-- essentials.tpa
-- essentials.tpacancel
-- essentials.tpaccept
-- essentials.tpahere
-- essentials.tpdeny
+    value: true
+- essentials.mail:
+    value: true
+- essentials.mail.send:
+    value: true
+- essentials.motd:
+    value: true
+- essentials.msg:
+    value: true
+- essentials.pay:
+    value: true
+- essentials.r:
+    value: true
+- essentials.rules:
+    value: true
+- essentials.sethome:
+    value: true
+- essentials.sethome.multiple:
+    value: true
+- essentials.sethome.multiple.default:
+    value: true
+- essentials.spawn:
+    value: true
 - essentials.warp:
-    value: false
-- essentials.warp.list
-- essentials.warps:
-    value: false
-- essentials.who:
-    value: false
-- guishop.shop
-- guishop.use
-- orders.create
-- orders.use
-- playerpoints.points
-- simpletpa.tpa
-- simpletpa.tpacancel
-- simpletpa.tpaccept
-- simpletpa.tpahere
-- simpletpa.tpatoggle
-- simpletpa.tpdeny
-- 'true'
-- voicechat.listen
-- voicechat.speak
-- weight.10
-prefixes:
-- '&7Игрок &f':
-    priority: 10
+    value: true
+- essentials.warp.list:
+    value: true
+- guishop.shop:
+    value: true
+- guishop.use:
+    value: true
+- orders.create:
+    value: true
+- orders.use:
+    value: true
+- playerpoints.points:
+    value: true
+- simpleclans.leader.*:
+    value: true
+- simpleclans.member.*:
+    value: true
+- simpletpa.tpa:
+    value: true
+- simpletpa.tpaccept:
+    value: true
+- simpletpa.tpacancel:
+    value: true
+- simpletpa.tpdeny:
+    value: true
+- simpletpa.tpahere:
+    value: true
+- simpletpa.tpatoggle:
+    value: true
+- essentials.tpa:
+    value: true
+- essentials.tpaccept:
+    value: true
+- essentials.tpdeny:
+    value: true
+- essentials.tpacancel:
+    value: true
+- essentials.tpahere:
+    value: true
+- weight.10:
+    value: true
+- prefix.10.&7Игрок &f:
+    value: true
+- deluxemenus.menu.coinshop:
+    value: true
+- deluxemenus.menu.coinshop2:
+    value: true
+- deluxemenus.menu.coinshop3:
+    value: true
+- deluxemenus.menu.seller:
+    value: true
+- deluxemenus.menu.seller_farmer:
+    value: true
+- deluxemenus.menu.seller_jewels:
+    value: true
+- deluxemenus.menu.seller_mobs:
+    value: true
+- voicechat.listen:
+    value: true
+- voicechat.speak:
+    value: true
+- deluxemenus.menu.main_menu:
+    value: true
+- bungeecord.command.server:
+    value: true

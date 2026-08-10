@@ -1,3 +1,3 @@
-on tab complete:
+on player command send:
     if player does not have permission "group.admin":
-        remove "permission", "permissions", "perms", "luckperms", "lp", "plugman", "plugins", "pl", "plm", "about", "ver", "version", "papi", "placeholderapi", "lightitemcooldown", "dm", "deluxemenus", "dmenu", "deluxemenu", "icanhasbukkit", "ewarps", "ewarp", "warp", "warps", "patpat", "linkaccount", "ewho", "who", "list", "tempban" from completions
+        remove "permission", "permissions", "perms", "luckperms", "lp", "plugman", "plugins", "pl", "plm", "about", "ver", "version", "papi", "placeholderapi", "lightitemcooldown", "dm", "deluxemenus", "dmenu", "deluxemenu", "icanhasbukkit", "ewarps", "ewarp", "warp", "warps", "patpat", "linkaccount", "ewho", "who", "list", "tempban" from event-commands

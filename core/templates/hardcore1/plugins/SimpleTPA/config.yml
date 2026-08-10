@@ -8,8 +8,6 @@ settings:
   teleport_warmup_enabled: false # If enabled, the requester has to stand still for a configured amount of time before being teleported after their TPA-Request gets accepted.
   teleport_warmup_seconds: 5 # Time in Seconds the requester has to stand still before being teleported. Only used if teleport_warmup_enabled is true.
   allow_multiple_requests: true # If enabled, Players can send TPA-Requests to multiple different Players at the same time, and receive multiple incoming Requests at once.
-
-  suppress_usage_hint: true # If enabled, suppresses the server's built-in "/tpa <player|version|help>" usage hint that would otherwise appear below SimpleTPA's own error messages.
 sounds:
   tpa_request_sent: "entity.experience_orb.pickup"
   tpa_request_received: "entity.player.levelup"

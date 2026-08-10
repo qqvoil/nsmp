@@ -1,14 +1,17 @@
 name: vip
-permissions:
-- crazyauctions.amount.7
-- crazyauctions.bid.10
-- crazyauctions.sell.10
-- essentials.back
-- essentials.back.ondeath
-- essentials.sethome.multiple.vip
-- weight.50
 parents:
 - default
 prefixes:
 - '&aПремиум &f':
     priority: 50
+permissions:
+- crazyauctions.amount.7:
+    value: true
+- essentials.sethome.multiple.vip:
+    value: true
+- weight.50:
+    value: true
+- essentials.back:
+    value: true
+- essentials.back.ondeath:
+    value: true

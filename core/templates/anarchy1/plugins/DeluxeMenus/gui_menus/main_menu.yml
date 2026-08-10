@@ -9,10 +9,23 @@ items:
     material: GRAY_STAINED_GLASS_PANE
     slots:
       - 0-11
-      - 13
       - 15-21
       - 23-26
     display_name: ' '
+
+  # --- МАГАЗИН ПРИВАТОВ (Слот 13) ---
+  'open_protection_shop':
+    material: BEDROCK
+    slot: 13
+    display_name: '&#ffff55&lМагазин Приватов'
+    lore:
+      - ''
+      - '&7Нажмите, чтобы купить'
+      - '&7блоки для привата территории.'
+      - ''
+      - '&eНажмите &7— Открыть магазин'
+    click_commands:
+      - '[openmenu] protectionshop'
 
   # --- МАГАЗИН (Тотем в слоте 12) ---
   'open_shop':
