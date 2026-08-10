@@ -92,7 +92,11 @@ def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int 
             logging.error(f"Item {item_id} not found in catalog during reward execution")
             return
 
+    # High Availability Fallback: Send commands to only ONE available server.
+    # Because PlayerPoints and LuckPerms now use a global MySQL database, 
+    # executing on multiple servers will duplicate tokens/rewards.
     for srv_name, srv_conf in RCON_SERVERS.items():
+        success_for_this_server = True
         for cmd_template in commands:
             cmd = cmd_template.format(player=player_name)
             try:
@@ -101,7 +105,12 @@ def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int 
                 logging.info(f"RCON response from {srv_name}: {resp}")
             except Exception as e:
                 logging.error(f"Failed RCON command '{cmd}' on {srv_name}: {e}")
-
+                success_for_this_server = False
+                break # Stop sending commands to this server if one fails, try next server
+                
+        if success_for_this_server:
+            logging.info(f"Successfully executed all rewards on {srv_name}.")
+            break # Stop after successfully executing on one server
 # --- Frontend Routes ---
 
 @app.route("/")

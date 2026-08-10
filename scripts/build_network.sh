@@ -120,7 +120,7 @@ link_plugins() {
     echo -e "\n${YELLOW}🔌 [2/3] Привязка пула плагинов к серверам...${NC}"
 
     # Velocity plugins
-    local VELO_PLUGINS=("Geyser-Velocity.jar" "floodgate-velocity.jar" "TCPShield-2.8.1 (1).jar" "veloauth-latest.jar" "VelocityPlayerListQuery-1.5.0.jar" "voicechat-velocity-2.6.18.jar")
+    local VELO_PLUGINS=("Geyser-Velocity.jar" "floodgate-velocity.jar" "TCPShield-2.8.1 (1).jar" "veloauth-latest.jar" "VelocityPlayerListQuery-1.5.0.jar" "voicechat-velocity-2.6.18.jar" "LuckPerms-Velocity-5.5.71.jar")
     for p in "${VELO_PLUGINS[@]}"; do
         if [[ -f "${PLUGINS_POOL}/${p}" ]]; then
             cp -u "${PLUGINS_POOL}/${p}" "${SERVER_DIR}/velocity/plugins/" 2>/dev/null || cp "${PLUGINS_POOL}/${p}" "${SERVER_DIR}/velocity/plugins/"

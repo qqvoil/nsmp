@@ -54,6 +54,49 @@ def update_luckperms_config(server_dir: str, srv_name: str):
 
     print(f"[+] Updated LuckPerms MySQL config for: {srv_name}")
 
+def update_playerpoints_config(server_dir: str, srv_name: str):
+    pp_dir = os.path.join(server_dir, "plugins", "PlayerPoints")
+    config_path = os.path.join(pp_dir, "config.yml")
+    
+    if not os.path.exists(config_path):
+        # Velocity usually doesn't have PlayerPoints
+        return
+
+    with open(config_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # We need to enable mysql and set connection details
+    # The config format looks like:
+    # mysql-settings:
+    #   enabled: false
+    #   hostname: 127.0.0.1
+    #   port: 3306
+    #   database-name: ''
+    #   user-name: ''
+    #   user-password: ''
+
+    # Strip port from host for hostname, or parse it
+    db_host = DB_CONFIG["host"].split(":")[0]
+    db_port = "3306"
+    if ":" in DB_CONFIG["host"]:
+        db_port = DB_CONFIG["host"].split(":")[1]
+
+    # Regex replacements
+    # 1. Enable MySQL
+    content = re.sub(r'enabled:\s*false', 'enabled: true', content, count=1)
+    
+    # 2. Update credentials in mysql-settings block
+    content = re.sub(r'hostname:\s*[\'"]?[\w\.]+[\'"]?', f'hostname: {db_host}', content)
+    content = re.sub(r'port:\s*\d+', f'port: {db_port}', content)
+    content = re.sub(r'database-name:\s*[\'"]?[\w]*[\'"]?', f'database-name: {DB_CONFIG["database"]}', content)
+    content = re.sub(r'user-name:\s*[\'"]?[\w]*[\'"]?', f'user-name: {DB_CONFIG["username"]}', content)
+    content = re.sub(r'user-password:\s*[\'"]?[\w]*[\'"]?', f'user-password: {DB_CONFIG["password"]}', content)
+    
+    with open(config_path, "w", encoding="utf-8") as f:
+        f.write(content)
+
+    print(f"[+] Updated PlayerPoints MySQL config for: {srv_name}")
+
 def main():
     print("==================================================")
     print("⚔ NeverSMP — Применение настроек централизованной БД")
@@ -63,11 +106,12 @@ def main():
         srv_dir = os.path.join(SERVER_ROOT, srv)
         if os.path.isdir(srv_dir):
             update_luckperms_config(srv_dir, srv)
+            update_playerpoints_config(srv_dir, srv)
         else:
             print(f"[-] Directory {srv} not found, skipping.")
             
     print("==================================================")
-    print("✅ Конфигурации LuckPerms переведены на единую MariaDB!")
+    print("✅ Конфигурации LuckPerms и PlayerPoints переведены на единую MariaDB!")
 
 if __name__ == "__main__":
     main()
