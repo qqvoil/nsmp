@@ -7,7 +7,8 @@ Switches all backend servers to unified MariaDB storage with real-time SQL messa
 import os
 import re
 
-SERVER_ROOT = os.path.expanduser("~/data/server")
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+SERVER_ROOT = os.path.join(BASE_DIR, "server")
 
 SERVERS = [
     "lobby", "smp1", "smp2", "hardcore1", "hardcore2", 

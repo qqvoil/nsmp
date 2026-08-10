@@ -181,8 +181,13 @@ link_plugins() {
     echo -e "${GREEN}✓ Все плагины распределены по серверам.${NC}"
 }
 
+apply_configs() {
+    echo -e "\n${YELLOW}⚙️ [3/4] Применение глобальных конфигураций MySQL...${NC}"
+    python3 "${BASE_DIR}/scripts/apply_mysql_configs.py"
+}
+
 verify_build() {
-    echo -e "\n${YELLOW}🧪 [3/3] Верификация собранной структуры...${NC}"
+    echo -e "\n${YELLOW}🧪 [4/4] Верификация собранной структуры...${NC}"
     local count
     count=$(ls -d "${SERVER_DIR}"/*/ 2>/dev/null | wc -l || echo 0)
     echo -e "${GREEN}✓ Успешно собрано серверов: ${count} из 11${NC}"
@@ -191,4 +196,5 @@ verify_build() {
 
 assemble_servers
 link_plugins
+apply_configs
 verify_build
