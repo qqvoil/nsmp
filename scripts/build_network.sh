@@ -154,10 +154,6 @@ link_plugins() {
             if [[ "$p_name" == *velocity* || "$p_name" == *Velocity* || "$p_name" == *Geyser-Velocity* || "$p_name" == *TCPShield* || "$p_name" == *veloauth* ]]; then
                 continue
             fi
-            # Filter sCheckPlayer (Lobby only)
-            if [[ "$p_name" == *sCheckPlayer* ]] && [[ "$srv" != "Lobby" ]]; then
-                continue
-            fi
             # Filter HardcoreRevive (Hardcore servers only)
             if [[ "$p_name" == *HardcoreRevive* ]] && [[ "$srv" != hardcore* ]]; then
                 continue
