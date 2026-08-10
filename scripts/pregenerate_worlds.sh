@@ -29,6 +29,8 @@ trigger_chunky() {
         sleep 1
         tmux send-keys -t "nsmp_${srv}" "chunky start" Enter
         sleep 1
+        tmux send-keys -t "nsmp_${srv}" "chunky confirm" Enter
+        sleep 1
         tmux send-keys -t "nsmp_${srv}" "chunky quiet" Enter
     else
         echo "⚠️ Сервер ${srv} (nsmp_${srv}) не запущен в tmux. Пропуск генерации."

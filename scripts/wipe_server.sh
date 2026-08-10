@@ -58,6 +58,7 @@ wipe_single_server() {
     rm -rf "${srv_dir}/plugins/GriefPreventionData" 2>/dev/null || true
     rm -rf "${srv_dir}/plugins/AuctionHouse" 2>/dev/null || true
     rm -rf "${srv_dir}/plugins/zAuctionHouse" 2>/dev/null || true
+    rm -rf "${srv_dir}/plugins/Chunky" 2>/dev/null || true
 
     echo "[4/4] Запуск свежего сервера ${srv} с новой генерацией мира..."
     bash "$(dirname "$0")/server-manager.sh" start "${srv}"
