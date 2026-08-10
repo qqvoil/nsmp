@@ -92,25 +92,39 @@ def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int 
             logging.error(f"Item {item_id} not found in catalog during reward execution")
             return
 
-    # High Availability Fallback: Send commands to only ONE available server.
-    # Because PlayerPoints and LuckPerms now use a global MySQL database, 
-    # executing on multiple servers will duplicate tokens/rewards.
+    # High Availability & Cross-Server Broadcast:
+    # Database commands (p give, lp) should only execute on ONE server to avoid duplication.
+    # Broadcast commands (tellraw, broadcast) should execute on ALL servers.
+    global_commands = [c for c in commands if not (c.startswith("tellraw ") or c.startswith("broadcast "))]
+    local_commands = [c for c in commands if c.startswith("tellraw ") or c.startswith("broadcast ")]
+
+    global_success = False
     for srv_name, srv_conf in RCON_SERVERS.items():
-        success_for_this_server = True
-        for cmd_template in commands:
+        if not global_success:
+            success_for_this_server = True
+            for cmd_template in global_commands:
+                cmd = cmd_template.replace("{player}", player_name)
+                try:
+                    logging.info(f"Executing RCON Global Command on {srv_name}: {cmd}")
+                    resp = execute_rcon_command(srv_conf["host"], srv_conf["port"], srv_conf["pass"], cmd)
+                    logging.info(f"RCON response from {srv_name}: {resp}")
+                except Exception as e:
+                    logging.error(f"Failed RCON command '{cmd}' on {srv_name}: {e}")
+                    success_for_this_server = False
+                    break
+            if success_for_this_server:
+                global_success = True
+                logging.info(f"Successfully executed global rewards on {srv_name}.")
+        
+        # Always execute local broadcasts on this server if it's reachable
+        for cmd_template in local_commands:
             cmd = cmd_template.replace("{player}", player_name)
             try:
-                logging.info(f"Executing RCON on {srv_name}: {cmd}")
-                resp = execute_rcon_command(srv_conf["host"], srv_conf["port"], srv_conf["pass"], cmd)
-                logging.info(f"RCON response from {srv_name}: {resp}")
+                logging.info(f"Executing RCON Local Broadcast on {srv_name}: {cmd}")
+                execute_rcon_command(srv_conf["host"], srv_conf["port"], srv_conf["pass"], cmd)
             except Exception as e:
-                logging.error(f"Failed RCON command '{cmd}' on {srv_name}: {e}")
-                success_for_this_server = False
-                break # Stop sending commands to this server if one fails, try next server
-                
-        if success_for_this_server:
-            logging.info(f"Successfully executed all rewards on {srv_name}.")
-            break # Stop after successfully executing on one server
+                logging.error(f"Failed RCON broadcast '{cmd}' on {srv_name}: {e}")
+
 # --- Frontend Routes ---
 
 @app.route("/")
