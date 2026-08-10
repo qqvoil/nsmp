@@ -6,15 +6,9 @@
     "GTG"
   ],
   "key": {
-    "G": {
-      "item": "minecraft:gunpowder"
-    },
-    "T": {
-      "item": "minecraft:tnt"
-    },
-    "D": {
-      "item": "minecraft:diamond"
-    }
+    "G": "minecraft:gunpowder",
+    "T": "minecraft:tnt",
+    "D": "minecraft:diamond"
   },
   "result": {
     "id": "minecraft:tnt",
