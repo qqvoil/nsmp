@@ -4,7 +4,7 @@ bind = "127.0.0.1:25567"
 method = "MODERN"
 secret = "VEPZp3dbw5h4"
 
-welcome_message = "<yellow>У нас есть телеграм с чатом и важной информацией: <click:open_url:'https://t.me/NeverSMP'><hover:show_text:'Открыть чат'>NeverSMP</hover></click></yellow>"
+welcome_message = ""
 action_bar = "<gold>Добро пожаловать на NeverSMP!</gold>"
 
 [title]
