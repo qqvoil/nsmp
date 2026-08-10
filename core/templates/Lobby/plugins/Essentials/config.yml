@@ -555,7 +555,7 @@ afk-list-name: "none"
 broadcast-afk-message: true
 
 # You can disable the Minecraft death messages here.
-death-messages: true
+death-messages: false
 
 # How should Essentials handle players with the 'essentials.keepinv' permission who have items with
 # Curse of Vanishing when they die?
