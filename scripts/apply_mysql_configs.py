@@ -11,7 +11,7 @@ BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 SERVER_ROOT = os.path.join(BASE_DIR, "server")
 
 SERVERS = [
-    "lobby", "smp1", "smp2", "hardcore1", "hardcore2", 
+    "Lobby", "SMP1", "SMP2", "hardcore1", "hardcore2", 
     "anarchy1", "anarchy2", "building1", "building2", "velocity"
 ]
 
