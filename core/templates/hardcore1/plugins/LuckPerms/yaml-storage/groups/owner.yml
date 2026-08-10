@@ -1,11 +1,9 @@
 name: owner
+permissions:
+- '*'
+- weight.100
 parents:
 - admin
 prefixes:
 - '&4Владелец &f':
     priority: 100
-permissions:
-- '*':
-    value: true
-- weight.100:
-    value: true

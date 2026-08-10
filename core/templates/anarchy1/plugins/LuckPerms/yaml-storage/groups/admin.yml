@@ -1,11 +1,9 @@
 name: admin
+permissions:
+- '*'
+- weight.90
 parents:
 - vip
 prefixes:
 - '&cАдмин &f':
     priority: 90
-permissions:
-- '*':
-    value: true
-- weight.90:
-    value: true
