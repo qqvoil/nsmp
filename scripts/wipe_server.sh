@@ -65,7 +65,7 @@ wipe_single_server() {
 }
 
 if [ "$TARGET" == "all_wipeable" ]; then
-    for srv in smp1 smp2 anarchy1 anarchy2; do
+    for srv in smp1 anarchy1; do
         wipe_single_server "$srv"
     done
 else

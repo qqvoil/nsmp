@@ -93,9 +93,9 @@ EOF
             sed -i.bak "s/^rcon.port=.*/rcon.port=${rcon_port}/" "${srv_dir}/server.properties" 2>/dev/null || true
             
             # Set world size based on wipe schedule
-            if [[ "$name" == "SMP1" || "$name" == "SMP2" || "$name" == "anarchy1" || "$name" == "anarchy2" ]]; then
+            if [[ "$name" == "SMP1" || "$name" == "anarchy1" ]]; then
                 sed -i.bak "s/^max-world-size=.*/max-world-size=5000/" "${srv_dir}/server.properties" 2>/dev/null || true
-            elif [[ "$name" == "hardcore1" ]]; then
+            elif [[ "$name" == "SMP2" || "$name" == "anarchy2" || "$name" == "hardcore1" ]]; then
                 sed -i.bak "s/^max-world-size=.*/max-world-size=15000/" "${srv_dir}/server.properties" 2>/dev/null || true
             elif [[ "$name" == "hardcore2" ]]; then
                 sed -i.bak "s/^max-world-size=.*/max-world-size=20000/" "${srv_dir}/server.properties" 2>/dev/null || true
