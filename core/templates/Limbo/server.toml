@@ -1,11 +1,12 @@
 bind = "127.0.0.1:25567"
+welcome_message = ""
+action_bar = ""
 
 [forwarding]
 method = "MODERN"
 secret = "VEPZp3dbw5h4"
 
-welcome_message = "<reset>"
-action_bar = "<gold>Добро пожаловать на NeverSMP!</gold>"
+
 
 [title]
 enabled = true
