@@ -69,20 +69,20 @@ messaging-service="sql"
     content = re.sub(r'server="?\w+"?', f'server="{srv_name}"', content)
 
     # 4. Update data block address, database, username, password, table-prefix
-    content = re.sub(r'address:\s*["\']?[^"\']+["\']?', f'address: "{DB_CONFIG["host"]}"', content, count=1)
-    content = re.sub(r'address="?[^"\']+"?', f'address="{DB_CONFIG["host"]}"', content, count=1)
+    content = re.sub(r'address:\s*["\']?[^"\'\n]+["\']?', f'address: "{DB_CONFIG["host"]}"', content, count=1)
+    content = re.sub(r'address="?[^"\'\n]+"?', f'address="{DB_CONFIG["host"]}"', content, count=1)
     
-    content = re.sub(r'database:\s*["\']?[^"\']+["\']?', f'database: "{DB_CONFIG["database"]}"', content, count=1)
-    content = re.sub(r'database="?[^"\']+"?', f'database="{DB_CONFIG["database"]}"', content, count=1)
+    content = re.sub(r'database:\s*["\']?[^"\'\n]+["\']?', f'database: "{DB_CONFIG["database"]}"', content, count=1)
+    content = re.sub(r'database="?[^"\'\n]+"?', f'database="{DB_CONFIG["database"]}"', content, count=1)
     
-    content = re.sub(r'username:\s*["\']?[^"\']+["\']?', f'username: "{DB_CONFIG["username"]}"', content, count=1)
-    content = re.sub(r'username="?[^"\']+"?', f'username="{DB_CONFIG["username"]}"', content, count=1)
+    content = re.sub(r'username:\s*["\']?[^"\'\n]+["\']?', f'username: "{DB_CONFIG["username"]}"', content, count=1)
+    content = re.sub(r'username="?[^"\'\n]+"?', f'username="{DB_CONFIG["username"]}"', content, count=1)
     
-    content = re.sub(r'password:\s*["\']?[^"\']*["\']?', f'password: "{DB_CONFIG["password"]}"', content, count=1)
-    content = re.sub(r'password="?[^"\']*"?', f'password="{DB_CONFIG["password"]}"', content, count=1)
+    content = re.sub(r'password:\s*["\']?[^"\'\n]*["\']?', f'password: "{DB_CONFIG["password"]}"', content, count=1)
+    content = re.sub(r'password="?[^"\'\n]*"?', f'password="{DB_CONFIG["password"]}"', content, count=1)
     
-    content = re.sub(r'table-prefix:\s*["\']?[^"\']*["\']?', f'table-prefix: "{DB_CONFIG["table_prefix"]}"', content, count=1)
-    content = re.sub(r'table-prefix="?[^"\']*"?', f'table-prefix="{DB_CONFIG["table_prefix"]}"', content, count=1)
+    content = re.sub(r'table-prefix:\s*["\']?[^"\'\n]*["\']?', f'table-prefix: "{DB_CONFIG["table_prefix"]}"', content, count=1)
+    content = re.sub(r'table-prefix="?[^"\'\n]*"?', f'table-prefix="{DB_CONFIG["table_prefix"]}"', content, count=1)
 
     with open(config_path, "w", encoding="utf-8") as f:
         f.write(content)
