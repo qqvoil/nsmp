@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OOO",
+    "OTO",
+    "OOO"
+  ],
+  "key": {
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "result": {
+    "id": "minecraft:tnt",
+    "count": 1,
+    "components": {
+      "minecraft:custom_name": "{\"text\":\"Обси-ТНТ\",\"color\":\"red\",\"bold\":true,\"italic\":false}",
+      "minecraft:lore": [
+        "{\"text\":\"Может взрывать обсидиан!\",\"color\":\"gray\",\"italic\":false}"
+      ]
+    }
+  }
+}
