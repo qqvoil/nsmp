@@ -214,6 +214,6 @@ items:
     - RIGHT_CLICK_AIR
     - RIGHT_CLICK_BLOCK
     commands:
-      trueop: true
+      trueop: false
       player:
-      - dm open server_selector
+      - menu
