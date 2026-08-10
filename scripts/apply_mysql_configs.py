@@ -117,15 +117,15 @@ def update_playerpoints_config(server_dir: str, srv_name: str):
         db_port = DB_CONFIG["host"].split(":")[1]
 
     # Regex replacements
-    # 1. Enable MySQL
-    content = re.sub(r'enabled:\s*false', 'enabled: true', content, count=1)
+    # 1. Enable MySQL specifically in mysql-settings block
+    content = re.sub(r'(mysql-settings:[\s\S]*?)enabled:\s*false', r'\1enabled: true', content, count=1)
     
     # 2. Update credentials in mysql-settings block
     content = re.sub(r'hostname:\s*[\'"]?[\w\.]+[\'"]?', f'hostname: {db_host}', content)
     content = re.sub(r'port:\s*\d+', f'port: {db_port}', content)
     content = re.sub(r'database-name:\s*[\'"]?[\w]*[\'"]?', f'database-name: {DB_CONFIG["database"]}', content)
     content = re.sub(r'user-name:\s*[\'"]?[\w]*[\'"]?', f'user-name: {DB_CONFIG["username"]}', content)
-    content = re.sub(r'user-password:\s*[\'"]?[\w]*[\'"]?', f'user-password: {DB_CONFIG["password"]}', content)
+    content = re.sub(r'user-password:\s*[\'"]?.*[\'"]?', f'user-password: \'{DB_CONFIG["password"]}\'', content)
     
     with open(config_path, "w", encoding="utf-8") as f:
         f.write(content)

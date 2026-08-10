@@ -98,7 +98,7 @@ def execute_donation_rewards(player_name: str, item_id: str, custom_tokens: int 
     for srv_name, srv_conf in RCON_SERVERS.items():
         success_for_this_server = True
         for cmd_template in commands:
-            cmd = cmd_template.format(player=player_name)
+            cmd = cmd_template.replace("{player}", player_name)
             try:
                 logging.info(f"Executing RCON on {srv_name}: {cmd}")
                 resp = execute_rcon_command(srv_conf["host"], srv_conf["port"], srv_conf["pass"], cmd)
