@@ -85,12 +85,22 @@ EOF
         # Accept EULA
         echo "eula=true" > "${srv_dir}/eula.txt"
 
-        # Adjust server.properties port if file exists
+        # Adjust server.properties port and world size if file exists
         if [[ -f "${srv_dir}/server.properties" ]]; then
             rcon_port=$((port - 14))
             sed -i.bak "s/^server-port=.*/server-port=${port}/" "${srv_dir}/server.properties" 2>/dev/null || true
             sed -i.bak "s/^query.port=.*/query.port=${port}/" "${srv_dir}/server.properties" 2>/dev/null || true
             sed -i.bak "s/^rcon.port=.*/rcon.port=${rcon_port}/" "${srv_dir}/server.properties" 2>/dev/null || true
+            
+            # Set world size based on wipe schedule
+            if [[ "$name" == "SMP1" || "$name" == "anarchy1" ]]; then
+                sed -i.bak "s/^max-world-size=.*/max-world-size=5000/" "${srv_dir}/server.properties" 2>/dev/null || true
+            elif [[ "$name" == "SMP2" || "$name" == "anarchy2" || "$name" == "hardcore1" || "$name" == "building1" ]]; then
+                sed -i.bak "s/^max-world-size=.*/max-world-size=15000/" "${srv_dir}/server.properties" 2>/dev/null || true
+            else
+                sed -i.bak "s/^max-world-size=.*/max-world-size=80000/" "${srv_dir}/server.properties" 2>/dev/null || true
+            fi
+            
             rm -f "${srv_dir}/server.properties.bak"
         fi
 
