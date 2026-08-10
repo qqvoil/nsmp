@@ -11,14 +11,14 @@ PREMIUM_TIERS = {
         "days": 30,
         "price_rub": 99,
         "price_tokens": 15000,
-        "name": "Премиум (30 дней)",
+        "name": "VIP (30 дней)",
         "label": "30 дней"
     },
     60: {
         "days": 60,
         "price_rub": 149,
         "price_tokens": 25000,
-        "name": "Премиум (60 дней)",
+        "name": "VIP (60 дней)",
         "label": "60 дней • Скидка 25%",
         "badge": "Выгодно"
     },
@@ -26,7 +26,7 @@ PREMIUM_TIERS = {
         "days": 90,
         "price_rub": 249,
         "price_tokens": 40000,
-        "name": "Премиум (90 дней)",
+        "name": "VIP (90 дней)",
         "label": "90 дней • Скидка 35%",
         "badge": "Максимум"
     }
@@ -38,7 +38,7 @@ PREMIUM_PERKS = [
     "💰 Анархия & SMP: 10 слотов на аукционе вместо 5",
     "🏠 Анархия & SMP: 5 точек дома (/sethome) вместо 3",
     "🏰 Building: полный доступ к серверу мирного выживания",
-    "✨ Эксклюзивный префикс &d[PREMIUM]&f в табе и чате",
+    "✨ Эксклюзивный префикс &d[VIP]&f в табе и чате",
     "💎 Возможность выставлять предметы на аукционе за Токены"
 ]
 
@@ -108,7 +108,7 @@ CATALOG = {
     "premium_30": {
         "id": "premium_30",
         "category": "subscription",
-        "name": "Премиум на 30 дней",
+        "name": "VIP на 30 дней",
         "price": 99,
         "price_tokens": 15000,
         "days": 30,
@@ -117,15 +117,15 @@ CATALOG = {
         "description": "Полный набор привилегий для всех серверов NeverSMP.",
         "perks": PREMIUM_PERKS,
         "commands": [
-            "lp user {player} parent addtemp premium 30d",
+            "lp user {player} parent addtemp vip 30d",
             "lp user {player} permission settemp neversmp.server.building true 30d",
-            "broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>{player}</gradient> <white>приобрел</white> <light_purple>ПРЕМИУМ на 30 дней</light_purple>!"
+            "broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>{player}</gradient> <white>приобрел</white> <light_purple>VIP на 30 дней</light_purple>!"
         ]
     },
     "premium_60": {
         "id": "premium_60",
         "category": "subscription",
-        "name": "Премиум на 60 дней",
+        "name": "VIP на 60 дней",
         "price": 149,
         "price_tokens": 25000,
         "days": 60,
@@ -134,15 +134,15 @@ CATALOG = {
         "description": "Полный набор привилегий с экономией 25%.",
         "perks": PREMIUM_PERKS,
         "commands": [
-            "lp user {player} parent addtemp premium 60d",
+            "lp user {player} parent addtemp vip 60d",
             "lp user {player} permission settemp neversmp.server.building true 60d",
-            "broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>{player}</gradient> <white>приобрел</white> <light_purple>ПРЕМИУМ на 60 дней</light_purple>!"
+            "broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>{player}</gradient> <white>приобрел</white> <light_purple>VIP на 60 дней</light_purple>!"
         ]
     },
     "premium_90": {
         "id": "premium_90",
         "category": "subscription",
-        "name": "Премиум на 90 дней",
+        "name": "VIP на 90 дней",
         "price": 249,
         "price_tokens": 40000,
         "days": 90,
@@ -151,9 +151,9 @@ CATALOG = {
         "description": "Максимальный срок привилегий с экономией 35%.",
         "perks": PREMIUM_PERKS,
         "commands": [
-            "lp user {player} parent addtemp premium 90d",
+            "lp user {player} parent addtemp vip 90d",
             "lp user {player} permission settemp neversmp.server.building true 90d",
-            "broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>{player}</gradient> <white>приобрел</white> <light_purple>ПРЕМИУМ на 90 дней</light_purple>!"
+            "broadcast <gradient:#e056fd:#aa00aa>⚔ NeverSMP ⚔</gradient> <white>Игрок</white> <gradient:light_purple:white>{player}</gradient> <white>приобрел</white> <light_purple>VIP на 90 дней</light_purple>!"
         ]
     },
     "building_pass": {
@@ -230,7 +230,7 @@ for pkg in TOKEN_PACKAGES:
         "description": "Внутриигровая донат-валюта NeverSMP. Можно тратить на Премиум и аукцион.",
         "perks": [
             f"{pkg['tokens']:,} токенов на игровой баланс".replace(",", " "),
-            "Возможность купить Премиум за 15k токенов",
+            "Возможность купить VIP за 15k токенов",
             "Покупка редких предметов у игроков на аукционе"
         ],
         "commands": [

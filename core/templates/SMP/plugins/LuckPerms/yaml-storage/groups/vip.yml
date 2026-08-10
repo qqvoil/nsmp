@@ -10,5 +10,5 @@ permissions:
 parents:
 - default
 prefixes:
-- '&aПремиум &f':
+- '&b&lVIP &f':
     priority: 50
