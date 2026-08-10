@@ -34,6 +34,15 @@ wipe_single_server() {
     fi
 
     echo "[2/4] Остановка сервера ${srv}..."
+    if [[ "$srv" == "hardcore1" ]]; then
+        echo "Снятие банов смертей (очистка hardcore.dead) через MariaDB..."
+        # Удаляем право hardcore.dead у всех игроков в базе LuckPerms
+        mysql -u nsmp_user -p"NeverSMP_SecureDB_2026!" neversmp -e "DELETE FROM lp_user_permissions WHERE permission = 'hardcore.dead';" 2>/dev/null || true
+        # Синхронизируем изменения на обоих серверах хардкора перед их рестартом
+        tmux send-keys -t "nsmp_hardcore1" "lp sync" Enter 2>/dev/null || true
+        tmux send-keys -t "nsmp_hardcore2" "lp sync" Enter 2>/dev/null || true
+        sleep 2
+    fi
     if tmux has-session -t "nsmp_${srv}" 2>/dev/null; then
         tmux send-keys -t "nsmp_${srv}" "stop" Enter
         sleep 5

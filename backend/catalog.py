@@ -210,7 +210,6 @@ CATALOG = {
         ],
         "commands": [
             "pardon {player}",
-            "hardcore revive {player}",
             "lp user {player} permission unset hardcore.dead",
             "broadcast <gradient:#eb4d4b:#ff7675>☠ Хардкор ☠</gradient> <white>Игрок</white> <red>{player}</red> <white>воскрес из мертвых и вернулся в битву!</white>"
         ]

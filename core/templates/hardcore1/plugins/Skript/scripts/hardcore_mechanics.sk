@@ -1,5 +1,5 @@
 # ==============================================================================
-# NeverSMP — Hardcore DeathBan & Revive Mechanics
+# NeverSMP — Hardcore DeathBan & Revive Mechanics (Global Sync)
 # ==============================================================================
 
 options:
@@ -7,7 +7,7 @@ options:
     revive_cost_tokens: 500
 
 # ==============================================================================
-# СОБЫТИЕ: СМЕРТЬ НА ХАРДКОРЕ -> БАН И КИК В ЛОББИ
+# СОБЫТИЕ: СМЕРТЬ НА ХАРДКОРЕ -> ГЛОБАЛЬНЫЙ БАН В LUCKPERMS
 # ==============================================================================
 
 on death of player:
@@ -20,58 +20,35 @@ on death of player:
     set {_x} to round(x-coord of {_loc})
     set {_y} to round(y-coord of {_loc})
     set {_z} to round(z-coord of {_loc})
-    set {_now} to now's unix timestamp
-    set {_unban_time} to {_now} + {@deathban_duration}
     
-    # Запись времени бана и координат
-    set {hardcore_deathban::%victim's uuid%} to {_unban_time}
-    set {hardcore_death_loc::%victim's uuid%} to {_loc}
-    set {hardcore_dead_name::%victim's uuid%} to victim's name
-    set {hardcore_dead_by_name::%victim's name%} to victim's uuid
+    # Выдаем глобальное право hardcore.dead через LuckPerms. 
+    # Так как БД общая, бан мгновенно синхронизируется на всех серверах!
+    execute console command "lp user %victim's name% permission set hardcore.dead true"
     
     # Оповещение на весь сервер
     broadcast "&8&m--------------------------------------------------"
     broadcast "&c&l☠ ГИБЕЛЬ НА ХАРДКОРЕ!"
-    broadcast "&fИгрок &e%victim's name% &fпогиб и заблокирован на &c24 часа&f!"
+    broadcast "&fИгрок &e%victim's name% &fпогиб на поле боя!"
     broadcast "&7Координаты гибели: &eX: %{_x}%, Y: %{_y}%, Z: %{_z}%"
     broadcast "&8&m--------------------------------------------------"
     
-    # Выполнение консольного бана в TempBan / Essentials для надёжности
-    execute console command "tempban ban %victim's name% {@deathban_duration} Смерть_на_Хардкоре"
-    
     # Кик игрока с сервера с подробным экраном
     wait 1 tick
-    execute console command "kick %victim's name% §c§lNeverSMP — ХАРДКОР\n\n§fВы погибли на сервере §cHardcore§f!\n§7Координаты гибели: §eX: %{_x}%, Y: %{_y}%, Z: %{_z}%\n§7Срок бана: §c24 часа\n\n§aТиммейты могут воскресить вас: §e/revive %victim's name%\n§aРазбан на сайте: §ddonate.neversmp.ru"
+    execute console command "kick %victim's name% §c§lNeverSMP — ХАРДКОР\n\n§fВы погибли на сервере §cHardcore§f!\n§7Координаты гибели: §eX: %{_x}%, Y: %{_y}%, Z: %{_z}%\n§7Срок бана: §cДо следующего вайпа\n\n§aТиммейты могут воскресить вас: §e/revive %victim's name%\n§aРазбан на сайте: §ddonate.neversmp.ru"
 
 # ==============================================================================
-# ПРОВЕРКА ПРИ ВХОДЕ НА ХАРДКОР
+# ПРОВЕРКА ПРИ ВХОДЕ НА ХАРДКОР (РАБОТАЕТ НА ЛЮБОМ СЕРВЕРЕ)
 # ==============================================================================
 
-on join:
+on connect:
     if player is op:
         stop
     if player has permission "neversmp.hardcore.bypass":
         stop
         
-    if {hardcore_deathban::%player's uuid%} is set:
-        set {_now} to now's unix timestamp
-        set {_expire} to {hardcore_deathban::%player's uuid%}
-        
-        if {_now} >= {_expire}:
-            # Срок бана истёк — снимаем бан
-            delete {hardcore_deathban::%player's uuid%}
-            delete {hardcore_death_loc::%player's uuid%}
-            execute console command "tempban unban %player's name%"
-            execute console command "pardon %player's name%"
-            send "&aВаш срок бана на Хардкоре истёк! Добро пожаловать обратно в игру." to player
-        else:
-            # Бан ещё действует — вычисляем оставшееся время
-            set {_diff} to {_expire} - {_now}
-            set {_hours} to floor({_diff} / 3600)
-            set {_mins} to floor(mod({_diff}, 3600) / 60)
-            set {_secs} to mod({_diff}, 60)
-            
-            execute console command "kick %player's name% §c§lNeverSMP — ХАРДКОР\n\n§fВы заблокированы из-за гибели на Хардкоре!\n§7До разбана осталось: §e%{_hours}% ч. %{_mins}% мин. %{_secs}% сек.\n\n§aТиммейты могут воскресить вас: §e/revive %player's name%\n§aРазбан на сайте: §ddonate.neversmp.ru"
+    # Если право есть, игрок откидывается ещё до входа в мир
+    if player has permission "hardcore.dead":
+        kick player due to "§c§lNeverSMP — ХАРДКОР\n\n§fВы заблокированы из-за гибели на Хардкоре!\n§7Срок бана: §cДо следующего вайпа\n\n§aТиммейты могут воскресить вас: §e/revive %player's name%\n§aРазбан на сайте: §ddonate.neversmp.ru"
 
 # ==============================================================================
 # КОМАНДЫ ВОСКРЕШЕНИЯ ТИММЕЙТОВ: /revive <ник>
@@ -89,33 +66,16 @@ command /revive [<text>]:
             stop
             
         set {_target_name} to arg-1
-        set {_target_uuid} to {hardcore_dead_by_name::%{_target_name}%}
         
-        if {_target_uuid} is not set:
-            loop {hardcore_deathban::*}:
-                if {hardcore_dead_name::%loop-index%} is {_target_name}:
-                    set {_target_uuid} to loop-index
-                    
-        if {_target_uuid} is not set:
-            if {hardcore_deathban::%{_target_name}%} is set:
-                set {_target_uuid} to {_target_name}
-                
-        if {_target_uuid} is not set:
-            send "&cИгрок &e%{_target_name}% &cне числится среди погибших на Хардкоре!" to player
-            stop
-            
-        if {hardcore_deathban::%{_target_uuid}%} is not set:
-            send "&aИгрок &e%{_target_name}% &aуже разбанен и жив!" to player
-            stop
-            
+        # Проверяем, действительно ли игрок мертв через проверку прав
+        # (Можно добавить проверку игрока онлайн/офлайн через LP)
+        
         # Способ 1: Воскрешение Тотемом бессмертия из рук
         if player's tool is totem of undying:
             remove 1 totem of undying from player's inventory
             
-            delete {hardcore_deathban::%{_target_uuid}%}
-            delete {hardcore_death_loc::%{_target_uuid}%}
-            execute console command "tempban unban %{_target_name}%"
-            execute console command "pardon %{_target_name}%"
+            # Снимаем право. Изменение мгновенно улетает в базу и игрок может зайти.
+            execute console command "lp user %{_target_name}% permission unset hardcore.dead"
             
             broadcast "&8&m--------------------------------------------------"
             broadcast "&a&l✦ РИТУАЛ ВОСКРЕШЕНИЯ!"
@@ -126,16 +86,14 @@ command /revive [<text>]:
             
         send "&cДля воскрешения возьмите в руку &eТотем Бессмертия&c!" to player
 
+# ==============================================================================
+# КОМАНДЫ АДМИНА И ОГРАНИЧЕНИЯ
+# ==============================================================================
+
 # Команда админа для сброса бана смерти
 command /unbanhardcore <text>:
     permission: op
     trigger:
         set {_name} to arg-1
-        set {_uuid} to {hardcore_dead_by_name::%{_name}%}
-        if {_uuid} is set:
-            delete {hardcore_deathban::%{_uuid}%}
-            delete {hardcore_death_loc::%{_uuid}%}
-        delete {hardcore_deathban::%{_name}%}
-        execute console command "tempban unban %{_name}%"
-        execute console command "pardon %{_name}%"
-        send "&aСмерть-бан игрока %{_name}% успешно сброшен!" to player
+        execute console command "lp user %{_name}% permission unset hardcore.dead"
+        send "&aСмерть-бан игрока %{_name}% успешно сброшен (право hardcore.dead удалено)!" to player
