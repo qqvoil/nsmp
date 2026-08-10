@@ -4,7 +4,7 @@ bind = "127.0.0.1:25567"
 method = "MODERN"
 secret = "VEPZp3dbw5h4"
 
-welcome_message = " "
+welcome_message = "<reset>"
 action_bar = "<gold>Добро пожаловать на NeverSMP!</gold>"
 
 [title]
