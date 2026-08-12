@@ -223,7 +223,6 @@ items:
     lore:
       - '&7Размер: &f15x15x15 блоков'
       - ''
-      - '&cЛКМ: Недоступно'
       - '&7ПКМ: &b4000 токенов'
     right_click_requirement:
       requirements:
@@ -245,7 +244,6 @@ items:
     lore:
       - '&7Размер: &f20x20x20 блоков'
       - ''
-      - '&cЛКМ: Недоступно'
       - '&7ПКМ: &b7000 токенов'
     right_click_requirement:
       requirements:
