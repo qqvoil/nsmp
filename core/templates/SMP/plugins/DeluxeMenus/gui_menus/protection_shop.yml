@@ -223,19 +223,8 @@ items:
     lore:
       - '&7Размер: &f15x15x15 блоков'
       - ''
-      - '&7ЛКМ: &e20000 монет'
+      - '&cЛКМ: Недоступно'
       - '&7ПКМ: &b4000 токенов'
-    left_click_requirement:
-      requirements:
-        money_check:
-          type: has money
-          amount: 20000
-          deny_commands:
-            - '[message] &cНедостаточно монет!'
-    left_click_commands:
-      - '[console] eco take %player_name% 20000'
-      - '[console] ps give %player_name% emerald_ore 1'
-      - '[message] &aВы купили изумрудный приват!'
     right_click_requirement:
       requirements:
         points_check:
@@ -256,19 +245,8 @@ items:
     lore:
       - '&7Размер: &f20x20x20 блоков'
       - ''
-      - '&7ЛКМ: &e35000 монет'
+      - '&cЛКМ: Недоступно'
       - '&7ПКМ: &b7000 токенов'
-    left_click_requirement:
-      requirements:
-        money_check:
-          type: has money
-          amount: 35000
-          deny_commands:
-            - '[message] &cНедостаточно монет!'
-    left_click_commands:
-      - '[console] eco take %player_name% 35000'
-      - '[console] ps give %player_name% deepslate_emerald_ore 1'
-      - '[message] &aВы купили глубинный приват!'
     right_click_requirement:
       requirements:
         points_check:

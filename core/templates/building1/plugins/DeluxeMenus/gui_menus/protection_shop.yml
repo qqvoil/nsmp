@@ -223,8 +223,9 @@ items:
     lore:
       - '&7Размер: &f15x15x15 блоков'
       - ''
-      - '&7ЛКМ: &b4000 токенов'
-    left_click_requirement:
+      - '&cЛКМ: Недоступно'
+      - '&7ПКМ: &b4000 токенов'
+    right_click_requirement:
       requirements:
         points_check:
           type: '>= '
@@ -232,7 +233,7 @@ items:
           value: 4000
           deny_commands:
             - '[message] &cНедостаточно токенов!'
-    left_click_commands:
+    right_click_commands:
       - '[console] points take %player_name% 4000'
       - '[console] ps give %player_name% emerald_ore 1'
       - '[message] &aВы купили изумрудный приват!'
@@ -244,8 +245,9 @@ items:
     lore:
       - '&7Размер: &f20x20x20 блоков'
       - ''
-      - '&7ЛКМ: &b7000 токенов'
-    left_click_requirement:
+      - '&cЛКМ: Недоступно'
+      - '&7ПКМ: &b7000 токенов'
+    right_click_requirement:
       requirements:
         points_check:
           type: '>= '
@@ -253,7 +255,7 @@ items:
           value: 7000
           deny_commands:
             - '[message] &cНедостаточно токенов!'
-    left_click_commands:
+    right_click_commands:
       - '[console] points take %player_name% 7000'
       - '[console] ps give %player_name% deepslate_emerald_ore 1'
       - '[message] &aВы купили глубинный приват!'
