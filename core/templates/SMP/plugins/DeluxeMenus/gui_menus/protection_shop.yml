@@ -69,7 +69,7 @@ items:
             - '[message] &cНедостаточно монет!'
     left_click_commands:
       - '[console] eco take %player_name% 500'
-      - '[console] ps give %player_name% iron_block 1'
+      - '[console] ps give iron_block %player_name% 1'
       - '[message] &aВы купили железный приват!'
     right_click_requirement:
       requirements:
@@ -81,7 +81,7 @@ items:
             - '[message] &cНедостаточно токенов!'
     right_click_commands:
       - '[console] points take %player_name% 100'
-      - '[console] ps give %player_name% iron_block 1'
+      - '[console] ps give iron_block %player_name% 1'
       - '[message] &aВы купили железный приват!'
 
   'gold_block':
@@ -102,7 +102,7 @@ items:
             - '[message] &cНедостаточно монет!'
     left_click_commands:
       - '[console] eco take %player_name% 1000'
-      - '[console] ps give %player_name% gold_block 1'
+      - '[console] ps give gold_block %player_name% 1'
       - '[message] &aВы купили золотой приват!'
     right_click_requirement:
       requirements:
@@ -114,7 +114,7 @@ items:
             - '[message] &cНедостаточно токенов!'
     right_click_commands:
       - '[console] points take %player_name% 200'
-      - '[console] ps give %player_name% gold_block 1'
+      - '[console] ps give gold_block %player_name% 1'
       - '[message] &aВы купили золотой приват!'
 
   'diamond_block':
@@ -135,7 +135,7 @@ items:
             - '[message] &cНедостаточно монет!'
     left_click_commands:
       - '[console] eco take %player_name% 2500'
-      - '[console] ps give %player_name% diamond_block 1'
+      - '[console] ps give diamond_block %player_name% 1'
       - '[message] &aВы купили алмазный приват!'
     right_click_requirement:
       requirements:
@@ -147,7 +147,7 @@ items:
             - '[message] &cНедостаточно токенов!'
     right_click_commands:
       - '[console] points take %player_name% 500'
-      - '[console] ps give %player_name% diamond_block 1'
+      - '[console] ps give diamond_block %player_name% 1'
       - '[message] &aВы купили алмазный приват!'
 
   'emerald_block':
@@ -168,7 +168,7 @@ items:
             - '[message] &cНедостаточно монет!'
     left_click_commands:
       - '[console] eco take %player_name% 5000'
-      - '[console] ps give %player_name% emerald_block 1'
+      - '[console] ps give emerald_block %player_name% 1'
       - '[message] &aВы купили изумрудный приват!'
     right_click_requirement:
       requirements:
@@ -180,7 +180,7 @@ items:
             - '[message] &cНедостаточно токенов!'
     right_click_commands:
       - '[console] points take %player_name% 1000'
-      - '[console] ps give %player_name% emerald_block 1'
+      - '[console] ps give emerald_block %player_name% 1'
       - '[message] &aВы купили изумрудный приват!'
 
   'diamond_ore':
@@ -201,7 +201,7 @@ items:
             - '[message] &cНедостаточно монет!'
     left_click_commands:
       - '[console] eco take %player_name% 10000'
-      - '[console] ps give %player_name% diamond_ore 1'
+      - '[console] ps give diamond_ore %player_name% 1'
       - '[message] &aВы купили алмазный приват!'
     right_click_requirement:
       requirements:
@@ -213,7 +213,7 @@ items:
             - '[message] &cНедостаточно токенов!'
     right_click_commands:
       - '[console] points take %player_name% 2000'
-      - '[console] ps give %player_name% diamond_ore 1'
+      - '[console] ps give diamond_ore %player_name% 1'
       - '[message] &aВы купили алмазный приват!'
 
   'emerald_ore':
@@ -234,7 +234,7 @@ items:
             - '[message] &cНедостаточно токенов!'
     right_click_commands:
       - '[console] points take %player_name% 4000'
-      - '[console] ps give %player_name% emerald_ore 1'
+      - '[console] ps give emerald_ore %player_name% 1'
       - '[message] &aВы купили изумрудный приват!'
 
   'deepslate_emerald_ore':
@@ -255,5 +255,5 @@ items:
             - '[message] &cНедостаточно токенов!'
     right_click_commands:
       - '[console] points take %player_name% 7000'
-      - '[console] ps give %player_name% deepslate_emerald_ore 1'
+      - '[console] ps give deepslate_emerald_ore %player_name% 1'
       - '[message] &aВы купили глубинный приват!'
