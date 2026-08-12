@@ -40,10 +40,7 @@ def init_db():
         """)
         
         # Insert standard welcome promo code if not exists
-        conn.execute("""
-        INSERT OR IGNORE INTO mc_promocodes (code, discount_percent, max_uses)
-        VALUES ('NEVER2026', 15, 500);
-        """)
+        # Initialization complete
         conn.commit()
 
 def create_invoice(player_name: str, item_id: str, item_name: str, amount: int, server_target: str = "global", promo_code: str = None) -> int:
