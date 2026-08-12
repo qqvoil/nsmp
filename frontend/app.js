@@ -263,19 +263,31 @@ function initCheckoutModal() {
     }
 
     if (applyPromoBtn) {
-        applyPromoBtn.addEventListener('click', () => {
+        applyPromoBtn.addEventListener('click', async () => {
             const code = (promoInput.value || '').trim().toUpperCase();
             if (!code) return;
 
-            if (code === 'NEVER2026' || code === 'NSMP2026') {
-                currentDiscount = 15;
-                appliedPromo = code;
-                promoMsg.className = 'promo-msg success';
-                promoMsg.textContent = '✓ Промокод применен: скидка 15%!';
-                updateModalPrices();
-            } else {
+            try {
+                const resp = await fetch(`/api/check_promo?code=${encodeURIComponent(code)}`);
+                const data = await resp.json();
+
+                if (data.success) {
+                    currentDiscount = data.discount_percent;
+                    appliedPromo = code;
+                    promoMsg.className = 'promo-msg success';
+                    promoMsg.textContent = `✓ Промокод применен: скидка ${currentDiscount}%!`;
+                    updateModalPrices();
+                } else {
+                    currentDiscount = 0;
+                    appliedPromo = null;
+                    promoMsg.className = 'promo-msg error';
+                    promoMsg.textContent = data.error || 'Неверный промокод';
+                    updateModalPrices();
+                }
+            } catch (err) {
+                console.error("Promo check error:", err);
                 promoMsg.className = 'promo-msg error';
-                promoMsg.textContent = 'Неверный промокод';
+                promoMsg.textContent = 'Ошибка проверки. Попробуйте позже.';
             }
         });
     }
