@@ -186,7 +186,7 @@ items:
   'diamond_ore':
     material: DIAMOND_ORE
     slot: 23
-    display_name: '&bАлмазный приват (Большой)'
+    display_name: '&bАлмазный приват'
     lore:
       - '&7Размер: &f10x10x10 блоков'
       - ''
@@ -202,7 +202,7 @@ items:
     left_click_commands:
       - '[console] eco take %player_name% 10000'
       - '[console] ps give %player_name% diamond_ore 1'
-      - '[message] &aВы купили большой алмазный приват!'
+      - '[message] &aВы купили алмазный приват!'
     right_click_requirement:
       requirements:
         points_check:
@@ -214,29 +214,17 @@ items:
     right_click_commands:
       - '[console] points take %player_name% 2000'
       - '[console] ps give %player_name% diamond_ore 1'
-      - '[message] &aВы купили большой алмазный приват!'
+      - '[message] &aВы купили алмазный приват!'
 
   'emerald_ore':
     material: EMERALD_ORE
     slot: 24
-    display_name: '&aИзумрудный приват (Большой)'
+    display_name: '&aИзумрудный приват'
     lore:
       - '&7Размер: &f15x15x15 блоков'
       - ''
-      - '&7ЛКМ: &e20000 монет'
-      - '&7ПКМ: &b4000 токенов'
+      - '&7ЛКМ: &b4000 токенов'
     left_click_requirement:
-      requirements:
-        money_check:
-          type: has money
-          amount: 20000
-          deny_commands:
-            - '[message] &cНедостаточно монет!'
-    left_click_commands:
-      - '[console] eco take %player_name% 20000'
-      - '[console] ps give %player_name% emerald_ore 1'
-      - '[message] &aВы купили большой изумрудный приват!'
-    right_click_requirement:
       requirements:
         points_check:
           type: '>= '
@@ -244,32 +232,20 @@ items:
           value: 4000
           deny_commands:
             - '[message] &cНедостаточно токенов!'
-    right_click_commands:
+    left_click_commands:
       - '[console] points take %player_name% 4000'
       - '[console] ps give %player_name% emerald_ore 1'
-      - '[message] &aВы купили большой изумрудный приват!'
+      - '[message] &aВы купили изумрудный приват!'
 
   'deepslate_emerald_ore':
     material: DEEPSLATE_EMERALD_ORE
     slot: 25
-    display_name: '&2Глубинный приват (Огромный)'
+    display_name: '&2Глубинный приват'
     lore:
       - '&7Размер: &f20x20x20 блоков'
       - ''
-      - '&7ЛКМ: &e35000 монет'
-      - '&7ПКМ: &b7000 токенов'
+      - '&7ЛКМ: &b7000 токенов'
     left_click_requirement:
-      requirements:
-        money_check:
-          type: has money
-          amount: 35000
-          deny_commands:
-            - '[message] &cНедостаточно монет!'
-    left_click_commands:
-      - '[console] eco take %player_name% 35000'
-      - '[console] ps give %player_name% deepslate_emerald_ore 1'
-      - '[message] &aВы купили огромный глубинный приват!'
-    right_click_requirement:
       requirements:
         points_check:
           type: '>= '
@@ -277,7 +253,7 @@ items:
           value: 7000
           deny_commands:
             - '[message] &cНедостаточно токенов!'
-    right_click_commands:
+    left_click_commands:
       - '[console] points take %player_name% 7000'
       - '[console] ps give %player_name% deepslate_emerald_ore 1'
-      - '[message] &aВы купили огромный глубинный приват!'
+      - '[message] &aВы купили глубинный приват!'
