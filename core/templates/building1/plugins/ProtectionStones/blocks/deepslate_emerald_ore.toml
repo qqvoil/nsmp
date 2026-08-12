@@ -1,5 +1,6 @@
 # name of block (must be unique)
 type = "DEEPSLATE_EMERALD_ORE"
+alias = "deepslate_emerald_ore"
 # block type/alias (can be multiple for the same type of PS region)
 aliases = ["deepslate_emerald_ore"]
 

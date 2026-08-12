@@ -1,5 +1,6 @@
 # name of block (must be unique)
 type = "IRON_BLOCK"
+alias = "iron_block"
 # block type/alias (can be multiple for the same type of PS region)
 aliases = ["iron_block"]
 

@@ -1,5 +1,6 @@
 # name of block (must be unique)
 type = "GOLD_BLOCK"
+alias = "gold_block"
 # block type/alias (can be multiple for the same type of PS region)
 aliases = ["gold_block"]
 
