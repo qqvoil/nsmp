@@ -113,8 +113,12 @@ function updatePremiumCta() {
     const buyBtnText = document.querySelector('#buy-premium-btn span');
     
     if (currentCurrency === 'rub') {
-        if (priceDisplay) priceDisplay.textContent = `${tierData.rub} ₽`;
-        if (buyBtnText) buyBtnText.innerHTML = `Оформить Премиум за <strong id="selected-tier-price">${tierData.rub} ₽</strong>`;
+        let finalPrice = tierData.rub;
+        if (currentDiscount > 0) {
+            finalPrice = Math.max(1, Math.round(tierData.rub * (1 - currentDiscount / 100.0)));
+        }
+        if (priceDisplay) priceDisplay.textContent = `${finalPrice} ₽`;
+        if (buyBtnText) buyBtnText.innerHTML = `Оформить Премиум за <strong id="selected-tier-price">${finalPrice} ₽</strong>`;
     } else {
         const formattedTokens = `${tierData.tokens.toLocaleString('ru-RU')} т`;
         if (buyBtnText) buyBtnText.innerHTML = `Купить в игре за <strong>${formattedTokens}</strong>`;
@@ -142,7 +146,13 @@ function initTokenSlider() {
 
         // Progressive discount up to 30% at 100k
         const progress = Math.max(0, Math.min(1, (tokens - min) / (max - min)));
-        const discountPct = Math.round(progress * 30.0);
+        let discountPct = Math.round(progress * 30.0);
+        
+        // Add global promo code discount if applied
+        if (currentDiscount > 0) {
+            discountPct = Math.min(99, discountPct + currentDiscount);
+        }
+
         const finalPrice = Math.max(10, Math.round(basePrice * (1 - discountPct / 100.0)));
 
         const formattedTokens = tokens.toLocaleString('ru-RU');
@@ -507,7 +517,7 @@ window.applyInlinePromo = async function(section) {
             msg.style.display = 'block';
 
             // Trigger updates on the page
-            updateTierSelection();
+            updatePremiumCta();
             if (document.getElementById('tokens-range-slider')) {
                 // To trigger calculator update, just dispatch input event
                 document.getElementById('tokens-range-slider').dispatchEvent(new Event('input'));
@@ -518,7 +528,7 @@ window.applyInlinePromo = async function(section) {
             msg.textContent = data.error || 'Неверный код';
             msg.style.color = '#eb4d4b';
             msg.style.display = 'block';
-            updateTierSelection();
+            updatePremiumCta();
             if (document.getElementById('tokens-range-slider')) {
                 document.getElementById('tokens-range-slider').dispatchEvent(new Event('input'));
             }
