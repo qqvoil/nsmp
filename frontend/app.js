@@ -471,6 +471,65 @@ async function loadRecentDonates() {
     }
 }
 
+// Inline Promo Code Logic
+window.applyInlinePromo = async function(section) {
+    const input = document.getElementById(`inline-promo-${section}`);
+    const msg = document.getElementById(`inline-promo-msg-${section}`);
+    if (!input || !msg) return;
+
+    const code = input.value.trim().toUpperCase();
+    if (!code) {
+        msg.textContent = 'Введите код';
+        msg.style.display = 'block';
+        msg.style.color = '#eb4d4b';
+        return;
+    }
+
+    try {
+        const resp = await fetch(`/api/check_promo?code=${encodeURIComponent(code)}`);
+        const data = await resp.json();
+
+        if (data.success) {
+            currentDiscount = data.discount_percent;
+            appliedPromo = code;
+            
+            // Sync with modal if opened later
+            const modalInput = document.getElementById('promo-code');
+            const modalMsg = document.getElementById('promo-msg');
+            if (modalInput) modalInput.value = code;
+            if (modalMsg) {
+                modalMsg.className = 'promo-msg success';
+                modalMsg.textContent = `✓ Промокод применен: скидка ${currentDiscount}%!`;
+            }
+
+            msg.textContent = `✓ Успешно! Скидка ${currentDiscount}%`;
+            msg.style.color = '#6ab04c';
+            msg.style.display = 'block';
+
+            // Trigger updates on the page
+            updateTierSelection();
+            if (document.getElementById('tokens-range-slider')) {
+                // To trigger calculator update, just dispatch input event
+                document.getElementById('tokens-range-slider').dispatchEvent(new Event('input'));
+            }
+        } else {
+            currentDiscount = 0;
+            appliedPromo = null;
+            msg.textContent = data.error || 'Неверный код';
+            msg.style.color = '#eb4d4b';
+            msg.style.display = 'block';
+            updateTierSelection();
+            if (document.getElementById('tokens-range-slider')) {
+                document.getElementById('tokens-range-slider').dispatchEvent(new Event('input'));
+            }
+        }
+    } catch (err) {
+        msg.textContent = 'Ошибка соединения';
+        msg.style.color = '#eb4d4b';
+        msg.style.display = 'block';
+    }
+};
+
 // 9. Check URL for payment return
 function checkUrlParams() {
     const params = new URLSearchParams(window.location.search);

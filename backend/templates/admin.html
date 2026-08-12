@@ -223,6 +223,34 @@
             </div>
         </div>
 
+        <div class="actions-panel">
+            <h3 class="section-title">🎟 Управление промокодами</h3>
+            <div class="form-row">
+                <input type="text" id="promo-code-input" placeholder="Код (например: LETO2026)">
+                <input type="number" id="promo-discount-input" placeholder="Скидка % (1-100)" min="1" max="100">
+                <input type="number" id="promo-uses-input" placeholder="Лимит (0 = безлимит)" min="0">
+                <button class="btn-primary" onclick="addPromoCode()">Создать промокод</button>
+            </div>
+            
+            <div class="table-wrap" style="margin-top: 15px;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Промокод</th>
+                            <th>Скидка</th>
+                            <th>Использования</th>
+                            <th>Лимит</th>
+                            <th>Дата создания</th>
+                            <th>Действия</th>
+                        </tr>
+                    </thead>
+                    <tbody id="promo-tbody">
+                        <tr><td colspan="6" style="text-align:center;color:var(--text-muted)">Загрузка промокодов...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
         <div class="table-wrap">
             <table>
                 <thead>
@@ -370,6 +398,86 @@
                 `).join('');
             } catch (e) {
                 console.error(e);
+            }
+            
+            await loadPromocodes();
+        }
+
+        async function loadPromocodes() {
+            try {
+                const resp = await fetch('/api/admin/promocodes');
+                if (!resp.ok) return;
+                const data = await resp.json();
+                
+                const tbody = document.getElementById('promo-tbody');
+                if (!data.promocodes || data.promocodes.length === 0) {
+                    tbody.innerHTML = '<tr><td colspan="6" style="text-align:center">Нет созданных промокодов</td></tr>';
+                    return;
+                }
+                
+                tbody.innerHTML = data.promocodes.map(p => `
+                    <tr>
+                        <td><strong>${p.code}</strong></td>
+                        <td>${p.discount_percent}%</td>
+                        <td>${p.current_uses}</td>
+                        <td>${p.max_uses === 0 ? 'Безлимит' : p.max_uses}</td>
+                        <td>${p.created_at || '--'}</td>
+                        <td>
+                            <button class="btn-sm" style="color:var(--accent-red)" onclick="deletePromoCode('${p.code}')">Удалить</button>
+                        </td>
+                    </tr>
+                `).join('');
+            } catch (e) {
+                console.error('Error loading promocodes:', e);
+            }
+        }
+
+        async function addPromoCode() {
+            const code = document.getElementById('promo-code-input').value.trim();
+            const discount = document.getElementById('promo-discount-input').value;
+            const maxUses = document.getElementById('promo-uses-input').value;
+
+            if (!code || !discount) {
+                alert("Укажите код и скидку!");
+                return;
+            }
+
+            try {
+                const resp = await fetch('/api/admin/promocodes', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ 
+                        code: code, 
+                        discount_percent: parseInt(discount), 
+                        max_uses: parseInt(maxUses || 0) 
+                    })
+                });
+                const data = await resp.json();
+                if (data.success) {
+                    document.getElementById('promo-code-input').value = '';
+                    document.getElementById('promo-discount-input').value = '';
+                    document.getElementById('promo-uses-input').value = '';
+                    loadPromocodes();
+                } else {
+                    alert("Ошибка: " + data.error);
+                }
+            } catch (e) {
+                alert("Ошибка сети");
+            }
+        }
+
+        async function deletePromoCode(code) {
+            if (!confirm(`Точно удалить промокод ${code}?`)) return;
+            try {
+                const resp = await fetch(`/api/admin/promocodes/${code}`, { method: 'DELETE' });
+                const data = await resp.json();
+                if (data.success) {
+                    loadPromocodes();
+                } else {
+                    alert("Ошибка: " + (data.error || 'Не удалось удалить'));
+                }
+            } catch (e) {
+                alert("Ошибка сети");
             }
         }
 

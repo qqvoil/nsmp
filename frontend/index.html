@@ -182,6 +182,15 @@
                             </div>
                         </div>
 
+                        <div class="inline-promo-box" style="margin-bottom: 20px; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                            <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Есть промокод?</div>
+                            <div style="display: flex; gap: 8px;">
+                                <input type="text" id="inline-promo-premium" placeholder="Например: LETO2026" style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: white; outline: none; font-family: inherit;">
+                                <button type="button" onclick="applyInlinePromo('premium')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white; cursor: pointer; font-weight: 600;">></button>
+                            </div>
+                            <div id="inline-promo-msg-premium" style="font-size: 12px; margin-top: 6px; display: none;"></div>
+                        </div>
+
                         <div class="buy-cta-box">
                             <button class="primary-glow-btn" id="buy-premium-btn">
                                 <span>Оформить Премиум за <strong id="selected-tier-price">99 ₽</strong></span>
@@ -233,6 +242,15 @@
                             <span>75k</span>
                             <span>100k</span>
                         </div>
+                    </div>
+
+                    <div class="inline-promo-box" style="margin-top: 15px; margin-bottom: 20px; background: rgba(255,255,255,0.03); padding: 12px; border-radius: 12px; border: 1px solid rgba(255,255,255,0.1);">
+                        <div style="font-size: 13px; color: var(--text-muted); margin-bottom: 8px;">Есть промокод?</div>
+                        <div style="display: flex; gap: 8px;">
+                            <input type="text" id="inline-promo-tokens" placeholder="Например: LETO2026" style="flex: 1; padding: 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); background: rgba(0,0,0,0.3); color: white; outline: none; font-family: inherit;">
+                            <button type="button" onclick="applyInlinePromo('tokens')" style="padding: 10px 16px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); border-radius: 8px; color: white; cursor: pointer; font-weight: 600;">></button>
+                        </div>
+                        <div id="inline-promo-msg-tokens" style="font-size: 12px; margin-top: 6px; display: none;"></div>
                     </div>
 
                     <div class="calc-buy-action">
