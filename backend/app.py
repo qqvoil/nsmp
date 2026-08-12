@@ -471,5 +471,72 @@ def admin_console_send(server_name):
     except subprocess.CalledProcessError:
         return jsonify({"success": False, "message": "Ошибка: Сервер не запущен"})
 
+# --- Promo Code Management Routes ---
+
+@app.route("/api/check_promo", methods=["GET"])
+def check_promo():
+    code = request.args.get("code", "").strip().upper()
+    if not code:
+        return jsonify({"success": False, "error": "Пустой промокод"}), 400
+        
+    with get_db() as conn:
+        promo = conn.execute("SELECT * FROM mc_promocodes WHERE code = ?", (code,)).fetchone()
+        if not promo:
+            return jsonify({"success": False, "error": "Неверный промокод"}), 404
+            
+        if promo["max_uses"] > 0 and promo["current_uses"] >= promo["max_uses"]:
+            return jsonify({"success": False, "error": "Лимит использований исчерпан"}), 400
+            
+        return jsonify({
+            "success": True,
+            "discount_percent": promo["discount_percent"]
+        })
+
+@app.route("/api/admin/promocodes", methods=["GET"])
+@require_admin
+def admin_get_promocodes():
+    with get_db() as conn:
+        promocodes = conn.execute("SELECT * FROM mc_promocodes ORDER BY created_at DESC").fetchall()
+        return jsonify({"success": True, "promocodes": [dict(p) for p in promocodes]})
+
+@app.route("/api/admin/promocodes", methods=["POST"])
+@require_admin
+def admin_add_promocode():
+    data = request.json or {}
+    code = str(data.get("code", "")).strip().upper()
+    try:
+        discount = int(data.get("discount_percent", 10))
+        max_uses = int(data.get("max_uses", 0))
+    except (ValueError, TypeError):
+        return jsonify({"success": False, "error": "Неверный формат чисел"}), 400
+        
+    if not code:
+        return jsonify({"success": False, "error": "Код не может быть пустым"}), 400
+        
+    if discount <= 0 or discount > 100:
+        return jsonify({"success": False, "error": "Скидка должна быть от 1 до 100"}), 400
+        
+    import sqlite3
+    try:
+        with get_db() as conn:
+            conn.execute(
+                "INSERT INTO mc_promocodes (code, discount_percent, max_uses) VALUES (?, ?, ?)",
+                (code, discount, max_uses)
+            )
+            conn.commit()
+            return jsonify({"success": True})
+    except sqlite3.IntegrityError:
+        return jsonify({"success": False, "error": "Такой промокод уже существует"}), 400
+    except Exception as e:
+        return jsonify({"success": False, "error": str(e)}), 500
+
+@app.route("/api/admin/promocodes/<code>", methods=["DELETE"])
+@require_admin
+def admin_delete_promocode(code):
+    with get_db() as conn:
+        conn.execute("DELETE FROM mc_promocodes WHERE code = ?", (code,))
+        conn.commit()
+        return jsonify({"success": True})
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
