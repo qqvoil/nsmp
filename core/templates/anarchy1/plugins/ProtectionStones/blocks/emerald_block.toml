@@ -1,5 +1,5 @@
 # name of block (must be unique)
-type = "emerald_block"
+type = "EMERALD_BLOCK"
 # block type/alias (can be multiple for the same type of PS region)
 aliases = ["emerald_block"]
 
