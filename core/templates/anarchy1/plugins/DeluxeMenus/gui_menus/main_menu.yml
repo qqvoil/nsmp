@@ -25,7 +25,7 @@ items:
       - ''
       - '&eНажмите &7— Открыть магазин'
     click_commands:
-      - '[openmenu] protectionshop'
+      - '[openmenu] protection_shop'
 
   # --- МАГАЗИН (Тотем в слоте 12) ---
   'open_shop':
