@@ -202,7 +202,8 @@ def create_payment():
                 "description": f"NeverSMP: {item_name} ({player_name})",
                 "return": f"{return_url}/?success=1&id={invoice_id}",
                 "failedUrl": f"{return_url}/?failed=1",
-                "payload": payload
+                "payload": payload,
+                "webhookUrl": f"{return_url}/api/webhook/platega"
             }
             json_bytes = json.dumps(req_payload).encode("utf-8")
             req = urllib.request.Request(url, data=json_bytes, headers={
