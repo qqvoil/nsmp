@@ -260,8 +260,8 @@
                         <th>Никнейм</th>
                         <th>Товар</th>
                         <th>Сумма</th>
+                        <th>Промо</th>
                         <th>Статус</th>
-                        <th>Сервер</th>
                         <th>Действия</th>
                     </tr>
                 </thead>
@@ -389,8 +389,8 @@
                         <td><span class="nick-tag">${inv.player_name}</span></td>
                         <td>${inv.item_name}</td>
                         <td><strong>${inv.amount} ₽</strong></td>
+                        <td>${inv.promo_code ? `<span class="tag-status" style="background:var(--accent-cyan);color:#000;font-size:11px">${inv.promo_code}</span>` : '<span style="color:var(--text-muted)">—</span>'}</td>
                         <td><span class="tag-status ${inv.status === 'paid' ? 'status-paid' : 'status-pending'}">${inv.status}</span></td>
-                        <td>${inv.server_target}</td>
                         <td>
                             <button class="btn-sm" onclick="quickTransfer(${inv.id}, '${inv.player_name}')">Перепривязать</button>
                         </td>

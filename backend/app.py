@@ -361,7 +361,7 @@ def admin_check_auth():
 def admin_invoices():
     conn = get_db()
     cursor = conn.cursor()
-    cursor.execute("SELECT id, player_name, item_id, item_name, amount, status, server_target, created_at, paid_at FROM mc_invoices ORDER BY id DESC LIMIT 100")
+    cursor.execute("SELECT id, player_name, item_id, item_name, amount, status, server_target, promo_code, created_at, paid_at FROM mc_invoices ORDER BY id DESC LIMIT 100")
     rows = cursor.fetchall()
     conn.close()
     invoices = [
@@ -373,6 +373,7 @@ def admin_invoices():
             "amount": r["amount"],
             "status": r["status"],
             "server_target": r["server_target"],
+            "promo_code": r["promo_code"],
             "created_at": r["created_at"],
             "paid_at": r["paid_at"]
         }
