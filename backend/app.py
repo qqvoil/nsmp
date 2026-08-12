@@ -28,7 +28,7 @@ app.config["SECRET_KEY"] = os.environ.get("SECRET_KEY", "nsmp-dev-secret-key-202
 init_db()
 
 # --- Configs & Environment Variables ---
-PLATEGA_PROJECT_ID = os.environ.get("PLATEGA_PROJECT_ID")
+PLATEGA_MERCHANT_ID = os.environ.get("PLATEGA_MERCHANT_ID")
 PLATEGA_SECRET_KEY = os.environ.get("PLATEGA_SECRET_KEY")
 ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "neversmp_admin_2026")
 ADMIN_TG_ID = os.environ.get("ADMIN_TG_ID")
@@ -190,7 +190,7 @@ def create_payment():
     invoice_id, payload = create_invoice(player_name, item_id, item_name, amount, server_target, used_promo)
 
     # If Platega credentials are configured, create transaction
-    if PLATEGA_PROJECT_ID and PLATEGA_SECRET_KEY:
+    if PLATEGA_MERCHANT_ID and PLATEGA_SECRET_KEY:
         try:
             url = "https://app.platega.io/v2/transaction/process"
             return_url = os.environ.get("SITE_URL", "https://donate.neversmp.ru")
@@ -206,7 +206,7 @@ def create_payment():
             }
             json_bytes = json.dumps(req_payload).encode("utf-8")
             req = urllib.request.Request(url, data=json_bytes, headers={
-                "X-MerchantId": PLATEGA_PROJECT_ID,
+                "X-MerchantId": PLATEGA_MERCHANT_ID,
                 "X-Secret": PLATEGA_SECRET_KEY,
                 "Content-Type": "application/json"
             })
