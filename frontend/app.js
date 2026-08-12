@@ -309,7 +309,7 @@ function initCheckoutModal() {
             if (selectedPlatform === 'bedrock' && !nick.startsWith('.')) {
                 nick = '.' + nick;
             }
-            const server = document.getElementById('server-select').value;
+            const server = 'global';
             const submitBtn = document.getElementById('submit-pay-btn');
             const btnText = submitBtn.querySelector('.btn-text');
             const btnLoader = submitBtn.querySelector('.btn-loader');
