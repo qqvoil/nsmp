@@ -34,10 +34,18 @@ ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "neversmp_admin_2026")
 ADMIN_TG_ID = os.environ.get("ADMIN_TG_ID")
 BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("TG_BOT_TOKEN")
 
-# RCON configuration for primary servers
+# RCON configuration for all game servers
+RCON_PASS = os.environ.get("RCON_PASS", "")
 RCON_SERVERS = {
-    "lobby": {"host": os.environ.get("RCON_LOBBY_HOST", "127.0.0.1"), "port": int(os.environ.get("RCON_LOBBY_PORT", 25575)), "pass": os.environ.get("RCON_PASS", "")},
-    "smp1": {"host": os.environ.get("RCON_SMP1_HOST", "127.0.0.1"), "port": int(os.environ.get("RCON_SMP1_PORT", 25576)), "pass": os.environ.get("RCON_PASS", "")},
+    "lobby":    {"host": "127.0.0.1", "port": 25575, "pass": RCON_PASS},
+    "smp1":     {"host": "127.0.0.1", "port": 25576, "pass": RCON_PASS},
+    "smp2":     {"host": "127.0.0.1", "port": 25577, "pass": RCON_PASS},
+    "hardcore1":{"host": "127.0.0.1", "port": 25578, "pass": RCON_PASS},
+    "hardcore2":{"host": "127.0.0.1", "port": 25579, "pass": RCON_PASS},
+    "anarchy1": {"host": "127.0.0.1", "port": 25580, "pass": RCON_PASS},
+    "anarchy2": {"host": "127.0.0.1", "port": 25581, "pass": RCON_PASS},
+    "building1":{"host": "127.0.0.1", "port": 25582, "pass": RCON_PASS},
+    "building2":{"host": "127.0.0.1", "port": 25583, "pass": RCON_PASS},
 }
 
 def is_admin_authenticated() -> bool:
