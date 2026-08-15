@@ -5,7 +5,6 @@
 options:
     spawn_world: "world"
     spawn_x: 0.5
-    spawn_y: 100.0
     spawn_z: 0.5
     spawn_yaw: 0.0
     spawn_pitch: 0.0
@@ -40,7 +39,10 @@ command /spawn:
                 send "&cТелепортация отменена из-за начала боя!" to player
                 stop
             subtract 1 from {_count}
-        set {_target} to location({@spawn_x}, {@spawn_y}, {@spawn_z}, world({@spawn_world}), {@spawn_yaw}, {@spawn_pitch})
+        set {_target} to location of highest solid block at location({@spawn_x}, 0, {@spawn_z}, world({@spawn_world}))
+        add 1 to y-coord of {_target}
+        set yaw of {_target} to {@spawn_yaw}
+        set pitch of {_target} to {@spawn_pitch}
         teleport player to {_target}
         send "&aВы успешно телепортированы на спавн Анархии!" to player
         play sound "entity.enderman.teleport" at player to player
@@ -50,10 +52,17 @@ command /spawn:
 # Телепортация на спавн при первом входе
 on first join:
     wait 5 ticks
-    set {_target} to location({@spawn_x}, {@spawn_y}, {@spawn_z}, world({@spawn_world}), {@spawn_yaw}, {@spawn_pitch})
+    set {_target} to location of highest solid block at location({@spawn_x}, 0, {@spawn_z}, world({@spawn_world}))
+    add 1 to y-coord of {_target}
+    set yaw of {_target} to {@spawn_yaw}
+    set pitch of {_target} to {@spawn_pitch}
     teleport player to {_target}
 
 # Телепортация на спавн после смерти (если нет активной кровати)
 on respawn:
     if player's bed spawn location is not set:
-        set respawn location to location({@spawn_x}, {@spawn_y}, {@spawn_z}, world({@spawn_world}), {@spawn_yaw}, {@spawn_pitch})
+        set {_target} to location of highest solid block at location({@spawn_x}, 0, {@spawn_z}, world({@spawn_world}))
+        add 1 to y-coord of {_target}
+        set yaw of {_target} to {@spawn_yaw}
+        set pitch of {_target} to {@spawn_pitch}
+        set respawn location to {_target}
