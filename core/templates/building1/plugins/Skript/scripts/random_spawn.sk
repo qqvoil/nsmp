@@ -3,19 +3,31 @@ options:
     max_radius: 1000
 
 function getRandomSpawn() :: location:
-    set {_x_sign} to random integer between 0 and 1
-    if {_x_sign} is 0:
-        set {_x} to random integer between {@min_radius} and {@max_radius}
-    else:
-        set {_x} to random integer between -{@max_radius} and -{@min_radius}
+    set {_attempts} to 0
+    while {_attempts} < 50:
+        add 1 to {_attempts}
         
-    set {_z_sign} to random integer between 0 and 1
-    if {_z_sign} is 0:
-        set {_z} to random integer between {@min_radius} and {@max_radius}
-    else:
-        set {_z} to random integer between -{@max_radius} and -{@min_radius}
+        set {_x_sign} to random integer between 0 and 1
+        if {_x_sign} is 0:
+            set {_x} to random integer between {@min_radius} and {@max_radius}
+        else:
+            set {_x} to random integer between -{@max_radius} and -{@min_radius}
+            
+        set {_z_sign} to random integer between 0 and 1
+        if {_z_sign} is 0:
+            set {_z} to random integer between {@min_radius} and {@max_radius}
+        else:
+            set {_z} to random integer between -{@max_radius} and -{@min_radius}
+            
+        set {_loc} to location of highest block at location({_x}, 0, {_z}, world("world"))
+        set {_block} to block at {_loc}
         
-    set {_loc} to location of highest solid block at location({_x}, 0, {_z}, world("world"))
+        if {_block} is not water or lava or magma block or cactus or fire or air or bedrock:
+            add 1 to y-coord of {_loc}
+            return {_loc}
+            
+    # fallback
+    set {_loc} to location of highest block at location(0, 0, 0, world("world"))
     add 1 to y-coord of {_loc}
     return {_loc}
 
