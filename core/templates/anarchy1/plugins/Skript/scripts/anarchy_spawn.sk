@@ -17,68 +17,7 @@ options:
     # Высота входа в PvP-арену (ниже этой высоты начинается арена)
     arena_max_y: 85
     
-    # Границы автошахты
-    mine_min_x: -8
-    mine_max_x: 8
-    mine_min_y: 55
-    mine_max_y: 65
-    mine_min_z: -8
-    mine_max_z: 8
-
-# Функция проверки нахождения в автошахте
-function isInAutoMine(loc: location) :: boolean:
-    set {_x} to x-coord of {_loc}
-    set {_y} to y-coord of {_loc}
-    set {_z} to z-coord of {_loc}
-    if {_x} >= {@mine_min_x}:
-        if {_x} <= {@mine_max_x}:
-            if {_y} >= {@mine_min_y}:
-                if {_y} <= {@mine_max_y}:
-                    if {_z} >= {@mine_min_z}:
-                        if {_z} <= {@mine_max_z}:
-                            return true
-    return false
-
-# Функция генерации руд в автошахте
-function regenerateAutoMine():
-    set {_w} to world({@spawn_world})
-    loop integers from {@mine_min_x} to {@mine_max_x}:
-        set {_x} to loop-integer-1
-        loop integers from {@mine_min_y} to {@mine_max_y}:
-            set {_y} to loop-integer-2
-            loop integers from {@mine_min_z} to {@mine_max_z}:
-                set {_z} to loop-integer-3
-                set {_loc} to location({_x}, {_y}, {_z}, {_w})
-                set {_rand} to random integer between 1 and 100
-                if {_rand} <= 45:
-                    set block at {_loc} to stone
-                else if {_rand} <= 65:
-                    set block at {_loc} to coal ore
-                else if {_rand} <= 80:
-                    set block at {_loc} to iron ore
-                else if {_rand} <= 88:
-                    set block at {_loc} to gold ore
-                else if {_rand} <= 94:
-                    set block at {_loc} to redstone ore
-                else if {_rand} <= 97:
-                    set block at {_loc} to lapis ore
-                else if {_rand} <= 99:
-                    set block at {_loc} to diamond ore
-                else:
-                    set block at {_loc} to emerald ore
-    broadcast "&6&l[Автошахта] &aРуды в автошахте успешно обновлены! &7(/mine)"
-
-# Таймер автошахты (каждые 3 минуты)
-every 3 minutes:
-    regenerateAutoMine()
-
-# Оповещение за 30 секунд до обновления
-every 3 minutes:
-    wait 2 minutes and 30 seconds
-    loop all players:
-        if loop-player's world is {@spawn_world}:
-            if distance between loop-player and location(0, 60, 0, world({@spawn_world})) < 150:
-                send action bar "&6&l[Автошахта] &eОбновление ресурсов через 30 секунд!" to loop-player
+    arena_max_y: 85
 
 # ==============================================================================
 # КОМАНДЫ: /spawn и /mine
@@ -106,66 +45,7 @@ command /spawn:
         send "&aВы успешно телепортированы на спавн Анархии!" to player
         play sound "entity.enderman.teleport" at player to player
 
-command /mine:
-    aliases: /automine, /шахта
-    trigger:
-        if {combat_tagged::%player%} is set:
-            send "&cВы не можете телепортироваться в шахту во время боя!" to player
-            stop
-        send "&aТелепортация в автошахту через &e3 сек&a. Не двигайтесь!" to player
-        set {_start_loc} to player's location
-        set {_count} to 3
-        while {_count} > 0:
-            wait 1 second
-            if distance between player's location and {_start_loc} > 0.5:
-                send "&cТелепортация отменена, вы сдвинулись с места!" to player
-                stop
-            subtract 1 from {_count}
-        set {_target} to location(0.5, 66.0, 0.5, world({@spawn_world}), 0, 0)
-        teleport player to {_target}
-        send "&6Вы телепортированы в автошахту!" to player
-
-command /setautomine:
-    permission: op
-    trigger:
-        regenerateAutoMine()
-        send "&aАвтошахта принудительно обновлена!" to player
-
-# ==============================================================================
-# ЗАЩИТА СПАВНА И PVP-АРЕНЫ
-# ==============================================================================
-
-# Защита от разрушения блоков
-on break:
-    if player is op:
-        stop
-    if player's world is {@spawn_world}:
-        if isInAutoMine(event-location) is true:
-            stop # В автошахте ломать можно!
-        set {_dist} to distance between event-location and location(0, event-location's y-coord, 0, world({@spawn_world}))
-        if {_dist} <= {@arena_radius}:
-            cancel event
-            send action bar "&cТерритория спавна и арены защищена от разрушений!" to player
-
-# Защита от установки блоков
-on place:
-    if player is op:
-        stop
-    if player's world is {@spawn_world}:
-        set {_dist} to distance between event-location and location(0, event-location's y-coord, 0, world({@spawn_world}))
-        if {_dist} <= {@arena_radius}:
-            cancel event
-            send action bar "&cТерритория спавна и арены защищена от построек!" to player
-
-# Защита от урона на безопасном спавне
-on damage of player:
-    if victim's world is {@spawn_world}:
-        set {_dist} to distance between victim and location(0, victim's y-coord, 0, world({@spawn_world}))
-        if {_dist} <= {@spawn_radius}:
-            if victim's y-coord >= {@arena_max_y}:
-                cancel event
-                if attacker is a player:
-                    send action bar "&aВ безопасной зоне спавна PvP отключено!" to attacker
+        play sound "entity.enderman.teleport" at player to player
 
 # Телепортация на спавн при первом входе
 on first join:
