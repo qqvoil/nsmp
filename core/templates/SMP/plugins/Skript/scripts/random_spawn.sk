@@ -1,2 +1,30 @@
-on script load:
-    execute console command "gamerule spawnRadius 1000"
+options:
+    min_radius: 200
+    max_radius: 1000
+
+function getRandomSpawn() :: location:
+    set {_x_sign} to random integer between 0 and 1
+    if {_x_sign} is 0:
+        set {_x} to random integer between {@min_radius} and {@max_radius}
+    else:
+        set {_x} to random integer between -{@max_radius} and -{@min_radius}
+        
+    set {_z_sign} to random integer between 0 and 1
+    if {_z_sign} is 0:
+        set {_z} to random integer between {@min_radius} and {@max_radius}
+    else:
+        set {_z} to random integer between -{@max_radius} and -{@min_radius}
+        
+    set {_loc} to location of highest solid block at location({_x}, 0, {_z}, world("world"))
+    add 1 to y-coord of {_loc}
+    return {_loc}
+
+on first join:
+    wait 5 ticks
+    set {_loc} to getRandomSpawn()
+    teleport player to {_loc}
+
+on respawn:
+    if player's bed spawn location is not set:
+        set {_loc} to getRandomSpawn()
+        set respawn location to {_loc}
