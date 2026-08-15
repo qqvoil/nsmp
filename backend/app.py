@@ -37,15 +37,15 @@ BOT_TOKEN = os.environ.get("BOT_TOKEN") or os.environ.get("TG_BOT_TOKEN")
 # RCON configuration for all game servers
 RCON_PASS = os.environ.get("RCON_PASS", "")
 RCON_SERVERS = {
-    "lobby":    {"host": "127.0.0.1", "port": 25575, "pass": RCON_PASS},
+    "lobby":    {"host": "127.0.0.1", "port": 25552, "pass": RCON_PASS},
     "smp1":     {"host": "127.0.0.1", "port": 25576, "pass": RCON_PASS},
-    "smp2":     {"host": "127.0.0.1", "port": 25577, "pass": RCON_PASS},
-    "hardcore1":{"host": "127.0.0.1", "port": 25578, "pass": RCON_PASS},
-    "hardcore2":{"host": "127.0.0.1", "port": 25579, "pass": RCON_PASS},
-    "anarchy1": {"host": "127.0.0.1", "port": 25580, "pass": RCON_PASS},
-    "anarchy2": {"host": "127.0.0.1", "port": 25581, "pass": RCON_PASS},
-    "building1":{"host": "127.0.0.1", "port": 25582, "pass": RCON_PASS},
-    "building2":{"host": "127.0.0.1", "port": 25583, "pass": RCON_PASS},
+    "smp2":     {"host": "127.0.0.1", "port": 25573, "pass": RCON_PASS},
+    "hardcore1":{"host": "127.0.0.1", "port": 25575, "pass": RCON_PASS},
+    "hardcore2":{"host": "127.0.0.1", "port": 25572, "pass": RCON_PASS},
+    "anarchy1": {"host": "127.0.0.1", "port": 25574, "pass": RCON_PASS},
+    "anarchy2": {"host": "127.0.0.1", "port": 25571, "pass": RCON_PASS},
+    "building1":{"host": "127.0.0.1", "port": 25569, "pass": RCON_PASS},
+    "building2":{"host": "127.0.0.1", "port": 25570, "pass": RCON_PASS},
 }
 
 def is_admin_authenticated() -> bool:
@@ -192,8 +192,6 @@ def create_payment():
                 discount = promo["discount_percent"]
                 amount = max(1, int(amount * (1 - discount / 100.0)))
                 used_promo = promo["code"]
-                conn.execute("UPDATE mc_promocodes SET current_uses = current_uses + 1 WHERE code = ?", (promo["code"],))
-                conn.commit()
 
     invoice_id, payload = create_invoice(player_name, item_id, item_name, amount, server_target, used_promo)
 
@@ -259,6 +257,11 @@ def platega_webhook():
         invoice = get_invoice_by_payload(payload)
         if invoice and invoice["status"] == "pending":
             mark_invoice_paid(invoice["id"])
+            
+            if invoice["promo_code"]:
+                with get_db() as conn:
+                    conn.execute("UPDATE mc_promocodes SET current_uses = current_uses + 1 WHERE code = ?", (invoice["promo_code"],))
+                    conn.commit()
 
             # Resolve custom token count if applicable
             tokens_to_give = 0
@@ -298,6 +301,11 @@ def simulate_payment(invoice_id: int):
     if invoice and invoice["status"] == "pending":
         mark_invoice_paid(invoice_id)
         
+        if invoice["promo_code"]:
+            with get_db() as conn:
+                conn.execute("UPDATE mc_promocodes SET current_uses = current_uses + 1 WHERE code = ?", (invoice["promo_code"],))
+                conn.commit()
+                
         tokens_to_give = 0
         if invoice["item_id"] == "custom_tokens":
             try:

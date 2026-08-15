@@ -23,7 +23,7 @@ if [ "$EUID" -ne 0 ]; then
 fi
 
 # 1. Установка системных зависимостей
-echo -e "\n${YELLOW}📦 [1/6] Установка системных пакетов и зависимостей...${NC}"
+echo -e "\n${YELLOW}📦 [1/7] Установка системных пакетов и зависимостей...${NC}"
 export DEBIAN_FRONTEND=noninteractive
 apt-get update -qq
 apt-get install -y -qq \
@@ -65,7 +65,7 @@ fi
 echo -e "${GREEN}✓ Системные пакеты, Java 21 и библиотеки Python установлены.${NC}"
 
 # 3. Конфигурация .env
-echo -e "\n${YELLOW}🔑 [2/6] Проверка и настройка backend/.env...${NC}"
+echo -e "\n${YELLOW}🔑 [2/7] Проверка и настройка backend/.env...${NC}"
 ENV_FILE="${BASE_DIR}/backend/.env"
 if [ ! -f "$ENV_FILE" ]; then
     cat << 'ENVEOF' > "$ENV_FILE"
@@ -74,10 +74,6 @@ SITE_URL=https://donate.neversmp.ru
 PLATEGA_PROJECT_ID=your_platega_project_id
 PLATEGA_SECRET_KEY=your_platega_secret_key
 ADMIN_PASSWORD=neversmp_admin_2026
-RCON_LOBBY_HOST=127.0.0.1
-RCON_LOBBY_PORT=25575
-RCON_SMP1_HOST=127.0.0.1
-RCON_SMP1_PORT=25576
 RCON_PASS=change_this_rcon_password
 ENVEOF
     echo -e "${GREEN}✓ Создан шаблон файла .env.${NC}"
@@ -90,7 +86,7 @@ else
 fi
 
 # 4. Сетевая оптимизация и Фаервол (MTU 1200, advmss 1160, изоляция подсерверов)
-echo -e "\n${YELLOW}🌐 [3/6] Настройка сетевого стека и защиты портов (Firewall & MTU)...${NC}"
+echo -e "\n${YELLOW}🌐 [3/7] Настройка сетевого стека и защиты портов (Firewall & MTU)...${NC}"
 IFACE=$(ip -o link show | awk -F': ' '$2 != "lo" {print $2; exit}')
 GW=$(ip route show default 2>/dev/null | awk '{print $3; exit}')
 
@@ -125,8 +121,13 @@ sysctl -w net.ipv4.tcp_mtu_probing=1
 sysctl -w net.ipv4.tcp_base_mss=1024
 echo -e "${GREEN}✓ Сетевая служба и фаервол nsmp-net-tuning активированы.${NC}"
 
-# 5. Настройка Nginx Reverse Proxy и SSL
-echo -e "\n${YELLOW}🔒 [4/6] Настройка Nginx и SSL-сертификатов...${NC}"
+# 5. Инициализация базы данных MariaDB
+echo -e "\n${YELLOW}🗄️ [4/7] Установка и настройка базы данных MariaDB...${NC}"
+chmod +x "${BASE_DIR}/scripts/setup_mysql.sh"
+bash "${BASE_DIR}/scripts/setup_mysql.sh"
+
+# 6. Настройка Nginx Reverse Proxy и SSL
+echo -e "\n${YELLOW}🔒 [5/7] Настройка Nginx и SSL-сертификатов...${NC}"
 if [ -f /etc/letsencrypt/live/test1.jointhevoid.ru/fullchain.pem ]; then
     cat << 'NGINXEOF' > /etc/nginx/sites-available/default
 server {
@@ -181,8 +182,8 @@ nginx -t
 systemctl reload nginx
 echo -e "${GREEN}✓ Nginx успешно обновлен и перезапущен.${NC}"
 
-# 6. Служба магазина nsmp-web (Gunicorn WSGI)
-echo -e "\n${YELLOW}🐍 [5/6] Настройка службы бэкенда nsmp-web...${NC}"
+# 7. Служба магазина nsmp-web (Gunicorn WSGI)
+echo -e "\n${YELLOW}🐍 [6/7] Настройка службы бэкенда nsmp-web...${NC}"
 GUNICORN_BIN=$(which gunicorn 2>/dev/null || echo "/usr/bin/gunicorn")
 cat << SYSEOF > /etc/systemd/system/nsmp-web.service
 [Unit]
@@ -207,8 +208,8 @@ systemctl enable --now nsmp-web.service
 systemctl restart nsmp-web.service
 echo -e "${GREEN}✓ Сервис nsmp-web запущен и работает в фоновом режиме.${NC}"
 
-# 7. Автоматическая сборка и запуск 11 игровых серверов NeverSMP
-echo -e "\n${YELLOW}🎮 [6/7] Сборка и запуск серверов NeverSMP...${NC}"
+# 8. Автоматическая сборка и запуск 11 игровых серверов NeverSMP
+echo -e "\n${YELLOW}🎮 [7/7] Сборка и запуск серверов NeverSMP...${NC}"
 chmod +x "${BASE_DIR}/scripts/build_network.sh"
 chmod +x "${BASE_DIR}/scripts/server-manager.sh"
 
@@ -217,8 +218,8 @@ chmod +x "${BASE_DIR}/scripts/server-manager.sh"
 "${BASE_DIR}/scripts/server-manager.sh" start all || true
 echo -e "${GREEN}✓ Игровые серверы запущены через tmux.${NC}"
 
-# 8. Комплексный Health Check
-echo -e "\n${YELLOW}🧪 [7/7] Проверка работы сервисов...${NC}"
+# 9. Комплексный Health Check
+echo -e "\n${YELLOW}🧪 [Health Check] Проверка работы сервисов...${NC}"
 sleep 2
 API_RES=$(curl -s http://127.0.0.1:5000/api/catalog | grep -o '"success":true' || echo 'FAILED')
 if [ "$API_RES" = '"success":true' ]; then

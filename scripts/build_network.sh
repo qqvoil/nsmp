@@ -25,6 +25,8 @@ echo -e "${CYAN}================================================================
 echo "   ⚡ NeverSMP Network — Automated Build & Assemble Engine"
 echo -e "=================================================================${NC}"
 
+RCON_PASS=$(grep -oP '^RCON_PASS=\K.*' "${BASE_DIR}/backend/.env" 2>/dev/null || echo "neversmp_rcon_dev")
+
 mkdir -p "${SERVER_DIR}"
 
 # 1. Server setup definitions
@@ -91,6 +93,8 @@ EOF
             sed -i.bak "s/^server-port=.*/server-port=${port}/" "${srv_dir}/server.properties" 2>/dev/null || true
             sed -i.bak "s/^query.port=.*/query.port=${port}/" "${srv_dir}/server.properties" 2>/dev/null || true
             sed -i.bak "s/^rcon.port=.*/rcon.port=${rcon_port}/" "${srv_dir}/server.properties" 2>/dev/null || true
+            sed -i.bak "s/^enable-rcon=.*/enable-rcon=true/" "${srv_dir}/server.properties" 2>/dev/null || true
+            sed -i.bak "s/^rcon.password=.*/rcon.password=${RCON_PASS}/" "${srv_dir}/server.properties" 2>/dev/null || true
             
             # Set world size based on wipe schedule
             if [[ "$name" == "SMP1" || "$name" == "anarchy1" ]]; then
