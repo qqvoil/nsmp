@@ -185,7 +185,7 @@ link_plugins() {
 
 apply_configs() {
     echo -e "\n${YELLOW}⚙️ [3/4] Применение глобальных конфигураций MySQL...${NC}"
-    python3 "${BASE_DIR}/scripts/apply_mysql_configs.py"
+    NSMP_DB_PASSWORD="NeverSMP_SecureDB_2026!" python3 "${BASE_DIR}/scripts/apply_mysql_configs.py"
 }
 
 verify_build() {
