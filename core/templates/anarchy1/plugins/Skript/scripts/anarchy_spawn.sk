@@ -47,22 +47,4 @@ command /spawn:
         send "&aВы успешно телепортированы на спавн Анархии!" to player
         play sound "entity.enderman.teleport" at player to player
 
-        play sound "entity.enderman.teleport" at player to player
 
-# Телепортация на спавн при первом входе
-on first join:
-    wait 5 ticks
-    set {_target} to location of highest solid block at location({@spawn_x}, 0, {@spawn_z}, world({@spawn_world}))
-    add 1 to y-coord of {_target}
-    set yaw of {_target} to {@spawn_yaw}
-    set pitch of {_target} to {@spawn_pitch}
-    teleport player to {_target}
-
-# Телепортация на спавн после смерти (если нет активной кровати)
-on respawn:
-    if player's bed spawn location is not set:
-        set {_target} to location of highest solid block at location({@spawn_x}, 0, {@spawn_z}, world({@spawn_world}))
-        add 1 to y-coord of {_target}
-        set yaw of {_target} to {@spawn_yaw}
-        set pitch of {_target} to {@spawn_pitch}
-        set respawn location to {_target}
