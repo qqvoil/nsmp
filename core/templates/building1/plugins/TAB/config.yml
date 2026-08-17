@@ -10,15 +10,18 @@ header-footer:
         - "Test footer in world 'test'"
     default:
       header:
-        - " &8✗ &#aa00aa&lN&#9224b6&le&#7949c2&lv&#616dce&le&#4992db&lr&#31b6e7&lS&#18dbf3&lM&#00ffff&lP &8✗"
         - ""
-        - " &fОнлайн: &#aa00aa%online% &f| TPS: &#aa00aa%tps%"
-        - " &fИгроки на сервере:"
+        - " &#aa00aa&l* &f&lNeverSMP &#aa00aa&l*"
+        - "  &#e056fdВыживание & Анархия  "
+        - ""
+        - " &fОнлайн: &#aa00aa%online% &8| &fТПС: &#aa00aa%tps%"
         - ""
       footer:
         - ""
-        - " &fНаш сайт: &#00ffffdonate.neversmp.ru"
-        - " &fНаш тгк: &#00fffft.me/NeverSMP"
+        - " &#aa00aa&lМЫ В СЕТИ:"
+        - " &fСайт: &#e056fddonate.neversmp.ru"
+        - " &fТГК: &#e056fdt.me/NeverSMP"
+        - ""
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Tablist-name-formatting
 tablist-name-formatting:

@@ -1,20 +1,23 @@
-#Owner:
-#  tabprefix: "&0&l[&a&lOwner&0&l] &a"
-#  tagprefix: "&2&lOwner &a"
-Player:
-  tabprefix: "&0&l[&7&lPlayer&0&l] &3"
-  tagprefix: "&2&lPlayer &3"
+# NeverSMP Tab Groups
+owner:
+  tabprefix: "&8[&4&lВЛАДЕЛЕЦ&8] &4"
+  tagprefix: "&8[&4&lВЛАДЕЛЕЦ&8] &4"
+admin:
+  tabprefix: "&8[&#aa00aa&lАДМИН&8] &#e056fd"
+  tagprefix: "&8[&#aa00aa&lАДМИН&8] &#e056fd"
+moder:
+  tabprefix: "&8[&9&lМОДЕР&8] &9"
+  tagprefix: "&8[&9&lМОДЕР&8] &9"
+vip:
+  tabprefix: "&8[&#e056fd&lVIP&8] &#e056fd"
+  tagprefix: "&8[&#e056fd&lVIP&8] &#e056fd"
+default:
+  tabprefix: "&8[&7Игрок&8] &f"
+  tagprefix: "&8[&7Игрок&8] &f"
 
- # default settings for all groups, all groups will take properties from this section unless player's primary group overrides a specific setting
 _DEFAULT_:
-  tabprefix: "%luckperms-prefix%"
-  tagprefix: "%luckperms-prefix%"
+  tabprefix: "&8[&7Игрок&8] &f"
+  tagprefix: "&8[&7Игрок&8] &f"
   customtabname: "%player%"
   tabsuffix: "%luckperms-suffix%"
   tagsuffix: "%luckperms-suffix%"
-
-per-world:
-  world1:
-    Owner:
-      tabprefix: "&0&l[&a&lOwner&0&l] &a"
-      tagprefix: "&2&lOwner &a"
