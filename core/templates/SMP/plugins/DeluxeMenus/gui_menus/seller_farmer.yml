@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lСкупщик | Фермер'
+menu_title: '&#aa00aa&lСкупщик | Фермер'
 open_command: seller_farmer
 size: 27
 
@@ -17,7 +17,7 @@ items:
   'sell_sugar_cane':
     material: SUGAR_CANE
     slot: 2
-    display_name: '&#ffff55&lСахарный тростник'
+    display_name: '&#e056fd&lСахарный тростник'
     lore:
       - ''
       - '&7Цена за 1 шт: &a2 монеты'
@@ -52,7 +52,7 @@ items:
   'sell_chorus_fruit':
     material: CHORUS_FRUIT
     slot: 3
-    display_name: '&#ffff55&lПлод хоруса'
+    display_name: '&#e056fd&lПлод хоруса'
     lore:
       - ''
       - '&7Цена за 1 шт: &a10 монет'
@@ -87,7 +87,7 @@ items:
   'sell_carrot':
     material: CARROT
     slot: 4
-    display_name: '&#ffff55&lМорковь'
+    display_name: '&#e056fd&lМорковь'
     lore:
       - ''
       - '&7Цена за 1 шт: &a2 монеты'
@@ -122,7 +122,7 @@ items:
   'sell_potato':
     material: POTATO
     slot: 5
-    display_name: '&#ffff55&lКартофель'
+    display_name: '&#e056fd&lКартофель'
     lore:
       - ''
       - '&7Цена за 1 шт: &a2 монеты'
@@ -157,7 +157,7 @@ items:
   'sell_sweet_berries':
     material: SWEET_BERRIES
     slot: 6
-    display_name: '&#ffff55&lСладкие ягоды'
+    display_name: '&#e056fd&lСладкие ягоды'
     lore:
       - ''
       - '&7Цена за 1 шт: &a5 монет'
@@ -192,7 +192,7 @@ items:
   'sell_melon_slice':
     material: MELON_SLICE
     slot: 12
-    display_name: '&#ffff55&lЛомтик арбуза'
+    display_name: '&#e056fd&lЛомтик арбуза'
     lore:
       - ''
       - '&7Цена за 1 шт: &a5 монет'
@@ -227,7 +227,7 @@ items:
   'sell_kelp':
     material: KELP
     slot: 13
-    display_name: '&#ffff55&lЛаминария'
+    display_name: '&#e056fd&lЛаминария'
     lore:
       - ''
       - '&7Цена за 1 шт: &a1 монета'
@@ -262,7 +262,7 @@ items:
   'sell_pumpkin':
     material: PUMPKIN
     slot: 14
-    display_name: '&#ffff55&lТыква'
+    display_name: '&#e056fd&lТыква'
     lore:
       - ''
       - '&7Цена за 1 шт: &a15 монет'

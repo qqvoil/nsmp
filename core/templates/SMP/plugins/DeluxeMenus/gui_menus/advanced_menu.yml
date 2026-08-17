@@ -1,6 +1,6 @@
 #  A DeluxeMenus advanced configuration guide
 #=========================================================
-menu_title: '&8> &6&lD&eM &bAdvanced Example'
+menu_title: '&#aa00aa> &6&lD&eM &bAdvanced Example'
 open_command:
   - advancedmenu
   - advancedexamplemenu

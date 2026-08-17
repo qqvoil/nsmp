@@ -25,18 +25,18 @@ options:
 command /spawn:
     trigger:
         if {combat_tagged::%player%} is set:
-            send "&cВы не можете телепортироваться на спавн во время боя!" to player
+            send "&#aa00aa&l! &fВы не можете телепортироваться во время боя!" to player
             stop
-        send "&aТелепортация на спавн через &e3 сек&a. Не двигайтесь!" to player
+        send "&#aa00aa&l! &fТелепортация через &#e056fd3 сек&f. Не двигайтесь!" to player
         set {_start_loc} to player's location
         set {_count} to 3
         while {_count} > 0:
             wait 1 second
             if distance between player's location and {_start_loc} > 0.5:
-                send "&cТелепортация отменена, вы сдвинулись с места!" to player
+                send "&#aa00aa&l! &fТелепортация отменена, вы сдвинулись с места!" to player
                 stop
             if {combat_tagged::%player%} is set:
-                send "&cТелепортация отменена из-за начала боя!" to player
+                send "&#aa00aa&l! &fТелепортация отменена из-за начала боя!" to player
                 stop
             subtract 1 from {_count}
         set {_target} to location of highest solid block at location({@spawn_x}, 0, {@spawn_z}, world({@spawn_world}))
@@ -44,7 +44,7 @@ command /spawn:
         set yaw of {_target} to {@spawn_yaw}
         set pitch of {_target} to {@spawn_pitch}
         teleport player to {_target}
-        send "&aВы успешно телепортированы на спавн Анархии!" to player
+        send "&#aa00aa&l! &fВы успешно телепортированы на спавн!" to player
         play sound "entity.enderman.teleport" at player to player
 
 

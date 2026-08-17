@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lМагазин (Уровень 3)'
+menu_title: '&#aa00aa&lМагазин (Уровень 3)'
 open_command: coinshop3
 size: 54
 open_requirement:
@@ -290,7 +290,7 @@ items:
   'gapple2':
     material: GOLDEN_APPLE
     slot: 23
-    display_name: '&eЗолотое яблоко'
+    display_name: '&#e056fdЗолотое яблоко'
     lore:
       - ''
       - '&7Количество: &f1 шт.'
@@ -312,7 +312,7 @@ items:
   'gcarrot':
     material: GOLDEN_CARROT
     slot: 32
-    display_name: '&6Золотая морковь'
+    display_name: '&#aa00aaЗолотая морковь'
     lore:
       - ''
       - '&7Количество: &f32 шт.'
@@ -356,7 +356,7 @@ items:
   'pot_fire':
     material: POTION
     slot: 25
-    display_name: '&6Зелье огнестойкости'
+    display_name: '&#aa00aaЗелье огнестойкости'
     lore:
       - ''
       - '&7Количество: &f1 шт.'
@@ -400,7 +400,7 @@ items:
   'totem':
     material: TOTEM_OF_UNDYING
     slot: 41
-    display_name: '&eТотем бессмертия'
+    display_name: '&#e056fdТотем бессмертия'
     lore:
       - ''
       - '&7Количество: &f1 шт.'
@@ -451,6 +451,6 @@ items:
   'next':
     material: BLAZE_ROD
     slot: 50
-    display_name: '&8Следующая страница'
+    display_name: '&#aa00aaСледующая страница'
     lore:
       - '&7Больше страниц нет'

@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lКит ПВП'
+menu_title: '&#aa00aa&lКит ПВП'
 open_command: pvp_kit
 size: 54
 
@@ -88,7 +88,7 @@ items:
     material: COOKED_BEEF
     amount: 64
     slot: 17
-    display_name: '&6Жареная говядина'
+    display_name: '&#aa00aaЖареная говядина'
 
   # 9. Паутина (32 шт.)
   'preview_web':
@@ -140,7 +140,7 @@ items:
   'preview_shield_oak':
     material: SHIELD
     slot: 29
-    display_name: '&eДубовый щит'
+    display_name: '&#e056fdДубовый щит'
 
   # 16. Эндер-жемчуг #2 (16 шт.)
   'preview_pearl_2':

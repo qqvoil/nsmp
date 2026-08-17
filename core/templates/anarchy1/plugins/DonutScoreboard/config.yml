@@ -244,15 +244,15 @@ scoreboard:
     
     spacer-top: ' '
     
-    money: '&f&#00FF00&l$ &fMoney &#00FF000'
+    money: '&f&#aa00aa⛁ &fMoney &#e056fd%vault_eco_balance_fixed%'
     
-    kills: '&f&#FF0000🗡 &fKills &#FF0000%kills%'
+    kills: '&f&#aa00aa🗡 &fKills &#e056fd%kills%'
     
-    deaths: '&f&#FC7703☠ &fDeaths &#FC7703%deaths%'
+    deaths: '&f&#aa00aa☠ &fDeaths &#e056fd%deaths%'
     
-    playtime: '&f&#FFE600⌚ &fPlaytime &#FFE600%playtime%'
+    playtime: '&f&#aa00aa⌚ &fPlaytime &#e056fd%playtime%'
     
-    team: '&#00A6FF🪓 &#FFFFFFTeam &#00A6FFnone'
+    team: '&#aa00aa🪓 &fTeam &#e056fdnone'
     
     spacer-mid: ' '
     

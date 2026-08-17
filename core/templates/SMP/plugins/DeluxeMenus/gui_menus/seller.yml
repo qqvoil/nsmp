@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lСкупщик'
+menu_title: '&#aa00aa&lСкупщик'
 open_command: seller
 register_command: true
 size: 27
@@ -19,7 +19,7 @@ items:
   'sell_wheat':
     material: WHEAT
     slot: 11
-    display_name: '&#ffff55&lФермерство'
+    display_name: '&#e056fd&lФермерство'
     lore:
       - ''
       - '&e▶ Нажмите, чтобы открыть'
@@ -41,7 +41,7 @@ items:
   'sell_netherite':
     material: NETHERITE_INGOT
     slot: 15
-    display_name: '&#5a5a5a&lДрагоценности'
+    display_name: '&#aa00aa&lДрагоценности'
     lore:
       - ''
       - '&e▶ Нажмите, чтобы открыть'

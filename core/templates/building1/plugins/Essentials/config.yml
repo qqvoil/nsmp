@@ -591,8 +591,8 @@ allow-silent-join-quit: false
 # {ONLINE} - The number of players online.
 # {UNIQUE} - The number of unique players to join the server.
 # {UPTIME} - The amount of time the server has been online.
-custom-join-message: "none"
-custom-quit-message: "none"
+custom-join-message: "&#aa00aa&l+ &f{PLAYER}"
+custom-quit-message: "&#aa00aa&l- &f{PLAYER}"
 
 # You can set a custom join message for players who join with an updated username here.
 # This message will only be used if a player has joined before and has since changed their username.
@@ -1008,7 +1008,7 @@ chat:
   group-formats:
     default: '&e[Игрок] &r{DISPLAYNAME}&f: &7{MESSAGE}'
     admin: '&c[Админ] &r{DISPLAYNAME}&f: &7{MESSAGE}'
-  #format: '&7[{GROUP}]&r {DISPLAYNAME}&7:&r {MESSAGE}'
+  #format: '{DISPLAYNAME} &#aa00aa» &f{MESSAGE}'
   #format: '&7{PREFIX}&r {NICKNAME}&r &7{SUFFIX}&r: {MESSAGE}'
 
   # You can also specify a format for each type of chat.
@@ -1261,7 +1261,7 @@ newbies:
   # {DISPLAYNAME} will be replaced with the player name.
   # Set to '' to disable.
   #announce-format: ''
-  announce-format: '&dWelcome {DISPLAYNAME}&d to the server!'
+  announce-format: '&#aa00aa&l+ &fДобро пожаловать, {DISPLAYNAME}!'
 
   # When players spawn for the first time, which spawnpoint should be used?
   # Set to 'none' to use the spawnpoint of the world.

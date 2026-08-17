@@ -1,4 +1,4 @@
-menu_title: '&8Магазин Приватов'
+menu_title: '&#aa00aaМагазин Приватов'
 open_command: protectionshop
 register_command: false
 size: 45
@@ -87,7 +87,7 @@ items:
   'gold_block':
     material: GOLD_BLOCK
     slot: 20
-    display_name: '&eЗолотой приват'
+    display_name: '&#e056fdЗолотой приват'
     lore:
       - '&7Размер: &f3x3x3 блока'
       - ''

@@ -1,4 +1,4 @@
-menu_title: '&#000000&lТокен Шоп'
+menu_title: '&#aa00aa&lТокен Шоп'
 open_command: tokenshop
 size: 54
 
@@ -231,7 +231,7 @@ items:
   'totem':
     material: TOTEM_OF_UNDYING
     slot: 23
-    display_name: '&eТотем бессмертия'
+    display_name: '&#e056fdТотем бессмертия'
     lore:
       - ''
       - '&7Количество: &f1 шт.'
@@ -275,7 +275,7 @@ items:
   'golden_apple':
     material: GOLDEN_APPLE
     slot: 41
-    display_name: '&eЗолотое яблоко'
+    display_name: '&#e056fdЗолотое яблоко'
     lore:
       - ''
       - '&7Количество: &f64 шт.'
@@ -297,7 +297,7 @@ items:
   'golden_carrot':
     material: GOLDEN_CARROT
     slot: 16
-    display_name: '&6Золотая морковь'
+    display_name: '&#aa00aaЗолотая морковь'
     lore:
       - ''
       - '&7Количество: &f32 шт.'
@@ -319,7 +319,7 @@ items:
   'pvp_shulker':
     material: ORANGE_SHULKER_BOX
     slot: 25
-    display_name: '&6Шалкер с PvP набором'
+    display_name: '&#aa00aaШалкер с PvP набором'
     lore:
       - ''
       - '&7Внутри: &eТоп PvP экипировка'
@@ -341,7 +341,7 @@ items:
   'coins_100k':
     material: GOLD_INGOT
     slot: 34
-    display_name: '&e100,000 Монет'
+    display_name: '&#e056fd100,000 Монет'
     lore:
       - ''
       - '&7Обмен токенов на монеты'
@@ -363,7 +363,7 @@ items:
   'coins_1m':
     material: GOLD_BLOCK
     slot: 43
-    display_name: '&e1,000,000 Монет'
+    display_name: '&#e056fd1,000,000 Монет'
     lore:
       - ''
       - '&7Обмен токенов на монеты'

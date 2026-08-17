@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lГлавное меню'
+menu_title: '&#aa00aa&lГлавное меню'
 open_command: menu
 register_command: true
 size: 27
@@ -17,7 +17,7 @@ items:
   'open_protection_shop':
     material: BEDROCK
     slot: 13
-    display_name: '&#ffff55&lМагазин Приватов'
+    display_name: '&#e056fd&lМагазин Приватов'
     lore:
       - ''
       - '&7Нажмите, чтобы купить'
@@ -31,7 +31,7 @@ items:
   'open_shop':
     material: TOTEM_OF_UNDYING
     slot: 12
-    display_name: '&#ffff55&lМагазин'
+    display_name: '&#e056fd&lМагазин'
     lore:
       - ''
       - '&7Нажмите, чтобы открыть'
@@ -45,7 +45,7 @@ items:
   'open_seller':
     material: WHEAT
     slot: 14
-    display_name: '&#ffff55&lСкупщик'
+    display_name: '&#e056fd&lСкупщик'
     lore:
       - ''
       - '&7Нажмите, чтобы открыть'

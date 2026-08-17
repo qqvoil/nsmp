@@ -1,4 +1,4 @@
-menu_title: '&8Телепортация RTP'
+menu_title: '&#aa00aaТелепортация RTP'
 open_command: _rtp_internal
 register_command: true
 size: 27
@@ -29,7 +29,7 @@ items:
   info:
     material: BOOK
     slot: 14
-    display_name: '&e&lИнформация'
+    display_name: '&#e056fd&lИнформация'
     lore:
       - '&aRTP'
       - '&7Подойдет для быстрого поиска места'

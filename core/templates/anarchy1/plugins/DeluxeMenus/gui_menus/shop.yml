@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lМагазин Сервера' # Тёмно-серый цвет (HEX)
+menu_title: '&#aa00aa&lМагазин Сервера' # Тёмно-серый цвет (HEX)
 open_command: shop
 register_command: true
 size: 27
@@ -38,7 +38,7 @@ items:
   'token_shop_icon':
     material: TOTEM_OF_UNDYING
     slot: 11
-    display_name: '&#ffff55&lМагазин за Токены'
+    display_name: '&#e056fd&lМагазин за Токены'
     lore:
       - ''
       - '&7Нажмите, чтобы открыть раздел'

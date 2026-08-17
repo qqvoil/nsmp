@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lСкупщик | Драгоценности'
+menu_title: '&#aa00aa&lСкупщик | Драгоценности'
 open_command: seller_jewels
 size: 27
 
@@ -17,7 +17,7 @@ items:
   'sell_netherite_ingot':
     material: NETHERITE_INGOT
     slot: 2
-    display_name: '&#ffff55&lНезеритовый слиток'
+    display_name: '&#e056fd&lНезеритовый слиток'
     lore:
       - ''
       - '&7Цена за 1 шт: &a250 монет'
@@ -52,7 +52,7 @@ items:
   'sell_diamond':
     material: DIAMOND
     slot: 3
-    display_name: '&#ffff55&lАлмаз'
+    display_name: '&#e056fd&lАлмаз'
     lore:
       - ''
       - '&7Цена за 1 шт: &a125 монет'
@@ -87,7 +87,7 @@ items:
   'sell_emerald':
     material: EMERALD
     slot: 4
-    display_name: '&#ffff55&lИзумруд'
+    display_name: '&#e056fd&lИзумруд'
     lore:
       - ''
       - '&7Цена за 1 шт: &a5 монет'
@@ -122,7 +122,7 @@ items:
   'sell_netherite_scrap':
     material: NETHERITE_SCRAP
     slot: 5
-    display_name: '&#ffff55&lНезеритовый лом'
+    display_name: '&#e056fd&lНезеритовый лом'
     lore:
       - ''
       - '&7Цена за 1 шт: &a50 монет'
@@ -157,7 +157,7 @@ items:
   'sell_coal':
     material: COAL
     slot: 6
-    display_name: '&#ffff55&lУголь'
+    display_name: '&#e056fd&lУголь'
     lore:
       - ''
       - '&7Цена за 1 шт: &a20 монет'
@@ -192,7 +192,7 @@ items:
   'sell_iron_ingot':
     material: IRON_INGOT
     slot: 12
-    display_name: '&#ffff55&lЖелезный слиток'
+    display_name: '&#e056fd&lЖелезный слиток'
     lore:
       - ''
       - '&7Цена за 1 шт: &a15 монет'
@@ -227,7 +227,7 @@ items:
   'sell_gold_ingot':
     material: GOLD_INGOT
     slot: 13
-    display_name: '&#ffff55&lЗолотой слиток'
+    display_name: '&#e056fd&lЗолотой слиток'
     lore:
       - ''
       - '&7Цена за 1 шт: &a10 монет'
@@ -262,7 +262,7 @@ items:
   'sell_copper_ingot':
     material: COPPER_INGOT
     slot: 14
-    display_name: '&#ffff55&lМедный слиток'
+    display_name: '&#e056fd&lМедный слиток'
     lore:
       - ''
       - '&7Цена за 1 шт: &a5 монет'

@@ -1,4 +1,4 @@
-menu_title: '&#5a5a5a&lСкупщик | Лут с мобов'
+menu_title: '&#aa00aa&lСкупщик | Лут с мобов'
 open_command: seller_mobs
 size: 27
 
@@ -17,7 +17,7 @@ items:
   'sell_blaze_rod':
     material: BLAZE_ROD
     slot: 2
-    display_name: '&#ffff55&lОгненный стержень'
+    display_name: '&#e056fd&lОгненный стержень'
     lore:
       - ''
       - '&7Цена за 1 шт: &a10 монет'
@@ -52,7 +52,7 @@ items:
   'sell_rotten_flesh':
     material: ROTTEN_FLESH
     slot: 3
-    display_name: '&#ffff55&lГнилая плоть'
+    display_name: '&#e056fd&lГнилая плоть'
     lore:
       - ''
       - '&7Цена за 1 шт: &a1 монета'
@@ -87,7 +87,7 @@ items:
   'sell_spider_eye':
     material: SPIDER_EYE
     slot: 4
-    display_name: '&#ffff55&lПаучий глаз'
+    display_name: '&#e056fd&lПаучий глаз'
     lore:
       - ''
       - '&7Цена за 1 шт: &a2 монеты'
@@ -122,7 +122,7 @@ items:
   'sell_shulker_shell':
     material: SHULKER_SHELL
     slot: 5
-    display_name: '&#ffff55&lПанцирь шалкера'
+    display_name: '&#e056fd&lПанцирь шалкера'
     lore:
       - ''
       - '&7Цена за 1 шт: &a100 монет'
@@ -157,7 +157,7 @@ items:
   'sell_gold_nugget':
     material: GOLD_NUGGET
     slot: 6
-    display_name: '&#ffff55&lКусочек золота'
+    display_name: '&#e056fd&lКусочек золота'
     lore:
       - ''
       - '&7Цена за 1 шт: &a1 монета'
@@ -192,7 +192,7 @@ items:
   'sell_ghast_tear':
     material: GHAST_TEAR
     slot: 12
-    display_name: '&#ffff55&lСлеза гаста'
+    display_name: '&#e056fd&lСлеза гаста'
     lore:
       - ''
       - '&7Цена за 1 шт: &a50 монет'
@@ -227,7 +227,7 @@ items:
   'sell_bone':
     material: BONE
     slot: 13
-    display_name: '&#ffff55&lКость'
+    display_name: '&#e056fd&lКость'
     lore:
       - ''
       - '&7Цена за 1 шт: &a5 монет'
@@ -262,7 +262,7 @@ items:
   'sell_gunpowder':
     material: GUNPOWDER
     slot: 14
-    display_name: '&#ffff55&lПорох'
+    display_name: '&#e056fd&lПорох'
     lore:
       - ''
       - '&7Цена за 1 шт: &a2 монеты'

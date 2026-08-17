@@ -10,15 +10,15 @@ header-footer:
         - "Test footer in world 'test'"
     default:
       header:
-        - " &f⚔ &d&lNeverSMP &f⚔"
+        - " &8✗ &#aa00aa&lN&#9224b6&le&#7949c2&lv&#616dce&le&#4992db&lr&#31b6e7&lS&#18dbf3&lM&#00ffff&lP &8✗"
         - ""
-        - " &fОнлайн: &d%online% &f| TPS: &d%tps%"
+        - " &fОнлайн: &#aa00aa%online% &f| TPS: &#aa00aa%tps%"
         - " &fИгроки на сервере:"
         - ""
       footer:
         - ""
-        - " &fНаш сайт: &ddonate.neversmp.ru"
-        - " &fНаш тгк: &dt.me/NeverSMP"
+        - " &fНаш сайт: &#00ffffdonate.neversmp.ru"
+        - " &fНаш тгк: &#00fffft.me/NeverSMP"
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Tablist-name-formatting
 tablist-name-formatting:
@@ -69,7 +69,7 @@ bossbar:
   bars:
     ServerInfo:
       style: "PROGRESS" # for 1.9+: PROGRESS, NOTCHED_6, NOTCHED_10, NOTCHED_12, NOTCHED_20
-      color: "%animation:barcolors%" # for 1.9+: BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
+      color: "PURPLE" # for 1.9+: BLUE, GREEN, PINK, PURPLE, RED, WHITE, YELLOW
       progress: "100" # in %
       text: "&fWebsite: &bwww.neversmp.ru"
 
@@ -85,27 +85,27 @@ scoreboard:
       title: " &7⚔ &d&lNeverSMP &7⚔"
       display-condition: "%player-version-id%>=765;%bedrock%=false" # Only display it to players using 1.20.3+ AND NOT bedrock edition
       lines:
-        - "&d┌"
-        - "&d│ &fНик: &d%player_name%"
-        - "&d│ &fДонат: %luckperms_prefix%"
-        - "&d│"
-        - "&d│ &fУ/С: &a%statistic_player_kills%&f/&c%statistic_deaths%"
-        - "&d│ &fБаланс: &e%vault_eco_balance_fixed%⛁"
-        - "&d│ &fТокены: &d%playerpoints_points%⛁"
-        - "&d│ &fНаиграно: &d%statistic_hours_played%ч."
-        - "&d└&f"
+        - "&#aa00aa&l┌"
+        - "&#aa00aa&l│ &fНик: &#e056fd%player_name%"
+        - "&#aa00aa&l│ &fДонат: %luckperms_prefix%"
+        - "&#aa00aa&l│"
+        - "&#aa00aa&l│ &fУ/С: &a%statistic_player_kills%&f/&c%statistic_deaths%"
+        - "&#aa00aa&l│ &fБаланс: &#e056fd%vault_eco_balance_fixed%&f⛁"
+        - "&#aa00aa&l│ &fТокены: &#e056fd%playerpoints_points%&f⛁"
+        - "&#aa00aa&l│ &fНаиграно: &#e056fd%statistic_hours_played%&fч."
+        - "&#aa00aa&l└"
     scoreboard:
       title: " &7⚔ &d&lNeverSMP &7⚔"
       lines:
-        - "&d┌"
-        - "&d│ &fНик: &d%player_name%"
-        - "&d│ &fДонат: %luckperms_prefix%"
-        - "&d│"
-        - "&d│ &fУ/С: &a%statistic_player_kills%&f/&c%statistic_deaths%"
-        - "&d│ &fБаланс: &e%vault_eco_balance_fixed%⛁"
-        - "&d│ &fТокены: &d%playerpoints_points%⛁"
-        - "&d│ &fНаиграно: &d%statistic_hours_played%ч."
-        - "&d└&f"
+        - "&#aa00aa&l┌"
+        - "&#aa00aa&l│ &fНик: &#e056fd%player_name%"
+        - "&#aa00aa&l│ &fДонат: %luckperms_prefix%"
+        - "&#aa00aa&l│"
+        - "&#aa00aa&l│ &fУ/С: &a%statistic_player_kills%&f/&c%statistic_deaths%"
+        - "&#aa00aa&l│ &fБаланс: &#e056fd%vault_eco_balance_fixed%&f⛁"
+        - "&#aa00aa&l│ &fТокены: &#e056fd%playerpoints_points%&f⛁"
+        - "&#aa00aa&l│ &fНаиграно: &#e056fd%statistic_hours_played%&fч."
+        - "&#aa00aa&l└"
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Layout
 layout:
