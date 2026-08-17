@@ -62,7 +62,7 @@ prevent-spectator-effect:
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Bossbar
 bossbar:
-  enabled: true
+  enabled: false
   toggle-command: /bossbar
   remember-toggle-choice: false
   hidden-by-default: false
