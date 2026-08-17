@@ -166,7 +166,7 @@ cooldown:
 
   # Message shown when a player is on cooldown.
   # Use {time} placeholder for remaining cooldown time.
-  message: "&cПодождите {time} сек. перед следующим использованием RTP!"
+  message: "&#aa00aa&l! &fПодождите &#e056fd{time} сек&f. перед следующим использованием RTP!"
 
   # Permission to bypass cooldown.
   # Players with this permission can use RTP without waiting.
@@ -256,16 +256,16 @@ effects:
 # Supports color codes using & (e.g., &a for green, &c for red).
 messages:
   # Message when RTP teleport is successful.
-  success: "&aВы успешно телепортированы в случайную точку мира!"
+  success: "&#aa00aa&l! &fВы успешно телепортированы в случайную точку!"
 
   # Message when no safe location is found after maximum attempts.
-  no-safe-location: "&cНе удалось найти безопасное место. Попробуйте еще раз."
+  no-safe-location: "&#aa00aa&l! &fНе удалось найти безопасное место. Попробуйте еще раз."
 
   # Message when the specified world is not found or is blacklisted.
-  world-not-found: "&cМир не найден или запрещен для RTP."
+  world-not-found: "&#aa00aa&l! &fМир не найден или запрещен для RTP."
 
   # Message when player doesn't have permission to use the command.
-  no-permission: "&cУ вас нет прав для использования этой команды."
+  no-permission: "&#aa00aa&l! &fУ вас нет прав для использования этой команды."
 
   # Message when configuration is reloading.
   reloading: "&aПерезагрузка конфигурации..."
@@ -274,27 +274,27 @@ messages:
   reloaded: "&aКонфигурация успешно перезагружена!"
 
   # Message when command usage is invalid.
-  invalid-command: "&cНеверное использование. /rtp [мир], /rtp <игрок> или /rtp reload"
+  invalid-command: "&#aa00aa&l! &fНеверное использование. /rtp"
 
   # Message when teleport countdown starts.
   # Use {time} placeholder for remaining time in seconds.
-  teleport-start: "&eТелепортация через {time} сек... Не двигайтесь!"
+  teleport-start: "&#aa00aa&l! &fТелепортация через &#e056fd{time} сек&f... Не двигайтесь!"
 
   # Message when teleport is cancelled due to player movement.
-  teleport-cancelled: "&cТелепортация отменена! Вы пошевелились."
+  teleport-cancelled: "&#aa00aa&l! &fТелепортация отменена, вы пошевелились!"
 
   # Title shown during teleport countdown.
-  teleport-countdown-title: "&6&lТелепортация..."
+  teleport-countdown-title: "&#aa00aa&lТелепортация..."
 
   # Subtitle shown during teleport countdown.
   # Use {time} placeholder for remaining time in seconds.
-  teleport-countdown-subtitle: "&eНе двигайтесь {time} сек.!"
+  teleport-countdown-subtitle: "&fНе двигайтесь &#e056fd{time} сек&f!"
 
   # Title shown when teleport is cancelled.
-  teleport-cancelled-title: "&c&lОтменено"
+  teleport-cancelled-title: "&#aa00aa&lОтменено"
 
   # Subtitle shown when teleport is cancelled.
-  teleport-cancelled-subtitle: "&cВы сдвинулись с места!"
+  teleport-cancelled-subtitle: "&fВы сдвинулись с места!"
 
   # Message when admin teleports another player.
   # Use {player} and {world} placeholders.
