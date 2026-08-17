@@ -11,16 +11,19 @@ header-footer:
     default:
       header:
         - ""
-        - " &#aa00aa&l* &f&lNeverSMP &#aa00aa&l*"
-        - "  &#e056fdВыживание & Анархия  "
+        - " &#e056fd&lNeverSMP "
+        - " &7Анархия и Выживание "
         - ""
+        - " &8&m                                                  "
         - " &fОнлайн: &#aa00aa%online% &8| &fТПС: &#aa00aa%tps%"
+        - " &8&m                                                  "
         - ""
       footer:
         - ""
-        - " &#aa00aa&lМЫ В СЕТИ:"
+        - " &8&m                                                  "
         - " &fСайт: &#e056fddonate.neversmp.ru"
         - " &fТГК: &#e056fdt.me/NeverSMP"
+        - " &8&m                                                  "
         - ""
 
 # https://github.com/NEZNAMY/TAB/wiki/Feature-guide:-Tablist-name-formatting
