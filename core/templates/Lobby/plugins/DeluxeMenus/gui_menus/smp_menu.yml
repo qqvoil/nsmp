@@ -25,7 +25,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] smp1'
-      - '[message] &aПодключение к серверу SMP1...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу SMP1...'
   smp2_button:
     material: GRASS_BLOCK
     slot: 14
@@ -40,7 +40,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] smp2'
-      - '[message] &aПодключение к серверу SMP2...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу SMP2...'
   back_button:
     material: ARROW
     slot: 22

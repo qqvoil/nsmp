@@ -26,7 +26,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] hardcore1'
-      - '[message] &aПодключение к серверу Hardcore1...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу Hardcore1...'
   hardcore2_button:
     material: DIAMOND_AXE
     slot: 14
@@ -42,7 +42,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] hardcore2'
-      - '[message] &aПодключение к серверу Hardcore2...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу Hardcore2...'
   back_button:
     material: ARROW
     slot: 22

@@ -5,5 +5,5 @@
 command /hub:
     aliases: /lobby, /l
     trigger:
-        send "&eПодключение к главному лобби..." to player
+        send "&#aa00aa&l! &fПодключение к главному лобби..." to player
         connect player to "lobby"

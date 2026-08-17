@@ -25,7 +25,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] anarchy1'
-      - '[message] &aПодключение к серверу Anarchy1...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу Anarchy1...'
   anarchy2_button:
     material: TNT
     slot: 14
@@ -40,7 +40,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] anarchy2'
-      - '[message] &aПодключение к серверу Anarchy2...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу Anarchy2...'
   back_button:
     material: ARROW
     slot: 22

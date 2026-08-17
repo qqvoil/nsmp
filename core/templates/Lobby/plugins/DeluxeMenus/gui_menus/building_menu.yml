@@ -25,7 +25,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] building1'
-      - '[message] &aПодключение к серверу Building1...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу Building1...'
   building2_button:
     material: DIAMOND_PICKAXE
     slot: 14
@@ -40,7 +40,7 @@ items:
     left_click_commands:
       - '[sound] BLOCK_NOTE_BLOCK_XYLOPHONE'
       - '[connect] building2'
-      - '[message] &aПодключение к серверу Building2...'
+      - '[message] &#aa00aa&l! &fПодключение к серверу Building2...'
   back_button:
     material: ARROW
     slot: 22
